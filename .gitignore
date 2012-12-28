@@ -1,0 +1,19 @@
+.emacs.*
+*.elc
+*.eld
+*.bmk
+*.newsrc*
+
+.DS_Store
+ac-comphist.dat
+anything-c-adaptive-history
+ede-projects.el
+
+# [#].[#]
+\#*#
+\!*
+*~
+
+elpa/
+auto-save-list/
+# semanticdb/
