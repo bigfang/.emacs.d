@@ -1,5 +1,0 @@
-#name : enum ... { ... }
-# --
-enum ${1:name} {
-    $0
-}${2:name};

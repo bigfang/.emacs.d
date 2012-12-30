@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-12-29 00:20:52>
+;; Time-stamp: <BigFang 2012-12-30 10:15:41>
 
 ;;; elisp
 (require 'anything-config)
@@ -160,11 +160,13 @@
 
 ;;============================;;
 (require 'yasnippet)
-(yas/initialize)
-(setq yas/root-directory "~/.emacs.d/snippets"
-      ;; yas/trigger-key "<tab>"
-      yas/prompt-functions '(yas/dropdown-prompt
-                             yas/ido-prompt
-                             yas/completing-prompt)
-      yas/use-menu 'abbreviate)
-(yas/load-directory yas/root-directory)
+(yas-global-mode 1)
+(require 'dropdown-list)
+(setq yas-prompt-functions '(yas-dropdown-prompt
+                             yas-ido-prompt
+                             yas-completing-prompt)
+      ;; yas-expand-from-trigger-key "<tab>"
+      ;; yas-root-directory "~/.emacs.d/snippets"
+      yas-use-menu 'abbreviate)
+
+;; (yas-load-directory yas-root-directory)
