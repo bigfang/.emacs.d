@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-12-30 10:54:52>
+;; Time-stamp: <BigFang 2012-12-30 14:36:06>
 
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/plugins")
@@ -32,4 +32,5 @@
 (load-theme 'wombat t)
 
 ;; Load Configure
+(load custom-file)
 (mapc 'load (directory-files "~/.emacs.d/config" t "el$"))
