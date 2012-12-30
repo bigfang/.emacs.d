@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-07-01 23:23:55>
+;; Time-stamp: <BigFang 2012-12-30 10:44:17>
 
 (require 'gnushush)
 (setq gnushush-fqdn "unknown")
@@ -58,7 +58,7 @@
 (setq gnus-posting-styles
       '((".*"
          (name "BigFang")
-         (address "bit_air@gmail.com")
+         (address "bitair@gmail.com")
          (eval (setq mm-coding-system-priorities
                      '(iso-8859-1 gbk utf-8))))))
 

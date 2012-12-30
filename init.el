@@ -1,12 +1,12 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-12-28 22:45:48>
+;; Time-stamp: <BigFang 2012-12-30 10:54:52>
 
 ;; load-path
 (add-to-list 'load-path "~/.emacs.d/plugins")
 
-(setq bookmark-default-file "~/.emacs.d/.emacs.bmk"
-      custom-file "~/.emacs.d/config/emacs-custom.el"
+(setq custom-file "~/.emacs.d/emacs-custom.el"
+      bookmark-default-file "~/.emacs.d/.emacs.bmk"
       gnus-init-file "~/.emacs.d/site-lisp/.gnus.el"
       erc-startup-file-list '("~/.emacs.d/site-lisp/.ercrc.el"))
 (fset 'yes-or-no-p 'y-or-n-p)
