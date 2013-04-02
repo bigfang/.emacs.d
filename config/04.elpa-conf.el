@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-12-30 10:15:41>
+;; Time-stamp: <BigFang 2013-04-02 14:48:57>
 
 ;;; elisp
 (require 'anything-config)
@@ -69,6 +69,9 @@
 ;;============================;;
 (require 'highlight-symbol)
 ;; (global-set-key (kbd "C-z s") 'highlight-symbol-at-point)
+
+;;============================;;
+(require 'magit)
 
 ;;============================;;
 (require 'markdown-mode)
