@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-07-04 21:43:03>
+;; Time-stamp: <BigFang 2013-04-04 17:08:36>
 
 ;; alpha
 (set-frame-parameter nil 'alpha 95)
@@ -16,8 +16,8 @@
     (setf (frame-parameter nil 'alpha) (if (>= (- my-emacs-alpha-value 5) 0)
                                            (- my-emacs-alpha-value 5)
                                          0))))
-(global-set-key (kbd "<S-wheel-up>") 'my-emacs-alpha-up)
-(global-set-key (kbd "<S-wheel-down>") 'my-emacs-alpha-down)
+(global-set-key (kbd "<S-mouse-4>") 'my-emacs-alpha-up)
+(global-set-key (kbd "<S-mouse-5>") 'my-emacs-alpha-down)
 
 ;; Comment current line
 (defun comment-or-uncomment-current-line-or-region ()

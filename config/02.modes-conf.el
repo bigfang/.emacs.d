@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-12-15 15:17:36>
+;; Time-stamp: <BigFang 2013-04-04 17:24:49>
 
 ;; bs.el
 (require 'bs)
@@ -75,22 +75,6 @@
 ;;       (local-set-key (kbd "<f12>") 'toggle-tool-bar-mode-from-frame)
 ;;       ))
 
-;; Hippie-Expand
-;; (setq hippie-expand-try-functions-list
-;;       '(;;senator-try-expand-semantic
-;;         try-expand-dabbrev
-;;         try-expand-dabbrev-visible
-;;         try-expand-dabbrev-all-buffers
-;;         try-expand-dabbrev-from-kill
-;;         try-complete-file-name-partially
-;;         try-complete-file-name
-;;         try-expand-all-abbrevs
-;;         try-expand-list
-;;         try-expand-line
-;;         try-complete-lisp-symbol-partially
-;;         try-complete-lisp-symbol))
-;; (global-set-key (kbd "M-/") 'hippie-expand)
-
 ;; ibuffer
 (require 'ibuffer)
 (setq ibuffer-saved-filter-groups
@@ -101,11 +85,11 @@
          ("web" (or (mode . html-mode)
                     (mode . css-mode)
                     (mode . js-mode)
-                    (mode . coffee-mode)
-                    (mode . slim-mode)))
-         ("script" (or (mode . ruby-mode)
-                       (mode . sh-mode)
+                    (mode . js2-mode)
+                    (mode . coffee-mode)))
+         ("script" (or (mode . sh-mode)
                        (mode . sql-mode)
+                       (mode . ruby-mode)
                        (mode . haskell-mode)
                        (mode . python-mode)))
          ("prog" (or (mode . c++-mode)
@@ -157,9 +141,9 @@
 
 ;; tramp
 (require 'tramp)
-(setq tramp-default-method "plink")
-(setq tramp-default-user "wtr"
-      tramp-default-host "109\.123\.121\.10")
+(setq tramp-default-method "ssh")
+(setq tramp-default-user "user"
+      tramp-default-host "192\.168\.0\.1")
 (setq password-cache-expiry 65535)
 
 ;; VC

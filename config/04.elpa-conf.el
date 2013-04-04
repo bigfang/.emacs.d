@@ -1,6 +1,28 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-04-02 14:48:57>
+;; Time-stamp: <BigFang 2013-04-04 17:31:25>
+
+
+;;; Program languages
+
+(require 'clojure-mode)
+
+(require 'js2-mode)
+
+;; (require 'coffee-mode)
+
+;; (require 'python-mode)
+;; (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
+(setq interpreter-mode-alist (cons '("python" . python-mode)
+                                   interpreter-mode-alist))
+(autoload 'python-mode "python-mode" "Python editing mode." t)
+
+;; (require 'haskell-mode)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
+;; (add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
+
 
 ;;; elisp
 (require 'anything-config)
@@ -33,40 +55,6 @@
 (setq browse-kill-ring-separator "===")
 
 ;;============================;;
-(require 'clojure-mode)
-
-;;============================;;
-(require 'coffee-mode)
-
-;; ============================;;
-;; (add-to-list 'load-path "~/.emacs.d/plugins/company")
-;; (autoload 'company-mode "company" nil t)
-;; (require 'company)
-;; (setq company-idle-delay nil)
-
-;; (defun company-yasnippet-or-completion ()
-;;   (interactive)
-;;   (if (yas/expansion-at-point)
-;;       (progn (company-abort)
-;;              (yas/expand))
-;;     (company-complete-common)))
-;; (defun yas/expansion-at-point ()
-;;   "Tested with v0.6.1. Extracted from `yas/expand-1'"
-;;   (first (yas/current-key)))
-;; (define-key company-active-map (kbd "<tab>") 'company-yasnippet-or-completion)
-
-;; (define-key company-mode-map (kbd "<tab>") 'company-complete-common)
-
-;; (define-key company-mode-map (kbd "M-n") 'company-cycle)
-;; (define-key company-mode-map (kbd "M-p") 'company-cycle-backwards)
-
-;;============================;;
-(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;;(add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-
-;;============================;;
 (require 'highlight-symbol)
 ;; (global-set-key (kbd "C-z s") 'highlight-symbol-at-point)
 
@@ -91,12 +79,6 @@
 (pretty-lambda 'haskell-mode)
 
 ;;============================;;
-;; (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-                                   interpreter-mode-alist))
-(autoload 'python-mode "python-mode" "Python editing mode." t)
-
-;;============================;;
 (require 'rainbow-delimiters)
 (global-rainbow-delimiters-mode)
 ;; (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -114,9 +96,6 @@
  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "magenta"))))
  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "cyan")))))
 
-;; ((((((((()))))))))
-
-
 ;;============================;;
 (require 'rainbow-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
@@ -124,7 +103,6 @@
 ;; (dolist (rainbow-hook '(css-mode-hook
 ;;                         html-mode-hook))
 ;;   (add-hook rainbow-hook (lambda () (rainbow-mode t))))
-
 
 ;;============================;;
 (require 'rect-mark)
@@ -151,15 +129,9 @@
 (setq session-save-file "~/.emacs.d/.emacs.session")
 
 ;;============================;;
-(require 'slim-mode)
-
-;;============================;;
 (require 'undo-tree)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
-
-;;============================;;
-(require 'yaml-mode)
 
 ;;============================;;
 (require 'yasnippet)
