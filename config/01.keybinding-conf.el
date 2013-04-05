@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-07-05 11:39:19>
+;; Time-stamp: <BigFang 2013-04-05 10:56:16>
 
 ;; key binding
 (when (eq window-system 'w32)
@@ -38,11 +38,16 @@
 (global-set-key (kbd "M-p") 'previous-line)
 (global-set-key (kbd "M-n") 'next-line)
 
-(global-set-key (kbd "<s-up>") 'enlarge-window)
-(global-set-key (kbd "<s-down>") 'shrink-window)
-(global-set-key (kbd "<s-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<s-right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "<S-up>") 'enlarge-window)
+(global-set-key (kbd "<S-down>") 'shrink-window)
+(global-set-key (kbd "<S-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<S-right>") 'enlarge-window-horizontally)
 ;; (windmove-default-keybindings)
+
+(global-set-key (kbd "C-M-j")
+                (lambda ()
+                  (interactive)
+                  (join-line -1)))
 
 ;; key-chord
 (require 'key-chord)

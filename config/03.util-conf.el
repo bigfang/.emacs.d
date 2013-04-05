@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-04-04 17:08:36>
+;; Time-stamp: <BigFang 2013-04-05 12:29:34>
 
 ;; alpha
 (set-frame-parameter nil 'alpha 95)
@@ -19,6 +19,7 @@
 (global-set-key (kbd "<S-mouse-4>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<S-mouse-5>") 'my-emacs-alpha-down)
 
+
 ;; Comment current line
 (defun comment-or-uncomment-current-line-or-region ()
   "Comments or uncomments current current line or whole lines in region."
@@ -31,7 +32,7 @@
       (comment-or-uncomment-region
        (progn (goto-char min) (line-beginning-position))
        (progn (goto-char max) (line-end-position))))))
-;; (global-set-key (kbd "M-;") 'comment-or-uncomment-current-line-or-region)
+
 
 ;; Copy word
 (defun copy-word (&optional arg)
@@ -57,40 +58,22 @@
 (global-set-key (kbd "C-z l") 'copy-line)
 (global-set-key (kbd "C-z p") 'copy-paragraph)
 
-;; (defun copy-line-or-region (&optional n)
-;;   "Save current line or region into Kill-Ring.  If the mark is
-;; deactivated in current buffer, Save current line; otherwise save
-;; the region."
-;;   (interactive "p")
-;;   (if mark-active
-;;       (kill-ring-save
-;;        (region-beginning) (region-end))
-;;     (copy-line n)))
 
 ;; move line
-(defun move-line (n)
-  "Move the current line up or down by N lines."
-  (interactive "p")
-  (setq col (current-column))
-  (beginning-of-line) (setq start (point))
-  (end-of-line) (forward-char) (setq end (point))
-  (let ((line-text (delete-and-extract-region start end)))
-    (forward-line n)
-    (insert line-text)
-    ;; restore point to original column in moved line
-    (forward-line -1)
-    (forward-char col)))
-(defun move-line-up (n)
-  "Move the current line up by N lines."
-  (interactive "p")
-  (move-line (if (null n) -1 (- n))))
-(defun move-line-down (n)
-  "Move the current line down by N lines."
-  (interactive "p")
-  (move-line (if (null n) 1 n)))
+(defun move-line-up ()
+  (interactive)
+  (transpose-lines 1)
+  (forward-line -2))
+
+(defun move-line-down ()
+  (interactive)
+  (forward-line 1)
+  (transpose-lines 1)
+  (forward-line -1))
 
 (global-set-key (kbd "<C-S-up>") 'move-line-up)
 (global-set-key (kbd "<C-S-down>") 'move-line-down)
+
 
 ;; transpose windows
 (defun transpose-windows (arg)
@@ -106,6 +89,33 @@
       (setq arg (if (plusp arg) (1- arg) (1+ arg))))))
 
 (global-set-key (kbd "C-z t") 'transpose-windows)
+
+
+;; vi dd, o, O
+(defun kill-current-line (&optional n)
+  (interactive "p")
+  (save-excursion
+    (beginning-of-line)
+    (let ((kill-whole-line t))
+      (kill-line n))))
+
+(defun vi-open-line-above ()
+  (interactive)
+  (unless (bolp)
+    (beginning-of-line))
+  (newline)
+  (forward-line -1)
+  (indent-according-to-mode))
+
+(defun vi-open-line-below ()
+  (interactive)
+  (unless (eolp)
+    (end-of-line))
+  (newline-and-indent))
+
+(global-set-key (kbd "<C-return>") 'vi-open-line-below)
+(global-set-key (kbd "<C-S-return>") 'vi-open-line-above)
+
 
 ;; go to char
 (defun wy-go-to-char (n char)
@@ -126,37 +136,3 @@
   (isearch-search-and-update))
 
 (define-key isearch-mode-map "\C-w" 'wcy-isearch-word-at-point)
-
-;; vi dd, o, O
-(defun vi-open-line-above ()
-  "Insert a newline above the current line and put point at beginning."
-  (interactive)
-  (unless (bolp)
-    (beginning-of-line))
-  (newline)
-  (forward-line -1)
-  (indent-according-to-mode))
-
-(defun vi-open-line-below ()
-  "Insert a newline below the current line and put point at beginning."
-  (interactive)
-  (unless (eolp)
-    (end-of-line))
-  (newline-and-indent))
-
-(defun vi-open-line (&optional abovep)
-  "Insert a newline below the current line and put point at beginning.
-With a prefix argument, insert a newline above the current line."
-  (interactive "P")
-  (if abovep
-      (vi-open-line-above)
-    (vi-open-line-below)))
-
-(global-set-key (kbd "C-j") 'vi-open-line)
-
-(defun kill-current-line (&optional n)
-  (interactive "p")
-  (save-excursion
-    (beginning-of-line)
-    (let ((kill-whole-line t))
-      (kill-line n))))
