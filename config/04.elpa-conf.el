@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-04-04 17:31:25>
+;; Time-stamp: <BigFang 2013-04-05 16:15:15>
 
 
 ;;; Program languages
@@ -47,6 +47,10 @@
 ;; (define-key ac-completing-map (kbd "<return>") 'ac-stop)
 (ac-set-trigger-key "TAB")
 (add-hook 'cc-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
+
+;;============================;;
+(require 'auto-highlight-symbol)
+(global-auto-highlight-symbol-mode t)
 
 ;;============================;;
 (require 'browse-kill-ring)
@@ -122,6 +126,12 @@
   "Copy a rectangular region to the kill ring." t)
 (autoload 'rm-mouse-drag-region "rect-mark"
   "Drag out a rectangular region with the mouse." t)
+
+;;============================;;
+(require 'smarter-compile)
+(add-to-list 'smart-compile-alist
+             '("\\.py$" . "python %f"))
+(global-set-key (kbd "C-z C-x") 'smarter-compile)
 
 ;;============================;;
 (require 'session)

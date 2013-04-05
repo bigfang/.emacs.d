@@ -1,15 +1,11 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-07-01 23:01:52>
+;; Time-stamp: <BigFang 2013-04-05 16:07:00>
 
 ;;============================;;
-(require 'auto-highlight-symbol)
-(global-auto-highlight-symbol-mode t)
-
-;;============================;;
-(require 'compile-dwim)
-(global-set-key (kbd "C-z c") 'compile-dwim-compile)
-(global-set-key (kbd "C-z r") 'compile-dwim-run)
+;; (require 'compile-dwim)
+;; (global-set-key (kbd "C-z c") 'compile-dwim-compile)
+;; (global-set-key (kbd "C-z r") 'compile-dwim-run)
 
 ;;============================;;
 (require 'recent-jump)
