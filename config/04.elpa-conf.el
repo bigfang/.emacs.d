@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-04-05 16:15:15>
+;; Time-stamp: <BigFang 2013-04-08 14:07:55>
 
 
 ;;; Program languages
@@ -142,6 +142,9 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
+
+;;============================;;
+(require 'yaml-mode)
 
 ;;============================;;
 (require 'yasnippet)
