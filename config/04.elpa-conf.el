@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-06-04 11:44:29>
+;; Time-stamp: <BigFang 2013-06-04 14:50:54>
 
 
 ;;; Program languages
@@ -8,6 +8,9 @@
 (require 'clojure-mode)
 
 (require 'js2-mode)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
+
 
 ;; (require 'coffee-mode)
 
