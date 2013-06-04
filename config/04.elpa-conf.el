@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-04-08 14:07:55>
+;; Time-stamp: <BigFang 2013-06-04 11:44:29>
 
 
 ;;; Program languages
@@ -131,6 +131,8 @@
 (require 'smarter-compile)
 (add-to-list 'smart-compile-alist
              '("\\.py$" . "python %f"))
+(add-to-list 'smart-compile-alist
+             '("\\.js$" . "node %f"))
 (global-set-key (kbd "C-z C-x") 'smarter-compile)
 
 ;;============================;;
