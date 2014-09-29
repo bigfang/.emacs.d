@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2013-06-09 11:48:14>
+;; Time-stamp: <BigFang 2014-09-29 17:56:49>
 
 
 ;;; Program languages
@@ -48,10 +48,6 @@
 ;; (define-key ac-completing-map (kbd "<return>") 'ac-stop)
 (ac-set-trigger-key "TAB")
 (add-hook 'cc-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
-
-;;============================;;
-(require 'auto-highlight-symbol)
-(global-auto-highlight-symbol-mode t)
 
 ;;============================;;
 (require 'browse-kill-ring)
@@ -145,9 +141,6 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
-
-;;============================;;
-(require 'yaml-mode)
 
 ;;============================;;
 (require 'yasnippet)
