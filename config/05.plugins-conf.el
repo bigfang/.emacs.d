@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
+;; Time-stamp: <BigFang 2015-03-29 19:33:55>
 
-;; Time-stamp: <BigFang 2013-04-05 16:07:00>
 
 ;;============================;;
 ;; (require 'compile-dwim)

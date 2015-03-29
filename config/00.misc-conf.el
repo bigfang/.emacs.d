@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
+;; Time-stamp: <BigFang 2015-03-29 19:33:33>
 
-;; Time-stamp: <BigFang 2012-11-22 11:06:46>
 
 (setq backward-delete-char-untabify-method nil)
 (setq default-directory "~/")

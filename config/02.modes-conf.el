@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
+;; Time-stamp: <BigFang 2015-03-29 19:33:03>
 
-;; Time-stamp: <BigFang 2013-06-05 10:21:54>
 
 ;; bs.el
 (require 'bs)
@@ -133,9 +133,6 @@
 (ido-mode t)
 (ido-everywhere t)
 (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last")
-
-;; js-mode
-(setq js-indent-level 2)
 
 ;; remember
 (require 'remember)

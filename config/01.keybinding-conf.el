@@ -1,15 +1,27 @@
 ;; -*- mode: Emacs-Lisp -*-
+;; Time-stamp: <BigFang 2015-03-29 19:59:14>
 
-;; Time-stamp: <BigFang 2013-04-05 10:56:16>
 
-;; key binding
-(when (eq window-system 'w32)
+;; Win key binding
+(when (eq system-type 'windows-nt)
   (setq w32-pass-lwindow-to-system nil
         w32-pass-rwindow-to-system nil
         w32-lwindow-modifier 'super
-        w32-rwindow-modifier 'super))
-;; w32-pass-apps-to-system nil
-;; w32-apps-modifier 'hyper))
+        w32-rwindow-modifier 'super
+        w32-pass-apps-to-system nil
+        w32-apps-modifier 'hyper))
+
+;; Mac key binding
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'meta)
+  (setq mac-option-modifier 'super)
+  (setq mac-control-modifier 'control)
+  (setq ns-function-modifier 'hyper))
+
+;; Terminal
+(when (eq window-system nil)
+  (menu-bar-mode -1))
+
 
 (define-prefix-command 'apps-map)
 (global-set-key (kbd "<apps>") 'apps-map)
@@ -52,8 +64,8 @@
 ;; key-chord
 (require 'key-chord)
 (key-chord-mode 1)
-(key-chord-define-global "uu" 'undo)
+;; (key-chord-define-global "uu" 'undo)
 (key-chord-define-global "``" 'highlight-symbol-at-point)
 (key-chord-define-global "dd" 'kill-current-line)
 (key-chord-define-global ";;" 'comment-or-uncomment-current-line-or-region)
-(key-chord-define-global "00" 'vi-open-line)
+;; (key-chord-define-global "00" 'vi-open-line-below)

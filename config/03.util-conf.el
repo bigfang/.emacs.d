@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
+;; Time-stamp: <BigFang 2015-03-29 19:36:28>
 
-;; Time-stamp: <BigFang 2014-09-29 18:00:57>
 
 ;; alpha
 (set-frame-parameter nil 'alpha 95)
@@ -18,6 +18,8 @@
                                          0))))
 (global-set-key (kbd "<S-wheel-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<S-wheel-down>") 'my-emacs-alpha-down)
+(global-set-key (kbd "<C-s-up>") 'my-emacs-alpha-up)
+(global-set-key (kbd "<C-s-down>") 'my-emacs-alpha-down)
 
 
 ;; Comment current line
@@ -73,7 +75,8 @@
 
 (global-set-key (kbd "<C-S-up>") 'move-line-up)
 (global-set-key (kbd "<C-S-down>") 'move-line-down)
-
+(global-set-key (kbd "<s-up>") 'move-line-up)
+(global-set-key (kbd "<s-down>") 'move-line-down)
 
 ;; transpose windows
 (defun transpose-windows (arg)

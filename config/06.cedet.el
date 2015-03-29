@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
+;; Time-stamp: <BigFang 2015-03-29 19:34:02>
 
-;; Time-stamp: <BigFang 2012-06-30 13:28:11>
 
 (require 'cedet)
 (require 'semantic)

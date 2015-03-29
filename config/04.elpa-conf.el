@@ -1,32 +1,18 @@
 ;; -*- mode: Emacs-Lisp -*-
-
-;; Time-stamp: <BigFang 2014-09-29 17:56:49>
+;; Time-stamp: <BigFang 2015-03-29 20:10:51>
 
 
 ;;; Program languages
 (require 'clojure-mode)
-(require 'coffee-mode)
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (define-key js2-mode-map (kbd "<return>") 'newline-and-indent)
 ;; (define-key js2-mode-map (kbd "<backspace>") 'c-electric-backspace)
 ;; (define-key js2-mode-map (kbd "C-d") 'c-electric-delete-forward)
 
-;; (require 'python-mode)
-;; (setq auto-mode-alist (cons '("\\.py$" . python-mode) auto-mode-alist))
-(setq interpreter-mode-alist (cons '("python" . python-mode)
-                                   interpreter-mode-alist))
-(autoload 'python-mode "python-mode" "Python editing mode." t)
-
-;; (require 'haskell-mode)
-;; (add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
-;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-;; (add-hook 'haskell-mode-hook 'turn-on-haskell-indent)
-;; (add-hook 'haskell-mode-hook 'turn-on-haskell-simple-indent)
-
 
 ;;; elisp
-(require 'anything-config)
+(require 'helm-config)
 
 ;;============================;;
 (require 'ascii)
@@ -81,21 +67,25 @@
 
 ;;============================;;
 (require 'rainbow-delimiters)
-(global-rainbow-delimiters-mode)
-;; (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(custom-set-faces
- ;; '(completions-common-part ((t (:inherit default :foreground "red"))))
- ;; '(diredp-compressed-file-suffix ((t (:foreground "#7b68ee"))))
- ;; '(diredp-ignored-file-name ((t (:foreground "#aaaaaa"))))
- '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "Salmon"))))
- '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "cornflowerblue"))))
- '(rainbow-delimiters-depth-3-face ((((background dark)) (:foreground "orange"))))
- '(rainbow-delimiters-depth-4-face ((((background dark)) (:foreground "purple"))))
- '(rainbow-delimiters-depth-5-face ((((background dark)) (:foreground "green"))))
- '(rainbow-delimiters-depth-6-face ((((background dark)) (:foreground "yellow"))))
- '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "brown"))))
- '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "magenta"))))
- '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "cyan")))))
+(rainbow-delimiters-mode)
+(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'lisp-interaction-mode 'rainbow-delimiters-mode)
+;; (custom-set-faces
+;;  ;; '(completions-common-part ((t (:inherit default :foreground "red"))))
+;;  ;; '(diredp-compressed-file-suffix ((t (:foreground "#7b68ee"))))
+;;  ;; '(diredp-ignored-file-name ((t (:foreground "#aaaaaa"))))
+;;  '(rainbow-delimiters-depth-1-face ((((background dark)) (:foreground "Salmon"))))
+;;  '(rainbow-delimiters-depth-2-face ((((background dark)) (:foreground "cornflowerblue"))))
+;;  '(rainbow-delimiters-depth-3-face ((((background dark)) (:foreground "orange"))))
+;;  '(rainbow-delimiters-depth-4-face ((((background dark)) (:foreground "purple"))))
+;;  '(rainbow-delimiters-depth-5-face ((((background dark)) (:foreground "green"))))
+;;  '(rainbow-delimiters-depth-6-face ((((background dark)) (:foreground "yellow"))))
+;;  '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "brown"))))
+;;  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "magenta"))))
+;;  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "cyan")))))
+
 
 ;;============================;;
 (require 'rainbow-mode)
@@ -145,12 +135,10 @@
 ;;============================;;
 (require 'yasnippet)
 (yas-global-mode 1)
-(require 'dropdown-list)
 (setq yas-prompt-functions '(yas-dropdown-prompt
                              yas-ido-prompt
                              yas-completing-prompt)
       ;; yas-expand-from-trigger-key "<tab>"
       ;; yas-root-directory "~/.emacs.d/snippets"
       yas-use-menu 'abbreviate)
-
 ;; (yas-load-directory yas-root-directory)
