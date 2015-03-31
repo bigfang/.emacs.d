@@ -16,6 +16,7 @@ tramp
 \!*
 *~
 
+eshell/
 elpa/
 auto-save-list/
 # semanticdb/

@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-29 19:59:14>
+;; Time-stamp: <BigFang 2015-03-31 22:06:32>
 
 
 ;; Win key binding
@@ -13,6 +13,8 @@
 
 ;; Mac key binding
 (when (eq system-type 'darwin)
+  ;; (require 'ls-lisp)
+  ;; (setq ls-lisp-use-insert-directory-program nil)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super)
   (setq mac-control-modifier 'control)

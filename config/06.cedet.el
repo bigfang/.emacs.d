@@ -1,5 +1,35 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-29 19:34:02>
+;; Time-stamp: <BigFang 2015-03-31 23:04:36>
+
+
+;; CC-mode
+(require 'cc-mode)
+(add-hook 'c-mode-common-hook
+          '(lambda ()
+	     (require 'xcscope)
+             (c-toggle-hungry-state t)
+             (setq default-tab-width 4
+                   c-default-style "k&r"
+                   indent-tabs-mode nil
+                   c-basic-offset tab-width
+                   comment-style 'extra-line)))
+;;    (hs-minor-mode t)
+;; (add-to-list 'c-cleanup-list 'scope-operator)
+;; (add-to-list 'c-cleanup-list 'defun-close-semi)
+;; (add-to-list 'c-cleanup-list 'list-close-comma)
+;; (add-to-list 'c-cleanup-list 'brace-else-brace)
+;; (add-to-list 'c-cleanup-list 'brace-elseif-brace)
+;; (add-to-list 'c-cleanup-list 'compact-empty-funcall)))
+
+(define-key c-mode-base-map (kbd "RET") 'newline-and-indent)
+
+;; gud
+(gud-tooltip-mode)
+(setq gdb-many-windows t)
+;; (add-hook 'gdb-mode-hook
+;;    '(lambda ()
+;;       (local-set-key (kbd "<f12>") 'toggle-tool-bar-mode-from-frame)
+;;       ))
 
 
 (require 'cedet)

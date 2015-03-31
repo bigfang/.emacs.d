@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2012-12-30 10:44:17>
+;; Time-stamp: <BigFang 2015-03-31 23:20:34>
 
 (require 'gnushush)
 (setq gnushush-fqdn "unknown")
@@ -40,11 +40,12 @@
 (setq gnus-inhibit-startup-message nil
       gnus-startup-file "~/.emacs.d/.newsrc")
 
-(setq gnus-select-method '(nntp "news.cn99.com"))
-(add-to-list 'gnus-secondary-select-methods '(nntp "news.newsfan.net"))
-(add-to-list 'gnus-secondary-select-methods '(nntp "news.yaako.com"))
-(add-to-list 'gnus-secondary-select-methods '(nntp "news.gmane.org"))
-(add-to-list 'gnus-secondary-select-methods '(nntp "freenews.netfront.net"))
+(setq gnus-select-method '(nntp "news.gmane.org"))
+(add-to-list 'gnus-secondary-select-methods '(nntp "news.gnus.org"))
+;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.newsfan.net"))
+;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.yaako.com"))
+;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.cn99.com"))
+;; (add-to-list 'gnus-secondary-select-methods '(nntp "freenews.netfront.net"))
 
 (setq gnus-group-name-charset-group-alist
       '(("nnrss.*" . utf-8)
