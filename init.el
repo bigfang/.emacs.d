@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-29 19:32:32>
+;; Time-stamp: <BigFang 2015-03-31 10:20:16>
 
 
 ;; load-path
@@ -31,6 +31,7 @@
 ;; Color theme
 (setq custom-theme-directory "~/.emacs.d/themes")
 (load-theme 'wombat t)
+(set-cursor-color "#FFDEAD")
 
 ;; Load Configure
 (load custom-file)
