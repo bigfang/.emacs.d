@@ -1,5 +1,4 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-31 22:06:32>
 
 
 ;; Win key binding

@@ -1,5 +1,4 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-29 20:10:51>
 
 
 ;;; Program languages

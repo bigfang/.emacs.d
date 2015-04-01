@@ -1,5 +1,4 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-31 23:32:33>
 
 
 ;; bs.el
@@ -35,10 +34,11 @@
                       (mode . shell-mode)
                       (mode . eshell-mode)))
          ("Web" (or (mode . html-mode)
-                    (mode . css-mode)
                     (mode . js-mode)
                     (mode . js2-mode)
-                    (mode . coffee-mode)))
+                    (mode . json-mode)
+                    (mode . coffee-mode)
+                    (mode . css-mode)))
          ("Script" (or (mode . sh-mode)
                        (mode . sql-mode)
                        (mode . ruby-mode)

@@ -1,5 +1,4 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-29 19:33:33>
 
 
 (setq backward-delete-char-untabify-method nil)

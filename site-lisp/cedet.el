@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-31 23:04:36>
 
+;; Time-stamp: <BigFang 2015-04-01 17:52:31>
 
 ;; CC-mode
 (require 'cc-mode)

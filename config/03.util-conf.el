@@ -1,5 +1,4 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-29 19:36:28>
 
 
 ;; alpha
