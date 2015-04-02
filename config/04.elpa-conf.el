@@ -8,6 +8,7 @@
 (define-key js2-mode-map (kbd "<return>") 'newline-and-indent)
 ;; (define-key js2-mode-map (kbd "<backspace>") 'c-electric-backspace)
 ;; (define-key js2-mode-map (kbd "C-d") 'c-electric-delete-forward)
+(define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
 
 
 ;;; elisp
@@ -20,16 +21,26 @@
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
+(setq ac-sources '(ac-source-abbrev
+                   ac-source-yasnippet
+                   ac-source-filename
+                   ac-source-words-in-same-mode-buffers
+                   ac-source-css-property
+                   ac-source-features
+                   ac-source-functions
+                   ac-source-variables
+                   ac-source-symbols
+                   ac-source-dictionary))
 (global-auto-complete-mode t)
 (setq ac-auto-start 3)
-(setq ac-auto-show-menu nil)
+(setq ac-auto-show-menu t)
 (define-key ac-mode-map (kbd "M-i") 'auto-complete)
 (define-key ac-complete-mode-map (kbd "M-i") 'ac-next)
 (define-key ac-complete-mode-map (kbd "<down>") 'next-line)
 (define-key ac-complete-mode-map (kbd "<up>") 'previous-line)
 (define-key ac-menu-map (kbd "M-n") 'ac-next)
 (define-key ac-menu-map (kbd "M-p") 'ac-previous)
-;; (define-key ac-completing-map (kbd "<tab>") 'ac-complete)
+(define-key ac-completing-map (kbd "<return>") 'ac-complete)
 ;; (define-key ac-completing-map (kbd "<return>") 'ac-stop)
 (ac-set-trigger-key "TAB")
 (add-hook 'cc-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
