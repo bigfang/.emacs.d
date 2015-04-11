@@ -50,6 +50,7 @@
 (global-set-key (kbd "C-M-]") 'align-entire)
 (global-set-key (kbd "M-p") 'previous-line)
 (global-set-key (kbd "M-n") 'next-line)
+(global-set-key (kbd "M-/") 'undo)
 
 (global-set-key (kbd "<S-up>") 'enlarge-window)
 (global-set-key (kbd "<S-down>") 'shrink-window)
