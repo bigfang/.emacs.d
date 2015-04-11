@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-04-11 09:07:27>
+;; Time-stamp: <BigFang 2015-04-11 11:41:42>
 
 
 ;; load-path
@@ -28,6 +28,7 @@
 
 ;; Marmalade repo
 (require 'package)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
