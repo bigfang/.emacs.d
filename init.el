@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2015-03-31 10:20:16>
+;; Time-stamp: <BigFang 2015-04-11 09:07:27>
 
 
 ;; load-path
@@ -19,6 +19,10 @@
 (add-hook 'write-file-hooks 'time-stamp)
 (setq time-stamp-format "BigFang %04y-%02m-%02d %02H:%02M:%02S")
 
+;; exec-path
+;; (setenv "PATH" (concat (getenv "PATH") "/path"))
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 ;; trailing whitespace
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -35,10 +39,10 @@
 
 ;; Load Configure
 (load custom-file)
-(mapc 'load (directory-files "~/.emacs.d/config" t "el$"))
+(mapc 'load (directory-files "~/.emacs.d/config" t "^[^#].+\\.el$"))
 
-(setq default-frame-alist
-      '(
-        (width . 112) ; character
-        (height . 38) ; lines
-        ))
+;; (setq default-frame-alist
+;;       '(
+;;         (width . 112) ; character
+;;         (height . 38) ; lines
+;;         ))

@@ -8,6 +8,8 @@
 (define-key js2-mode-map (kbd "<return>") 'newline-and-indent)
 ;; (define-key js2-mode-map (kbd "<backspace>") 'c-electric-backspace)
 ;; (define-key js2-mode-map (kbd "C-d") 'c-electric-delete-forward)
+(require 'json-mode)
+(require 'json-reformat)
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
 
 
@@ -50,6 +52,12 @@
 (browse-kill-ring-default-keybindings)
 (setq browse-kill-ring-highlight-current-entry t)
 (setq browse-kill-ring-separator "===")
+
+;;============================;;
+;; (rqquire 'flycheck)
+(if (fboundp 'global-flycheck-mode)
+    (global-flycheck-mode +1)
+  (add-hook 'prog-mode-hook 'flycheck-mode))
 
 ;;============================;;
 (require 'highlight-symbol)

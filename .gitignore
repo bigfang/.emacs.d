@@ -5,6 +5,7 @@
 *.newsrc*
 
 .DS_Store
+.session
 ac-comphist.dat
 anything-c-adaptive-history
 ede-projects.el
