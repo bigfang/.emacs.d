@@ -34,6 +34,7 @@
                       (mode . shell-mode)
                       (mode . eshell-mode)))
          ("Web" (or (mode . html-mode)
+                    (mode . web-mode)
                     (mode . js-mode)
                     (mode . js2-mode)
                     (mode . json-mode)

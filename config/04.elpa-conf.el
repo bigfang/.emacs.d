@@ -47,6 +47,14 @@
 (ac-set-trigger-key "TAB")
 (add-hook 'cc-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
 
+(require 'emmet-mode)
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+(add-hook 'web-mode-hook 'emmet-mode)
+;; (require 'ac-emmet)
+;; (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
+;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
+
 ;;============================;;
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
@@ -104,7 +112,6 @@
 ;;  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "magenta"))))
 ;;  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "cyan")))))
 
-
 ;;============================;;
 (require 'rainbow-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
@@ -149,6 +156,22 @@
 (require 'undo-tree)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
+
+;;============================;;
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+(setq web-mode-enable-current-element-highlight t)
+(setq web-mode-enable-current-column-highlight t)
+;; (add-hook 'web-mode-hook #'(lambda () (set (make-local-variable 'yas-extra-modes) 'html-mode)))
+;; (defun yas-web-mode-fix ()
+;;   (if (string= major-mode "web-mode")
+;;       (progn
+;;         (web-mode-buffer-refresh)
+;;         (indent-for-tab-command))))
+;; (setq yas/after-exit-snippet-hook 'yas-web-mode-fix)
 
 ;;============================;;
 (require 'yasnippet)
