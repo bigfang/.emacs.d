@@ -51,6 +51,13 @@
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
 (add-hook 'web-mode-hook 'emmet-mode)
+(setq emmet-preview-default nil)
+(add-hook 'emmet-mode-hook
+          (lambda ()
+            (define-key emmet-mode-keymap (kbd "C-j") nil)
+            (define-key emmet-mode-keymap (kbd "<C-return>") nil)
+            (define-key emmet-mode-keymap (kbd "<M-return>") 'emmet-expand-line)
+            (define-key emmet-mode-keymap (kbd "M-j") 'emmet-expand-line)))
 ;; (require 'ac-emmet)
 ;; (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
 ;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
