@@ -68,6 +68,6 @@
 (key-chord-mode 1)
 ;; (key-chord-define-global "uu" 'undo)
 (key-chord-define-global "``" 'highlight-symbol-at-point)
-(key-chord-define-global "dd" 'kill-current-line)
+(key-chord-define-global "DD" 'kill-current-line)
 (key-chord-define-global ";;" 'comment-or-uncomment-current-line-or-region)
 ;; (key-chord-define-global "00" 'vi-open-line-below)
