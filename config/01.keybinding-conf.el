@@ -12,8 +12,6 @@
 
 ;; Mac key binding
 (when (eq system-type 'darwin)
-  ;; (require 'ls-lisp)
-  ;; (setq ls-lisp-use-insert-directory-program nil)
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super)
   (setq mac-control-modifier 'control)
