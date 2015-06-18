@@ -11,6 +11,7 @@
 (require 'json-mode)
 (require 'json-reformat)
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
+(require 'yaml-mode)
 
 
 ;;; elisp
@@ -47,6 +48,13 @@
 (ac-set-trigger-key "TAB")
 (add-hook 'cc-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
 
+;;============================;;
+(require 'browse-kill-ring)
+(browse-kill-ring-default-keybindings)
+(setq browse-kill-ring-highlight-current-entry t)
+(setq browse-kill-ring-separator "===")
+
+;;============================;;
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
@@ -61,12 +69,6 @@
 ;; (require 'ac-emmet)
 ;; (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
 ;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
-
-;;============================;;
-(require 'browse-kill-ring)
-(browse-kill-ring-default-keybindings)
-(setq browse-kill-ring-highlight-current-entry t)
-(setq browse-kill-ring-separator "===")
 
 ;;============================;;
 ;; (rqquire 'flycheck)
