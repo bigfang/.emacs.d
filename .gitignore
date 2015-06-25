@@ -1,3 +1,5 @@
+# -*- mode: gitignore; -*-
+
 .emacs.*
 *.elc
 *.eld
@@ -14,6 +16,7 @@ tramp
 
 # [#].[#]
 \#*#
+.\#*
 \!*
 *~
 
