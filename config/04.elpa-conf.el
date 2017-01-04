@@ -84,9 +84,6 @@
 (require 'magit)
 
 ;;============================;;
-(require 'markdown-mode)
-
-;;============================;;
 (require 'pager)
 (global-set-key (kbd "C-v") 'pager-page-down)
 (global-set-key (kbd "M-v") 'pager-page-up)
@@ -167,7 +164,7 @@
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
 
 ;;============================;;
-(require 'web-mode)
+;; (require 'web-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
