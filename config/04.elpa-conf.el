@@ -71,6 +71,15 @@
 ;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
 
 ;;============================;;
+(require 'fill-column-indicator)
+(set-fill-column 80)
+(setq fci-rule-width 1)
+(setq fci-rule-color "DimGray")
+(define-globalized-minor-mode
+  global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
+
+;;============================;;
 ;; (rqquire 'flycheck)
 (if (fboundp 'global-flycheck-mode)
     (global-flycheck-mode +1)
@@ -166,11 +175,11 @@
 ;;============================;;
 ;; (require 'web-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-code-indent-offset 2)
-(setq web-mode-enable-current-element-highlight t)
-(setq web-mode-enable-current-column-highlight t)
+;; (setq web-mode-markup-indent-offset 2)
+;; (setq web-mode-css-indent-offset 2)
+;; (setq web-mode-code-indent-offset 2)
+;; (setq web-mode-enable-current-element-highlight t)
+;; (setq web-mode-enable-current-column-highlight t)
 ;; (add-hook 'web-mode-hook #'(lambda () (set (make-local-variable 'yas-extra-modes) 'html-mode)))
 ;; (defun yas-web-mode-fix ()
 ;;   (if (string= major-mode "web-mode")
