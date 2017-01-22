@@ -11,7 +11,11 @@
 (require 'json-mode)
 (require 'json-reformat)
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
-(require 'yaml-mode)
+;; (require 'yaml-mode)
+
+;; elpy
+(package-initialize)
+(elpy-enable)
 
 
 ;;; elisp
@@ -25,38 +29,40 @@
 (require 'ascii)
 
 ;;============================;;
-(require 'auto-complete)
-(require 'auto-complete-config)
-(ac-config-default)
-(setq ac-sources '(ac-source-abbrev
-                   ac-source-yasnippet
-                   ac-source-filename
-                   ac-source-words-in-same-mode-buffers
-                   ac-source-css-property
-                   ac-source-features
-                   ac-source-functions
-                   ac-source-variables
-                   ac-source-symbols
-                   ac-source-dictionary))
-(global-auto-complete-mode t)
-(setq ac-auto-start 3)
-(setq ac-auto-show-menu t)
-(define-key ac-mode-map (kbd "M-i") 'auto-complete)
-(define-key ac-complete-mode-map (kbd "M-i") 'ac-next)
-(define-key ac-complete-mode-map (kbd "<down>") 'next-line)
-(define-key ac-complete-mode-map (kbd "<up>") 'previous-line)
-(define-key ac-menu-map (kbd "M-n") 'ac-next)
-(define-key ac-menu-map (kbd "M-p") 'ac-previous)
-(define-key ac-completing-map (kbd "<return>") 'ac-complete)
-;; (define-key ac-completing-map (kbd "<return>") 'ac-stop)
-(ac-set-trigger-key "TAB")
-(add-hook 'cc-mode (lambda () (add-to-list 'ac-sources 'ac-source-semantic)))
-
-;;============================;;
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 (setq browse-kill-ring-highlight-current-entry t)
 (setq browse-kill-ring-separator "===")
+
+;;============================;;
+(add-hook 'after-init-hook 'global-company-mode)
+(eval-after-load 'company
+  '(progn
+     (define-key company-active-map (kbd "M-i") 'company-complete-common-or-cycle)
+     (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)))
+
+(defun complete-or-indent ()
+  (interactive)
+  (if (company-manual-begin)
+      (company-complete-common)
+    (indent-according-to-mode)))
+(global-set-key (kbd "M-i") 'complete-or-indent)
+
+(custom-set-faces
+ '(company-preview
+   ((t (:foreground "darkgray" :underline t))))
+ '(company-preview-common
+   ((t (:inherit company-preview))))
+ '(company-tooltip
+   ((t (:background "lightgray" :foreground "black"))))
+ '(company-tooltip-selection
+   ((t (:background "steelblue" :foreground "white"))))
+ '(company-tooltip-common
+   ((((type x)) (:inherit company-tooltip :weight bold))
+    (t (:inherit company-tooltip))))
+ '(company-tooltip-common-selection
+   ((((type x)) (:inherit company-tooltip-selection :weight bold))
+    (t (:inherit company-tooltip-selection)))))
 
 ;;============================;;
 (require 'emmet-mode)
@@ -73,6 +79,10 @@
 ;; (require 'ac-emmet)
 ;; (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
 ;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
+
+;;============================;;
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;;============================;;
 (require 'fill-column-indicator)
@@ -182,11 +192,6 @@
 
 ;;============================;;
 (require 'yasnippet)
-(yas-global-mode 1)
-(setq yas-prompt-functions '(yas-dropdown-prompt
-                             yas-ido-prompt
-                             yas-completing-prompt)
-      ;; yas-expand-from-trigger-key "<tab>"
-      ;; yas-root-directory "~/.emacs.d/snippets"
-      yas-use-menu 'abbreviate)
-;; (yas-load-directory yas-root-directory)
+;; (yas-global-mode 1)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
