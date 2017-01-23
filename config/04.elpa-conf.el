@@ -1,8 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;;; Program languages
+;;; programming languages
 (require 'clojure-mode)
+(require 'elixir-mode)
+
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (define-key js2-mode-map (kbd "<return>") 'newline-and-indent)
@@ -20,21 +22,23 @@
 
 ;;; elisp
 (require 'helm-config)
+(global-set-key (kbd "C-x b") 'helm-buffers-list)
 
-;;============================;;
+
+;; =====
 (require 'ace-jump-mode)
-(define-key global-map (kbd "C-c C-c") 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-;;============================;;
+;; =====
 (require 'ascii)
 
-;;============================;;
+;; =====
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 (setq browse-kill-ring-highlight-current-entry t)
 (setq browse-kill-ring-separator "===")
 
-;;============================;;
+;; =====
 (add-hook 'after-init-hook 'global-company-mode)
 (eval-after-load 'company
   '(progn
@@ -64,7 +68,7 @@
    ((((type x)) (:inherit company-tooltip-selection :weight bold))
     (t (:inherit company-tooltip-selection)))))
 
-;;============================;;
+;; =====
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
@@ -80,11 +84,11 @@
 ;; (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
 ;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
 
-;;============================;;
+;; =====
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-;;============================;;
+;; =====
 (require 'fill-column-indicator)
 (set-fill-column 80)
 (setq fci-rule-width 1)
@@ -93,41 +97,41 @@
   global-fci-mode fci-mode (lambda () (fci-mode 1)))
 (global-fci-mode 1)
 
-;;============================;;
+;; =====
 ;; (rqquire 'flycheck)
 (if (fboundp 'global-flycheck-mode)
     (global-flycheck-mode +1)
   (add-hook 'prog-mode-hook 'flycheck-mode))
 
-;;============================;;
+;; =====
 (require 'highlight-symbol)
 ;; (global-set-key (kbd "C-z s") 'highlight-symbol-at-point)
 
-;;============================;;
+;; =====
 (require 'magit)
 
-;;============================;;
+;; =====
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;;============================;;
+;; =====
 (require 'pager)
 (global-set-key (kbd "C-v") 'pager-page-down)
 (global-set-key (kbd "M-v") 'pager-page-up)
 (global-set-key (kbd "C-p") 'pager-row-up)
 (global-set-key (kbd "C-n") 'pager-row-down)
 
-;;============================;;
+;; =====
 (require 'pretty-lambdada)
 (pretty-lambda-for-modes)
 (pretty-lambda 'python-mode)
 (pretty-lambda 'ruby-mode)
 (pretty-lambda 'haskell-mode)
 
-;;============================;;
+;; =====
 (require 'rainbow-delimiters)
 (rainbow-delimiters-mode)
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
@@ -148,7 +152,7 @@
 ;;  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "magenta"))))
 ;;  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "cyan")))))
 
-;;============================;;
+;; =====
 (require 'rainbow-mode)
 (add-hook 'css-mode-hook 'rainbow-mode)
 (add-hook 'html-mode-hook 'rainbow-mode)
@@ -156,7 +160,12 @@
 ;;                         html-mode-hook))
 ;;   (add-hook rainbow-hook (lambda () (rainbow-mode t))))
 
-;;============================;;
+;; =====
+(require 'session)
+(add-hook 'after-init-hook 'session-initialize)
+(setq session-save-file "~/.emacs.d/.emacs.session")
+
+;; =====
 (require 'smarter-compile)
 (add-to-list 'smart-compile-alist
              '("\\.py$" . "python %f"))
@@ -164,17 +173,17 @@
              '("\\.js$" . "node %f"))
 (global-set-key (kbd "C-z C-x") 'smarter-compile)
 
-;;============================;;
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-(setq session-save-file "~/.emacs.d/.emacs.session")
+;; =====
+(require 'smex)
+(global-set-key (kbd "<escape>") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
-;;============================;;
+;; =====
 (require 'undo-tree)
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
 
-;;============================;;
+;; =====
 ;; (require 'web-mode)
 ;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 ;; (setq web-mode-markup-indent-offset 2)
@@ -190,7 +199,7 @@
 ;;         (indent-for-tab-command))))
 ;; (setq yas/after-exit-snippet-hook 'yas-web-mode-fix)
 
-;;============================;;
+;; =====
 (require 'yasnippet)
 ;; (yas-global-mode 1)
 (yas-reload-all)
