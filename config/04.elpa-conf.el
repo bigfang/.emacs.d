@@ -21,8 +21,22 @@
 
 
 ;;; elisp
+(require 'helm)
 (require 'helm-config)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
+(setq helm-M-x-fuzzy-match t
+      helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") #'helm-find-files)
+(global-set-key (kbd "M-y") 'helm-show-kill-ring)
+(global-set-key (kbd "C-c h o") 'helm-occur)
+(helm-autoresize-mode t)
+(helm-mode t)
+
+
+(require 'helm-smex)
+(global-set-key [remap execute-extended-command] #'helm-smex)
+(global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
 
 
 ;; =====
@@ -31,12 +45,6 @@
 
 ;; =====
 (require 'ascii)
-
-;; =====
-(require 'browse-kill-ring)
-(browse-kill-ring-default-keybindings)
-(setq browse-kill-ring-highlight-current-entry t)
-(setq browse-kill-ring-separator "===")
 
 ;; =====
 (add-hook 'after-init-hook 'global-company-mode)
@@ -175,8 +183,8 @@
 
 ;; =====
 (require 'smex)
-(global-set-key (kbd "<escape>") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; (global-set-key (kbd "<escape>") 'smex)
+;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; =====
 (require 'undo-tree)
