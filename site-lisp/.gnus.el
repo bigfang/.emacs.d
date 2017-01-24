@@ -1,6 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <BigFang 2016-12-13 20:39:34>
+;; Time-stamp: <BigFang 2017-01-24 20:42:22>
 
 (require 'gnushush)
 (setq gnushush-fqdn "unknown")
@@ -41,7 +41,7 @@
       gnus-startup-file "~/.emacs.d/.newsrc")
 
 (setq gnus-select-method '(nntp "news.gmane.org"))
-(add-to-list 'gnus-secondary-select-methods '(nntp "news.gnus.org"))
+;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.gnus.org"))
 ;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.newsfan.net"))
 ;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.yaako.com"))
 ;; (add-to-list 'gnus-secondary-select-methods '(nntp "news.cn99.com"))
