@@ -92,9 +92,9 @@
 ;; tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
-(setq tramp-default-user "user"
-      tramp-default-host "192\.168\.0\.1")
-(setq password-cache-expiry 65535)
+;; (setq tramp-default-user "user"
+;;       tramp-default-host "192\.168\.0\.1")
+(setq password-cache-expiry nil)
 
 ;; VC
 (setq version-control t

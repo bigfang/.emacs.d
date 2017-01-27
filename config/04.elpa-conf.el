@@ -15,10 +15,6 @@
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
 ;; (require 'yaml-mode)
 
-;; elpy
-(package-initialize)
-(elpy-enable)
-
 
 ;;; elisp
 (require 'helm)
