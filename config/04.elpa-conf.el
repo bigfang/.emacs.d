@@ -8,6 +8,7 @@
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (define-key js2-mode-map (kbd "<return>") 'newline-and-indent)
+(add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
 ;; (define-key js2-mode-map (kbd "<backspace>") 'c-electric-backspace)
 ;; (define-key js2-mode-map (kbd "C-d") 'c-electric-delete-forward)
 (require 'json-mode)
@@ -15,13 +16,17 @@
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
 ;; (require 'yaml-mode)
 
+(require 'alchemist)
+(setq alchemist-key-command-prefix (kbd "C-c ."))
+(setq alchemist-mix-env "dev")
+
 
 ;;; elisp
 (require 'helm)
 (require 'helm-config)
 (setq helm-M-x-fuzzy-match t
       helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match    t)
+      helm-recentf-fuzzy-match t)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-x C-f") #'helm-find-files)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
@@ -88,7 +93,7 @@
 
 ;; =====
 ;; (require 'fill-column-indicator)
-;; (set-fill-column 80)
+;; (setq-default fill-column 80)
 ;; (setq fci-rule-width 1)
 ;; (setq fci-rule-color "DimGray")
 ;; (define-globalized-minor-mode

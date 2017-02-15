@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2017-01-24 17:47:11>
+;; Time-stamp: <BigFang 2017-02-15 21:19:02>
 
 
 ;; load-path
@@ -12,7 +12,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; personal info
-(setq user-full-name "BigFang"
+(setq user-full-name "bigfang"
       user-mail-address "bitair@gmail.com")
 
 ;; time-stamp
@@ -24,7 +24,9 @@
 (setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;; trailing whitespace
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
+;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'prog-mode-hook
+          (lambda () (add-hook 'before-save-hook 'delete-trailing-whitespace)))
 
 ;; Marmalade repo
 (require 'package)
