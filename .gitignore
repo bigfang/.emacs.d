@@ -8,7 +8,7 @@
 
 .DS_Store
 .session
-ac-comphist.dat
+.mc-lists.el
 anything-c-adaptive-history
 ede-projects.el
 emacs-custom.el
