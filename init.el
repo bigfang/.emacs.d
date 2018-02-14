@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <BigFang 2017-02-15 21:19:02>
+;; Time-stamp: <BigFang 2018-02-14 20:07:09>
 
 
 ;; load-path
@@ -37,17 +37,11 @@
 
 ;; Color theme
 (setq custom-theme-directory "~/.emacs.d/themes")
-;; (load-theme 'wombat t)
-(load-theme 'zenburn t)
+(load-theme 'wombat t)
+;; (load-theme 'zenburn t)
 (set-cursor-color "#FFDEAD")
 (set-face-attribute 'region nil :background "#666" :foreground "#fff")
 
 ;; Load Configure
 (load custom-file)
 (mapc 'load (directory-files "~/.emacs.d/config" t "^[^#].+\\.el$"))
-
-;; (setq default-frame-alist
-;;       '(
-;;         (width . 112) ; character
-;;         (height . 38) ; lines
-;;         ))

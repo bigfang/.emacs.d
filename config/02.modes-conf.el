@@ -4,8 +4,8 @@
 ;; bs.el
 (require 'bs)
 (global-set-key (kbd "C-z b") 'bs-show)
-(global-set-key (kbd "M-<up>") 'bs-cycle-previous)
-(global-set-key (kbd "M-<down>") 'bs-cycle-next)
+(global-set-key (kbd "C-z C-p") 'bs-cycle-previous)
+(global-set-key (kbd "C-z C-n") 'bs-cycle-next)
 
 ;; view-mode
 (require 'view)
@@ -73,7 +73,7 @@
 (add-hook 'ibuffer-mode-hook
           (lambda ()
             (ibuffer-switch-to-saved-filter-groups "Default")))
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+(global-set-key (kbd "C-x b") 'ibuffer)
 
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))

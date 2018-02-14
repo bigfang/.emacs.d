@@ -15,8 +15,10 @@
     (setf (frame-parameter nil 'alpha) (if (>= (- my-emacs-alpha-value 5) 0)
                                            (- my-emacs-alpha-value 5)
                                          0))))
-(global-set-key (kbd "<S-wheel-up>") 'my-emacs-alpha-up)
+(global-set-key (kbd "<S-mouse-4>") 'my-emacs-alpha-down)
+(global-set-key (kbd "<S-mouse-5>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<S-wheel-down>") 'my-emacs-alpha-down)
+(global-set-key (kbd "<S-wheel-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<C-s-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<C-s-down>") 'my-emacs-alpha-down)
 
@@ -74,8 +76,7 @@
 
 (global-set-key (kbd "<C-S-up>") 'move-line-up)
 (global-set-key (kbd "<C-S-down>") 'move-line-down)
-(global-set-key (kbd "<s-up>") 'move-line-up)
-(global-set-key (kbd "<s-down>") 'move-line-down)
+
 
 ;; transpose windows
 (defun transpose-windows (arg)

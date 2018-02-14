@@ -12,15 +12,49 @@
 
 ;; Mac key binding
 (when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta)
-  (setq mac-option-modifier 'super)
-  (setq mac-control-modifier 'control)
-  (setq ns-function-modifier 'hyper))
+  (setq mac-command-modifier 'meta
+        mac-control-modifier 'control
+        mac-option-modifier 'super
+        ns-function-modifier 'hyper))
 
 ;; Terminal
 (when (eq window-system nil)
   (menu-bar-mode -1))
 
+;; (unless window-system
+;;   (xterm-mouse-mode 1)
+;;   (global-set-key (kbd "<mouse-4>") (lambda ()
+;;                               (interactive)
+;;                               (scroll-down 1)))
+;;   (global-set-key (kbd "<mouse-5>") (lambda ()
+;;                               (interactive)
+;;                               (scroll-up 1)))
+;;   (global-set-key (kbd "<wheel-down>") (lambda ()
+;;                               (interactive)
+;;                               (scroll-down 1)))
+;;   (global-set-key (kbd "<wheel-up>") (lambda ()
+;;                               (interactive)
+;;                               (scroll-up 1))))
+
+
+(defun my/global-map-and-set-key (key command &optional prefix suffix)
+   "`my/map-key' KEY then `global-set-key' KEY with COMMAND.
+ PREFIX or SUFFIX can wrap the key when passing to `global-set-key'."
+   (my/map-key key)
+   (global-set-key (kbd (concat prefix key suffix)) command))
+
+ (defun my/map-key (key)
+   "Map KEY from escape sequence \"\e[emacs-KEY\."
+   (define-key function-key-map (concat "\e[emacs-" key) (kbd key)))
+
+(global-set-key (kbd "C-c l") 'mc/edit-lines)
+;; 需要配合 iTerm2 进行 key mapping
+;; https://stackoverflow.com/a/40222318/2163429
+;; (my/global-map-and-set-key "C-=" 'er/expand-region)
+;; (my/global-map-and-set-key "C--" 'er/contract-region)
+;; (my/global-map-and-set-key "C->" 'mc/mark-next-like-this)
+;; (my/global-map-and-set-key "C-<" 'mc/mark-previous-like-this)
+;; (my/global-map-and-set-key "C-c C->" 'mc/mark-all-like-this)
 
 (define-prefix-command 'apps-map)
 (global-set-key (kbd "<apps>") 'apps-map)
@@ -35,10 +69,8 @@
 (define-prefix-command 'ctl-z-map)
 (global-set-key (kbd "C-z") 'ctl-z-map)
 ;; (global-set-key (kbd "C-z <f5>") 'revert-buffer)
-(global-set-key (kbd "C-z C-z") 'speedbar)
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
-(global-set-key (kbd "C-z d") 'gdb)
 
 (global-set-key (kbd "C-`") 'other-window)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
@@ -46,15 +78,11 @@
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-x j") 'ffap)
 (global-set-key (kbd "C-M-]") 'align-entire)
-(global-set-key (kbd "M-p") 'previous-line)
-(global-set-key (kbd "M-n") 'next-line)
-(global-set-key (kbd "M-/") 'undo)
 
 (global-set-key (kbd "<S-up>") 'enlarge-window)
 (global-set-key (kbd "<S-down>") 'shrink-window)
 (global-set-key (kbd "<S-left>") 'shrink-window-horizontally)
 (global-set-key (kbd "<S-right>") 'enlarge-window-horizontally)
-;; (windmove-default-keybindings)
 
 (global-set-key (kbd "C-M-j")
                 (lambda ()

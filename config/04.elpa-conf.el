@@ -2,7 +2,7 @@
 
 
 ;;; programming languages
-(require 'clojure-mode)
+;; (require 'clojure-mode)
 (require 'elixir-mode)
 
 (require 'js2-mode)
@@ -22,32 +22,55 @@
 
 
 ;;; elisp
-(require 'helm)
-(require 'helm-config)
-(setq helm-M-x-fuzzy-match t
-      helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match t)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") #'helm-find-files)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-c h o") 'helm-occur)
-(helm-autoresize-mode t)
-(helm-mode t)
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t
+      ivy-height 15)
+(setq ivy-re-builders-alist
+      '((swiper . ivy--regex-plus)
+        (t      . ivy--regex-fuzzy)))
+;; (setq enable-recursive-minibuffers t)
+(global-set-key (kbd "C-s") 'swiper)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "M-y") 'counsel-yank-pop)
+
+(global-set-key (kbd "C-c v") 'ivy-push-view)
+(global-set-key (kbd "C-c V") 'ivy-pop-view)
+;; (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
+
+(global-set-key (kbd "M-SPC") 'avy-goto-char-2)
+(global-set-key (kbd "M-SPC") 'avy-goto-char-2)
 
 
-(require 'helm-smex)
-(global-set-key [remap execute-extended-command] #'helm-smex)
-(global-set-key (kbd "M-X") #'helm-smex-major-mode-commands)
+;; (require 'helm)
+;; (require 'helm-config)
+;; (setq helm-M-x-fuzzy-match t
+;;       helm-split-window-in-side-p t
+;;       helm-buffers-fuzzy-matching t
+;;       helm-recentf-fuzzy-match t)
+
+;; (global-set-key (kbd "M-x") #'helm-M-x)
+;; (global-set-key (kbd "C-x C-b") 'helm-mini)
+;; (global-set-key (kbd "C-x C-f") #'helm-find-files)
+;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
+;; (global-set-key (kbd "C-z o") 'helm-occur)
+
+;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
+;; (define-key helm-map (kbd "C-z")  'helm-select-action)
+
+;; (setq helm-autoresize-max-height 0)
+;; (setq helm-autoresize-min-height 50)
+;; (helm-autoresize-mode 1)
+;; (helm-mode t)
+
+;; (require 'helm-swoop)
+;; (global-set-key (kbd "C-z s") 'helm-swoop)
 
 
 ;; =====
-(require 'ace-jump-mode)
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-;; =====
-(require 'ascii)
-
-;; =====
+(require 'company-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 (eval-after-load 'company
   '(progn
@@ -102,9 +125,9 @@
 
 ;; =====
 ;; (rqquire 'flycheck)
-(if (fboundp 'global-flycheck-mode)
-    (global-flycheck-mode +1)
-  (add-hook 'prog-mode-hook 'flycheck-mode))
+;; (if (fboundp 'global-flycheck-mode)
+;;     (global-flycheck-mode +1)
+;;   (add-hook 'prog-mode-hook 'flycheck-mode))
 
 ;; =====
 (require 'highlight-symbol)
@@ -115,7 +138,7 @@
 
 ;; =====
 (require 'multiple-cursors)
-(global-set-key (kbd "C-C C-C") 'mc/edit-lines)
+(global-set-key (kbd "C-c C-C") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
@@ -124,8 +147,8 @@
 (require 'pager)
 (global-set-key (kbd "C-v") 'pager-page-down)
 (global-set-key (kbd "M-v") 'pager-page-up)
-(global-set-key (kbd "C-p") 'pager-row-up)
-(global-set-key (kbd "C-n") 'pager-row-down)
+(global-set-key (kbd "M-p") 'pager-row-up)
+(global-set-key (kbd "M-n") 'pager-row-down)
 
 ;; =====
 (require 'pretty-lambdada)
@@ -177,30 +200,14 @@
 (global-set-key (kbd "C-z C-x") 'smarter-compile)
 
 ;; =====
-(require 'smex)
-;; (global-set-key (kbd "<escape>") 'smex)
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(require 'neotree)
+(global-set-key (kbd "C-z C-z") 'neotree-toggle)
 
 ;; =====
 (require 'undo-tree)
 (global-undo-tree-mode)
+(global-set-key (kbd "C-z C-_") 'undo-tree-visualize)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
-
-;; =====
-;; (require 'web-mode)
-;; (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;; (setq web-mode-markup-indent-offset 2)
-;; (setq web-mode-css-indent-offset 2)
-;; (setq web-mode-code-indent-offset 2)
-;; (setq web-mode-enable-current-element-highlight t)
-;; (setq web-mode-enable-current-column-highlight t)
-;; (add-hook 'web-mode-hook #'(lambda () (set (make-local-variable 'yas-extra-modes) 'html-mode)))
-;; (defun yas-web-mode-fix ()
-;;   (if (string= major-mode "web-mode")
-;;       (progn
-;;         (web-mode-buffer-refresh)
-;;         (indent-for-tab-command))))
-;; (setq yas/after-exit-snippet-hook 'yas-web-mode-fix)
 
 ;; =====
 (require 'yasnippet)
