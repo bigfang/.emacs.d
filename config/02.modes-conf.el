@@ -9,7 +9,7 @@
 
 ;; view-mode
 (require 'view)
-(global-set-key (kbd "C-x C-z") 'view-mode)
+(global-set-key (kbd "C-z C-z") 'view-mode)
 (define-key view-mode-map "b" 'backward-char)
 (define-key view-mode-map "f" 'forward-char)
 (define-key view-mode-map (kbd "C-n") 'next-line)
@@ -24,7 +24,6 @@
       dired-recursive-deletes 'top
       dired-dwim-target t)
 (put 'dired-find-alternate-file 'disabled nil)
-(global-set-key (kbd "C-z C-j") 'dired-jump)
 
 ;; ibuffer
 (require 'ibuffer)

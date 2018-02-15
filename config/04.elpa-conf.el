@@ -39,8 +39,8 @@
 (global-set-key (kbd "C-c V") 'ivy-pop-view)
 ;; (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
-(global-set-key (kbd "M-SPC") 'avy-goto-char-2)
-(global-set-key (kbd "M-SPC") 'avy-goto-char-2)
+(global-set-key (kbd "C-z C-g") 'avy-goto-char-2)
+(global-set-key (kbd "M-g f") 'avy-goto-line)
 
 
 ;; (require 'helm)
@@ -70,7 +70,7 @@
 
 
 ;; =====
-(require 'company-mode)
+;; (require 'company-mode)
 (add-hook 'after-init-hook 'global-company-mode)
 (eval-after-load 'company
   '(progn
@@ -112,7 +112,7 @@
 
 ;; =====
 (require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+(global-set-key (kbd "M-SPC") 'er/expand-region)
 
 ;; =====
 ;; (require 'fill-column-indicator)
@@ -142,6 +142,10 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
+
+;; =====
+(require 'neotree)
+(global-set-key (kbd "C-x C-z") 'neotree-toggle)
 
 ;; =====
 (require 'pager)
@@ -198,10 +202,6 @@
 (add-to-list 'smart-compile-alist
              '("\\.js$" . "node %f"))
 (global-set-key (kbd "C-z C-x") 'smarter-compile)
-
-;; =====
-(require 'neotree)
-(global-set-key (kbd "C-z C-z") 'neotree-toggle)
 
 ;; =====
 (require 'undo-tree)
