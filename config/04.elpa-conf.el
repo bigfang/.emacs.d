@@ -2,8 +2,6 @@
 
 
 ;;; programming languages
-;; (require 'clojure-mode)
-(require 'elixir-mode)
 
 (require 'js2-mode)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
@@ -16,19 +14,22 @@
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
 ;; (require 'yaml-mode)
 
+(require 'elixir-mode)
 (require 'alchemist)
 (setq alchemist-key-command-prefix (kbd "C-c ."))
 (setq alchemist-mix-env "dev")
 
 
-;;; elisp
+;; ================================================== ;;
+
+;; ivy counsel swiper
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t
+      enable-recursive-minibuffers t
       ivy-height 15)
 (setq ivy-re-builders-alist
       '((swiper . ivy--regex-plus)
         (t      . ivy--regex-fuzzy)))
-;; (setq enable-recursive-minibuffers t)
 (global-set-key (kbd "C-s") 'swiper)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-b") 'ivy-switch-buffer)
@@ -43,39 +44,19 @@
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 
 
-;; (require 'helm)
-;; (require 'helm-config)
-;; (setq helm-M-x-fuzzy-match t
-;;       helm-split-window-in-side-p t
-;;       helm-buffers-fuzzy-matching t
-;;       helm-recentf-fuzzy-match t)
-
-;; (global-set-key (kbd "M-x") #'helm-M-x)
-;; (global-set-key (kbd "C-x C-b") 'helm-mini)
-;; (global-set-key (kbd "C-x C-f") #'helm-find-files)
-;; (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-;; (global-set-key (kbd "C-z o") 'helm-occur)
-
-;; (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-;; (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action)
-;; (define-key helm-map (kbd "C-z")  'helm-select-action)
-
-;; (setq helm-autoresize-max-height 0)
-;; (setq helm-autoresize-min-height 50)
-;; (helm-autoresize-mode 1)
-;; (helm-mode t)
-
-;; (require 'helm-swoop)
-;; (global-set-key (kbd "C-z s") 'helm-swoop)
-
-
-;; =====
-;; (require 'company-mode)
+;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-yasnippet)
 (eval-after-load 'company
   '(progn
      (define-key company-active-map (kbd "M-i") 'company-complete-common-or-cycle)
      (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)))
+
+(defun indent-or-complete ()
+  (interactive)
+  (if (looking-at "\\_>")
+      (company-complete-common)
+    (indent-according-to-mode)))
 
 (defun complete-or-indent ()
   (interactive)
@@ -83,9 +64,10 @@
       (company-complete-common)
     (indent-according-to-mode)))
 (global-set-key (kbd "M-i") 'complete-or-indent)
+(global-set-key (kbd "<tab>") 'indent-or-complete)
+
 
 (require 'color)
-
 (let ((bg (face-attribute 'default :background)))
   (custom-set-faces
    `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
@@ -93,6 +75,19 @@
    `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
    `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
    `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
+
+
+;; yasnippet
+(require 'yasnippet)
+;; (yas-global-mode 1)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
+
+
+;; ================================================== ;;
+
+(require 'diredful)
+(diredful-mode 1)
 
 ;; =====
 (require 'emmet-mode)
@@ -106,25 +101,22 @@
             (define-key emmet-mode-keymap (kbd "<C-return>") nil)
             (define-key emmet-mode-keymap (kbd "<M-return>") 'emmet-expand-line)
             (define-key emmet-mode-keymap (kbd "M-j") 'emmet-expand-line)))
-;; (require 'ac-emmet)
-;; (add-hook 'sgml-mode-hook 'ac-emmet-html-setup)
-;; (add-hook 'css-mode-hook 'ac-emmet-css-setup)
 
 ;; =====
 (require 'expand-region)
 (global-set-key (kbd "M-SPC") 'er/expand-region)
 
 ;; =====
-;; (require 'fill-column-indicator)
-;; (setq-default fill-column 80)
-;; (setq fci-rule-width 1)
-;; (setq fci-rule-color "DimGray")
-;; (define-globalized-minor-mode
-;;   global-fci-mode fci-mode (lambda () (fci-mode 1)))
-;; (global-fci-mode 1)
+(require 'fill-column-indicator)
+(setq-default fill-column 120)
+(setq fci-rule-width 1)
+(setq fci-rule-color "DimGray")
+(define-globalized-minor-mode
+  global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode 1)
 
 ;; =====
-;; (rqquire 'flycheck)
+;; (require 'flycheck)
 ;; (if (fboundp 'global-flycheck-mode)
 ;;     (global-flycheck-mode +1)
 ;;   (add-hook 'prog-mode-hook 'flycheck-mode))
@@ -208,9 +200,3 @@
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-_") 'undo-tree-visualize)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
-
-;; =====
-(require 'yasnippet)
-;; (yas-global-mode 1)
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)

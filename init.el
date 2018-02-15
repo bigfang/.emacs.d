@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-02-15 12:05:08>
+;; Time-stamp: <2018-02-15 16:27:19>
 
 
 ;; load-path
@@ -14,10 +14,6 @@
 ;; time-stamp
 (add-hook 'write-file-hooks 'time-stamp)
 (setq time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S")
-
-;; exec-path
-;; (setenv "PATH" (concat (getenv "PATH") "/path"))
-(setq exec-path (append exec-path '("/usr/local/bin")))
 
 ;; trailing whitespace
 ;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
