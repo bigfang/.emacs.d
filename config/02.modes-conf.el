@@ -1,9 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; prog-mode hooks
+;; == prog-mode hooks ==
 (add-hook 'prog-mode-hook 'prettify-symbols-mode)
 (add-hook 'prog-mode-hook (lambda () (hs-minor-mode t)))
+
 
 ;; bs.el
 (require 'bs)
@@ -11,15 +12,10 @@
 (global-set-key (kbd "C-z C-p") 'bs-cycle-previous)
 (global-set-key (kbd "C-z C-n") 'bs-cycle-next)
 
-;; view-mode
-(require 'view)
-(global-set-key (kbd "C-z C-z") 'view-mode)
-(define-key view-mode-map "b" 'backward-char)
-(define-key view-mode-map "f" 'forward-char)
-(define-key view-mode-map (kbd "C-n") 'next-line)
-(define-key view-mode-map (kbd "C-p") 'previous-line)
-(define-key view-mode-map (kbd "p") 'pager-row-up)
-(define-key view-mode-map (kbd "n") 'pager-row-down)
+;; desktop
+(require 'desktop)
+(desktop-save-mode t)
+(add-to-list 'desktop-path "~/.emacs.d/")
 
 ;; dired
 (require 'dired)
@@ -111,7 +107,15 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
 
-;; desktop
-(require 'desktop)
-(desktop-save-mode t)
-(add-to-list 'desktop-path "~/.emacs.d/")
+;; view-mode
+(require 'view)
+(global-set-key (kbd "C-z C-z") 'view-mode)
+(define-key view-mode-map "b" 'backward-char)
+(define-key view-mode-map "f" 'forward-char)
+(define-key view-mode-map (kbd "C-n") 'next-line)
+(define-key view-mode-map (kbd "C-p") 'previous-line)
+(define-key view-mode-map (kbd "p") 'pager-row-up)
+(define-key view-mode-map (kbd "n") 'pager-row-down)
+
+;; windmove
+(windmove-default-keybindings)
