@@ -1,6 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+;; prog-mode hooks
+(add-hook 'prog-mode-hook 'prettify-symbols-mode)
+(add-hook 'prog-mode-hook (lambda () (hs-minor-mode t)))
+
 ;; bs.el
 (require 'bs)
 (global-set-key (kbd "C-z b") 'bs-show)

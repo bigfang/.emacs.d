@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-02-15 16:27:19>
+;; Time-stamp: <2018-02-16 12:33:06>
 
 
 ;; load-path
@@ -16,9 +16,8 @@
 (setq time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S")
 
 ;; trailing whitespace
-;; (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (add-hook 'prog-mode-hook
-          (lambda () (add-hook 'before-save-hook 'delete-trailing-whitespace)))
+          (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 ;; Marmalade repo
 (require 'package)

@@ -66,15 +66,21 @@
 (global-set-key (kbd "M-i") 'complete-or-indent)
 (global-set-key (kbd "<tab>") 'indent-or-complete)
 
-
-(require 'color)
-(let ((bg (face-attribute 'default :background)))
-  (custom-set-faces
-   `(company-tooltip ((t (:inherit default :background ,(color-lighten-name bg 2)))))
-   `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
-   `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
-   `(company-tooltip-selection ((t (:inherit font-lock-function-name-face))))
-   `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
+(custom-set-faces
+ '(company-preview
+   ((t (:foreground "darkgray" :underline t))))
+ '(company-preview-common
+   ((t (:inherit company-preview))))
+ '(company-tooltip
+   ((t (:background "lightgray" :foreground "black"))))
+ '(company-tooltip-selection
+   ((t (:background "steelblue" :foreground "white"))))
+ '(company-tooltip-common
+   ((((type x)) (:inherit company-tooltip :weight bold))
+    (t (:inherit company-tooltip))))
+ '(company-tooltip-common-selection
+   ((((type x)) (:inherit company-tooltip-selection :weight bold))
+    (t (:inherit company-tooltip-selection)))))
 
 
 ;; yasnippet
@@ -84,10 +90,14 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 
-;; ================================================== ;;
+;; python jedi
+(defun my/python-mode-hook ()
+  (add-to-list 'company-backends 'company-jedi))
 
-(require 'diredful)
-(diredful-mode 1)
+(add-hook 'python-mode-hook 'my/python-mode-hook)
+
+
+;; ================================================== ;;
 
 ;; =====
 (require 'emmet-mode)
@@ -106,14 +116,14 @@
 (require 'expand-region)
 (global-set-key (kbd "M-SPC") 'er/expand-region)
 
-;; =====
-(require 'fill-column-indicator)
-(setq-default fill-column 120)
-(setq fci-rule-width 1)
-(setq fci-rule-color "DimGray")
-(define-globalized-minor-mode
-  global-fci-mode fci-mode (lambda () (fci-mode 1)))
-(global-fci-mode 1)
+;; ===== 与company-mode冲突
+;; (require 'fill-column-indicator)
+;; (setq-default fill-column 120)
+;; (setq fci-rule-width 1)
+;; (setq fci-rule-color "DimGray")
+;; (define-globalized-minor-mode
+;;   global-fci-mode fci-mode (lambda () (fci-mode 1)))
+;; (global-fci-mode 1)
 
 ;; =====
 ;; (require 'flycheck)
@@ -186,14 +196,6 @@
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 (setq session-save-file "~/.emacs.d/.emacs.session")
-
-;; =====
-(require 'smarter-compile)
-(add-to-list 'smart-compile-alist
-             '("\\.py$" . "python %f"))
-(add-to-list 'smart-compile-alist
-             '("\\.js$" . "node %f"))
-(global-set-key (kbd "C-z C-x") 'smarter-compile)
 
 ;; =====
 (require 'undo-tree)
