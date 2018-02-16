@@ -46,7 +46,7 @@
 
 ;; company-mode
 (add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends 'company-yasnippet)
+(add-to-list 'company-backends 'company-yasnippet t)
 (eval-after-load 'company
   '(progn
      (define-key company-active-map (kbd "M-i") 'company-complete-common-or-cycle)
@@ -90,24 +90,19 @@
 (add-hook 'prog-mode-hook #'yas-minor-mode)
 
 
-;; python jedi
-(defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi)
+;; python jedi elpy
+(defun my/python-mode-conf ()
+  (setenv "IPY_TEST_SIMPLE_PROMPT" "1")
   (setq python-indent-offset 4
         python-indent 4
         indent-tabs-mode nil
 
-        ;; 设置 run-python 的参数
+        ;; TODO 设置 run-python 的参数
         python-shell-exec-path "~/.emacs.d/.python-environments/jedi/bin"
         python-shell-virtualenv-root "~/.emacs.d/.python-environments/jedi"
         python-shell-interpreter "ipython"
-        python-shell-interpreter-args "--simple-prompt -i"
-        python-shell-prompt-regexp "In \\[[0-9]+\\]: "
-        python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
-        python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
-        python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
-        python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
-(add-hook 'python-mode-hook 'my/python-mode-hook)
+        python-shell-interpreter-args "-i --simple-prompt"))
+(add-hook 'python-mode-hook 'my/python-mode-conf)
 
 (setq jedi:environment-root "jedi"
       jedi:complete-otn-dot t
@@ -115,8 +110,15 @@
       compandy-minimum-prefix-length 3
       company-transformers '(company-sort-by-occurrence)
       company-selection-wrap-around t)
+
 (add-hook 'python-mode-hook 'jedi:setup)
-(add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
+(add-hook 'python-mode-hook
+          (lambda ()
+            (push (concat (getenv "HOME") "/.emacs.d/.python-environments/jedi/bin") exec-path)
+            (add-to-list 'company-backends 'company-jedi)))
+
+(elpy-enable)
+(remove-hook 'elpy-modules 'elpy-module-flymake)
 
 
 ;; ================================================== ;;
@@ -148,10 +150,8 @@
 ;; (global-fci-mode 1)
 
 ;; =====
-;; (require 'flycheck)
-;; (if (fboundp 'global-flycheck-mode)
-;;     (global-flycheck-mode +1)
-;;   (add-hook 'prog-mode-hook 'flycheck-mode))
+(require 'flycheck)
+(add-hook 'prog-mode-hook 'flycheck-mode)
 
 ;; =====
 (require 'highlight-symbol)
