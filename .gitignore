@@ -7,10 +7,10 @@
 *.newsrc*
 
 .DS_Store
-.session
 tramp
 recentf
 .projectile
+ac-comphist.dat
 
 .mc-lists.el
 emacs-custom.el
@@ -25,3 +25,4 @@ eshell/
 elpa/
 auto-save-list/
 url/
+.python-environments/

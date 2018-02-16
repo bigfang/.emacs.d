@@ -63,8 +63,8 @@
   (if (company-manual-begin)
       (company-complete-common)
     (indent-according-to-mode)))
+(global-set-key (kbd "M-i") 'indent-or-complete)
 (global-set-key (kbd "M-i") 'complete-or-indent)
-(global-set-key (kbd "<tab>") 'indent-or-complete)
 
 (custom-set-faces
  '(company-preview
@@ -92,9 +92,31 @@
 
 ;; python jedi
 (defun my/python-mode-hook ()
-  (add-to-list 'company-backends 'company-jedi))
+  (add-to-list 'company-backends 'company-jedi)
+  (setq python-indent-offset 4
+        python-indent 4
+        indent-tabs-mode nil
 
+        ;; 设置 run-python 的参数
+        python-shell-exec-path "~/.emacs.d/.python-environments/jedi/bin"
+        python-shell-virtualenv-root "~/.emacs.d/.python-environments/jedi"
+        python-shell-interpreter "ipython"
+        python-shell-interpreter-args "--simple-prompt -i"
+        python-shell-prompt-regexp "In \\[[0-9]+\\]: "
+        python-shell-prompt-output-regexp "Out\\[[0-9]+\\]: "
+        python-shell-completion-setup-code "from IPython.core.completerlib import module_completion"
+        python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n"
+        python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n"))
 (add-hook 'python-mode-hook 'my/python-mode-hook)
+
+(setq jedi:environment-root "jedi"
+      jedi:complete-otn-dot t
+      jedi:use-shortcuts t
+      compandy-minimum-prefix-length 3
+      company-transformers '(company-sort-by-occurrence)
+      company-selection-wrap-around t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(add-hook 'python-mode-hook (lambda () (add-to-list 'company-backends 'company-jedi)))
 
 
 ;; ================================================== ;;
@@ -157,19 +179,8 @@
 (global-set-key (kbd "M-n") 'pager-row-down)
 
 ;; =====
-(require 'pretty-lambdada)
-(pretty-lambda-for-modes)
-(pretty-lambda 'python-mode)
-(pretty-lambda 'ruby-mode)
-(pretty-lambda 'haskell-mode)
-
-;; =====
 (require 'rainbow-delimiters)
-(rainbow-delimiters-mode)
-(add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'js2-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'lisp-mode-hook 'rainbow-delimiters-mode)
-(add-hook 'lisp-interaction-mode 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 ;; (custom-set-faces
 ;;  ;; '(completions-common-part ((t (:inherit default :foreground "red"))))
 ;;  ;; '(diredp-compressed-file-suffix ((t (:foreground "#7b68ee"))))
@@ -183,19 +194,23 @@
 ;;  '(rainbow-delimiters-depth-7-face ((((background dark)) (:foreground "brown"))))
 ;;  '(rainbow-delimiters-depth-8-face ((((background dark)) (:foreground "magenta"))))
 ;;  '(rainbow-delimiters-depth-9-face ((((background dark)) (:foreground "cyan")))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(rainbow-delimiters-depth-1-face ((t (:foreground "dark orange"))))
+ '(rainbow-delimiters-depth-2-face ((t (:foreground "deep pink"))))
+ '(rainbow-delimiters-depth-3-face ((t (:foreground "chartreuse"))))
+ '(rainbow-delimiters-depth-4-face ((t (:foreground "deep sky blue"))))
+ '(rainbow-delimiters-depth-5-face ((t (:foreground "yellow"))))
+ '(rainbow-delimiters-depth-6-face ((t (:foreground "orchid"))))
+ '(rainbow-delimiters-depth-7-face ((t (:foreground "spring green"))))
+ '(rainbow-delimiters-depth-8-face ((t (:foreground "sienna1")))))
 
 ;; =====
 (require 'rainbow-mode)
-(add-hook 'css-mode-hook 'rainbow-mode)
-(add-hook 'html-mode-hook 'rainbow-mode)
-;; (dolist (rainbow-hook '(css-mode-hook
-;;                         html-mode-hook))
-;;   (add-hook rainbow-hook (lambda () (rainbow-mode t))))
-
-;; =====
-(require 'session)
-(add-hook 'after-init-hook 'session-initialize)
-(setq session-save-file "~/.emacs.d/.emacs.session")
+(add-hook 'prog-mode-hook 'rainbow-mode)
 
 ;; =====
 (require 'undo-tree)
