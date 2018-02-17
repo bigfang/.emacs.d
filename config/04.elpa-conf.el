@@ -12,7 +12,6 @@
 (require 'json-mode)
 (require 'json-reformat)
 (define-key json-mode-map (kbd "C-c C-f") 'json-reformat-region)
-;; (require 'yaml-mode)
 
 (require 'elixir-mode)
 (require 'alchemist)
@@ -82,12 +81,8 @@
    ((((type x)) (:inherit company-tooltip-selection :weight bold))
     (t (:inherit company-tooltip-selection)))))
 
-
-;; yasnippet
-(require 'yasnippet)
-;; (yas-global-mode 1)
-(yas-reload-all)
-(add-hook 'prog-mode-hook #'yas-minor-mode)
+(when (not (eq window-system nil))
+  (company-quickhelp-mode))
 
 
 ;; python jedi elpy
@@ -111,14 +106,19 @@
       company-transformers '(company-sort-by-occurrence)
       company-selection-wrap-around t)
 
-(add-hook 'python-mode-hook 'jedi:setup)
 (add-hook 'python-mode-hook
           (lambda ()
             (push (concat (getenv "HOME") "/.emacs.d/.python-environments/jedi/bin") exec-path)
-            (add-to-list 'company-backends 'company-jedi)))
+            ;; (add-to-list 'company-backends 'company-jedi)
+            'jedi:setup))
 
 (elpy-enable)
+(defalias 'workon 'pyvenv-workon)
 (remove-hook 'elpy-modules 'elpy-module-flymake)
+(add-hook 'elpy-mode-hook
+          (lambda ()
+            (local-unset-key (kbd "M-<tab>"))
+            (define-key elpy-mode-map (kbd "M-i") 'elpy-company-backend)))
 
 
 ;; ================================================== ;;
@@ -149,9 +149,9 @@
 ;;   global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;; (global-fci-mode 1)
 
-;; =====
-(require 'flycheck)
-(add-hook 'prog-mode-hook 'flycheck-mode)
+;; ===== 与elpy补全冲突
+;; (require 'flycheck)
+;; (add-hook 'prog-mode-hook 'flycheck-mode)
 
 ;; =====
 (require 'highlight-symbol)
@@ -217,3 +217,9 @@
 (global-undo-tree-mode)
 (global-set-key (kbd "C-z C-_") 'undo-tree-visualize)
 (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
+
+;; yasnippet
+(require 'yasnippet)
+;; (yas-global-mode 1)
+(yas-reload-all)
+(add-hook 'prog-mode-hook #'yas-minor-mode)
