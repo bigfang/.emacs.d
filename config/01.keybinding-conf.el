@@ -1,26 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; Win key binding
-(when (eq system-type 'windows-nt)
-  (setq w32-pass-lwindow-to-system nil
-        w32-pass-rwindow-to-system nil
-        w32-lwindow-modifier 'super
-        w32-rwindow-modifier 'super
-        w32-pass-apps-to-system nil
-        w32-apps-modifier 'hyper))
-
-;; Mac key binding
-(when (eq system-type 'darwin)
-  (setq mac-command-modifier 'meta
-        mac-control-modifier 'control
-        mac-option-modifier 'super
-        ns-function-modifier 'hyper))
-
-;; Terminal
-(when (eq window-system nil)
-  (menu-bar-mode -1))
-
+;; Terminal mouse scroll
 ;; (unless window-system
 ;;   (xterm-mouse-mode 1)
 ;;   (global-set-key (kbd "<mouse-4>") (lambda ()
