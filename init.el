@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-02-17 22:56:45>
+;; Time-stamp: <2018-02-18 09:15:41>
 
 
 ;; load-path
@@ -28,9 +28,9 @@
 
 ;; Color theme
 (setq custom-theme-directory "~/.emacs.d/themes")
-(load-theme 'wombat t)
-;; (load-theme 'zenburn t)
-(set-cursor-color "#FFDEAD")
+;; (load-theme 'wombat t)
+(load-theme 'material t)
+;; (set-cursor-color "#FFDEAD")
 ;; (set-face-attribute 'region nil :background "#666" :foreground "#fff")
 
 ;; Load Configure
