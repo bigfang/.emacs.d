@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-02-18 09:15:41>
+;; Time-stamp: <2018-02-18 14:29:23>
 
 
 ;; load-path
@@ -21,9 +21,10 @@
 
 ;; Marmalade repo
 (require 'package)
-;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
+;; (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
 ;; Color theme
@@ -35,4 +36,4 @@
 
 ;; Load Configure
 (load custom-file)
-(mapc 'load (directory-files "~/.emacs.d/config" t "^[^#].+\\.el$"))
+(mapc 'load (directory-files "~/.emacs.d/config" t "^[^#]+\\.el$"))
