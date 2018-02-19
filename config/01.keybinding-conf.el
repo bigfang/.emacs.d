@@ -1,32 +1,36 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+;; define key-map C-z
+(define-prefix-command 'ctl-z-map)
+(global-set-key (kbd "C-z") 'ctl-z-map)
+
 ;; Terminal mouse scroll
-;; (unless window-system
-;;   (xterm-mouse-mode 1)
-;;   (global-set-key (kbd "<mouse-4>") (lambda ()
-;;                               (interactive)
-;;                               (scroll-down 1)))
-;;   (global-set-key (kbd "<mouse-5>") (lambda ()
-;;                               (interactive)
-;;                               (scroll-up 1)))
-;;   (global-set-key (kbd "<wheel-down>") (lambda ()
-;;                               (interactive)
-;;                               (scroll-down 1)))
-;;   (global-set-key (kbd "<wheel-up>") (lambda ()
-;;                               (interactive)
-;;                               (scroll-up 1))))
+(unless window-system
+  (global-set-key (kbd "C-z x") 'xterm-mouse-mode)
+  (global-set-key (kbd "<mouse-4>") (lambda ()
+                                      (interactive)
+                                      (scroll-down 1)))
+  (global-set-key (kbd "<mouse-5>") (lambda ()
+                                      (interactive)
+                                      (scroll-up 1)))
+  (global-set-key (kbd "<wheel-down>") (lambda ()
+                                         (interactive)
+                                         (scroll-down 1)))
+  (global-set-key (kbd "<wheel-up>") (lambda ()
+                                       (interactive)
+                                       (scroll-up 1))))
 
 
 (defun my/global-map-and-set-key (key command &optional prefix suffix)
-   "`my/map-key' KEY then `global-set-key' KEY with COMMAND.
+  "`my/map-key' KEY then `global-set-key' KEY with COMMAND.
  PREFIX or SUFFIX can wrap the key when passing to `global-set-key'."
-   (my/map-key key)
-   (global-set-key (kbd (concat prefix key suffix)) command))
+  (my/map-key key)
+  (global-set-key (kbd (concat prefix key suffix)) command))
 
- (defun my/map-key (key)
-   "Map KEY from escape sequence \"\e[emacs-KEY\."
-   (define-key function-key-map (concat "\e[emacs-" key) (kbd key)))
+(defun my/map-key (key)
+  "Map KEY from escape sequence \"\e[emacs-KEY\."
+  (define-key function-key-map (concat "\e[emacs-" key) (kbd key)))
 
 (global-set-key (kbd "C-c l") 'mc/edit-lines)
 ;; 需要配合 iTerm2 进行 key mapping
@@ -47,8 +51,6 @@
 (global-set-key (kbd "<apps> m") 'emms)
 (global-set-key (kbd "<apps> o") 'org-mode)
 
-(define-prefix-command 'ctl-z-map)
-(global-set-key (kbd "C-z") 'ctl-z-map)
 ;; (global-set-key (kbd "C-z <f5>") 'revert-buffer)
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)

@@ -6,6 +6,19 @@
 (add-hook 'prog-mode-hook (lambda () (hs-minor-mode t)))
 
 
+;; Auto-save and Backups
+;; (setq auto-save-default nil)
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+(setq make-backup-files t
+      version-control t
+      backup-by-copying t
+      kept-old-versions 2
+      kept-new-versions 5
+      delete-old-versions t)
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
 ;; bs.el
 (require 'bs)
 (global-set-key (kbd "C-z b") 'bs-show)
@@ -32,7 +45,8 @@
          ("Dired" (or (mode . dired-mode)
                       (mode . shell-mode)
                       (mode . eshell-mode)))
-         ("Script" (or (mode . sh-mode)
+         ("Script" (or (name . "^\\.gitignore$")
+                       (mode . sh-mode)
                        (mode . sql-mode)
                        (mode . ruby-mode)
                        (mode . python-mode)))
@@ -44,7 +58,6 @@
                     (mode . js-mode)
                     (mode . js2-mode)
                     (mode . json-mode)
-                    (mode . coffee-mode)
                     (mode . css-mode)))
          ("Org" (or (name . "^\\*Calendar\\*$")
                     (name . "^diary$")
@@ -74,9 +87,6 @@
             (ibuffer-switch-to-saved-filter-groups "Default")))
 (global-set-key (kbd "C-x b") 'ibuffer)
 
-(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
-
 ;; ido
 (require 'ido)
 (ido-mode t)
@@ -95,17 +105,9 @@
 ;;       tramp-default-host "192\.168\.0\.1")
 (setq password-cache-expiry nil)
 
-;; VC
-(setq version-control t
-      make-backup-files nil
-      kept-old-versions 2
-      kept-new-versions 2
-      delete-old-versions t)
-(add-to-list 'backup-directory-alist "~/.backups/")
-
 ;; uniquify
 (require 'uniquify)
-(setq uniquify-buffer-name-style 'forward)
+(setq uniquify-buffer-name-style 'post-forward)
 
 ;; view-mode
 (require 'view)

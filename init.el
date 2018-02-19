@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-02-19 10:42:23>
+;; Time-stamp: <2018-02-19 15:15:14>
 
 
 ;; load-path
@@ -10,27 +10,6 @@
       gnus-init-file "~/.emacs.d/.gnus.el"
       erc-startup-file-list '("~/.emacs.d/.ercrc.el"))
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; Windows
-(when (eq system-type 'windows-nt)
-  (setq w32-pass-lwindow-to-system nil
-        w32-pass-rwindow-to-system nil
-        w32-lwindow-modifier 'super
-        w32-rwindow-modifier 'super
-        w32-pass-apps-to-system nil
-        w32-apps-modifier 'hyper))
-
-;; Mac OS X
-(when (eq system-type 'darwin)
-  ;; (push "/usr/local/bin" exec-path)
-  (setq mac-command-modifier 'meta
-        mac-control-modifier 'control
-        mac-option-modifier 'super
-        ns-function-modifier 'hyper))
-
-;; Terminal
-(when (eq window-system nil)
-  (menu-bar-mode -1))
 
 ;; time-stamp
 (add-hook 'write-file-hooks 'time-stamp)
@@ -56,6 +35,29 @@
 (load-theme 'solarized-dark t)
 ;; (set-cursor-color "#FFDEAD")
 ;; (set-face-attribute 'region nil :background "#666" :foreground "#fff")
+
+
+;; Windows
+(when (eq system-type 'windows-nt)
+  (setq w32-pass-lwindow-to-system nil
+        w32-pass-rwindow-to-system nil
+        w32-lwindow-modifier 'super
+        w32-rwindow-modifier 'super
+        w32-pass-apps-to-system nil
+        w32-apps-modifier 'hyper))
+
+;; Mac OS X
+(when (eq system-type 'darwin)
+  ;; (push "/usr/local/bin" exec-path)
+  (setq mac-command-modifier 'meta
+        mac-control-modifier 'control
+        mac-option-modifier 'super
+        ns-function-modifier 'hyper))
+
+;; Terminal
+(when (eq window-system nil)
+  (load-theme 'wombat t)
+  (menu-bar-mode -1))
 
 ;; Load Configure
 (load custom-file)
