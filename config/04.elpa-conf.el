@@ -35,12 +35,18 @@
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 (global-set-key (kbd "M-y") 'counsel-yank-pop)
 
-(global-set-key (kbd "C-c v") 'ivy-push-view)
-(global-set-key (kbd "C-c V") 'ivy-pop-view)
+(global-set-key (kbd "C-z v") 'ivy-push-view)
+(global-set-key (kbd "C-z V") 'ivy-pop-view)
 ;; (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
 (global-set-key (kbd "C-z C-g") 'avy-goto-char-2)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
+
+(counsel-projectile-mode t)
+
+;; projectile
+;; (projectile-mode)
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
 
 
 ;; company-mode
@@ -169,6 +175,7 @@
 
 ;; =====
 (require 'neotree)
+(setq neo-autorefresh t)
 (global-set-key (kbd "C-x C-z") 'neotree-toggle)
 
 ;; =====
