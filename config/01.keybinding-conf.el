@@ -32,7 +32,6 @@
   "Map KEY from escape sequence \"\e[emacs-KEY\."
   (define-key function-key-map (concat "\e[emacs-" key) (kbd key)))
 
-(global-set-key (kbd "C-c l") 'mc/edit-lines)
 ;; 需要配合 iTerm2 进行 key mapping
 ;; https://stackoverflow.com/a/40222318/2163429
 ;; (my/global-map-and-set-key "C-=" 'er/expand-region)
@@ -55,12 +54,13 @@
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
 
-(global-set-key (kbd "C-`") 'other-window)
+(global-set-key (kbd "C-`") 'toggle-truncate-lines)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-x j") 'ffap)
 (global-set-key (kbd "C-M-]") 'align-entire)
+(global-set-key (kbd "M-SPC") 'set-mark-command)
 
 (global-set-key (kbd "<S-up>") 'enlarge-window)
 (global-set-key (kbd "<S-down>") 'shrink-window)

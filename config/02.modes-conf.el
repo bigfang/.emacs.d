@@ -2,8 +2,14 @@
 
 
 ;; == prog-mode hooks ==
-(add-hook 'prog-mode-hook 'prettify-symbols-mode)
-(add-hook 'prog-mode-hook (lambda () (hs-minor-mode t)))
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (prettify-symbols-mode)
+            (hs-minor-mode)
+            ;; (linum-mode)
+            (highlight-symbol-mode)
+            (setq truncate-lines t)
+            ))
 
 
 ;; Auto-save and Backups

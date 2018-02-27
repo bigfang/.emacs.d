@@ -39,7 +39,7 @@
 (global-set-key (kbd "C-z V") 'ivy-pop-view)
 ;; (define-key minibuffer-local-map (kbd "C-r") 'counsel-minibuffer-history)
 
-(global-set-key (kbd "C-z C-g") 'avy-goto-char-2)
+(global-set-key (kbd "M-g g") 'avy-goto-char-2)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 
 (counsel-projectile-mode t)
@@ -54,6 +54,7 @@
 (add-to-list 'company-backends 'company-yasnippet t)
 (eval-after-load 'company
   '(progn
+     (setq company-tooltip-minimum 8)
      (define-key company-active-map (kbd "M-i") 'company-complete-common-or-cycle)
      (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)))
 
@@ -125,6 +126,8 @@
           (lambda ()
             (flycheck-mode)
             (local-unset-key (kbd "M-<tab>"))
+            (define-key elpy-mode-map (kbd "<C-return>") 'vi-open-line-below)
+            (define-key elpy-mode-map (kbd "<C-S-return>") 'vi-open-line-above)
             (define-key elpy-mode-map (kbd "M-i") 'elpy-company-backend)
             (define-key elpy-mode-map (kbd "C-.") 'elpy-goto-definition)))
 
@@ -146,7 +149,8 @@
 
 ;; =====
 (require 'expand-region)
-(global-set-key (kbd "M-SPC") 'er/expand-region)
+(global-set-key (kbd "C-SPC") 'er/expand-region)
+(global-set-key (kbd "C-S-SPC") 'er/contract-region)
 
 ;; ===== 与company-mode冲突
 ;; (require 'fill-column-indicator)
@@ -163,6 +167,11 @@
 
 ;; =====
 (require 'highlight-symbol)
+(custom-set-variables
+ '(highlight-symbol-colors
+   '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
+ '(highlight-symbol-foreground-color "black")
+ )
 ;; (global-set-key (kbd "C-z s") 'highlight-symbol-at-point)
 
 ;; =====
@@ -170,7 +179,7 @@
 
 ;; =====
 (require 'multiple-cursors)
-(global-set-key (kbd "C-c C-C") 'mc/edit-lines)
+;; (global-set-key (kbd "C-c l") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
