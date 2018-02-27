@@ -25,7 +25,7 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t
       enable-recursive-minibuffers t
-      ivy-height 15)
+      ivy-height 12)
 (setq ivy-re-builders-alist
       '((swiper . ivy--regex-plus)
         (t      . ivy--regex-fuzzy)))
@@ -114,7 +114,7 @@
 
 (add-hook 'python-mode-hook
           (lambda ()
-            (push (concat (getenv "HOME") "/.emacs.d/.python-environments/jedi/bin") exec-path)
+            (add-to-list 'exec-path (concat (getenv "HOME") "/.emacs.d/.python-environments/jedi/bin"))
             ;; (add-to-list 'company-backends 'company-jedi)
             'jedi:setup))
 
@@ -123,8 +123,10 @@
 (remove-hook 'elpy-modules 'elpy-module-flymake)
 (add-hook 'elpy-mode-hook
           (lambda ()
+            (flycheck-mode)
             (local-unset-key (kbd "M-<tab>"))
-            (define-key elpy-mode-map (kbd "M-i") 'elpy-company-backend)))
+            (define-key elpy-mode-map (kbd "M-i") 'elpy-company-backend)
+            (define-key elpy-mode-map (kbd "C-.") 'elpy-goto-definition)))
 
 
 ;; ================================================== ;;

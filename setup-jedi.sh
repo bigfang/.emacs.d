@@ -10,6 +10,8 @@ cd $DIR
 
 pyenv local $PYENV_VERSION
 virtualenv -p python --prompt="<venv:jedi>" jedi
+
 $DIR/jedi/bin/pip install ~/.emacs.d/elpa/jedi-core-0.2.7
+$DIR/jedi/bin/pip install flake8
 
 unset PYENV_VERSION
