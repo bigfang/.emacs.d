@@ -149,8 +149,8 @@
 
 ;; =====
 (require 'expand-region)
-(global-set-key (kbd "C-SPC") 'er/expand-region)
-(global-set-key (kbd "C-S-SPC") 'er/contract-region)
+(global-set-key (kbd "M-SPC") 'er/expand-region)
+(global-set-key (kbd "M-S-SPC") 'er/contract-region)
 
 ;; ===== 与company-mode冲突
 ;; (require 'fill-column-indicator)
@@ -176,6 +176,10 @@
 
 ;; =====
 (require 'magit)
+
+;; =====
+(require 'minions)
+(minions-mode 1)
 
 ;; =====
 (require 'multiple-cursors)

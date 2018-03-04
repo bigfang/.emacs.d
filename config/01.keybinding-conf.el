@@ -60,7 +60,7 @@
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-x j") 'ffap)
 (global-set-key (kbd "C-M-]") 'align-entire)
-(global-set-key (kbd "M-SPC") 'set-mark-command)
+;; (global-set-key (kbd "C-SPC") 'set-mark-command)
 
 (global-set-key (kbd "<S-up>") 'enlarge-window)
 (global-set-key (kbd "<S-down>") 'shrink-window)
