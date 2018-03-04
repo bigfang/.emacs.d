@@ -43,14 +43,6 @@
 (column-number-mode t)
 (size-indication-mode t)
 
-;; (setq compilation-finish-function
-;;       (lambda (buf str)
-;;         (if (string-match "finished" str)
-;;             (run-at-time 1 nil 'delete-windows-on buf))))
-(setq compilation-window-height 15)
-;; (setq compilation-auto-jump-to-first-error t)
-(setq compilation-scroll-output t)
-
 ;; scroll
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1)((control)))
       mouse-wheel-progressive-speed nil
