@@ -100,6 +100,9 @@
 (ido-everywhere t)
 (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last")
 
+;; image mode
+(define-key image-mode-map "u" 'image-scroll-down)
+
 ;; remember
 (require 'remember)
 (define-key global-map (kbd "<f9> r") 'remember)
