@@ -122,7 +122,7 @@
 
 ;; view-mode
 (require 'view)
-(global-set-key (kbd "C-z C-z") 'view-mode)
+(global-set-key (kbd "C-z z") 'view-mode)
 (define-key view-mode-map "b" 'backward-char)
 (define-key view-mode-map "f" 'forward-char)
 (define-key view-mode-map (kbd "C-n") 'next-line)

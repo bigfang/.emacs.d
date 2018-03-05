@@ -136,6 +136,21 @@
 ;; ================================================== ;;
 
 ;; =====
+(setq evil-toggle-key "M-z"
+      evil-want-C-i-jump nil)
+;; (require 'evil)
+(evil-mode 1)
+
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map
+  (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
+(define-key evil-insert-state-map [escape] 'evil-normal-state)
+
+(setq evil-emacs-state-cursor '("#cd5c5c" box)
+      evil-normal-state-cursor '("#00bfff" box)
+      evil-insert-state-cursor '("#eedd82" box))
+
+;; =====
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
