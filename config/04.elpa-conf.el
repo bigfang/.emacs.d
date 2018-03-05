@@ -54,7 +54,8 @@
 (add-to-list 'company-backends 'company-yasnippet t)
 (eval-after-load 'company
   '(progn
-     (setq company-tooltip-minimum 8)
+     (setq company-tooltip-minimum 8
+           company-show-numbers t)
      (define-key company-active-map (kbd "M-i") 'company-complete-common-or-cycle)
      (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)))
 
@@ -70,7 +71,7 @@
       (company-complete-common)
     (indent-according-to-mode)))
 (global-set-key (kbd "M-i") 'indent-or-complete)
-(global-set-key (kbd "M-i") 'complete-or-indent)
+;; (global-set-key (kbd "M-i") 'complete-or-indent)
 
 (custom-set-faces
  '(company-preview
@@ -176,6 +177,7 @@
 
 ;; =====
 (require 'magit)
+(global-set-key (kbd "C-c v") 'magit-status)
 
 ;; =====
 (require 'minions)

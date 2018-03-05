@@ -101,6 +101,7 @@
 (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last")
 
 ;; image mode
+(require 'image-mode)
 (define-key image-mode-map "u" 'image-scroll-down)
 
 ;; remember
