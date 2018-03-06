@@ -2,14 +2,18 @@
 
 
 ;; == prog-mode hooks ==
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (prettify-symbols-mode)
-            (hs-minor-mode)
-            ;; (linum-mode)
-            (highlight-symbol-mode)
-            (setq truncate-lines t)
-            ))
+(defun my/prog-mode ()
+  (interactive)
+  (hs-minor-mode)
+  ;; (linum-mode)
+  (prettify-symbols-mode)
+
+  ;; (git-gutter-mode)
+  (highlight-symbol-mode)
+
+  (setq truncate-lines t))
+
+(add-hook 'prog-mode-hook 'my/prog-mode)
 
 
 ;; Auto-save and Backups

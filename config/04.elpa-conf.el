@@ -32,6 +32,7 @@
 (define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
 (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
 (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
+(define-key evil-normal-state-map (kbd "C-y") 'evil-scroll-up)        ; C-u
 (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-line-down) ; evil-paste-pop-next
 (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-line-up) ; evil-paste-pop
 
@@ -60,6 +61,7 @@
   "f" 'counsel-find-file
   "g" 'keyboard-quit
   "h" 'highlight-symbol-at-point
+  "q" 'quit-window
   "s" 'counsel-ag
   "k" 'kill-this-buffer
   "v" 'magit-status
@@ -214,6 +216,12 @@
 ;; =====
 ;; (require 'flycheck)
 ;; (add-hook 'prog-mode-hook 'flycheck-mode)
+
+;; =====
+(require 'git-gutter)
+(global-git-gutter-mode +1)
+(custom-set-variables
+ '(git-gutter:disabled-modes '(asm-mode image-mode)))
 
 ;; =====
 (require 'highlight-symbol)
