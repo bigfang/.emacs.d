@@ -21,6 +21,55 @@
 
 ;; ================================================== ;;
 
+;; evil
+(setq evil-toggle-key "M-z"
+      evil-want-C-i-jump nil)
+;; (require 'evil)
+(evil-mode 1)
+
+(define-key evil-normal-state-map (kbd "^") 'evil-window-top)
+(define-key evil-normal-state-map (kbd "$") 'evil-window-bottom)
+(define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
+(define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
+(define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
+(define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-line-down) ; evil-paste-pop-next
+(define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-line-up) ; evil-paste-pop
+
+(setcdr evil-insert-state-map nil)
+(define-key evil-insert-state-map
+  (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
+(define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
+(define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+
+(setq evil-emacs-state-cursor '("#cd5c5c" box)
+      evil-normal-state-cursor '("#00bfff" box)
+      evil-visual-state-cursor '("#eedd82" box)
+      evil-insert-state-cursor '("#ab82ff" box))
+
+(require 'evil-leader)
+(global-evil-leader-mode)
+(evil-leader/set-leader "<SPC>")
+(evil-leader/set-key
+  "<SPC>" 'evil-normal-state
+  "|" 'split-window-right
+  "-" 'split-window-below
+  ";" 'comment-or-uncomment-current-line-or-region
+  "0" 'delete-window
+
+  "b" 'switch-to-buffer
+  "f" 'counsel-find-file
+  "g" 'keyboard-quit
+  "h" 'highlight-symbol-at-point
+  "s" 'counsel-ag
+  "k" 'kill-this-buffer
+  "v" 'magit-status
+
+  "pp" 'counsel-projectile-switch-project
+  "pb" 'counsel-projectile-switch-to-buffer
+  "pf" 'counsel-projectile-find-file
+  "ps" 'counsel-projectile-ag)
+
+
 ;; ivy counsel swiper
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t
@@ -136,21 +185,6 @@
 ;; ================================================== ;;
 
 ;; =====
-(setq evil-toggle-key "M-z"
-      evil-want-C-i-jump nil)
-;; (require 'evil)
-(evil-mode 1)
-
-(setcdr evil-insert-state-map nil)
-(define-key evil-insert-state-map
-  (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
-(define-key evil-insert-state-map [escape] 'evil-normal-state)
-
-(setq evil-emacs-state-cursor '("#cd5c5c" box)
-      evil-normal-state-cursor '("#00bfff" box)
-      evil-insert-state-cursor '("#eedd82" box))
-
-;; =====
 (require 'emmet-mode)
 (add-hook 'sgml-mode-hook 'emmet-mode)
 (add-hook 'css-mode-hook  'emmet-mode)
@@ -177,7 +211,7 @@
 ;;   global-fci-mode fci-mode (lambda () (fci-mode 1)))
 ;; (global-fci-mode 1)
 
-;; ===== 与elpy补全冲突
+;; =====
 ;; (require 'flycheck)
 ;; (add-hook 'prog-mode-hook 'flycheck-mode)
 
@@ -200,7 +234,7 @@
 
 ;; =====
 (require 'multiple-cursors)
-;; (global-set-key (kbd "C-c l") 'mc/edit-lines)
+(global-set-key (kbd "C-c l") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)
@@ -253,9 +287,8 @@
 
 ;; =====
 (require 'undo-tree)
-(global-undo-tree-mode)
-(global-set-key (kbd "C-z C-_") 'undo-tree-visualize)
-(global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
+(global-undo-tree-mode)                 ; C-x u
+;; (global-set-key (kbd "C-z C-/") 'undo-tree-visualize)
 
 ;; yasnippet
 (require 'yasnippet)

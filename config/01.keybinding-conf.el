@@ -1,6 +1,8 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(global-unset-key (kbd "M-ESC ESC"))    ; for evil
+
 ;; define key-map C-z
 (define-prefix-command 'ctl-z-map)
 (global-set-key (kbd "C-z") 'ctl-z-map)
@@ -40,6 +42,7 @@
 ;; (my/global-map-and-set-key "C-<" 'mc/mark-previous-like-this)
 ;; (my/global-map-and-set-key "C-c C->" 'mc/mark-all-like-this)
 
+
 (define-prefix-command 'apps-map)
 (global-set-key (kbd "<apps>") 'apps-map)
 (global-set-key (kbd "<apps> i") 'erc)
@@ -75,8 +78,6 @@
 ;; key-chord
 (require 'key-chord)
 (key-chord-mode 1)
-;; (key-chord-define-global "uu" 'undo)
-(key-chord-define-global "``" 'highlight-symbol-at-point)
-(key-chord-define-global "DD" 'kill-current-line)
+;; (key-chord-define-global "DD" 'kill-current-line)
+;; (key-chord-define-global "``" 'highlight-symbol-at-point)
 (key-chord-define-global ";;" 'comment-or-uncomment-current-line-or-region)
-;; (key-chord-define-global "00" 'vi-open-line-below)
