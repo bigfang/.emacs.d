@@ -1,7 +1,8 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-
-(global-unset-key (kbd "M-ESC ESC"))    ; for evil
+;; unbinding for evil
+(global-unset-key (kbd "M-ESC ESC"))
+(global-unset-key (kbd "C-x C-c"))
 
 ;; define key-map C-z
 (define-prefix-command 'ctl-z-map)

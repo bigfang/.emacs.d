@@ -23,16 +23,21 @@
 
 ;; evil
 (setq evil-toggle-key "M-z"
+      evil-want-fine-undo t
       evil-want-C-i-jump nil)
 ;; (require 'evil)
 (evil-mode 1)
+(evil-set-initial-state 'dired-mode 'emacs)
+(evil-set-initial-state 'image-mode 'emacs)
+(add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 (define-key evil-normal-state-map (kbd "^") 'evil-window-top)
 (define-key evil-normal-state-map (kbd "$") 'evil-window-bottom)
 (define-key evil-normal-state-map (kbd "H") 'evil-first-non-blank)
 (define-key evil-normal-state-map (kbd "L") 'evil-end-of-line)
 (define-key evil-normal-state-map (kbd "C-e") 'evil-end-of-line)
-(define-key evil-normal-state-map (kbd "C-y") 'evil-scroll-up)        ; C-u
+(define-key evil-normal-state-map (kbd "C-y") 'yank)
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-line-down) ; evil-paste-pop-next
 (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-line-up) ; evil-paste-pop
 
@@ -41,35 +46,64 @@
   (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
 (define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+(define-key evil-insert-state-map (kbd "C-o") 'evil-execute-in-normal-state)
 
-(setq evil-emacs-state-cursor '("#cd5c5c" box)
-      evil-normal-state-cursor '("#00bfff" box)
+
+(setq evil-emacs-state-cursor '("#00bfff" box)
+      evil-normal-state-cursor '("#cd5c5c" box)
       evil-visual-state-cursor '("#eedd82" box)
       evil-insert-state-cursor '("#ab82ff" box))
+
+
+(require 'evil-surround)
+(global-evil-surround-mode 1)
 
 (require 'evil-leader)
 (global-evil-leader-mode)
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "<SPC>" 'evil-normal-state
+  "<up>" 'windmove-up
+  "<down>" 'windmove-down
+  "<left>" 'windmove-left
+  "<right>" 'windmove-right
+  "<SPC>" 'keyboard-quit
+
+  "=" 'er/expand-region
+  "." 'xref-find-definitions
   "|" 'split-window-right
   "-" 'split-window-below
   ";" 'comment-or-uncomment-current-line-or-region
   "0" 'delete-window
 
-  "b" 'switch-to-buffer
+  "!e" 'flycheck-explain-error-at-point
+  "!l" 'flycheck-list-errors
+  "!p" 'flycheck-previous-error
+  "!n" 'flycheck-next-error
+
+  "bb" 'switch-to-buffer
+  "bn" 'next-buffer
+  "bp" 'previous-buffer
+  "bk" 'kill-this-buffer
+  "ma" 'mc/mark-all-like-this
   "f" 'counsel-find-file
-  "g" 'keyboard-quit
+  "g" 'avy-goto-char-2
   "h" 'highlight-symbol-at-point
   "q" 'quit-window
+  "wk" 'kill-buffer-and-window
   "s" 'counsel-ag
-  "k" 'kill-this-buffer
-  "v" 'magit-status
+  "u" 'undo-tree-visualize
+  "vv" 'magit-status
 
   "pp" 'counsel-projectile-switch-project
   "pb" 'counsel-projectile-switch-to-buffer
   "pf" 'counsel-projectile-find-file
-  "ps" 'counsel-projectile-ag)
+  "ps" 'counsel-projectile-ag
+  "xs" 'save-buffer
+
+  "C-x C-c" 'save-buffers-kill-terminal)
+
+(evil-leader/set-key-for-mode 'python-mode "." 'elpy-goto-definition)
+(evil-leader/set-key-for-mode 'python-mode "," 'elpy-goto-assignment)
 
 
 ;; ivy counsel swiper
@@ -97,7 +131,7 @@
 
 ;; projectile
 ;; (projectile-mode)
-;; (setq projectile-switch-project-action 'neotree-projectile-action)
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 
 ;; company-mode
@@ -201,8 +235,7 @@
 
 ;; =====
 (require 'expand-region)
-(global-set-key (kbd "M-SPC") 'er/expand-region)
-(global-set-key (kbd "M-S-SPC") 'er/contract-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; ===== 与company-mode冲突
 ;; (require 'fill-column-indicator)
@@ -242,7 +275,6 @@
 
 ;; =====
 (require 'multiple-cursors)
-(global-set-key (kbd "C-c l") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C->") 'mc/mark-all-like-this)

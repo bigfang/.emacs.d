@@ -9,7 +9,7 @@
   (prettify-symbols-mode)
 
   ;; (git-gutter-mode)
-  (highlight-symbol-mode)
+  ;; (highlight-symbol-mode)
 
   (setq truncate-lines t))
 
