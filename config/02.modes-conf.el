@@ -1,23 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; == prog-mode hooks ==
-(defun my/prog-mode ()
-  (interactive)
-  (hs-minor-mode)
-  ;; (linum-mode)
-  (prettify-symbols-mode)
-
-  ;; (git-gutter-mode)
-  ;; (highlight-symbol-mode)
-  (rainbow-delimiters-mode)
-  (rainbow-mode)
-
-  (setq truncate-lines t))
-
-(add-hook 'prog-mode-hook 'my/prog-mode)
-
-
 ;; Auto-save and Backups
 ;; (setq auto-save-default nil)
 (setq auto-save-file-name-transforms

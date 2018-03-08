@@ -303,7 +303,6 @@
 
 ;; =====
 (require 'rainbow-mode)
-(add-hook 'prog-mode-hook 'rainbow-mode)
 
 ;; =====
 (require 'undo-tree)
@@ -315,3 +314,20 @@
 ;; (yas-global-mode 1)
 (yas-reload-all)
 (add-hook 'prog-mode-hook #'yas-minor-mode)
+
+
+;; == prog-mode hooks ==
+(defun my/prog-mode ()
+  (interactive)
+  (hs-minor-mode)
+  ;; (linum-mode)
+  (prettify-symbols-mode)
+
+  ;; (git-gutter-mode)
+  ;; (highlight-symbol-mode)
+  (rainbow-delimiters-mode)
+  (rainbow-mode)
+
+  (setq truncate-lines t))
+
+(add-hook 'prog-mode-hook 'my/prog-mode)
