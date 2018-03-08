@@ -10,6 +10,8 @@
 
   ;; (git-gutter-mode)
   ;; (highlight-symbol-mode)
+  (rainbow-delimiters-mode)
+  (rainbow-mode)
 
   (setq truncate-lines t))
 
