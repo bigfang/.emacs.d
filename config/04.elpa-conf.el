@@ -7,7 +7,7 @@
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 (define-key js2-mode-map (kbd "<return>") 'newline-and-indent)
 (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
-;; (define-key js2-mode-map (kbd "<backspace>") 'c-electric-backspace)
+;; (define-key js2-mode-map (kbd "DEL") 'c-electric-backspace)
 ;; (define-key js2-mode-map (kbd "C-d") 'c-electric-delete-forward)
 (require 'json-mode)
 (require 'json-reformat)
@@ -29,6 +29,7 @@
 (evil-mode 1)
 (evil-set-initial-state 'dired-mode 'emacs)
 (evil-set-initial-state 'image-mode 'emacs)
+(evil-set-initial-state 'neotree-mode 'emacs)
 (add-hook 'git-commit-mode-hook 'evil-insert-state)
 
 (define-key evil-normal-state-map (kbd "^") 'evil-window-top)
@@ -41,10 +42,17 @@
 (define-key evil-normal-state-map (kbd "C-n") 'evil-scroll-line-down) ; evil-paste-pop-next
 (define-key evil-normal-state-map (kbd "C-p") 'evil-scroll-line-up) ; evil-paste-pop
 
+(define-key evil-visual-state-map (kbd "^") 'evil-window-top)
+(define-key evil-visual-state-map (kbd "$") 'evil-window-bottom)
+(define-key evil-visual-state-map (kbd "H") 'evil-first-non-blank)
+(define-key evil-visual-state-map (kbd "L") 'evil-end-of-line)
+(define-key evil-visual-state-map (kbd "C-e") 'evil-end-of-line)
+
+
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map
   (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
-(define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
+(define-key evil-insert-state-map (kbd "ESC") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "C-o") 'evil-execute-in-normal-state)
 
@@ -60,13 +68,14 @@
 
 (require 'evil-leader)
 (global-evil-leader-mode)
-(evil-leader/set-leader "<SPC>")
+(evil-leader/set-leader "SPC")
 (evil-leader/set-key
   "<up>" 'windmove-up
   "<down>" 'windmove-down
   "<left>" 'windmove-left
   "<right>" 'windmove-right
-  "<SPC>" 'keyboard-quit
+  "ESC" 'keyboard-quit
+  "SPC" 'keyboard-quit
 
   "=" 'er/expand-region
   "." 'xref-find-definitions
@@ -74,12 +83,14 @@
   "-" 'split-window-below
   ";" 'comment-or-uncomment-current-line-or-region
   "0" 'delete-window
+  "1" 'delete-other-windows
 
   "!e" 'flycheck-explain-error-at-point
   "!l" 'flycheck-list-errors
   "!p" 'flycheck-previous-error
   "!n" 'flycheck-next-error
 
+  "B" 'ibuffer
   "bb" 'switch-to-buffer
   "bn" 'next-buffer
   "bp" 'previous-buffer
@@ -89,16 +100,23 @@
   "g" 'avy-goto-char-2
   "h" 'highlight-symbol-at-point
   "q" 'quit-window
-  "wk" 'kill-buffer-and-window
+  "w" 'save-buffer
+  "k" 'kill-buffer-and-window
   "s" 'counsel-ag
   "u" 'undo-tree-visualize
+
   "vv" 'magit-status
+  "vd" 'magit-diff-unstaged
 
   "pp" 'counsel-projectile-switch-project
   "pb" 'counsel-projectile-switch-to-buffer
   "pf" 'counsel-projectile-find-file
   "ps" 'counsel-projectile-ag
-  "xs" 'save-buffer
+  "pi" 'projectile-ibuffer
+  "pd" 'projectile-dired
+
+  "xe" 'eval-last-sexp
+  "z" 'winner-undo
 
   "C-x C-c" 'save-buffers-kill-terminal)
 
@@ -142,7 +160,7 @@
      (setq company-tooltip-minimum 8
            company-show-numbers t)
      (define-key company-active-map (kbd "M-i") 'company-complete-common-or-cycle)
-     (define-key company-active-map (kbd "<tab>") 'company-complete-common-or-cycle)))
+     (define-key company-active-map (kbd "TAB") 'company-complete-common-or-cycle)))
 
 (defun indent-or-complete ()
   (interactive)
@@ -211,11 +229,11 @@
 (add-hook 'elpy-mode-hook
           (lambda ()
             (flycheck-mode)
-            (local-unset-key (kbd "M-<tab>"))
+            (local-unset-key (kbd "<M-tab>"))
             (define-key elpy-mode-map (kbd "<C-return>") 'vi-open-line-below)
             (define-key elpy-mode-map (kbd "<C-S-return>") 'vi-open-line-above)
             (define-key elpy-mode-map (kbd "M-i") 'elpy-company-backend)
-            (define-key elpy-mode-map (kbd "C-.") 'elpy-goto-definition)))
+            (define-key elpy-mode-map (kbd "M-.") 'elpy-goto-definition)))
 
 
 ;; ================================================== ;;
