@@ -21,6 +21,7 @@
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
 
+
 (auto-image-file-mode t)
 (auto-revert-mode t)
 (blink-cursor-mode -1)
@@ -29,22 +30,31 @@
 (global-hl-line-mode -1)
 (global-linum-mode -1)
 (mouse-avoidance-mode 'animate)
-(set-scroll-bar-mode nil)
 (show-paren-mode t)
-(tool-bar-mode -1)
 (transient-mark-mode t)
 (winner-mode t)
 
-;; Mode line
-(setq display-time-24hr-format t
-      display-time-use-mail-icon t)
-(display-time-mode t)
-;; (display-battery-mode t)
-(column-number-mode t)
-(size-indication-mode t)
 
 ;; scroll
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1)((control)))
       mouse-wheel-progressive-speed nil
       scroll-step 1)
 (setq next-screen-context-lines 0)
+
+
+;; Auto-save and Backups
+;; (setq auto-save-default nil)
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+(setq make-backup-files t
+      version-control t
+      backup-by-copying t
+      kept-old-versions 2
+      kept-new-versions 5
+      delete-old-versions t)
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+
+
+(provide 'init-basic)
+;;; init-basic.el ends here

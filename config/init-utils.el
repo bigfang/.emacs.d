@@ -2,7 +2,6 @@
 
 
 ;; alpha
-(set-frame-parameter nil 'alpha 95)
 (defun my-emacs-alpha-up ()
   (interactive)
   (let ((my-emacs-alpha-value (frame-parameter nil 'alpha)))
@@ -21,36 +20,6 @@
 (global-set-key (kbd "<S-wheel-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<C-s-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<C-s-down>") 'my-emacs-alpha-down)
-
-
-;; Comment current line
-(defun comment-or-uncomment-current-line-or-region ()
-  "Comments or uncomments current current line or whole lines in region."
-  (interactive)
-  (save-excursion
-    (let (min max)
-      (if (region-active-p)
-          (setq min (region-beginning) max (region-end))
-        (setq min (point) max (point)))
-      (comment-or-uncomment-region
-       (progn (goto-char min) (line-beginning-position))
-       (progn (goto-char max) (line-end-position))))))
-
-
-;; move line
-(defun move-line-up ()
-  (interactive)
-  (transpose-lines 1)
-  (forward-line -2))
-
-(defun move-line-down ()
-  (interactive)
-  (forward-line 1)
-  (transpose-lines 1)
-  (forward-line -1))
-
-(global-set-key (kbd "<C-S-up>") 'move-line-up)
-(global-set-key (kbd "<C-S-down>") 'move-line-down)
 
 
 ;; transpose windows
@@ -93,3 +62,7 @@
 
 (global-set-key (kbd "<C-return>") 'vi-open-line-below)
 (global-set-key (kbd "<C-S-return>") 'vi-open-line-above)
+
+
+(provide 'init-utils)
+;;; init-utils.el ends here
