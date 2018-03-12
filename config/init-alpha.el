@@ -1,6 +1,22 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package emojify
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-emojify-mode)
+  )
+
+(use-package smartparens
+  :ensure t)
+
+(use-package smartparens-config
+  :ensure nil
+  :after (smartparens)
+  :hook ((prog-mode . show-smartparens-mode)
+         (prog-mode . smartparens-mode)))
+
+
 (use-package emmet-mode
   :ensure nil
   :hook (sgml-mode css-mode web-mode)
