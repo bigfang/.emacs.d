@@ -4,6 +4,7 @@
 (use-package evil
   :ensure t
   :pin melpa-stable
+  :after (evil-leader)
   :bind (
          :map evil-normal-state-map
          ("^" . evil-window-top)
