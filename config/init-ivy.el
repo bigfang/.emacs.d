@@ -8,6 +8,8 @@
          ("C-z v" . ivy-push-view)
          ("C-z V" . ivy-pop-view)
          :map ivy-minibuffer-map
+         ;; ("[escape]" . minibuffer-keyboard-quit)
+         ("<escape>" . minibuffer-keyboard-quit)
          ("M-n" . ivy-next-line)
          ("M-p" . ivy-previous-line)
          ("C-n" . ivy-next-history-element)
@@ -24,7 +26,8 @@
 
 
 (use-package ivy-hydra
-  :ensure t)
+  :ensure t
+  :after (ivy))
 
 
 (use-package avy
@@ -36,11 +39,13 @@
 
 (use-package swiper
   :ensure t
+  :after (ivy)
   :bind (("C-s" . swiper)))
 
 
 (use-package counsel
   :ensure t
+  :after (ivy)
   :bind (("M-x" . counsel-M-x)
          ("C-h f" . counsel-describe-function)
          ("C-h v" . counsel-describe-variable)
@@ -51,6 +56,7 @@
 
 (use-package counsel-projectile
   :ensure t
+  :after (ivy)
   :config
   (counsel-projectile-mode t))
 

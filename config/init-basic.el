@@ -11,6 +11,7 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 (setq require-final-newline t)
+(setq scroll-conservatively 101)
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials)
 (setq visible-bell t)

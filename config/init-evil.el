@@ -60,14 +60,11 @@
   (global-evil-leader-mode)
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
-    "<up>" 'windmove-up
-    "<down>" 'windmove-down
-    "<left>" 'windmove-left
-    "<right>" 'windmove-right
     "ESC" 'keyboard-quit
     "SPC" 'keyboard-quit
 
     "=" 'er/expand-region
+    "[" 'highlight-symbol-at-point
     "." 'xref-find-definitions
     "\\" 'split-window-right
     "-" 'split-window-below
@@ -88,7 +85,7 @@
     "ma" 'mc/mark-all-like-this
     "f" 'counsel-find-file
     "g" 'avy-goto-word-or-subword-1
-    "h" 'highlight-symbol-at-point
+    "h" 'help-command
     "q" 'quit-window
     "w" 'save-buffer
     "k" 'kill-buffer-and-window
@@ -96,7 +93,9 @@
 
     "ss" 'swiper
     "sr" 'ivy-resume
+    "si" 'counsel-imenu
     "sa" 'counsel-ag
+    "sw" 'switch-window
 
     "vv" 'magit-status
     "vd" 'magit-diff-unstaged
@@ -108,6 +107,7 @@
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-ag
 
+    "xx" 'counsel-M-x
     "xe" 'eval-last-sexp
     "z" 'winner-undo
 
@@ -119,24 +119,27 @@
 
 
 (use-package evil-magit
-  :requires (magit)
   :ensure t
+  :after (evil)
   :pin melpa-stable)
 
 
 
 (use-package evil-ediff
-  :ensure t)
+  :ensure t
+  :after (evil))
 
 
 (use-package evil-surround
   :ensure t
+  :after (evil)
   :config
   (global-evil-surround-mode 1))
 
 
 (use-package evil-escape
   :ensure t
+  :after (evil)
   :config
   (evil-escape-mode)
   (setq-default evil-escape-delay 0.2)
