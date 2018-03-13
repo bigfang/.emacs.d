@@ -4,7 +4,6 @@
 (use-package evil
   :ensure t
   :pin melpa-stable
-  :after (evil-leader)
   :bind (
          :map evil-normal-state-map
          ("^" . evil-window-top)
@@ -51,6 +50,8 @@
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
+
+  (evil-define-key 'normal python-mode-map (kbd "gd") 'elpy-goto-definition)
   )
 
 
@@ -63,6 +64,8 @@
   (evil-leader/set-key
     "ESC" 'keyboard-quit
     "SPC" 'keyboard-quit
+    "TAB" 'previous-buffer
+    "DEL" 'next-buffer
 
     "=" 'er/expand-region
     "[" 'highlight-symbol-at-point
@@ -78,19 +81,33 @@
     "!p" 'flycheck-previous-error
     "!n" 'flycheck-next-error
 
-    "bi" 'ibuffer
-    "bb" 'switch-to-buffer
-    "bn" 'next-buffer
-    "bp" 'previous-buffer
-    "bk" 'kill-this-buffer
-    "ma" 'mc/mark-all-like-this
-    "f" 'counsel-find-file
-    "g" 'avy-goto-word-or-subword-1
     "h" 'help-command
     "q" 'quit-window
     "w" 'save-buffer
     "k" 'kill-buffer-and-window
     "u" 'undo-tree-visualize
+
+    "bi" 'ibuffer
+    "bb" 'switch-to-buffer
+    "bn" 'next-buffer
+    "bp" 'previous-buffer
+    "bk" 'kill-this-buffer
+
+    "ff" 'counsel-find-file
+    "fp" 'ffap
+    "ft" 'toggle-truncate-lines
+
+    "ma" 'mc/mark-all-like-this
+    "mm" 'counsel-bookmark
+    "ml" 'bookmark-bmenu-list
+    "mr" 'remember
+    "mn" 'remember-notes
+    "mR" 'remember-region
+    "mc" 'remember-clipboard'
+
+    "gg" 'avy-goto-word-or-subword-1
+    "gf" 'avy-goto-line
+    "gl" 'goto-line
 
     "ss" 'swiper
     "sr" 'ivy-resume
@@ -113,34 +130,27 @@
     "z" 'winner-undo
 
     "C-x C-c" 'save-buffers-kill-terminal)
-
-  (evil-leader/set-key-for-mode 'python-mode "." 'elpy-goto-definition)
-  (evil-leader/set-key-for-mode 'python-mode "," 'elpy-goto-assignment)
   )
 
 
 (use-package evil-magit
   :ensure t
-  :after (evil)
   :pin melpa-stable)
 
 
 
 (use-package evil-ediff
-  :ensure t
-  :after (evil))
+  :ensure t)
 
 
 (use-package evil-surround
   :ensure t
-  :after (evil)
   :config
   (global-evil-surround-mode 1))
 
 
 (use-package evil-escape
   :ensure t
-  :after (evil)
   :config
   (evil-escape-mode)
   (setq-default evil-escape-delay 0.2)

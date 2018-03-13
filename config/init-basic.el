@@ -1,20 +1,25 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(setq backward-delete-char-untabify-method nil)
-(setq default-directory "~/")
+(setq custom-file "~/.emacs.d/emacs-custom.el"
+      bookmark-default-file "~/.emacs.d/.emacs.bmk"
+      gnus-init-file "~/.emacs.d/.gnus.el"
+      erc-startup-file-list '("~/.emacs.d/.ercrc.el"))
+
+
+(setq backward-delete-char-untabify-method 'untabify)
+;; (setq default-directory "~/")
 (setq display-battery-mode t)
 ;; (setq default-fill-column 80)
 (setq echo-keystrokes 0.1)
 (setq enable-recursive-minibuffers t)
-(setq frame-title-format "%b @ Emacs")
+(setq frame-title-format "%f @ Emacs")
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 (setq require-final-newline t)
-(setq scroll-conservatively 101)
 (setq tab-always-indent 'complete)
-(add-to-list 'completion-styles 'initials)
-(setq visible-bell t)
+;; (add-to-list 'completion-styles 'initials)
+;; (setq visible-bell t)
 (setq x-select-enable-clipboard t)
 
 (setq-default indent-tabs-mode nil)
@@ -28,7 +33,7 @@
 (blink-cursor-mode -1)
 (delete-selection-mode t)
 (electric-pair-mode t)
-(global-hl-line-mode -1)
+(global-hl-line-mode t)
 (global-linum-mode -1)
 (mouse-avoidance-mode 'animate)
 (show-paren-mode t)
@@ -37,10 +42,10 @@
 
 
 ;; scroll
-(setq mouse-wheel-scroll-amount '(3 ((shift) . 1)((control)))
+(setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control)))
       mouse-wheel-progressive-speed nil
-      scroll-step 1)
-(setq next-screen-context-lines 0)
+      scroll-conservatively 101)
+(setq next-screen-context-lines 3)
 
 
 ;; Auto-save and Backups

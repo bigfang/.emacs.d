@@ -19,5 +19,11 @@
 (set-frame-parameter nil 'alpha 95)
 
 
+;; Load Configure
+
+(when (file-exists-p custom-file)
+  (load custom-file))
+
+
 (provide 'init-ui)
 ;;; init-ui.el ends here

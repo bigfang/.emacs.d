@@ -4,8 +4,9 @@
 (use-package ibuffer
   :ensure nil
   :bind ("C-x C-b" . ibuffer)
-  :hook (ibuffer-mode . (lambda ()
-                          (ibuffer-switch-to-saved-filter-groups "Default")))
+  :hook
+  (ibuffer-mode . (lambda ()
+                    (ibuffer-switch-to-saved-filter-groups "Default")))
   :config
   (setq ibuffer-saved-filter-groups
         '(("Default"

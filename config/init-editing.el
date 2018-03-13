@@ -11,6 +11,7 @@
             (add-to-list 'write-file-functions 'delete-trailing-whitespace)
             ;; (linum-mode)
             (hs-minor-mode)
+            (highlight-indentation-mode)
             (prettify-symbols-mode)
             (setq truncate-lines t)
             ))

@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-11 15:46:37>
+;; Time-stamp: <2018-03-14 21:40:05>
 
 
 
@@ -10,14 +10,13 @@
 (package-initialize)
 
 
-;; (setq *emacs-load-start* (current-time))
+
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq confirm-kill-emacs #'y-or-n-p)
 
-(setq custom-file "~/.emacs.d/emacs-custom.el"
-      bookmark-default-file "~/.emacs.d/.emacs.bmk"
-      gnus-init-file "~/.emacs.d/.gnus.el"
-      erc-startup-file-list '("~/.emacs.d/.ercrc.el"))
+;; Quit Emacs
+(defalias 'exit 'save-buffers-kill-terminal)
+(global-unset-key (kbd "C-x C-c"))
 
 
 (add-to-list 'load-path "~/.emacs.d/config")
@@ -43,7 +42,3 @@
 (require 'init-utils)
 
 (require 'init-alpha)
-
-
-;; Load Configure
-(load custom-file)

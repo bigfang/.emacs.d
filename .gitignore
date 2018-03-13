@@ -11,6 +11,7 @@ tramp
 recentf
 .projectile
 ac-comphist.dat
+notes
 
 .mc-lists.el
 emacs-custom.el

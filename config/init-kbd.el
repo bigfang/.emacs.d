@@ -1,11 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; Quit Emacs
-(global-unset-key (kbd "C-x C-c"))
-(defalias 'exit 'save-buffers-kill-terminal)
-
-
 ;; Windows
 (when (eq system-type 'windows-nt)
   (setq w32-pass-lwindow-to-system nil
@@ -53,6 +48,7 @@
 ;; (global-set-key (kbd "C-z <f5>") 'revert-buffer)
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
+(global-set-key (kbd "C-z C-z") 'toggle-rot13-mode)
 
 (global-set-key (kbd "C-`") 'toggle-truncate-lines)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
