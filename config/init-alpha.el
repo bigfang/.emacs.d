@@ -1,6 +1,18 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package imenu-anywhere
+  :ensure t)
+
+
+(use-package imenu-list
+  :ensure t
+  :bind ("C-'" . imenu-list-smart-toggle)
+  :config
+  (setq imenu-list-size 0.15
+        imenu-list-auto-resize t))
+
+
 (use-package emojify
   :ensure t
   :config
