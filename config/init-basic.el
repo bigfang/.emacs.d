@@ -13,7 +13,7 @@
 ;; (setq default-fill-column 80)
 (setq echo-keystrokes 0.1)
 (setq enable-recursive-minibuffers t)
-(setq frame-title-format "%f @ Emacs")
+(setq frame-title-format "%b %z %p @ %m >_< %f")
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message "")
 (setq require-final-newline t)

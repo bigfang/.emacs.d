@@ -5,27 +5,20 @@
   :ensure t
   :pin melpa-stable
   :bind (
-         :map evil-normal-state-map
+         :map evil-motion-state-map
          ("^" . evil-window-top)
          ("$" . evil-window-bottom)
          ("H" . evil-first-non-blank)
          ("L" . evil-end-of-line)
-         ("C-e" . evil-end-of-line)
-         ("C-y" . yank)
-         ("C-u" . evil-scroll-up)
+         ("C-e" . evil-end-of-line)      ; evil-scroll-line-down
+
+         :map evil-normal-state-map
+         ("C-y" . yank)                  ; evil-scroll-line-up
          ("C-n" . evil-scroll-line-down)   ; evil-paste-pop-next
          ("C-p" . evil-scroll-line-up)   ; evil-paste-pop
 
-         :map evil-visual-state-map
-         ("^" . evil-window-top)
-         ("$" . evil-window-bottom)
-         ("H" . evil-first-non-blank)
-         ("L" . evil-end-of-line)
-         ("C-e" . evil-end-of-line)
-
          :map evil-insert-state-map
          ([escape] . evil-normal-state)     ; DO NOT USE "ESC"!
-         ;; ("C-g" . evil-normal-state)
          ("C-o" . evil-execute-in-normal-state)
 
          :map evil-emacs-state-map
@@ -35,13 +28,18 @@
   :init
   (setq evil-toggle-key "M-z"
         evil-want-fine-undo t
+        ;; evil-move-cursor-back nil
+        evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
   :config
   (evil-mode 1)
-  (setq evil-emacs-state-cursor '("#00bfff" box)
-        evil-normal-state-cursor '("#cd5c5c" box)
-        evil-visual-state-cursor '("#eedd82" box)
-        evil-insert-state-cursor '("#ab82ff" box))
+  (setq evil-operator-state-cursor '("LightGreen" evil-half-cursor)
+        evil-motion-state-cursor '("RoyalBlue" box)
+        evil-replace-state-cursor '("RoyalBlue" bar)
+        evil-emacs-state-cursor '("DeepSkyBlue" box)
+        evil-normal-state-cursor '("IndianRed" box)
+        evil-visual-state-cursor '("LightGoldenrod" box)
+        evil-insert-state-cursor '("MediumPurple1" box))
 
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'image-mode 'emacs)
@@ -64,6 +62,7 @@
   (evil-leader/set-key
     "ESC" 'keyboard-quit
     "SPC" 'keyboard-quit
+    "RET" 'keyboard-quit
     "TAB" 'previous-buffer
     "DEL" 'next-buffer
 
@@ -76,10 +75,10 @@
     "0" 'delete-window
     "1" 'delete-other-windows
 
-    "!e" 'flycheck-explain-error-at-point
-    "!l" 'flycheck-list-errors
-    "!p" 'flycheck-previous-error
-    "!n" 'flycheck-next-error
+    "ce" 'flycheck-explain-error-at-point
+    "cl" 'flycheck-list-errors
+    "cp" 'flycheck-previous-error
+    "cn" 'flycheck-next-error
 
     "h" 'help-command
     "q" 'quit-window
@@ -93,9 +92,9 @@
     "bp" 'previous-buffer
     "bk" 'kill-this-buffer
 
-    "ff" 'counsel-find-file
-    "fp" 'ffap
-    "ft" 'toggle-truncate-lines
+    "oo" 'counsel-find-file
+    "of" 'ffap
+    "ot" 'toggle-truncate-lines
 
     "ma" 'mc/mark-all-like-this
     "mm" 'counsel-bookmark

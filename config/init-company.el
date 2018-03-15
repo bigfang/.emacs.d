@@ -34,7 +34,7 @@
   :config
   (add-to-list 'company-backends 'company-yasnippet t)
   (setq company-tooltip-minimum 7
-        company-minimum-prefix-length 2
+        company-minimum-prefix-length 3
         company-selection-wrap-around t
         company-transformers '(company-sort-by-occurrence)
         company-show-numbers t)
