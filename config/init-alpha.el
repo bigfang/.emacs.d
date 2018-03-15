@@ -1,6 +1,18 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package pyim
+  :ensure t
+  :config
+  (setq default-input-method "pyim")
+  (setq pyim-default-scheme 'pyim-shuangpin)
+  (pyim-isearch-mode 1))
+
+(use-package pyim-basedict
+  :ensure
+  :config (pyim-basedict-enable))
+
+
 (use-package imenu-anywhere
   :ensure t)
 

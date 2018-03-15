@@ -89,5 +89,11 @@
   (global-undo-tree-mode))
 
 
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+
+
 (provide 'init-elpa)
 ;;; init-elpa.el ends here
