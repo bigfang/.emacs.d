@@ -36,6 +36,8 @@
 
 
 (use-package emacs
+  :bind (("M-n" . evil-scroll-line-down)
+         ("M-p" . evil-scroll-line-up))
   :chords (";;" . comment-line)
   :diminish (abbrev-mode)
 )

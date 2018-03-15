@@ -43,14 +43,6 @@
   (setq projectile-switch-project-action 'neotree-projectile-action))
 
 
-(use-package pager
-  :ensure t
-  :bind (("C-v" . pager-page-down)
-         ("M-v" . pager-page-up)
-         ("M-p" . pager-row-up)
-         ("M-n" . pager-row-down)))
-
-
 (use-package rainbow-delimiters
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode)

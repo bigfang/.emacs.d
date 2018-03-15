@@ -14,8 +14,6 @@
 
          :map evil-normal-state-map
          ("C-y" . yank)                  ; evil-scroll-line-up
-         ("C-n" . evil-scroll-line-down)   ; evil-paste-pop-next
-         ("C-p" . evil-scroll-line-up)   ; evil-paste-pop
 
          :map evil-insert-state-map
          ([escape] . evil-normal-state)     ; DO NOT USE "ESC"!
@@ -35,7 +33,7 @@
   (evil-mode 1)
   (setq evil-operator-state-cursor '("LightGreen" evil-half-cursor)
         evil-motion-state-cursor '("RoyalBlue" box)
-        evil-replace-state-cursor '("RoyalBlue" bar)
+        evil-replace-state-cursor '("goldenrod1" box)
         evil-emacs-state-cursor '("DeepSkyBlue" box)
         evil-normal-state-cursor '("IndianRed" box)
         evil-visual-state-cursor '("LightGoldenrod" box)
@@ -75,16 +73,10 @@
     "0" 'delete-window
     "1" 'delete-other-windows
 
-    "ce" 'flycheck-explain-error-at-point
-    "cl" 'flycheck-list-errors
-    "cp" 'flycheck-previous-error
-    "cn" 'flycheck-next-error
-
     "h" 'help-command
     "q" 'quit-window
     "w" 'save-buffer
     "k" 'kill-buffer-and-window
-    "u" 'undo-tree-visualize
 
     "bi" 'ibuffer
     "bb" 'switch-to-buffer
@@ -92,9 +84,13 @@
     "bp" 'previous-buffer
     "bk" 'kill-this-buffer
 
-    "oo" 'counsel-find-file
-    "of" 'ffap
-    "ot" 'toggle-truncate-lines
+    "ce" 'flycheck-explain-error-at-point
+    "cl" 'flycheck-list-errors
+    "cp" 'flycheck-previous-error
+    "cn" 'flycheck-next-error
+
+    "dd" 'imenu-list-smart-toggle
+    "dt" 'neotree-toggle
 
     "ma" 'mc/mark-all-like-this
     "mm" 'counsel-bookmark
@@ -107,15 +103,14 @@
     "gg" 'avy-goto-word-or-subword-1
     "gf" 'avy-goto-line
     "gl" 'goto-line
+    "gj" 'ffap
 
-    "ss" 'swiper
-    "sr" 'ivy-resume
-    "si" 'counsel-imenu
-    "sa" 'counsel-ag
-    "sw" 'switch-window
-
-    "vv" 'magit-status
-    "vd" 'magit-diff-unstaged
+    "ii" 'counsel-find-file
+    "if" 'counsel-find-file
+    "is" 'swiper
+    "ir" 'ivy-resume
+    "im" 'counsel-imenu
+    "ia" 'counsel-ag
 
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
@@ -124,9 +119,16 @@
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-ag
 
+    "sw" 'switch-window
+
+    "uu" 'undo-tree-visualize
+    "uw" 'winner-undo
+
+    "vv" 'magit-status
+    "vd" 'magit-diff-unstaged
+
     "xx" 'counsel-M-x
     "xe" 'eval-last-sexp
-    "z" 'winner-undo
 
     "C-x C-c" 'save-buffers-kill-terminal)
   )

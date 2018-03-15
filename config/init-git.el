@@ -4,7 +4,9 @@
 (use-package magit
   :ensure t
   :pin melpa-stable
-  :bind ("C-c v" . magit-status))
+  :bind ("C-c v" . magit-status)
+  :config
+  (setq magit-completing-read-function 'ivy-completing-read))
 
 (use-package git-gutter
   :ensure t
