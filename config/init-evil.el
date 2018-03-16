@@ -11,9 +11,11 @@
          ("H" . evil-first-non-blank)
          ("L" . evil-end-of-line)
          ("C-e" . evil-end-of-line)      ; evil-scroll-line-down
+         ("@" . evil-jump-item)
 
          :map evil-normal-state-map
          ("C-y" . yank)                  ; evil-scroll-line-up
+         ("%" . evil-execute-macro)
 
          :map evil-insert-state-map
          ([escape] . evil-normal-state)     ; DO NOT USE "ESC"!
@@ -91,27 +93,6 @@
     "cp" 'flycheck-previous-error
     "cn" 'flycheck-next-error
 
-    ;; display => d
-    "dd" 'imenu-list-smart-toggle
-    "dt" 'neotree-toggle
-
-    ;; mark => m
-    "ma" 'mc/mark-all-like-this
-    "mm" 'counsel-bookmark
-    "ml" 'bookmark-bmenu-list
-    "mn" 'remember-notes
-    "mr" 'remember
-    "mR" 'remember-region
-    "mc" 'remember-clipboard'
-
-    ;; j => jump
-    "jc" 'avy-goto-char-2
-    "jw" 'avy-goto-word-or-subword-1
-    "jf" 'avy-goto-line
-    "jr" 'avy-resume
-    "jl" 'goto-line
-    "jj" 'ffap
-
     ;; ivy => i
     "ii" 'counsel-find-file
     "if" 'counsel-find-file
@@ -122,6 +103,27 @@
     "iv" 'ivy-push-view
     "iV" 'ivy-pop-view
 
+    ;; j => jump
+    "jc" 'avy-goto-char-2
+    "jw" 'avy-goto-word-or-subword-1
+    "jf" 'avy-goto-line
+    "jr" 'avy-resume
+    "jl" 'goto-line
+    "jj" 'ffap
+
+    ;; list => l
+    "li" 'imenu-list-smart-toggle
+    "lt" 'neotree-toggle
+
+    ;; mark => m
+    "ma" 'mc/mark-all-like-this
+    "mm" 'counsel-bookmark
+    "ml" 'bookmark-bmenu-list
+    "mn" 'remember-notes
+    "mr" 'remember
+    "mR" 'remember-region
+    "mc" 'remember-clipboard'
+
     ;; project => p
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
@@ -130,19 +132,22 @@
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-ag
 
-    ;; undo => u
-    "uu" 'undo-tree-visualize
-    "uw" 'winner-undo
-
+    ;; switch => s
     "sw" 'switch-window
 
-    ;; v => version
+    ;; undo => u
+    "uv" 'undo-tree-visualize
+    "uu" 'undo-tree-undo
+    "ur" 'undo-tree-redo
+    "uw" 'winner-undo
+
+    ;; version => v
     "vv" 'magit-status
     "vds" 'magit-diff-staged
     "vdu" 'magit-diff-unstaged
     "vdf" 'magit-diff-buffer-file
 
-    ;; x => execute
+    ;; execute => x
     "xx" 'counsel-M-x
     "xe" 'eval-last-sexp
 

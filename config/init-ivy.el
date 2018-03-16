@@ -4,9 +4,6 @@
 (use-package ivy
   :ensure t
   :bind (("C-x b" . ivy-switch-buffer)
-         ("C-c C-r" . ivy-resume)
-         ("C-z v" . ivy-push-view)
-         ("C-z V" . ivy-pop-view)
          :map ivy-minibuffer-map
          ;; ("[escape]" . minibuffer-keyboard-quit)
          ("<escape>" . minibuffer-keyboard-quit)

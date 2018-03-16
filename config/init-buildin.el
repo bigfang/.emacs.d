@@ -2,9 +2,7 @@
 
 
 (use-package bs
-  :bind (("C-z b" . bs-show)
-         ("C-z C-p" . bs-cycle-previous)
-         ("C-z C-n" . bs-cycle-next)))
+  :bind ("C-z b" . bs-show))
 
 
 (use-package desktop

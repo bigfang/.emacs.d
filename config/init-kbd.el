@@ -45,7 +45,7 @@
                                        (scroll-up 1))))
 
 
-;; (global-set-key (kbd "C-z <f5>") 'revert-buffer)
+(global-set-key (kbd "C-z r") 'revert-buffer)
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
 (global-set-key (kbd "C-z C-z") 'toggle-rot13-mode)

@@ -25,7 +25,6 @@
 
 (use-package highlight-symbol
   :ensure t
-  :bind ("C-z s" . highlight-symbol-at-point)
   :chords ("[[" . highlight-symbol-at-point))
 
 
