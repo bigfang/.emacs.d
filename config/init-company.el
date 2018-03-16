@@ -9,8 +9,8 @@
          :map company-active-map
          ("<return>" . company-abort)
          ("RET" . company-abort)
-         ("<space>" . company-abort)
-         ("SPC" . company-abort)
+         ("<space>" . my/abort-and-insert-space)
+         ("SPC" . my/abort-and-insert-space)
          ("M-i" . company-complete-common-or-cycle)
          ("C-n" . company-complete-common-or-cycle)
          ("C-p" . company-select-previous)
@@ -31,6 +31,12 @@
     (if (company-manual-begin)
         (company-complete-common)
       (indent-according-to-mode)))
+
+  (defun my/abort-and-insert-space ()
+    (interactive)
+    (progn
+      (company-abort)
+      (insert " ")))
   :config
   (add-to-list 'company-backends 'company-yasnippet t)
   (setq company-tooltip-minimum 7
@@ -42,10 +48,12 @@
 
 
 (use-package company-quickhelp
-  :if (not (eq window-system nil))
+  ;; :if (not (eq window-system nil))
   :ensure t
   :config
-  (company-quickhelp-mode))
+  (company-quickhelp-mode)
+  (eval-after-load 'company
+    '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin)))
 
 
 (provide 'init-company)
