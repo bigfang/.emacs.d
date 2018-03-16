@@ -29,7 +29,12 @@
 
 (use-package image-mode
   :bind (:map image-mode-map
-              ("u" . image-scroll-down)))
+        ("u" . image-scroll-down)))
+
+
+(use-package recentf
+  :config
+  (recentf-mode t))
 
 
 (use-package tramp

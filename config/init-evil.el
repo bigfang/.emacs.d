@@ -96,6 +96,7 @@
     ;; ivy => i
     "ii" 'counsel-find-file
     "if" 'counsel-find-file
+    "ie" 'counsel-recentf
     "is" 'swiper
     "ir" 'ivy-resume
     "im" 'counsel-imenu
@@ -127,6 +128,7 @@
     ;; project => p
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
+    "pe" 'projectile-recentf
     "pp" 'counsel-projectile-switch-project
     "pb" 'counsel-projectile-switch-to-buffer
     "pf" 'counsel-projectile-find-file
