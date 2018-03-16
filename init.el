@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-15 09:32:33>
+;; Time-stamp: <2018-03-16 14:55:06>
 
 
 
@@ -23,9 +23,8 @@
 
 (require 'init-pkg)
 (require 'init-basic)
-(require 'init-ui)
+(require 'init-look)
 (require 'init-kbd)
-(require 'init-modeline)
 (require 'init-ibuffer)
 (require 'init-buildin)
 

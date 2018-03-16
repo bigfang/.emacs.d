@@ -33,7 +33,7 @@
 (blink-cursor-mode -1)
 (delete-selection-mode t)
 (electric-pair-mode t)
-(global-hl-line-mode t)
+(global-hl-line-mode -1)
 (global-linum-mode -1)
 (mouse-avoidance-mode 'animate)
 (show-paren-mode t)

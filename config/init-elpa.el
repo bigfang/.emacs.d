@@ -14,18 +14,13 @@
   (setq projectile-completion-system 'ivy))
 
 
-(use-package yasnippet
-  :ensure t
-  :pin melpa
-  :hook (prog-mode . yas-minor-mode)
-  :config
-  (yas-reload-all))
-
-
-
 (use-package highlight-symbol
   :ensure t
-  :chords ("[[" . highlight-symbol-at-point))
+  :chords ("[[" . highlight-symbol-at-point)
+  :custom
+  (highlight-symbol-colors
+   '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
+  (highlight-symbol-foreground-color "black"))
 
 
 (use-package move-text
@@ -83,7 +78,16 @@
 (use-package which-key
   :ensure t
   :config
-  (which-key-mode))
+  (which-key-mode)
+  (setq which-key-idle-delay 1.5))
+
+
+(use-package yasnippet
+  :ensure t
+  :pin melpa
+  :hook (prog-mode . yas-minor-mode)
+  :config
+  (yas-reload-all))
 
 
 (provide 'init-elpa)
