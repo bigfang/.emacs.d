@@ -54,8 +54,8 @@
          ("f" . forward-char)
          ("C-n" . next-line)
          ("C-p" . previous-line)
-         ("p" . pager-row-up)
-         ("n" . pager-row-down)))
+         ("p" . evil-scroll-line-up)
+         ("n" . evil-scroll-line-down)))
 
 
 (use-package windmove

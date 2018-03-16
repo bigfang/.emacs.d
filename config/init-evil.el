@@ -78,40 +78,51 @@
     "w" 'save-buffer
     "k" 'kill-buffer-and-window
 
+    ;; buffer => b
     "bi" 'ibuffer
     "bb" 'switch-to-buffer
     "bn" 'next-buffer
     "bp" 'previous-buffer
     "bk" 'kill-this-buffer
 
+    ;; check => c
     "ce" 'flycheck-explain-error-at-point
     "cl" 'flycheck-list-errors
     "cp" 'flycheck-previous-error
     "cn" 'flycheck-next-error
 
+    ;; display => d
     "dd" 'imenu-list-smart-toggle
     "dt" 'neotree-toggle
 
+    ;; mark => m
     "ma" 'mc/mark-all-like-this
     "mm" 'counsel-bookmark
     "ml" 'bookmark-bmenu-list
-    "mr" 'remember
     "mn" 'remember-notes
+    "mr" 'remember
     "mR" 'remember-region
     "mc" 'remember-clipboard'
 
-    "gg" 'avy-goto-word-or-subword-1
-    "gf" 'avy-goto-line
-    "gl" 'goto-line
-    "gj" 'ffap
+    ;; j => jump
+    "jc" 'avy-goto-char-2
+    "jw" 'avy-goto-word-or-subword-1
+    "jf" 'avy-goto-line
+    "jr" 'avy-resume
+    "jl" 'goto-line
+    "jj" 'ffap
 
+    ;; ivy => i
     "ii" 'counsel-find-file
     "if" 'counsel-find-file
     "is" 'swiper
     "ir" 'ivy-resume
     "im" 'counsel-imenu
     "ia" 'counsel-ag
+    "iv" 'ivy-push-view
+    "iV" 'ivy-pop-view
 
+    ;; project => p
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
     "pp" 'counsel-projectile-switch-project
@@ -119,14 +130,19 @@
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-ag
 
-    "sw" 'switch-window
-
+    ;; undo => u
     "uu" 'undo-tree-visualize
     "uw" 'winner-undo
 
-    "vv" 'magit-status
-    "vd" 'magit-diff-unstaged
+    "sw" 'switch-window
 
+    ;; v => version
+    "vv" 'magit-status
+    "vds" 'magit-diff-staged
+    "vdu" 'magit-diff-unstaged
+    "vdf" 'magit-diff-buffer-file
+
+    ;; x => execute
     "xx" 'counsel-M-x
     "xe" 'eval-last-sexp
 
