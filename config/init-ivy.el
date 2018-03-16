@@ -1,10 +1,13 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package smex
+  :ensure t)
+
+
 (use-package ivy
   :ensure t
-  :bind (("C-x b" . ivy-switch-buffer)
-         :map ivy-minibuffer-map
+  :bind (:map ivy-minibuffer-map
          ;; ("[escape]" . minibuffer-keyboard-quit)
          ("<escape>" . minibuffer-keyboard-quit)
          ("M-n" . ivy-next-line)
@@ -15,16 +18,15 @@
   :config
   (ivy-mode 1)
   (setq ivy-re-builders-alist
-        '((swiper . ivy--regex-plus)
-          (t      . ivy--regex-fuzzy)))
+        '((counsel-M-x . ivy--regex-fuzzy)
+          (t . ivy--regex-plus)))
   (setq ivy-use-virtual-buffers t
         ivy-count-format "(%d/%d) "
         ivy-height 12))
 
 
 (use-package ivy-hydra
-  :ensure t
-  :after (ivy))
+  :ensure t)
 
 
 (use-package avy
@@ -36,24 +38,20 @@
 
 (use-package swiper
   :ensure t
-  :after (ivy)
-  :bind (("C-s" . swiper)))
+  :bind ("C-z s" . swiper))
 
 
 (use-package counsel
   :ensure t
-  :after (ivy)
   :bind (("M-x" . counsel-M-x)
-         ("C-h f" . counsel-describe-function)
-         ("C-h v" . counsel-describe-variable)
-         ("C-h S" . counsel-info-lookup-symbol)
-         ("C-x C-f" . counsel-find-file)
+         ("<f1> f" . counsel-describe-function)
+         ("<f1> v" . counsel-describe-variable)
+         ("<f1> S" . counsel-info-lookup-symbol)
          ("M-y" . counsel-yank-pop)))
 
 
 (use-package counsel-projectile
   :ensure t
-  :after (ivy)
   :config
   (counsel-projectile-mode t))
 

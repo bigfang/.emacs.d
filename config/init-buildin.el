@@ -21,6 +21,7 @@
 
 
 (use-package ido
+  :bind (("C-x b" . ido-switch-buffer))
   :config
   (ido-mode t)
   (ido-everywhere t)

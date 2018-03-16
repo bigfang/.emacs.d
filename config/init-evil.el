@@ -82,7 +82,7 @@
 
     ;; buffer => b
     "bi" 'ibuffer
-    "bb" 'switch-to-buffer
+    "bb" 'ivy-switch-buffer
     "bn" 'next-buffer
     "bp" 'previous-buffer
     "bk" 'kill-this-buffer
@@ -94,13 +94,15 @@
     "cn" 'flycheck-next-error
 
     ;; ivy => i
-    "ii" 'counsel-find-file
+    "ii" 'swiper
+    "ib" 'counsel-ibuffer
     "if" 'counsel-find-file
     "ie" 'counsel-recentf
-    "is" 'swiper
-    "ir" 'ivy-resume
     "im" 'counsel-imenu
+    "is" 'counsel-rg
+    "ir" 'counsel-rg
     "ia" 'counsel-ag
+    "iu" 'ivy-resume
     "iv" 'ivy-push-view
     "iV" 'ivy-pop-view
 
@@ -132,9 +134,13 @@
     "pp" 'counsel-projectile-switch-project
     "pb" 'counsel-projectile-switch-to-buffer
     "pf" 'counsel-projectile-find-file
-    "ps" 'counsel-projectile-ag
+    "ps" 'counsel-projectile-rg
+    "pr" 'counsel-projectile-rg
+    "pa" 'counsel-projectile-ag
 
-    ;; switch => s
+    ;; something => s
+    "ss" 'swiper
+    "sv" 'ivy-switch-view
     "sw" 'switch-window
 
     ;; undo => u
@@ -150,17 +156,16 @@
     "vdf" 'magit-diff-buffer-file
 
     ;; execute => x
-    "xx" 'counsel-M-x
+    "xx" 'smex
     "xe" 'eval-last-sexp
 
     "C-x C-c" 'save-buffers-kill-terminal)
   )
 
 
-(use-package evil-magit
-  :ensure t
-  :pin melpa-stable)
 
+(use-package evil-magit
+  :ensure t)
 
 
 (use-package evil-ediff
