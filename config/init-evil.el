@@ -11,11 +11,11 @@
          ("H" . evil-first-non-blank)
          ("L" . evil-end-of-line)
          ("C-e" . evil-end-of-line)      ; evil-scroll-line-down
-         ("@" . evil-jump-item)
+         ([remap evil-execute-macro] . evil-jump-item)
 
          :map evil-normal-state-map
          ("C-y" . yank)                  ; evil-scroll-line-up
-         ("%" . evil-execute-macro)
+         ([remap evil-jump-item] . evil-execute-macro)
 
          :map evil-insert-state-map
          ([escape] . evil-normal-state)     ; DO NOT USE "ESC"!
