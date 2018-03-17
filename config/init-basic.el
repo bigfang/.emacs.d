@@ -21,6 +21,7 @@
 ;; (add-to-list 'completion-styles 'initials)
 ;; (setq visible-bell t)
 (setq x-select-enable-clipboard t)
+(setq save-interprogram-paste-before-kill t)
 
 (setq-default indent-tabs-mode nil)
 

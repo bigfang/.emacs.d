@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-16 14:55:06>
+;; Time-stamp: <2018-03-17 13:12:40>
 
 
 
@@ -39,8 +39,6 @@
 
 (require 'init-plugins)
 (require 'init-utils)
-
-(require 'init-alpha)
 
 
 ;;; init.el ends here
