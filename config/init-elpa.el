@@ -14,6 +14,7 @@
   (setq projectile-completion-system 'ivy))
 
 
+
 (use-package highlight-symbol
   :ensure t
   :chords ("[[" . highlight-symbol-at-point)
@@ -21,6 +22,14 @@
   (highlight-symbol-colors
    '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
   (highlight-symbol-foreground-color "black"))
+
+
+(use-package imenu-list
+  :ensure t
+  :bind ("C-'" . imenu-list-smart-toggle)
+  :config
+  (setq imenu-list-size 0.15
+        imenu-list-auto-resize t))
 
 
 (use-package move-text

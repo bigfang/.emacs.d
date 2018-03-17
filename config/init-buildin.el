@@ -1,10 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package bs
-  :bind ("C-z b" . bs-show))
-
-
 (use-package desktop
   :config
   (desktop-save-mode t)

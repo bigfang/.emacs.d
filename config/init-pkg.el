@@ -18,8 +18,9 @@
 
 
 (eval-when-compile
-  (require 'use-package)
-  (setq use-package-verbose t))
+  (setq use-package-verbose t
+        use-package-enable-imenu-support t)
+  (require 'use-package))
 
 ;; key-chords
 (use-package use-package-chords

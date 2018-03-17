@@ -6,7 +6,7 @@
   :config
   (setq default-input-method "pyim")
   (setq pyim-default-scheme 'pyim-shuangpin)
-  (pyim-isearch-mode 1))
+  (pyim-isearch-mode -1))
 
 (use-package pyim-basedict
   :ensure
@@ -15,14 +15,6 @@
 
 (use-package imenu-anywhere
   :ensure t)
-
-
-(use-package imenu-list
-  :ensure t
-  :bind ("C-'" . imenu-list-smart-toggle)
-  :config
-  (setq imenu-list-size 0.15
-        imenu-list-auto-resize t))
 
 
 (use-package emojify

@@ -125,9 +125,10 @@
     "mn" 'remember-notes
     "mr" 'remember
     "mR" 'remember-region
-    "mc" 'remember-clipboard'
+    "mc" 'remember-clipboard
 
     ;; project => p
+    "p SPC" 'keyboard-quit
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
     "pe" 'projectile-recentf
