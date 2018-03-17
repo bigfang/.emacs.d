@@ -1,22 +1,35 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(setq frame-title-format "%b %z %p @ %m >_< %f")
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message ";; (〜￣▽￣)〜〜(￣▽￣〜)\n\n")
+(setq visible-bell nil)
+
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
+(blink-cursor-mode -1)
+(global-hl-line-mode -1)
+(global-linum-mode -1)
+(mouse-avoidance-mode 'animate)
 
 
 ;; === theme ===
-(setq custom-theme-directory "~/.emacs.d/themes")
+(set-frame-parameter nil 'alpha 95)
+;; (set-cursor-color "#cd5c5c")
+(set-face-attribute 'region nil :background "#4682b4" :foreground "black")
 
+(setq custom-theme-directory "~/.emacs.d/themes")
 (use-package solarized-theme
   :ensure t
+  :disabled
   :config
-  (load-theme 'solarized-dark t)
-  (set-cursor-color "#cd5c5c")
-  (set-face-attribute 'region nil :background "#4682b4" :foreground "black")
-  )
+  (load-theme 'solarized-dark t))
 
-(set-frame-parameter nil 'alpha 95)
+(use-package doom-themes
+  :ensure t
+  :config
+  (load-theme 'doom-spacegrey))
 
 
 ;; === modeline ===
@@ -36,6 +49,7 @@
 
 
 ;; Load custom file
+(setq custom-file "~/.emacs.d/emacs-custom.el")
 (when (file-exists-p custom-file)
   (load custom-file))
 

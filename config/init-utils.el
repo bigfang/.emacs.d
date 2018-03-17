@@ -14,10 +14,6 @@
     (setf (frame-parameter nil 'alpha) (if (>= (- my-emacs-alpha-value 5) 0)
                                            (- my-emacs-alpha-value 5)
                                          0))))
-(global-set-key (kbd "<S-mouse-4>") 'my-emacs-alpha-down)
-(global-set-key (kbd "<S-mouse-5>") 'my-emacs-alpha-up)
-(global-set-key (kbd "<S-wheel-down>") 'my-emacs-alpha-down)
-(global-set-key (kbd "<S-wheel-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<C-s-up>") 'my-emacs-alpha-up)
 (global-set-key (kbd "<C-s-down>") 'my-emacs-alpha-down)
 
@@ -38,14 +34,7 @@
 (global-set-key (kbd "C-z t") 'transpose-windows)
 
 
-;; vi dd, o, O
-(defun kill-current-line (&optional n)
-  (interactive "p")
-  (save-excursion
-    (beginning-of-line)
-    (let ((kill-whole-line t))
-      (kill-line n))))
-
+;; vi o, O
 (defun vi-open-line-above ()
   (interactive)
   (unless (bolp)

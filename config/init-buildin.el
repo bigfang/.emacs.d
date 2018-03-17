@@ -24,6 +24,11 @@
   (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last"))
 
 
+(use-package image-file
+  :config
+  (auto-image-file-mode t))
+
+
 (use-package image-mode
   :bind (:map image-mode-map
         ("u" . image-scroll-down)))
@@ -61,6 +66,11 @@
 (use-package windmove
   :config
   (windmove-default-keybindings))
+
+
+(use-package winner
+  :config
+  (winner-mode t))
 
 
 (provide 'init-buildin)

@@ -6,6 +6,20 @@
 *.bmk
 *.newsrc*
 
+# Org-mode
+.org-id-locations
+*_archive
+
+# flymake Flycheck
+*_flymake.*
+flycheck_*.el
+
+# [#].[#]
+\#*#
+.\#*
+\!*
+*~
+
 .DS_Store
 tramp
 recentf
@@ -15,12 +29,6 @@ notes
 
 .mc-lists.el
 emacs-custom.el
-
-# [#].[#]
-\#*#
-.\#*
-\!*
-*~
 
 eshell/
 elpa/

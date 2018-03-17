@@ -20,8 +20,13 @@
 (use-package emojify
   :ensure t
   :config
-  (add-hook 'after-init-hook #'global-emojify-mode)
-  )
+  (add-hook 'after-init-hook #'global-emojify-mode))
+
+(use-package company-emoji
+  :ensure t
+  :config
+  (add-to-list 'company-backends 'company-emoji))
+
 
 (use-package smartparens
   :ensure t)
@@ -64,14 +69,11 @@
   (add-hook 'company-completion-started-hook 'company-turn-off-fci)
   (add-hook 'company-completion-finished-hook 'company-maybe-turn-on-fci)
   (add-hook 'company-completion-cancelled-hook 'company-maybe-turn-on-fci)
+  :hook (prog-mode . fci-mode)
   :config
-  (setq-default fill-column 120)
   (setq fci-rule-width 1)
   (setq fci-rule-color "DimGray")
-  (define-globalized-minor-mode
-    global-fci-mode fci-mode (lambda () (fci-mode 1)))
-  (global-fci-mode 1))
-
+  )
 
 (use-package markdown-mode
   :ensure t)

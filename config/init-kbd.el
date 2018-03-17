@@ -48,6 +48,7 @@
 (global-set-key (kbd "C-z r") 'revert-buffer)
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
+(global-set-key (kbd "C-z s") 'isearch-forward)
 (global-set-key (kbd "C-z C-z") 'toggle-rot13-mode)
 
 (global-set-key (kbd "C-`") 'toggle-truncate-lines)
@@ -70,11 +71,10 @@
 
 (global-set-key (kbd "H-i") 'erc)
 (global-set-key (kbd "H-n") 'gnus)
-(global-set-key (kbd "H-d") 'ediff)
 (global-set-key (kbd "H-s") 'shell)
-(global-set-key (kbd "H-S") 'eshell)
+(global-set-key (kbd "H-e") 'eshell)
+(global-set-key (kbd "H-w") 'eww)
 (global-set-key (kbd "H-m") 'emms)
-(global-set-key (kbd "H-o") 'org-mode)
 
 
 ;; https://stackoverflow.com/a/40222318/2163429

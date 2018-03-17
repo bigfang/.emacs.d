@@ -38,7 +38,7 @@
 
 (use-package swiper
   :ensure t
-  :bind ("C-z s" . swiper))
+  :bind ("C-s" . swiper))
 
 
 (use-package counsel
