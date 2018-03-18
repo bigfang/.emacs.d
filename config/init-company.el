@@ -42,18 +42,19 @@
   (setq company-tooltip-minimum 7
         company-minimum-prefix-length 3
         company-selection-wrap-around t
+        company-tooltip-align-annotations t
         company-transformers '(company-sort-by-occurrence)
-        company-show-numbers t)
-  )
+        company-show-numbers t))
 
 
 (use-package company-quickhelp
-  ;; :if (not (eq window-system nil))
+  :if window-system
   :ensure t
   :config
-  (company-quickhelp-mode)
+  (setq company-quickhelp-delay 3)
   (eval-after-load 'company
-    '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin)))
+    '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
+  (company-quickhelp-mode))
 
 
 (provide 'init-company)

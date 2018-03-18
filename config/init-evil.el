@@ -32,7 +32,6 @@
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
   :config
-  (evil-mode 1)
   (setq evil-operator-state-cursor '("LightGreen" evil-half-cursor)
         evil-motion-state-cursor '("RoyalBlue" box)
         evil-replace-state-cursor '("goldenrod1" box)
@@ -40,17 +39,14 @@
         evil-normal-state-cursor '("IndianRed" box)
         evil-visual-state-cursor '("LightGoldenrod" box)
         evil-insert-state-cursor '("MediumPurple1" box))
-
+  (evil-mode 1)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'image-mode 'emacs)
   (evil-set-initial-state 'neotree-mode 'emacs)
 
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
-    (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
-
-  (evil-define-key 'normal python-mode-map (kbd "gd") 'elpy-goto-definition)
-  )
+    (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
 
 
 (use-package evil-leader
@@ -186,9 +182,9 @@
 (use-package evil-escape
   :ensure t
   :config
-  (evil-escape-mode)
   (setq-default evil-escape-delay 0.2)
-  (setq-default evil-escape-key-sequence "kj"))
+  (setq-default evil-escape-key-sequence "kj")
+  (evil-escape-mode))
 
 
 (provide 'init-evil)

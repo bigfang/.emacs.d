@@ -3,8 +3,8 @@
 
 (use-package desktop
   :config
-  (desktop-save-mode t)
-  (add-to-list 'desktop-path "~/.emacs.d/"))
+  (add-to-list 'desktop-path "~/.emacs.d/")
+  (desktop-save-mode t))
 
 
 (use-package dired
@@ -19,9 +19,9 @@
 (use-package ido
   :bind (("C-x b" . ido-switch-buffer))
   :config
+  (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last")
   (ido-mode t)
-  (ido-everywhere t)
-  (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last"))
+  (ido-everywhere t))
 
 
 (use-package image-file
@@ -35,8 +35,7 @@
 
 
 (use-package recentf
-  :config
-  (recentf-mode t))
+  :config (recentf-mode t))
 
 
 (use-package tramp
@@ -69,8 +68,7 @@
 
 
 (use-package winner
-  :config
-  (winner-mode t))
+  :config (winner-mode t))
 
 
 (provide 'init-buildin)

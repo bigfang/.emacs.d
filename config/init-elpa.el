@@ -3,15 +3,16 @@
 
 (use-package flycheck
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :hook (python-mode . flycheck-mode))
 
 
 (use-package projectile
   :ensure t
   :pin melpa-stable
   :config
-  (projectile-mode)
-  (setq projectile-completion-system 'ivy))
+  (setq projectile-completion-system 'ivy)
+  (projectile-mode))
 
 
 
@@ -94,15 +95,14 @@
 
 (use-package undo-tree
   :ensure t
-  :config
-  (global-undo-tree-mode))
+  :config (global-undo-tree-mode))
 
 
 (use-package which-key
   :ensure t
   :config
-  (which-key-mode)
-  (setq which-key-idle-delay 1.5))
+  (setq which-key-idle-delay 1.5)
+  (which-key-mode))
 
 
 (use-package yasnippet

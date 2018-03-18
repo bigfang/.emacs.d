@@ -44,8 +44,8 @@
 (use-package minions
   :ensure t
   :config
-  (minions-mode 1)
-  (setq minions-mode-line-lighter ">_<"))
+  (setq minions-mode-line-lighter ">_<")
+  (minions-mode 1))
 
 
 ;; Load custom file

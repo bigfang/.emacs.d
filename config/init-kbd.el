@@ -1,6 +1,11 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+;; define key-map C-z
+(define-prefix-command 'ctl-z-map)
+(global-set-key (kbd "C-z") 'ctl-z-map)
+
+
 ;; Windows
 (when (eq system-type 'windows-nt)
   (setq w32-pass-lwindow-to-system nil
@@ -18,15 +23,11 @@
         mac-option-modifier 'super
         ns-function-modifier 'hyper))
 
+
 ;; Terminal
-(when (eq window-system nil)
+(unless window-system
   (load-theme 'wombat t)
   (menu-bar-mode -1))
-
-
-;; define key-map C-z
-(define-prefix-command 'ctl-z-map)
-(global-set-key (kbd "C-z") 'ctl-z-map)
 
 ;; Terminal mouse scroll
 (unless window-system

@@ -16,13 +16,13 @@
          ("C-p" . ivy-previous-history-element)
          )
   :config
-  (ivy-mode 1)
   (setq ivy-re-builders-alist
         '((counsel-M-x . ivy--regex-fuzzy)
           (t . ivy--regex-plus)))
   (setq ivy-use-virtual-buffers t
         ivy-count-format "(%d/%d) "
-        ivy-height 12))
+        ivy-height 12)
+  (ivy-mode 1))
 
 
 (use-package ivy-hydra
@@ -52,8 +52,7 @@
 
 (use-package counsel-projectile
   :ensure t
-  :config
-  (counsel-projectile-mode t))
+  :config (counsel-projectile-mode t))
 
 
 (provide 'init-ivy)
