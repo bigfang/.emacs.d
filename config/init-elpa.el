@@ -15,6 +15,14 @@
 
 
 
+(use-package buffer-move
+  :ensure t
+  :bind (("C-z <up>" . buf-move-up)
+         ("C-z <down>" . buf-move-down)
+         ("C-z <left>" . buf-move-left)
+         ("C-z <right>" . buf-move-right)))
+
+
 (use-package highlight-symbol
   :ensure t
   :chords ("[[" . highlight-symbol-at-point)

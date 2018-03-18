@@ -75,7 +75,13 @@
   (setq fci-rule-color "DimGray")
   )
 
+
 (use-package markdown-mode
+  :ensure t)
+
+
+;; or htmlfontify
+(use-package htmlize
   :ensure t)
 
 

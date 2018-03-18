@@ -65,6 +65,10 @@
     "RET" 'keyboard-quit
     "TAB" 'previous-buffer
     "DEL" 'next-buffer
+    "<up>" 'buf-move-up
+    "<down>" 'buf-move-down
+    "<left>" 'buf-move-left
+    "<right>" 'buf-move-right
 
     "=" 'er/expand-region
     "[" 'highlight-symbol-at-point
