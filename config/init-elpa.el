@@ -15,6 +15,12 @@
 
 
 
+(use-package auto-yasnippet
+  :ensure t
+  :bind (("s-w" . aya-create)
+         ("s-y" . aya-expand)))
+
+
 (use-package buffer-move
   :ensure t
   :bind (("C-z <up>" . buf-move-up)
