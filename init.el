@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-17 19:42:58>
+;; Time-stamp: <2018-03-19 09:59:11>
 
 
 
@@ -46,6 +46,10 @@
 
 (require 'init-plugins)
 (require 'init-utils)
+
+
+;; automatically garbage collect when switch away from emacs
+(add-hook 'focus-out-hook 'garbage-collect)
 
 
 ;;; init.el ends here

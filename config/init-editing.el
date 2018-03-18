@@ -7,6 +7,7 @@
 (setq backward-delete-char-untabify-method 'hungry) ; 删除键行为
 (setq select-enable-clipboard t)        ; 系统剪切板
 (setq save-interprogram-paste-before-kill t) ; 剪切板内容加入killing-ring
+(setq scroll-preserve-screen-position 'always) ; 滚屏时鼠标行为
 (setq tab-always-indent 'complete)           ; tab健行为
 
 (auto-revert-mode t)
@@ -59,13 +60,14 @@
 ;; prog-mode hooks
 (add-hook 'prog-mode-hook
           (lambda ()
-            (whitespace-cleanup-on-save)
-            ;; (linum-mode)
-            (hs-minor-mode)
-            (highlight-indentation-mode)
-            (prettify-symbols-mode)
             (setq truncate-lines t)
-            (setq fill-column 120)))
+            (setq fill-column 120)
+            (whitespace-cleanup-on-save)
+
+            ;; (linum-mode t)
+            (hs-minor-mode t)
+            (highlight-indentation-mode t)
+            (prettify-symbols-mode t)))
 
 
 (use-package expand-region

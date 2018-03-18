@@ -62,6 +62,12 @@
          ("n" . evil-scroll-line-down)))
 
 
+(use-package which-func
+  :config
+  (setq which-func-unknown "n/a")
+  (which-function-mode t))
+
+
 (use-package windmove
   :config
   (windmove-default-keybindings))

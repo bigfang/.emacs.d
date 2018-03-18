@@ -49,12 +49,19 @@
 
 (use-package company-quickhelp
   :if window-system
+  :disabled
   :ensure t
   :config
-  (setq company-quickhelp-delay 3)
+  (setq company-quickhelp-delay .3
+        company-quickhelp-use-propertized-text t)
   (eval-after-load 'company
     '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
   (company-quickhelp-mode))
+
+
+(use-package company-statistics
+  :ensure t
+  :config (company-statistics-mode 1))
 
 
 (provide 'init-company)

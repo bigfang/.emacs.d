@@ -26,6 +26,7 @@ recentf
 projectile.cache
 ac-comphist.dat
 notes
+company-statistics-cache.el
 
 .mc-lists.el
 emacs-custom.el
