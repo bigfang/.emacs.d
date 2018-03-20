@@ -77,5 +77,5 @@
   :config (winner-mode t))
 
 
-(provide 'init-buildin)
-;;; init-buildin.el ends here
+(provide 'init-builtin)
+;;; init-builtin.el ends here

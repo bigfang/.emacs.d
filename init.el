@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-19 09:59:11>
+;; Time-stamp: <2018-03-20 20:38:28>
 
 
 
@@ -33,7 +33,7 @@
 (require 'init-look)
 (require 'init-kbd)
 (require 'init-ibuffer)
-(require 'init-buildin)
+(require 'init-builtin)
 
 (require 'init-editing)
 (require 'init-evil)

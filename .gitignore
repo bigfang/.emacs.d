@@ -27,6 +27,7 @@ projectile.cache
 ac-comphist.dat
 notes
 company-statistics-cache.el
+smex-items
 
 .mc-lists.el
 emacs-custom.el
