@@ -103,5 +103,10 @@
 ;; ===  build-in  packages  ===
 
 
+
+;; ===  lsp  ===
+;; (require 'init-lsp)
+
+
 (provide 'init-plugins)
 ;;; init-plugins.el ends here
