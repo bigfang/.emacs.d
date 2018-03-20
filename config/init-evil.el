@@ -14,6 +14,8 @@
          ([remap evil-execute-macro] . evil-jump-item)
 
          :map evil-normal-state-map
+         ("ZZ" . kill-this-buffer)
+         ("ZQ" . quit-window)
          ("C-y" . yank)                  ; evil-scroll-line-up
          ([remap evil-jump-item] . evil-execute-macro)
 
@@ -32,7 +34,7 @@
         evil-want-C-i-jump nil)
   :config
   (setq evil-operator-state-cursor '("LightGreen" evil-half-cursor)
-        evil-motion-state-cursor '("RoyalBlue" box)
+        evil-motion-state-cursor '("orchid" box)
         evil-replace-state-cursor '("goldenrod1" box)
         evil-emacs-state-cursor '("DeepSkyBlue" box)
         evil-normal-state-cursor '("IndianRed" box)

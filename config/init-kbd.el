@@ -17,7 +17,7 @@
 
 ;; Mac OS X
 (when (eq system-type 'darwin)
-  ;; (push "/usr/local/bin" exec-path)
+  (setq dired-use-ls-dired nil)
   (setq mac-command-modifier 'meta
         mac-control-modifier 'control
         mac-option-modifier 'super

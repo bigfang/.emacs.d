@@ -18,19 +18,12 @@
          ("<C-return>" . vi-open-line-below)
          ("<C-S-return>" . vi-open-line-above)
          ("M-i" . elpy-company-backend)
-         ("M-." . elpy-goto-definition-or-rgrep)
+         ("M-." . elpy-goto-definition)
          )
   :init
   (elpy-enable)
-  (defun elpy-goto-definition-or-rgrep ()
-    "Go to the definition of the symbol at point, if found. Otherwise, run `elpy-rgrep-symbol'."
-    (interactive)
-    (ring-insert find-tag-marker-ring (point-marker))
-    (condition-case nil (elpy-goto-definition)
-      (error (elpy-rgrep-symbol
-              (concat "\\(def\\|class\\)\s" (thing-at-point 'symbol) "(")))))
   :config
-  (evil-define-key 'normal elpy-mode-map (kbd "gd") 'elpy-goto-definition-or-rgrep)
+  (evil-define-key 'normal elpy-mode-map (kbd "gd") 'elpy-goto-definition)
   (setq elpy-rpc-backend "jedi")
   (defalias 'workon 'pyvenv-workon)
   (remove-hook 'elpy-modules 'elpy-module-flymake))
