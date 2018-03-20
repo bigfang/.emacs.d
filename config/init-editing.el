@@ -3,12 +3,14 @@
 
 (setq-default fill-column 80)
 (setq-default indent-tabs-mode nil)
+(setq delete-by-moving-to-trash t)      ; 删除至系统回收站
 (setq echo-keystrokes 0.1)              ; 按键连击间隔
 (setq backward-delete-char-untabify-method 'hungry) ; 删除键行为
 (setq select-enable-clipboard t)        ; 系统剪切板
 (setq save-interprogram-paste-before-kill t) ; 剪切板内容加入killing-ring
 (setq scroll-preserve-screen-position 'always) ; 滚屏时鼠标行为
 (setq tab-always-indent 'complete)           ; tab健行为
+(setq set-mark-command-repeat-pop t)         ; C-u后C-SPC的行为
 
 (auto-revert-mode t)
 (delete-selection-mode t)               ; 退格键删除选中区域
@@ -61,7 +63,7 @@
 (add-hook 'prog-mode-hook
           (lambda ()
             (setq truncate-lines t)
-            (setq fill-column 120)
+            (setq fill-column 80)
             (whitespace-cleanup-on-save)
 
             ;; (linum-mode t)

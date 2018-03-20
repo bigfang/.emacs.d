@@ -53,12 +53,11 @@
          ("<C-S-down>" . move-text-down)))
 
 
-(use-package neotree
+(use-package paradox
   :ensure t
-  :bind ("C-x C-z" . neotree-toggle)
   :config
-  (setq neo-smart-open t)
-  (setq projectile-switch-project-action 'neotree-projectile-action))
+  (paradox-enable)
+  (evil-set-initial-state 'paradox-menu-mode 'emacs))
 
 
 (use-package rainbow-delimiters
@@ -110,10 +109,9 @@
   :pin melpa
   :hook (prog-mode . yas-minor-mode)
   :config
-  (yas-reload-all))
-
-(use-package yasnippet-snippets
-  :ensure t)
+  (yas-reload-all)
+  (use-package yasnippet-snippets
+    :ensure t))
 
 
 (provide 'init-elpa)

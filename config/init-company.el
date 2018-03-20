@@ -48,8 +48,8 @@
 
 
 (use-package company-quickhelp
-  :if window-system
   :disabled
+  :if window-system
   :ensure t
   :config
   (setq company-quickhelp-delay .3

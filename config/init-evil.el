@@ -27,8 +27,7 @@
   :hook (git-commit-mode . evil-insert-state)
   :init
   (setq evil-toggle-key "M-z"
-        evil-want-fine-undo t
-        ;; evil-move-cursor-back nil
+        evil-want-fine-undo nil
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
   :config
@@ -42,7 +41,6 @@
   (evil-mode 1)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'image-mode 'emacs)
-  (evil-set-initial-state 'neotree-mode 'emacs)
 
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
@@ -180,6 +178,7 @@
 
 
 (use-package evil-escape
+  :disabled
   :ensure t
   :config
   (setq-default evil-escape-delay 0.2)

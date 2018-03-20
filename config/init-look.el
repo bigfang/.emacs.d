@@ -21,8 +21,8 @@
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 (use-package solarized-theme
-  :ensure t
   :disabled
+  :ensure t
   :config
   (load-theme 'solarized-dark t))
 

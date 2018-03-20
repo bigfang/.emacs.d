@@ -1,6 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package all-the-icons
+  :ensure t)
+
+
 (use-package pyim
   :ensure t
   :config
@@ -28,13 +32,14 @@
   (add-to-list 'company-backends 'company-emoji))
 
 
-(use-package smartparens
-  :ensure t)
-
-(use-package smartparens-config
-  :ensure nil
-  :hook ((prog-mode . show-smartparens-mode)
-         (prog-mode . smartparens-mode)))
+;; (use-package smartparens
+;;   :disabled
+;;   :ensure t
+;;   :config
+;;   (use-package smartparens-config
+;;     :ensure nil
+;;     :hook ((prog-mode . show-smartparens-mode)
+;;            (prog-mode . smartparens-mode))))
 
 
 (use-package emmet-mode
@@ -52,8 +57,8 @@
 
 
 (use-package fill-column-indicator
-  :ensure t
   :disabled
+  :ensure t
   :init
   ;;; code sinppet from spacemacs
   (defvar-local company-fci-mode-on-p nil)
@@ -76,12 +81,22 @@
   )
 
 
-(use-package markdown-mode
+;; or htmlfontify
+(use-package htmlize
+  :disabled
   :ensure t)
 
 
-;; or htmlfontify
-(use-package htmlize
+(use-package neotree
+  :ensure t
+  :bind ("C-x C-z" . neotree-toggle)
+  :config
+  (setq neo-smart-open t)
+  (setq projectile-switch-project-action 'neotree-projectile-action)
+  (evil-set-initial-state 'neotree-mode 'emacs))
+
+
+(use-package markdown-mode
   :ensure t)
 
 
