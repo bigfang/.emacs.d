@@ -89,7 +89,8 @@
 
     ;; check => c
     "ce" 'flycheck-explain-error-at-point
-    "cl" 'flycheck-list-errors
+    ;; "cl" 'flycheck-list-errors
+    "cl" 'my/toggle-flyc-window
     "cp" 'flycheck-previous-error
     "cn" 'flycheck-next-error
 
@@ -155,6 +156,7 @@
     "vds" 'magit-diff-staged
     "vdu" 'magit-diff-unstaged
     "vdf" 'magit-diff-buffer-file
+    "vl" 'magit-log-current
 
     ;; execute => x
     "xx" 'smex

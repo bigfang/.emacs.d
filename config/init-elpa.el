@@ -4,7 +4,15 @@
 (use-package flycheck
   :ensure t
   :pin melpa-stable
-  :hook (python-mode . flycheck-mode))
+  :hook (python-mode . flycheck-mode)
+  :config
+  (defun my/toggle-flyc-window ()
+    (interactive)
+    (if (get-buffer-window "*Flycheck errors*" t)
+        (with-selected-window
+            (get-buffer-window "*Flycheck errors*" t)
+          (delete-window))
+      (flycheck-list-errors))))
 
 
 (use-package projectile

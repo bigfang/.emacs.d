@@ -54,5 +54,15 @@
   (load custom-file))
 
 
+;; display-buffer
+(add-to-list 'display-buffer-alist
+             '("\\*.*\\*"
+               (display-buffer-reuse-window
+                display-buffer-below-selected)
+               (split-window-sensibly)
+               (window-height   . 0.2)
+               (reusable-frames . visible)))
+
+
 (provide 'init-look)
 ;;; init-look.el ends here
