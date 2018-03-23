@@ -75,6 +75,7 @@
     "0" 'delete-window
     "1" 'delete-other-windows
 
+    "f" 'counsel-find-file
     "h" 'help-command
     "q" 'quit-window
     "w" 'save-buffer
@@ -179,15 +180,6 @@
   :ensure t
   :config
   (global-evil-surround-mode 1))
-
-
-(use-package evil-escape
-  :disabled
-  :ensure t
-  :config
-  (setq-default evil-escape-delay 0.2)
-  (setq-default evil-escape-key-sequence "kj")
-  (evil-escape-mode))
 
 
 (provide 'init-evil)
