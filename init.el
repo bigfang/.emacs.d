@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-20 20:38:28>
+;; Time-stamp: <2018-03-23 14:59:32>
 
 
 
@@ -40,7 +40,6 @@
 (require 'init-ivy)
 (require 'init-company)
 (require 'init-git)
-(require 'init-python)
 (require 'init-lang)
 (require 'init-elpa)
 
