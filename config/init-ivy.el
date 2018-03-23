@@ -1,10 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package smex
-  :ensure t)
-
-
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
@@ -29,13 +25,6 @@
   :ensure t)
 
 
-(use-package avy
-  :ensure t
-  :bind (("M-g g" . avy-goto-word-or-subword-1)
-         ("M-g f" . avy-goto-line))
-  )
-
-
 (use-package swiper
   :ensure t
   :bind ("C-s" . swiper))
@@ -44,15 +33,26 @@
 (use-package counsel
   :ensure t
   :bind (("M-x" . counsel-M-x)
+         ("M-y" . counsel-yank-pop)))
+
+
+;; ===
+(use-package avy
+  :ensure t
+  :bind (("M-g g" . avy-goto-word-or-subword-1)
          ("<f1> f" . counsel-describe-function)
          ("<f1> v" . counsel-describe-variable)
          ("<f1> S" . counsel-info-lookup-symbol)
-         ("M-y" . counsel-yank-pop)))
+         ("M-g f" . avy-goto-line)))
 
 
 (use-package counsel-projectile
   :ensure t
   :config (counsel-projectile-mode t))
+
+
+(use-package smex
+  :ensure t)
 
 
 (provide 'init-ivy)

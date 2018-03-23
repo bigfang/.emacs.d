@@ -108,7 +108,7 @@
 (use-package which-key
   :ensure t
   :config
-  (setq which-key-idle-delay 1.5)
+  (setq which-key-idle-delay 1.0)
   (which-key-mode))
 
 

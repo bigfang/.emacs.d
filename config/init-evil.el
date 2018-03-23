@@ -66,21 +66,24 @@
     "<left>" 'buf-move-left
     "<right>" 'buf-move-right
 
+    "0" 'delete-window
+    "1" 'delete-other-windows
     "=" 'er/expand-region
     "[" 'highlight-symbol-at-point
     "." 'xref-find-definitions
     "\\" 'split-window-right
     "-" 'split-window-below
     ";" 'comment-line
-    "0" 'delete-window
-    "1" 'delete-other-windows
+    "?" 'help-command
 
     "f" 'counsel-find-file
-    "h" 'help-command
     "q" 'quit-window
     "w" 'save-buffer
     "k" 'kill-buffer-and-window
 
+    "C-x C-c" 'save-buffers-kill-terminal)
+
+  (evil-leader/set-key
     ;; buffer => b
     "bi" 'ibuffer
     "bb" 'ivy-switch-buffer
@@ -93,8 +96,9 @@
     ;; "cl" 'flycheck-list-errors
     "cl" 'my/toggle-flyc-window
     "cp" 'flycheck-previous-error
-    "cn" 'flycheck-next-error
+    "cn" 'flycheck-next-error)
 
+  (evil-leader/set-key
     ;; ivy => i
     "ii" 'swiper
     "ib" 'counsel-ibuffer
@@ -106,8 +110,9 @@
     "ia" 'counsel-ag
     "iu" 'ivy-resume
     "iv" 'ivy-push-view
-    "iV" 'ivy-pop-view
+    "iV" 'ivy-pop-view)
 
+  (evil-leader/set-key
     ;; j => jump
     "jc" 'avy-goto-char-2
     "jw" 'avy-goto-word-or-subword-1
@@ -118,8 +123,9 @@
 
     ;; list => l
     "li" 'imenu-list-smart-toggle
-    "lt" 'neotree-toggle
+    "lt" 'neotree-toggle)
 
+  (evil-leader/set-key
     ;; mark => m
     "ma" 'mc/mark-all-like-this
     "mm" 'counsel-bookmark
@@ -127,8 +133,9 @@
     "mn" 'remember-notes
     "mr" 'remember
     "mR" 'remember-region
-    "mc" 'remember-clipboard
+    "mc" 'remember-clipboard)
 
+  (evil-leader/set-key
     ;; project => p
     "p SPC" 'keyboard-quit
     "pi" 'projectile-ibuffer
@@ -139,8 +146,9 @@
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-rg
     "pr" 'counsel-projectile-rg
-    "pa" 'counsel-projectile-ag
+    "pa" 'counsel-projectile-ag)
 
+  (evil-leader/set-key
     ;; something => s
     "ss" 'swiper
     "sv" 'ivy-switch-view
@@ -161,9 +169,7 @@
 
     ;; execute => x
     "xx" 'smex
-    "xe" 'eval-last-sexp
-
-    "C-x C-c" 'save-buffers-kill-terminal)
+    "xe" 'eval-last-sexp)
   )
 
 
