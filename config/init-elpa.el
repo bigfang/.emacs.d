@@ -52,7 +52,8 @@
   :bind ("C-'" . imenu-list-smart-toggle)
   :config
   (setq imenu-list-size 0.15
-        imenu-list-auto-resize t))
+        imenu-list-auto-resize t)
+  (evil-set-initial-state 'imenu-list-major-mode 'emacs))
 
 
 (use-package move-text

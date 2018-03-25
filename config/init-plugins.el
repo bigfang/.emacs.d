@@ -1,8 +1,18 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package all-the-icons
+(use-package treemacs
+  :ensure t
+  :bind ("M-0" . treemacs-select-window)
+  :config (setq treemacs-never-persist t))
+
+(use-package treemacs-evil
   :ensure t)
+
+(use-package treemacs-projectile
+  :ensure t
+  :config
+  (setq treemacs-header-function #'treemacs-projectile-create-header))
 
 
 (use-package pyim
@@ -30,16 +40,6 @@
   :ensure t
   :config
   (add-to-list 'company-backends 'company-emoji))
-
-
-;; (use-package smartparens
-;;   :disabled
-;;   :ensure t
-;;   :config
-;;   (use-package smartparens-config
-;;     :ensure nil
-;;     :hook ((prog-mode . show-smartparens-mode)
-;;            (prog-mode . smartparens-mode))))
 
 
 (use-package emmet-mode
@@ -84,19 +84,6 @@
 ;; or htmlfontify
 (use-package htmlize
   :disabled
-  :ensure t)
-
-
-(use-package neotree
-  :ensure t
-  :bind ("C-x C-z" . neotree-toggle)
-  :config
-  (setq neo-smart-open t)
-  (setq projectile-switch-project-action 'neotree-projectile-action)
-  (evil-set-initial-state 'neotree-mode 'emacs))
-
-
-(use-package markdown-mode
   :ensure t)
 
 

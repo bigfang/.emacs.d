@@ -48,5 +48,9 @@
   :ensure t)
 
 
+(use-package markdown-mode
+  :ensure t)
+
+
 (provide 'init-lang)
 ;;; init-lang.el ends here

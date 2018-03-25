@@ -28,8 +28,21 @@
 
 (use-package doom-themes
   :ensure t
+  :init
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
   :config
-  (load-theme 'doom-spacegrey))
+  (load-theme 'doom-spacegrey)
+  (doom-themes-visual-bell-config))
+
+
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-dired
+  :ensure t
+  :hook (dired-mode . all-the-icons-dired-mode))
+
 
 
 ;; === modeline ===

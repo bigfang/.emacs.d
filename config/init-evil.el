@@ -122,8 +122,10 @@
     "jj" 'ffap
 
     ;; list => l
-    "li" 'imenu-list-smart-toggle
-    "lt" 'neotree-toggle)
+    "lt" 'treemacs-select-window
+    "ll" 'treemacs-toggle
+    "lp" 'treemacs-projectile-toggle
+    "li" 'imenu-list-smart-toggle)
 
   (evil-leader/set-key
     ;; mark => m
@@ -171,7 +173,6 @@
     "xx" 'smex
     "xe" 'eval-last-sexp)
   )
-
 
 
 (use-package evil-magit
