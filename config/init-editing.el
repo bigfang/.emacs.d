@@ -15,7 +15,6 @@
 (auto-revert-mode t)
 (delete-selection-mode t)               ; 退格键删除选中区域
 (electric-pair-mode t)
-(show-paren-mode t)
 (transient-mark-mode t)                 ; 高亮选中区域
 
 

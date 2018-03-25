@@ -14,6 +14,7 @@
          ([remap evil-execute-macro] . evil-jump-item)
 
          :map evil-normal-state-map
+         ("zi" . hs-hide-level)
          ("ZZ" . kill-this-buffer)
          ("ZQ" . quit-window)
          ("C-y" . yank)                  ; evil-scroll-line-up
@@ -33,13 +34,13 @@
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
   :config
-  (setq evil-operator-state-cursor '("LightGreen" evil-half-cursor)
+  (setq evil-operator-state-cursor '("goldenrod1" evil-half-cursor)
         evil-motion-state-cursor '("orchid" box)
-        evil-replace-state-cursor '("goldenrod1" box)
+        evil-replace-state-cursor '("MediumPurple1" box)
         evil-emacs-state-cursor '("DeepSkyBlue" box)
         evil-normal-state-cursor '("IndianRed" box)
-        evil-visual-state-cursor '("LightGoldenrod" box)
-        evil-insert-state-cursor '("MediumPurple1" box))
+        evil-visual-state-cursor '("LightGreen" box)
+        evil-insert-state-cursor '("LightGoldenrod" box))
   (evil-mode 1)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'image-mode 'emacs)
@@ -71,10 +72,10 @@
     "=" 'er/expand-region
     "[" 'highlight-symbol-at-point
     "." 'xref-find-definitions
-    "\\" 'split-window-right
-    "-" 'split-window-below
     ";" 'comment-line
     "?" 'help-command
+    "\\" 'hsplit-last-buffer
+    "-" 'vsplit-last-buffer
 
     "f" 'counsel-find-file
     "q" 'quit-window
@@ -187,6 +188,13 @@
   :ensure t
   :config
   (global-evil-surround-mode 1))
+
+
+(use-package evil-escape
+  :ensure t
+  :config
+  (setq-default evil-escape-key-sequence "kj")
+  (evil-escape-mode))
 
 
 (provide 'init-evil)

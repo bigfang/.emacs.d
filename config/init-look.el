@@ -32,7 +32,7 @@
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
   :config
-  (load-theme 'doom-spacegrey)
+  (load-theme 'doom-spacegrey t)
   (doom-themes-visual-bell-config))
 
 
@@ -67,6 +67,7 @@
   (load custom-file))
 
 
+
 ;; display-buffer
 (add-to-list 'display-buffer-alist
              '("\\*.*\\*"
@@ -75,6 +76,16 @@
                (split-window-sensibly)
                (window-height   . 0.2)
                (reusable-frames . visible)))
+
+
+;; show paren
+(use-package paren
+  :ensure t
+  :config
+  (set-face-background 'show-paren-match (face-background 'default))
+  (set-face-foreground 'show-paren-match "#def")
+  (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
+  (show-paren-mode t))
 
 
 (provide 'init-look)

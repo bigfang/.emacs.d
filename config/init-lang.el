@@ -36,6 +36,7 @@
   )
 
 
+;; javascript
 (use-package js2-mode
   :ensure t
   :mode "\\.js\\'"
@@ -44,11 +45,21 @@
   :hook (js2-mode . (lambda () (setq js2-basic-offset 2)))
   )
 
+
+
 (use-package json-mode
   :ensure t)
 
-
 (use-package markdown-mode
+  :ensure t)
+
+(use-package csv-mode
+  :ensure t)
+
+(use-package dockerfile-mode
+  :ensure t)
+
+(use-package nginx-mode
   :ensure t)
 
 

@@ -4,7 +4,7 @@
 (use-package flycheck
   :ensure t
   :pin melpa-stable
-  :hook (python-mode . flycheck-mode)
+  :hook (elpy-mode . flycheck-mode)
   :config
   (defun my/toggle-flyc-window ()
     (interactive)
