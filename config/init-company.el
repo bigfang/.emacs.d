@@ -47,6 +47,13 @@
         company-show-numbers t))
 
 
+(use-package company-flx
+  :ensure t
+  :after company
+  :config
+  (company-flx-mode +1))
+
+
 (use-package company-quickhelp
   :disabled
   :if window-system

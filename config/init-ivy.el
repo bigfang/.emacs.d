@@ -52,7 +52,8 @@
 
 
 (use-package smex
-  :ensure t)
+  :ensure t
+  :bind ("M-X" . smex-major-mode-commands))
 
 
 (provide 'init-ivy)
