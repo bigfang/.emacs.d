@@ -1,6 +1,32 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package evil-anzu
+  :ensure t)
+
+(use-package anzu
+  :ensure t
+  :bind
+  (([remap query-replace] . anzu-query-replace)
+   ([remap query-replace-regexp] . anzu-query-replace-regexp))
+  )
+
+
+(use-package google-translate
+  :ensure t
+  :config
+  (setq url-gateway-method 'socks)
+  (setq socks-server '("Default server" "127.0.0.1" 1080 5))
+  (require 'google-translate-smooth-ui)
+  (setq google-translate-default-source-language "en")
+  (setq google-translate-default-target-language "zh-CN")
+  (setq google-translate-translation-directions-alist
+      '(("en" . "zh-CN")))
+  (global-set-key "\C-ct" 'google-translate-at-point)
+  (global-set-key "\C-cT" 'google-translate-smooth-translate)
+  )
+
+
 (use-package treemacs
   :ensure t
   :bind ("M-0" . treemacs-select-window)
