@@ -9,22 +9,22 @@
   :bind
   (([remap query-replace] . anzu-query-replace)
    ([remap query-replace-regexp] . anzu-query-replace-regexp))
-  )
+  :config
+  (global-anzu-mode 1))
 
 
 (use-package google-translate
   :ensure t
+  :bind (("C-c t" . google-translate-at-point)
+         ("C-c T" . google-translate-smooth-translate))
   :config
-  (setq url-gateway-method 'socks)
-  (setq socks-server '("Default server" "127.0.0.1" 1080 5))
+  ;; (setq url-gateway-method 'socks)
+  ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
   (require 'google-translate-smooth-ui)
-  (setq google-translate-default-source-language "en")
-  (setq google-translate-default-target-language "zh-CN")
+  (setq google-translate-default-source-language "en"
+        google-translate-default-target-language "zh-CN")
   (setq google-translate-translation-directions-alist
-      '(("en" . "zh-CN")))
-  (global-set-key "\C-ct" 'google-translate-at-point)
-  (global-set-key "\C-cT" 'google-translate-smooth-translate)
-  )
+      '(("en" . "zh-CN") ("zh-CN" . "en"))))
 
 
 (use-package treemacs

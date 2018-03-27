@@ -15,8 +15,6 @@
 
          :map evil-normal-state-map
          ("zi" . hs-hide-level)
-         ("ZZ" . kill-this-buffer)
-         ("ZQ" . quit-window)
          ("C-y" . yank)                  ; evil-scroll-line-up
          ([remap evil-jump-item] . evil-execute-macro)
 
@@ -156,6 +154,7 @@
     "ss" 'swiper
     "sv" 'ivy-switch-view
     "sw" 'switch-window
+    "st" 'transpose-frame
 
     ;; undo => u
     "uv" 'undo-tree-visualize

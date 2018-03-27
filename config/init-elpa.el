@@ -101,6 +101,11 @@
   (setq switch-window-shortcut-style 'qwerty))
 
 
+(use-package transpose-frame
+  :ensure t
+  :bind ("C-z t" . transpose-frame))
+
+
 (use-package undo-tree
   :ensure t
   :config (global-undo-tree-mode))

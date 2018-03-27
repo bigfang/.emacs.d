@@ -7,8 +7,8 @@
   :bind (("M-i" . indent-or-complete)
          ;; ("TAB" . indent-or-complete)
          :map company-active-map
-         ("<return>" . company-abort)
-         ("RET" . company-abort)
+         ("<return>" . company-complete-selection)
+         ("RET" . company-complete-selection)
          ("<space>" . my/abort-and-insert-space)
          ("SPC" . my/abort-and-insert-space)
          ("M-i" . company-complete-common-or-cycle)
