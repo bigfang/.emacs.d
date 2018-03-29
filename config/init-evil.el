@@ -107,6 +107,7 @@
     "is" 'counsel-rg
     "ir" 'counsel-rg
     "ia" 'counsel-ag
+    "io" 'counsel-outline
     "iu" 'ivy-resume
     "iv" 'ivy-push-view
     "iV" 'ivy-pop-view)
@@ -142,16 +143,18 @@
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
     "pe" 'projectile-recentf
+    "pr" 'projectile-replace
     "pp" 'counsel-projectile-switch-project
     "pb" 'counsel-projectile-switch-to-buffer
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-rg
-    "pr" 'counsel-projectile-rg
-    "pa" 'counsel-projectile-ag)
+    "pa" 'counsel-projectile-ag
+    "pxe" 'projectile-run-eshell)
 
   (evil-leader/set-key
     ;; something => s
     "ss" 'swiper
+    "sm" 'swiper-multi
     "sv" 'ivy-switch-view
     "sw" 'switch-window
     "st" 'transpose-frame
@@ -167,7 +170,11 @@
     "vds" 'magit-diff-staged
     "vdu" 'magit-diff-unstaged
     "vdf" 'magit-diff-buffer-file
-    "vl" 'magit-log-current
+    "vzz" 'magit-stash
+    "vzp" 'magit-stash-pop
+    "vb" 'magit-blame
+    "vll" 'magit-log-current
+    "vlf" 'magit-log-buffer-file
 
     ;; execute => x
     "xx" 'smex
