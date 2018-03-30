@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-03-23 14:59:32>
+;; Time-stamp: <2018-03-30 10:39:49>
 
 
 
@@ -30,21 +30,22 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'init-pkg)
-(require 'init-look)
-(require 'init-kbd)
-(require 'init-ibuffer)
-(require 'init-builtin)
 
-(require 'init-editing)
-(require 'init-evil)
-(require 'init-ivy)
-(require 'init-company)
-(require 'init-git)
-(require 'init-lang)
-(require 'init-elpa)
+(use-package init-look)
+(use-package init-kbd)
+(use-package init-ibuffer)
+(use-package init-builtin)
 
-(require 'init-plugins)
-(require 'init-utils)
+(use-package init-editing)
+(use-package init-evil)
+(use-package init-ivy)
+(use-package init-company)
+(use-package init-git)
+(use-package init-lang)
+(use-package init-elpa)
+
+(use-package init-plugins)
+(use-package init-utils)
 
 
 ;; automatically garbage collect when switch away from emacs

@@ -34,5 +34,25 @@
   (git-gutter:disabled-modes '(asm-mode hexl-mode image-mode)))
 
 
+(use-package diff-hl
+  :ensure t
+  :hook
+  ((magit-post-refresh . diff-hl-magit-post-refresh)
+   (dired-mode . diff-hl-dired-mode))
+  :config
+  (global-diff-hl-mode)
+  (diff-hl-flydiff-mode)
+  (unless (display-graphic-p)
+    (diff-hl-margin-mode)))
+
+
+(use-package git-timemachine
+  :ensure t
+  :config
+  (evil-make-overriding-map git-timemachine-mode-map 'normal)
+  ;; force update evil keymaps after git-timemachine-mode loaded
+  (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
+
+
 (provide 'init-git)
 ;;; init-git.el ends here
