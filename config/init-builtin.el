@@ -2,6 +2,7 @@
 
 
 (use-package desktop
+  :unless (daemonp)
   :config
   (add-to-list 'desktop-path "~/.emacs.d/")
   (desktop-save-mode t))
