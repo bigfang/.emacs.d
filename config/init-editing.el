@@ -20,9 +20,13 @@
 
 ;; scroll
 (setq mouse-wheel-scroll-amount '(3 ((shift) . 1) ((control)))
-      mouse-wheel-progressive-speed nil
-      scroll-conservatively 101)
+      mouse-wheel-progressive-speed nil)
 (setq next-screen-context-lines 3)
+(setq scroll-step 1
+      scroll-margin 0
+      scroll-conservatively 101)
+(setq hscroll-step 1
+      hscroll-margin 0)
 
 
 (use-package files
