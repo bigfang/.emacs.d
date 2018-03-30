@@ -10,19 +10,7 @@
 
 (use-package dired
   :config
-  (defun mydired-sort ()
-    "Sort dired listings with directories first."
-    (save-excursion
-      (let (buffer-read-only)
-        (forward-line 2) ;; beyond dir. header
-        (sort-regexp-fields t "^.*$" "[ ]*." (point) (point-max)))
-      (set-buffer-modified-p nil)))
-  (defadvice dired-readin
-      (after dired-after-updating-hook first () activate)
-    "Sort dired listings with directories first before adding marks."
-    (mydired-sort))
-
-  (setq dired-listing-switches "-aBhl"
+  (setq dired-listing-switches "-lahv"
         dired-recursive-copies 'top
         dired-recursive-deletes 'top
         dired-dwim-target t)
@@ -45,6 +33,12 @@
 (use-package image-mode
   :bind (:map image-mode-map
         ("u" . image-scroll-down)))
+
+
+(use-package ls-lisp
+  :config
+  (setq ls-lisp-use-insert-directory-program nil
+        ls-lisp-dirs-first t))
 
 
 (use-package recentf
