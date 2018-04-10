@@ -69,6 +69,19 @@
   (evil-set-initial-state 'paradox-menu-mode 'emacs))
 
 
+(use-package pyim
+  :ensure t
+  :config
+  (setq default-input-method "pyim"
+        pyim-default-scheme 'pyim-shuangpin)
+  (setq pyim-fuzzy-pinyin-alist nil)
+  (pyim-isearch-mode -1))
+
+(use-package pyim-basedict
+  :ensure
+  :config (pyim-basedict-enable))
+
+
 (use-package rainbow-delimiters
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode)
