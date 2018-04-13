@@ -29,6 +29,7 @@
   :init
   (setq evil-toggle-key "M-z"
         evil-want-fine-undo nil
+        evil-want-change-word-to-end nil
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
   :config
@@ -177,8 +178,9 @@
     "vlf" 'magit-log-buffer-file
 
     ;; execute => x
-    "xx" 'smex
-    "xe" 'eval-last-sexp)
+    "xe" 'eval-last-sexp
+    "xv" 'ido-find-alternate-file
+    "xx" 'smex)
   )
 
 
