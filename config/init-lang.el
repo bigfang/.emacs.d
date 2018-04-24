@@ -42,21 +42,21 @@
   :mode "\\.js\\'"
   :bind (:map js2-mode-map
          ("<return>" . newline-and-indent))
-  :hook (js2-mode . (lambda () (setq js2-basic-offset 2)))
-  )
+  :config
+  (setq js2-basic-offset 2))
 
 
-
-(use-package json-mode
-  :ensure t)
-
-(use-package markdown-mode
-  :ensure t)
 
 (use-package csv-mode
   :ensure t)
 
 (use-package dockerfile-mode
+  :ensure t)
+
+(use-package json-mode
+  :ensure t)
+
+(use-package markdown-mode
   :ensure t)
 
 (use-package nginx-mode
