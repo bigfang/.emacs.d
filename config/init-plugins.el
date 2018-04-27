@@ -1,6 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package fzf
+  :ensure t)
+
+
 (use-package evil-anzu
   :ensure t)
 
