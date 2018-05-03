@@ -66,7 +66,8 @@
   :ensure t
   :config
   (paradox-enable)
-  (evil-set-initial-state 'paradox-menu-mode 'emacs))
+  (evil-set-initial-state 'paradox-menu-mode 'emacs)
+  (setq paradox-execute-asynchronously t))
 
 
 (use-package pyim
