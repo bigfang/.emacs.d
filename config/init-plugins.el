@@ -37,10 +37,12 @@
   :config (setq treemacs-never-persist t))
 
 (use-package treemacs-evil
-  :ensure t)
+  :ensure t
+  :after treemacs)
 
 (use-package treemacs-projectile
   :ensure t
+  :after treemacs
   :config
   (setq treemacs-header-function #'treemacs-projectile-create-header))
 
