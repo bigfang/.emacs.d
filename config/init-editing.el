@@ -16,6 +16,7 @@
 (delete-selection-mode t)               ; 退格键删除选中区域
 (electric-pair-mode t)
 (transient-mark-mode t)                 ; 高亮选中区域
+(pixel-scroll-mode t)
 
 
 ;; scroll
