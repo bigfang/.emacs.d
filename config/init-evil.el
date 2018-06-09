@@ -57,7 +57,7 @@
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
     "ESC" 'keyboard-quit
-    "SPC" 'keyboard-quit
+    "SPC" 'switch-window
     "RET" 'keyboard-quit
     "TAB" 'previous-buffer
     "DEL" 'next-buffer

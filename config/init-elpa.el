@@ -108,7 +108,7 @@
   :bind ("C-x o" . switch-window)
   :config
   ;; (setq switch-window-auto-resize-window t
-  ;;       switch-window-default-window-size 0.7)
+  ;;       switch-window-default-window-size 0.75)
   (setq switch-window-threshold 2
         switch-window-increase 8
         switch-window-minibuffer-shortcut ?x)
