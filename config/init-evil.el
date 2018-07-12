@@ -158,6 +158,7 @@
     "sm" 'swiper-multi
     "sv" 'ivy-switch-view
     "sw" 'switch-window
+    "sf" 'other-frame
     "st" 'transpose-frame
 
     ;; undo => u
