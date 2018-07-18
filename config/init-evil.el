@@ -76,7 +76,7 @@
     "\\" 'hsplit-last-buffer
     "-" 'vsplit-last-buffer
 
-    "f" 'counsel-find-file
+    "f" 'ido-find-file
     "q" 'quit-window
     "w" 'save-buffer
     "k" 'kill-buffer-and-window

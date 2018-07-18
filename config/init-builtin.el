@@ -48,7 +48,7 @@
 (use-package tramp
   :config
   (setq tramp-default-method "ssh"
-        ;; tramp-default-user "user"
+        tramp-default-user "root"
         ;; tramp-default-host "192\.168\.0\.1"
         password-cache-expiry nil))
 
