@@ -41,7 +41,8 @@
         evil-visual-state-cursor '("LightGreen" box)
         evil-insert-state-cursor '("LightGoldenrod" box))
   (evil-mode 1)
-  (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'ibuffer-mode nil)
+  (evil-set-initial-state 'dired-mode nil)
   (evil-set-initial-state 'image-mode 'emacs)
 
   (setcdr evil-insert-state-map nil)
