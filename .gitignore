@@ -32,6 +32,7 @@ smex-items
 .mc-lists.el
 emacs-custom.el
 
+.cache/
 eshell/
 elpa/
 auto-save-list/

@@ -33,8 +33,11 @@
 
 (use-package treemacs
   :ensure t
-  :bind ("M-0" . treemacs-select-window)
-  :config (setq treemacs-never-persist t))
+  :config
+  (setq treemacs-project-follow-cleanup t)
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode t))
 
 (use-package treemacs-evil
   :ensure t

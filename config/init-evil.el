@@ -124,8 +124,7 @@
 
     ;; list => l
     "lt" 'treemacs-select-window
-    "ll" 'treemacs-toggle
-    "lp" 'treemacs-projectile-toggle
+    "ll" 'treemacs
     "li" 'imenu-list-smart-toggle)
 
   (evil-leader/set-key
