@@ -6,6 +6,8 @@
   :pin melpa-stable
   :bind (
          :map evil-motion-state-map
+         ("gd" . dumb-jump-go)
+         ("gD" . evil-goto-definition)
          ("^" . evil-window-top)
          ("$" . evil-window-bottom)
          ("H" . evil-first-non-blank)
@@ -14,6 +16,7 @@
          ([remap evil-execute-macro] . evil-jump-item)
 
          :map evil-normal-state-map
+         ("gl" . dumb-jump-quick-look)
          ("zi" . hs-hide-level)
          ("C-y" . yank)                  ; evil-scroll-line-up
          ([remap evil-jump-item] . evil-execute-macro)
