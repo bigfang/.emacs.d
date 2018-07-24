@@ -18,6 +18,7 @@
 (set-frame-parameter nil 'alpha 95)
 ;; (set-cursor-color "#cd5c5c")
 (set-face-attribute 'region nil :background "#4682b4" :foreground "black")
+(set-face-attribute 'default nil :font "Monaco 13")
 
 (setq custom-theme-directory "~/.emacs.d/themes")
 (use-package solarized-theme
