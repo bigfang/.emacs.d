@@ -1,8 +1,21 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package fzf
-  :ensure t)
+;; ===  lsp  ===
+;; (require 'init-lsp)
+
+
+(use-package pyim
+  :ensure t
+  :config
+  (setq default-input-method "pyim"
+        pyim-default-scheme 'pyim-shuangpin)
+  (setq pyim-fuzzy-pinyin-alist nil)
+  (pyim-isearch-mode -1))
+
+(use-package pyim-basedict
+  :ensure
+  :config (pyim-basedict-enable))
 
 
 (use-package evil-anzu
@@ -31,29 +44,6 @@
       '(("en" . "zh-CN") ("zh-CN" . "en"))))
 
 
-(use-package treemacs
-  :ensure t
-  :config
-  (setq treemacs-project-follow-cleanup t)
-  (treemacs-follow-mode t)
-  (treemacs-filewatch-mode t)
-  (treemacs-fringe-indicator-mode t))
-
-(use-package treemacs-evil
-  :ensure t
-  :after treemacs)
-
-(use-package treemacs-projectile
-  :ensure t
-  :after treemacs
-  :config
-  (setq treemacs-header-function #'treemacs-projectile-create-header))
-
-
-(use-package imenu-anywhere
-  :ensure t)
-
-
 (use-package emojify
   :ensure t
   :config
@@ -77,6 +67,10 @@
   :config
   (setq emmet-indentation 2
         emmet-preview-default nil))
+
+
+(use-package fzf
+  :ensure t)
 
 
 (use-package fill-column-indicator
@@ -108,14 +102,6 @@
 (use-package htmlize
   :disabled
   :ensure t)
-
-
-;; ===  build-in  packages  ===
-
-
-
-;; ===  lsp  ===
-;; (require 'init-lsp)
 
 
 (provide 'init-plugins)

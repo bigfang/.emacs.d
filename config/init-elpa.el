@@ -1,29 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package flycheck
-  :ensure t
-  :pin melpa-stable
-  :hook (elpy-mode . flycheck-mode)
-  :config
-  (defun my/toggle-flyc-window ()
-    (interactive)
-    (if (get-buffer-window "*Flycheck errors*" t)
-        (with-selected-window
-            (get-buffer-window "*Flycheck errors*" t)
-          (delete-window))
-      (flycheck-list-errors))))
-
-
-(use-package projectile
-  :ensure t
-  :pin melpa-stable
-  :config
-  (setq projectile-completion-system 'ivy)
-  (projectile-mode))
-
-
-
 (use-package auto-yasnippet
   :ensure t
   :bind (("s-w" . aya-create)
@@ -60,18 +37,32 @@
     ("b" dumb-jump-back "Back")))
 
 
+(use-package flycheck
+  :ensure t
+  :pin melpa-stable
+  :hook (elpy-mode . flycheck-mode)
+  :config
+  (defun my/toggle-flyc-window ()
+    (interactive)
+    (if (get-buffer-window "*Flycheck errors*" t)
+        (with-selected-window
+            (get-buffer-window "*Flycheck errors*" t)
+          (delete-window))
+      (flycheck-list-errors))))
+
+
 (use-package highlight-indent-guides
   :ensure t
   :hook (prog-mode . highlight-indent-guides-mode)
   :config
   (setq highlight-indent-guides-method 'character)
   (setq highlight-indent-guides-responsive 'top
-        highlight-indent-guides-delay 0.3)
+        highlight-indent-guides-delay 0.2)
 
   (setq highlight-indent-guides-auto-enabled nil)
-  (set-face-background 'highlight-indent-guides-odd-face "darkgray")
-  (set-face-background 'highlight-indent-guides-even-face "dimgray")
-  (set-face-foreground 'highlight-indent-guides-character-face "dimgray")
+  (set-face-background 'highlight-indent-guides-odd-face "DarkGrey")
+  (set-face-background 'highlight-indent-guides-even-face "DimGrey")
+  (set-face-foreground 'highlight-indent-guides-character-face "DimGrey")
   (set-face-foreground 'highlight-indent-guides-top-character-face "wheat4"))
 
 
@@ -82,6 +73,10 @@
   (highlight-symbol-colors
    '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
   (highlight-symbol-foreground-color "black"))
+
+
+(use-package imenu-anywhere
+  :ensure t)
 
 
 (use-package imenu-list
@@ -107,17 +102,12 @@
   (setq paradox-execute-asynchronously t))
 
 
-(use-package pyim
+(use-package projectile
   :ensure t
+  :pin melpa-stable
   :config
-  (setq default-input-method "pyim"
-        pyim-default-scheme 'pyim-shuangpin)
-  (setq pyim-fuzzy-pinyin-alist nil)
-  (pyim-isearch-mode -1))
-
-(use-package pyim-basedict
-  :ensure
-  :config (pyim-basedict-enable))
+  (setq projectile-completion-system 'ivy)
+  (projectile-mode))
 
 
 (use-package rainbow-delimiters
@@ -155,6 +145,26 @@
 (use-package transpose-frame
   :ensure t
   :bind ("C-z t" . transpose-frame))
+
+
+(use-package treemacs
+  :ensure t
+  :config
+  (setq treemacs-project-follow-cleanup t
+        treemacs-width 30)
+  (treemacs-follow-mode t)
+  (treemacs-filewatch-mode t)
+  (treemacs-fringe-indicator-mode t))
+
+(use-package treemacs-evil
+  :ensure t
+  :after treemacs)
+
+(use-package treemacs-projectile
+  :ensure t
+  :after treemacs
+  :config
+  (setq treemacs-header-function #'treemacs-projectile-create-header))
 
 
 (use-package undo-tree
