@@ -1,6 +1,14 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package hydra
+  :ensure t
+  :after (ibuffer)
+  :config
+  (require 'hydra/conf-dired)
+  (require 'hydra/conf-ibuffer))
+
+
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
@@ -22,7 +30,8 @@
 
 
 (use-package ivy-hydra
-  :ensure t)
+  :ensure t
+  :after (ivy hydra))
 
 
 (use-package swiper
@@ -56,5 +65,5 @@
   :bind ("M-X" . smex-major-mode-commands))
 
 
-(provide 'init-ivy)
-;;; init-ivy.el ends here
+(provide 'init-abo)
+;;; init-abo.el ends here
