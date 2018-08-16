@@ -50,7 +50,8 @@
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
 (global-set-key (kbd "C-z s") 'isearch-forward)
-(global-set-key (kbd "C-z C-z") 'toggle-rot13-mode)
+(global-set-key (kbd "C-z C-z") 'zone)
+(global-set-key (kbd "C-z C-x") 'toggle-rot13-mode)
 
 (global-set-key (kbd "C-`") 'toggle-truncate-lines)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
