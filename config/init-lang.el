@@ -62,6 +62,9 @@
 (use-package nginx-mode
   :ensure t)
 
+(use-package yaml-mode
+  :ensure t)
+
 
 (provide 'init-lang)
 ;;; init-lang.el ends here
