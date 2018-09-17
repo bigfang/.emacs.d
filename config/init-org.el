@@ -8,7 +8,9 @@
 
 
 (use-package org
-  :ensure t)
+  :ensure t
+  :config
+  (setq org-startup-folded nil))
 
 
 (provide 'init-org)
