@@ -13,5 +13,14 @@
   (setq org-startup-folded nil))
 
 
+(use-package org-bullets
+    :ensure t
+    :commands org-bullets-mode
+    :config
+    (add-hook 'org-mode-hook
+              (lambda ()
+                (org-bullets-mode 1))))
+
+
 (provide 'init-org)
 ;;; init-org.el ends here
