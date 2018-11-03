@@ -46,6 +46,12 @@
 
 
 ;; ===
+(use-package all-the-icons-ivy
+  :ensure t
+  :config
+  (all-the-icons-ivy-setup))
+
+
 (use-package avy
   :ensure t
   :bind (("M-g g" . avy-goto-word-or-subword-1)
