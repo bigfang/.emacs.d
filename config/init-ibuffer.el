@@ -16,6 +16,7 @@
            ("Python" (mode . python-mode))
            ("Elixir" (mode . elixir-mode))
            ("Coding" (or (name . "^\\.gitignore$")
+                         (mode . protobuf-mode)
                          (mode . sh-mode)
                          (mode . sql-mode)
                          (mode . ruby-mode)
