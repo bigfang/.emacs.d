@@ -80,7 +80,7 @@
     "\\" 'hsplit-last-buffer
     "-" 'vsplit-last-buffer
 
-    "f" 'ido-find-file
+    "F" 'ido-find-file
     "q" 'quit-window
     "w" 'save-buffer
     "k" 'kill-buffer-and-window
@@ -101,6 +101,15 @@
     "cl" 'my/toggle-flyc-window
     "cp" 'flycheck-previous-error
     "cn" 'flycheck-next-error)
+
+  (evil-leader/set-key
+    ;; frame => f
+    "f0" 'delete-frame
+    "f1" 'delete-other-frames
+    "f2" 'make-frame-command
+    "fn" 'make-frame-command
+    "fo" 'find-file-other-frame
+    "ff" 'other-frame)
 
   (evil-leader/set-key
     ;; ivy => i
