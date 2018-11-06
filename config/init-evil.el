@@ -181,6 +181,7 @@
     "uw" 'winner-undo
 
     ;; version => v
+    "vm" 'git-timemachine
     "vv" 'magit-status
     "vds" 'magit-diff-staged
     "vdu" 'magit-diff-unstaged

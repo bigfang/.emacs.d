@@ -14,7 +14,7 @@
   (pyim-isearch-mode -1))
 
 (use-package pyim-basedict
-  :ensure
+  :ensure nil
   :config (pyim-basedict-enable))
 
 
@@ -62,8 +62,7 @@
          ("C-j" . nil)
          ("<C-return>" . nil)
          ("<M-return>" . emmet-expand-line)
-         ("M-j" . emmet-expand-line)
-         )
+         ("M-j" . emmet-expand-line))
   :config
   (setq emmet-indentation 2
         emmet-preview-default nil))

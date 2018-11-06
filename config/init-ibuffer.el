@@ -40,7 +40,7 @@
                        (mode . lisp-interaction-mode)
                        (name . "^\\*Messages\\*$")
                        (mode . emacs-lisp-mode)))
-           ("VC"  (or (name . "^\\*magit")
+           ("VC"  (or (name . "^magit")
                       (name . "^\\*vc")
                       (mode . diff-mode)
                       (mode . vc-dir-mode)))
