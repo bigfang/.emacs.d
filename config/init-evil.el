@@ -4,8 +4,7 @@
 (use-package evil
   :ensure t
   :pin melpa-stable
-  :bind (
-         :map evil-motion-state-map
+  :bind (:map evil-motion-state-map
          ("gd" . dumb-jump-go)
          ("gD" . evil-goto-definition)
          ("^" . evil-window-top)
@@ -26,8 +25,7 @@
          ("C-o" . evil-execute-in-normal-state)
 
          :map evil-emacs-state-map
-         ([escape] . evil-normal-state)     ; DO NOT USE "ESC"!
-         )
+         ([escape] . evil-normal-state))     ; DO NOT USE "ESC"!
   :hook (git-commit-mode . evil-insert-state)
   :init
   (setq evil-toggle-key "M-z"
@@ -150,6 +148,11 @@
     "mr" 'remember
     "mR" 'remember-region
     "mc" 'remember-clipboard)
+
+  (evil-leader/set-key
+    ;; org-mode => o
+    "od" 'deft
+    "of" 'deft-find-file)
 
   (evil-leader/set-key
     ;; project => p
