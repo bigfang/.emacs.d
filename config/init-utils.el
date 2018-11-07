@@ -2,20 +2,20 @@
 
 
 ;; alpha
-(defun my-emacs-alpha-up ()
+(defun my/emacs-alpha-up ()
   (interactive)
-  (let ((my-emacs-alpha-value (frame-parameter nil 'alpha)))
-    (setf (frame-parameter nil 'alpha) (if (<= (+ my-emacs-alpha-value 5) 100)
-                                           (+ my-emacs-alpha-value 5)
+  (let ((my/emacs-alpha-value (frame-parameter nil 'alpha)))
+    (setf (frame-parameter nil 'alpha) (if (<= (+ my/emacs-alpha-value 5) 100)
+                                           (+ my/emacs-alpha-value 5)
                                          100))))
-(defun my-emacs-alpha-down ()
+(defun my/emacs-alpha-down ()
   (interactive)
-  (let ((my-emacs-alpha-value (frame-parameter nil 'alpha)))
-    (setf (frame-parameter nil 'alpha) (if (>= (- my-emacs-alpha-value 5) 0)
-                                           (- my-emacs-alpha-value 5)
+  (let ((my/emacs-alpha-value (frame-parameter nil 'alpha)))
+    (setf (frame-parameter nil 'alpha) (if (>= (- my/emacs-alpha-value 5) 0)
+                                           (- my/emacs-alpha-value 5)
                                          0))))
-(global-set-key (kbd "<C-s-up>") 'my-emacs-alpha-up)
-(global-set-key (kbd "<C-s-down>") 'my-emacs-alpha-down)
+(global-set-key (kbd "<C-s-up>") 'my/emacs-alpha-up)
+(global-set-key (kbd "<C-s-down>") 'my/emacs-alpha-down)
 
 
 ;; vi o, O

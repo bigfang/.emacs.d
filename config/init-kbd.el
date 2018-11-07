@@ -55,6 +55,7 @@
 
 (global-set-key (kbd "C-`") 'toggle-truncate-lines)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
+(global-set-key (kbd "M-U") 'upcase-word)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-x j") 'ffap)

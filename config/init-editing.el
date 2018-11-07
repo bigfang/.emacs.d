@@ -69,6 +69,7 @@
             (setq truncate-lines t)
             (setq fill-column 80)
             (whitespace-cleanup-on-save)
+            (turn-on-hungry-delete-mode)
 
             ;; (linum-mode t)
             (hs-minor-mode t)

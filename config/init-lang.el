@@ -9,10 +9,8 @@
          ("<C-return>" . vi-open-line-below)
          ("<C-S-return>" . vi-open-line-above)
          ("M-i" . elpy-company-backend)
-         ("M-." . elpy-goto-definition)
-         )
-  :init
-  (elpy-enable)
+         ("M-." . elpy-goto-definition))
+  :init (elpy-enable)
   :config
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
@@ -26,7 +24,9 @@
 
 ;; elixir
 (use-package elixir-mode
-  :ensure t)
+  :ensure t
+  :hook
+  (elixir-mode . (lambda () (add-hook 'before-save-hook 'elixir-format nil t))))
 
 (use-package alchemist
   :ensure t

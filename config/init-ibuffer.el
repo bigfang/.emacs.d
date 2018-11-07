@@ -20,6 +20,7 @@
                          (mode . sh-mode)
                          (mode . sql-mode)
                          (mode . ruby-mode)
+                         (mode . rust-mode)
                          (mode . clojure-mode)))
            ("Web" (or (mode . html-mode)
                       (mode . web-mode)
