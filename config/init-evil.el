@@ -128,9 +128,8 @@
     ;; j => jump
     "jc" 'avy-goto-char-2
     "jw" 'avy-goto-word-or-subword-1
-    "jf" 'avy-goto-line
+    "jl" 'avy-goto-line
     "jr" 'avy-resume
-    "jl" 'goto-line
     "jj" 'ffap
 
     ;; list => l
@@ -208,6 +207,13 @@
 
 (use-package evil-ediff
   :ensure t)
+
+
+(use-package evil-numbers
+  :ensure t
+  :config
+  (define-key evil-normal-state-map (kbd "<left>") 'evil-numbers/dec-at-pt)
+  (define-key evil-normal-state-map (kbd "<right>") 'evil-numbers/inc-at-pt))
 
 
 (use-package evil-surround

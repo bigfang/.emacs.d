@@ -68,6 +68,11 @@
 
 (use-package highlight-symbol
   :ensure t
+  :bind (("<down>" . highlight-symbol-next)
+         ("<up>" . highlight-symbol-prev))
+  :config
+  (define-key evil-motion-state-map (kbd "<up>") 'highlight-symbol-prev)
+  (define-key evil-motion-state-map (kbd "<down>") 'highlight-symbol-next)
   :custom
   (highlight-symbol-colors
    '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
