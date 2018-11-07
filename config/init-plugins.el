@@ -5,6 +5,15 @@
 ;; (require 'init-lsp)
 
 
+;; ===  regexp  ===
+(use-package visual-regexp
+  :ensure t)
+
+(use-package visual-regexp-steroids
+  :ensure t)
+
+
+;; ===  IME ===
 (use-package pyim
   :ensure t
   :config
@@ -18,9 +27,6 @@
   :config (pyim-basedict-enable))
 
 
-(use-package evil-anzu
-  :ensure t)
-
 (use-package anzu
   :ensure t
   :bind
@@ -29,6 +35,14 @@
   :config
   (global-anzu-mode 1))
 
+(use-package evil-anzu
+  :ensure t)
+
+
+(use-package google-this
+  :ensure t
+  :config
+  (google-this-mode 1))
 
 (use-package google-translate
   :ensure t
@@ -93,8 +107,7 @@
   :hook (prog-mode . fci-mode)
   :config
   (setq fci-rule-width 1)
-  (setq fci-rule-color "DimGray")
-  )
+  (setq fci-rule-color "DimGray"))
 
 
 ;; or htmlfontify

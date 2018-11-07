@@ -17,8 +17,7 @@
          ("M-n" . ivy-next-line)
          ("M-p" . ivy-previous-line)
          ("C-n" . ivy-next-history-element)
-         ("C-p" . ivy-previous-history-element)
-         )
+         ("C-p" . ivy-previous-history-element))
   :config
   (setq ivy-re-builders-alist
         '((counsel-M-x . ivy--regex-fuzzy)

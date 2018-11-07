@@ -16,8 +16,7 @@
                                                   nil
                                                   "\\.gitignore\\|\\(__init__\\|setup\\)\\.py")))
                          '("pyls"))
-  (add-hook 'python-mode-hook #'lsp-python-enable)
-  )
+  (add-hook 'python-mode-hook #'lsp-python-enable))
 
 
 (use-package lsp-mode

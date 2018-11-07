@@ -32,8 +32,7 @@
   :ensure t
   :config
   (setq alchemist-key-command-prefix (kbd "C-c ."))
-  (setq alchemist-mix-env "dev")
-  )
+  (setq alchemist-mix-env "dev"))
 
 
 ;; javascript

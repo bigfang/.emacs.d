@@ -76,8 +76,7 @@
                 " " filename-and-process)
           (mark " "
                 (name 16 -1)
-                " " filename)))
-  )
+                " " filename))))
 
 
 (provide 'init-ibuffer)
