@@ -71,6 +71,8 @@
   :bind (("<down>" . highlight-symbol-next)
          ("<up>" . highlight-symbol-prev))
   :config
+  (define-key evil-insert-state-map (kbd "<up>") 'evil-previous-line)
+  (define-key evil-insert-state-map (kbd "<down>") 'evil-next-line)
   (define-key evil-motion-state-map (kbd "<up>") 'highlight-symbol-prev)
   (define-key evil-motion-state-map (kbd "<down>") 'highlight-symbol-next)
   :custom

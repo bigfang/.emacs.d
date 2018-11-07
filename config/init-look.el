@@ -37,14 +37,6 @@
   (doom-themes-visual-bell-config))
 
 
-(use-package all-the-icons
-  :ensure t)
-
-(use-package all-the-icons-dired
-  :ensure t
-  :hook (dired-mode . all-the-icons-dired-mode))
-
-
 
 ;; === modeline ===
 (setq display-time-24hr-format t
@@ -68,7 +60,6 @@
   (load custom-file))
 
 
-
 ;; display-buffer
 (add-to-list 'display-buffer-alist
              '("\\*.*\\*"
@@ -87,6 +78,27 @@
   (set-face-foreground 'show-paren-match "#def")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
   (show-paren-mode t))
+
+
+
+;; === packages ===
+(use-package all-the-icons
+  :ensure t)
+
+(use-package all-the-icons-dired
+  :ensure t
+  :hook (dired-mode . all-the-icons-dired-mode))
+
+
+(use-package beacon
+  :ensure t
+  :config (beacon-mode t))
+
+
+(use-package dimmer
+  :ensure t
+  :config
+  (dimmer-mode))
 
 
 (provide 'init-look)
