@@ -1,13 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-07-29 10:38:37>
-
-
-
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
+;; Time-stamp: <2018-11-08 09:43:08>
 
 
 
@@ -29,24 +21,24 @@
 
 (add-to-list 'load-path "~/.emacs.d/config")
 
-(require 'init-pkg)
+(require 'conf-pkg)
 
-(use-package init-look)
-(use-package init-kbd)
-(use-package init-builtin)
-(use-package init-ibuffer)
-(use-package init-org)
+(use-package conf-look)
+(use-package conf-kbd)
+(use-package conf-builtin)
+(use-package conf-ibuffer)
+(use-package conf-org)
 
-(use-package init-editing)
-(use-package init-evil)
-(use-package init-abo)
-(use-package init-company)
-(use-package init-git)
-(use-package init-lang)
-(use-package init-elpa)
+(use-package conf-evil)
+(use-package conf-nav)
+(use-package conf-editing)
+(use-package conf-abo)
+(use-package conf-coding)
+(use-package conf-git)
+(use-package conf-company)
+(use-package conf-elpa)
 
-(use-package init-plugins)
-(use-package init-utils)
+(use-package conf-utils)
 
 
 ;; automatically garbage collect when switch away from emacs

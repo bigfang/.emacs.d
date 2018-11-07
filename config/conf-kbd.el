@@ -92,5 +92,5 @@
   (define-key function-key-map (concat "\e[emacs-" key) (kbd key)))
 
 
-(provide 'init-kbd)
-;;; init-kbd.el ends here
+(provide 'conf-kbd)
+;;; conf-kbd.el ends here

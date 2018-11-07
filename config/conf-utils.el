@@ -52,5 +52,5 @@
 (global-set-key (kbd "C-x 3") 'hsplit-last-buffer)
 
 
-(provide 'init-utils)
-;;; init-utils.el ends here
+(provide 'conf-utils)
+;;; conf-utils.el ends here

@@ -29,5 +29,5 @@
   (add-to-list 'company-backends 'company-lsp))
 
 
-(provide 'init-lsp)
-;;; init-lsp.el ends here
+(provide 'conf-lsp)
+;;; conf-lsp.el ends here

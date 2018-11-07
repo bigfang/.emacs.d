@@ -1,6 +1,47 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+;; === coding ===
+(use-package auto-yasnippet
+  :ensure t
+  :bind (("s-w" . aya-create)
+         ("s-y" . aya-expand)))
+
+
+(use-package flycheck
+  :ensure t
+  :pin melpa-stable
+  :hook (elpy-mode . flycheck-mode)
+  :config
+  (defun my/toggle-flyc-window ()
+    (interactive)
+    (if (get-buffer-window "*Flycheck errors*" t)
+        (with-selected-window
+            (get-buffer-window "*Flycheck errors*" t)
+          (delete-window))
+      (flycheck-list-errors))))
+
+
+(use-package projectile
+  :ensure t
+  :pin melpa-stable
+  :config
+  (setq projectile-completion-system 'ivy)
+  (projectile-mode))
+
+
+(use-package yasnippet
+  :ensure t
+  :pin melpa
+  :hook (prog-mode . yas-minor-mode)
+  :config
+  (yas-reload-all)
+  (use-package yasnippet-snippets
+    :ensure t))
+
+
+
+;; === programming languages ===
 ;; python
 (use-package elpy
   :ensure t
@@ -12,13 +53,12 @@
          ("M-." . elpy-goto-definition))
   :init (elpy-enable)
   :config
+  (evil-define-key 'normal elpy-mode-map (kbd "gd") 'elpy-goto-definition)
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
           python-shell-interpreter-args "-i --simple-prompt"))
   (setq python-indent-offset 4)
-  (evil-define-key 'normal elpy-mode-map (kbd "gd") 'elpy-goto-definition)
   (setq elpy-rpc-backend "jedi")
-  (defalias 'workon 'pyvenv-workon)
   (remove-hook 'elpy-modules 'elpy-module-flymake))
 
 
@@ -55,9 +95,6 @@
 (use-package json-mode
   :ensure t)
 
-(use-package markdown-mode
-  :ensure t)
-
 (use-package nginx-mode
   :ensure t)
 
@@ -68,5 +105,5 @@
   :ensure t)
 
 
-(provide 'init-lang)
-;;; init-lang.el ends here
+(provide 'conf-coding)
+;;; conf-coding.el ends here

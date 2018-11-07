@@ -64,5 +64,5 @@
   :config (company-statistics-mode 1))
 
 
-(provide 'init-company)
-;;; init-company.el ends here
+(provide 'conf-company)
+;;; conf-company.el ends here

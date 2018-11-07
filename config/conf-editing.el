@@ -69,17 +69,45 @@
             (setq truncate-lines t)
             (setq fill-column 80)
             (whitespace-cleanup-on-save)
-            (turn-on-hungry-delete-mode)
 
             ;; (linum-mode t)
             (hs-minor-mode t)
-            (highlight-indentation-mode t)
+            (highlight-indentation-mode -1)
             (prettify-symbols-mode t)))
 
 
+
+;; === packages ===
 (use-package expand-region
   :ensure t
-  :bind (("C-;" . er/expand-region)))
+  :bind (("C-;" . er/expand-region))
+  :config
+  (setq expand-region-contract-fast-key ","))
+
+
+(use-package string-inflection
+  :ensure t
+  :bind ("M-u" . my/string-inflection-cycle-auto) ; M-U in conf-kbd.el
+  :config
+  (defun my/string-inflection-cycle-auto ()
+    "switching by major-mode"
+    (interactive)
+    (cond
+     ;; for emacs-lisp-mode
+     ((eq major-mode 'emacs-lisp-mode)
+      (string-inflection-all-cycle))
+     ;; for python
+     ((eq major-mode 'python-mode)
+      (string-inflection-python-style-cycle))
+     (t
+      ;; default
+      (string-inflection-all-style-cycle)))))
+
+
+(use-package move-text
+  :ensure t
+  :bind (("<C-S-up>" . move-text-up)
+         ("<C-S-down>" . move-text-down)))
 
 
 (use-package multiple-cursors
@@ -94,5 +122,10 @@
         mc/insert-numbers-default 1))
 
 
-(provide 'init-editing)
-;;; init-editing.el ends here
+(use-package undo-tree
+  :ensure t
+  :config (global-undo-tree-mode))
+
+
+(provide 'conf-editing)
+;;; conf-editing.el ends here

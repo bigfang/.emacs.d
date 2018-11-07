@@ -101,5 +101,5 @@
   (dimmer-mode))
 
 
-(provide 'init-look)
-;;; init-look.el ends here
+(provide 'conf-look)
+;;; conf-look.el ends here

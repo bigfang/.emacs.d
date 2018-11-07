@@ -84,5 +84,5 @@
   :config (winner-mode t))
 
 
-(provide 'init-builtin)
-;;; init-builtin.el ends here
+(provide 'conf-builtin)
+;;; conf-builtin.el ends here

@@ -54,5 +54,5 @@
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 
 
-(provide 'init-git)
-;;; init-git.el ends here
+(provide 'conf-git)
+;;; conf-git.el ends here

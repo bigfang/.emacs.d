@@ -5,7 +5,6 @@
   :ensure t
   :pin melpa-stable
   :bind (:map evil-motion-state-map
-         ("gd" . dumb-jump-go)
          ("gD" . evil-goto-definition)
          ("^" . evil-window-top)
          ("$" . evil-window-bottom)
@@ -15,7 +14,6 @@
          ([remap evil-execute-macro] . evil-jump-item)
 
          :map evil-normal-state-map
-         ("gl" . dumb-jump-quick-look)
          ("zi" . hs-hide-level)
          ("C-y" . yank)                  ; evil-scroll-line-up
          ([remap evil-jump-item] . evil-execute-macro)
@@ -46,6 +44,13 @@
   (evil-set-initial-state 'dired-mode nil)
   (evil-set-initial-state 'image-mode 'emacs)
 
+  (define-key evil-motion-state-map "gd" 'dumb-jump-go)
+  (define-key evil-motion-state-map "gb" 'dumb-jump-back)
+  (define-key evil-motion-state-map "gl" 'dumb-jump-quick-look)
+
+  (define-key evil-motion-state-map (kbd "s-p") 'highlight-symbol-prev)
+  (define-key evil-motion-state-map (kbd "s-n") 'highlight-symbol-next)
+
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
@@ -60,7 +65,7 @@
   (evil-leader/set-key
     "ESC" 'keyboard-quit
     "SPC" 'switch-window
-    "RET" 'keyboard-quit
+    "RET" 'other-frame
     "TAB" 'previous-buffer
     "DEL" 'next-buffer
     "<up>" 'buf-move-up
@@ -70,9 +75,8 @@
 
     "0" 'delete-window
     "1" 'delete-other-windows
-    "=" 'er/expand-region
-    "[" 'highlight-symbol-at-point
-    "." 'xref-find-definitions
+    "=" 'list-packages
+    "`" 'highlight-symbol-at-point
     ";" 'comment-line
     "?" 'help-command
     "\\" 'hsplit-last-buffer
@@ -84,6 +88,16 @@
     "k" 'kill-buffer-and-window
 
     "C-x C-c" 'save-buffers-kill-terminal)
+
+  (evil-leader/set-key
+    ;; . => .
+    ".." 'er/expand-region
+    ".m" 'counsel-imenu
+    ".d" 'xref-find-definitions
+    ;; / => /
+    "//" 'swiper
+    "/s" 'google-this
+    "/ RET" 'google-this-search)
 
   (evil-leader/set-key
     ;; buffer => b
@@ -120,6 +134,8 @@
     "ir" 'counsel-rg
     "ia" 'counsel-ag
     "io" 'counsel-outline
+    "iz" 'counsel-fzf
+    "ia" 'ivy-imenu-anywhere
     "iu" 'ivy-resume
     "iv" 'ivy-push-view
     "iV" 'ivy-pop-view)
@@ -154,23 +170,22 @@
     "of" 'deft-find-file)
 
   (evil-leader/set-key
+    "p SPC" 'pyvenv-workon
     ;; project => p
-    "p SPC" 'keyboard-quit
     "pi" 'projectile-ibuffer
     "pd" 'projectile-dired
     "pe" 'projectile-recentf
     "pr" 'projectile-replace
+    "po" 'projectile-switch-open-project
     "pp" 'counsel-projectile-switch-project
     "pb" 'counsel-projectile-switch-to-buffer
     "pf" 'counsel-projectile-find-file
     "ps" 'counsel-projectile-rg
     "pa" 'counsel-projectile-ag
-    "pxe" 'projectile-run-eshell)
+    "p RET" 'projectile-run-eshell)
 
   (evil-leader/set-key
     ;; something => s
-    "ss" 'swiper
-    "sm" 'swiper-multi
     "sv" 'ivy-switch-view
     "sw" 'switch-window
     "sf" 'other-frame
@@ -178,13 +193,13 @@
 
     ;; undo => u
     "uv" 'undo-tree-visualize
-    "uu" 'undo-tree-undo
-    "ur" 'undo-tree-redo
-    "uw" 'winner-undo
+    "uu" 'winner-undo
+    "ur" 'winner-redo
 
     ;; version => v
     "vm" 'git-timemachine
     "vv" 'magit-status
+    "vr" 'magit-refresh-all
     "vds" 'magit-diff-staged
     "vdu" 'magit-diff-unstaged
     "vdf" 'magit-diff-buffer-file
@@ -212,8 +227,8 @@
 (use-package evil-numbers
   :ensure t
   :config
-  (define-key evil-normal-state-map (kbd "<left>") 'evil-numbers/dec-at-pt)
-  (define-key evil-normal-state-map (kbd "<right>") 'evil-numbers/inc-at-pt))
+  (define-key evil-normal-state-map (kbd "M-<up>") 'evil-numbers/dec-at-pt)
+  (define-key evil-normal-state-map (kbd "M-<down>") 'evil-numbers/inc-at-pt))
 
 
 (use-package evil-surround
@@ -229,5 +244,5 @@
   (evil-escape-mode))
 
 
-(provide 'init-evil)
-;;; init-evil.el ends here
+(provide 'conf-evil)
+;;; conf-evil.el ends here

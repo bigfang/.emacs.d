@@ -11,15 +11,6 @@
   (setq org-startup-folded nil))
 
 
-(use-package org-bullets
-    :ensure t
-    :commands org-bullets-mode
-    :config
-    (add-hook 'org-mode-hook
-              (lambda ()
-                (org-bullets-mode 1))))
-
-
 (use-package deft
   :ensure t
   :commands (deft)
@@ -37,6 +28,26 @@
   (evil-define-key 'normal deft-mode-map (kbd "q") 'quit-window))
 
 
+(use-package org-bullets
+    :ensure t
+    :commands org-bullets-mode
+    :hook (org-mode . (lambda () (org-bullets-mode 1))))
 
-(provide 'init-org)
-;;; init-org.el ends here
+
+(use-package toc-org
+  :ensure t
+  :hook (org-mode . toc-org-enable))
+
+
+
+;; === markdown ===
+(use-package markdown-mode
+  :ensure t)
+
+(use-package markdown-toc
+  :ensure t
+  :bind ("C-c C-q" . markdown-toc-generate-or-refresh-toc))
+
+
+(provide 'conf-org)
+;;; conf-org.el ends here

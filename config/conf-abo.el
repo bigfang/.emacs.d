@@ -35,7 +35,9 @@
 
 (use-package swiper
   :ensure t
-  :bind ("C-s" . swiper))
+  :bind ("C-s" . swiper)
+  :config
+  (define-key evil-motion-state-map "/" 'swiper))
 
 
 (use-package counsel
@@ -70,5 +72,5 @@
   :bind ("M-X" . smex-major-mode-commands))
 
 
-(provide 'init-abo)
-;;; init-abo.el ends here
+(provide 'conf-abo)
+;;; conf-abo.el ends here

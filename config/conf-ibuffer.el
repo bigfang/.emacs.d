@@ -41,7 +41,7 @@
                        (mode . lisp-interaction-mode)
                        (name . "^\\*Messages\\*$")
                        (mode . emacs-lisp-mode)))
-           ("VC"  (or (name . "^magit")
+           ("Git"  (or (name . "^magit")
                       (name . "^\\*vc")
                       (mode . diff-mode)
                       (mode . vc-dir-mode)))
@@ -79,5 +79,5 @@
                 " " filename))))
 
 
-(provide 'init-ibuffer)
-;;; init-ibuffer.el ends here
+(provide 'conf-ibuffer)
+;;; conf-ibuffer.el ends here
