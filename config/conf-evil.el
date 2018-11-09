@@ -76,6 +76,7 @@
     "0" 'delete-window
     "1" 'delete-other-windows
     "=" 'list-packages
+    "." 'er/expand-region
     "`" 'highlight-symbol-at-point
     ";" 'comment-line
     "?" 'help-command
@@ -90,11 +91,9 @@
     "C-x C-c" 'save-buffers-kill-terminal)
 
   (evil-leader/set-key
-    ;; . => .
-    ".." 'er/expand-region
-    ".m" 'counsel-imenu
-    ".d" 'xref-find-definitions
     ;; / => /
+    "/." 'xref-find-definitions
+    "/m" 'counsel-imenu
     "//" 'swiper
     "/s" 'google-this
     "/ RET" 'google-this-search)

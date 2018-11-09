@@ -49,6 +49,7 @@
   :bind
   (("C-x o" . switch-window)
    :map switch-window-extra-map
+   ("i" . nil)
    ("k" . 'switch-window-mvborder-up)
    ("j" . 'switch-window-mvborder-down)
    ("h" . 'switch-window-mvborder-left)
@@ -56,9 +57,14 @@
   :config
   ;; (setq switch-window-auto-resize-window t
   ;;       switch-window-default-window-size 0.75)
-  (setq switch-window-threshold 3
+  (setq switch-window-qwerty-shortcuts
+        '("s" "d" "i" "o" "u" "w" "v" "n"
+          "a" "f" "p" "e" "g" "y"
+          "m" "r" "t" "z" "x" "c"
+          "q" "h" "j" "k" "l" "b"))
+  (setq switch-window-threshold 2
         switch-window-increase 12
-        ;; switch-window-shortcut-appearance 'asciiart
+        switch-window-shortcut-appearance 'asciiart
         switch-window-minibuffer-shortcut ?x)
   (setq switch-window-shortcut-style 'qwerty))
 
