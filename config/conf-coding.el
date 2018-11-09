@@ -47,8 +47,7 @@
   :ensure t
   :pin melpa-stable
   :bind (:map elpy-mode-map
-         ("<C-return>" . vi-open-line-below)
-         ("<C-S-return>" . vi-open-line-above)
+         ;; ("<C-return>" . evil-open-blow)
          ("M-i" . elpy-company-backend)
          ("M-." . elpy-goto-definition))
   :init (elpy-enable)

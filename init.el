@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-11-08 09:43:08>
+;; Time-stamp: <2018-11-09 19:07:06>
 
 
 
@@ -23,6 +23,8 @@
 
 (require 'conf-pkg)
 
+(use-package conf-utils)
+
 (use-package conf-look)
 (use-package conf-kbd)
 (use-package conf-builtin)
@@ -37,8 +39,6 @@
 (use-package conf-git)
 (use-package conf-company)
 (use-package conf-elpa)
-
-(use-package conf-utils)
 
 
 ;; automatically garbage collect when switch away from emacs
