@@ -12,12 +12,15 @@
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
-         ;; ("[escape]" . minibuffer-keyboard-quit)
          ("<escape>" . minibuffer-keyboard-quit)
+         ("s-n" . ivy-next-line-and-call)
+         ("s-p" . ivy-previous-line-and-call)
          ("M-n" . ivy-next-line)
          ("M-p" . ivy-previous-line)
          ("C-n" . ivy-next-history-element)
          ("C-p" . ivy-previous-history-element))
+  :hook ((imenu-after-jump . recenter-top-bottom)
+         (counsel-grep-post-action . recenter-top-bottom))
   :config
   (setq ivy-re-builders-alist
         '((counsel-M-x . ivy--regex-fuzzy)
