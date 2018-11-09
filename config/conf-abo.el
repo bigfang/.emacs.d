@@ -5,8 +5,15 @@
   :ensure t
   :after (dired ibuffer)
   :config
-  (require 'hydra/conf-dired)
-  (require 'hydra/conf-ibuffer))
+  (require 'hydra/hydra-dired)
+  (require 'hydra/hydra-ibuffer)
+  (require 'hydra/hydra-macro)
+
+  (require 'hydra/hydra-flycheck)
+  (require 'hydra/hydra-git-gutter)
+  (require 'hydra/hydra-multiple-cursors)
+  (require 'hydra/hydra-projectile)
+  (require 'hydra/hydra-yasnippet))
 
 
 (use-package ivy
