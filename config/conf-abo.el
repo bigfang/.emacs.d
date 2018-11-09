@@ -3,7 +3,7 @@
 
 (use-package hydra
   :ensure t
-  :after (ibuffer)
+  :after (dired ibuffer)
   :config
   (require 'hydra/conf-dired)
   (require 'hydra/conf-ibuffer))

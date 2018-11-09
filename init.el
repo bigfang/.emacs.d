@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-11-09 19:07:06>
+;; Time-stamp: <2018-11-09 19:24:14>
 
 
 
@@ -38,6 +38,7 @@
 (use-package conf-coding)
 (use-package conf-git)
 (use-package conf-company)
+(use-package conf-docker)
 (use-package conf-elpa)
 
 
