@@ -64,6 +64,7 @@
   (evil-leader/set-leader "SPC")
 
   (evil-leader/set-key
+    "," 'hydra-toggle/body
     "c" 'hydra-flycheck/body
     "g" 'hydra-git-gutter/body
     "p" 'hydra-projectile/body

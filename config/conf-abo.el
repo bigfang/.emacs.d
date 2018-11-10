@@ -5,6 +5,7 @@
   :ensure t
   :after (dired ibuffer)
   :config
+  (require 'hydra/hydra-toggle)
   (require 'hydra/hydra-dired)
   (require 'hydra/hydra-ibuffer)
   (require 'hydra/hydra-info)
