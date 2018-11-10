@@ -9,6 +9,7 @@
   (require 'hydra/hydra-ibuffer)
   (require 'hydra/hydra-info)
   (require 'hydra/hydra-macro)
+  (require 'hydra/hydra-rectangle)
 
   (require 'hydra/hydra-avy)
   (require 'hydra/hydra-flycheck)

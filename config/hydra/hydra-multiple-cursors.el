@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra multiple-cursors-hydra (:hint nil)
+(defhydra hydra-multiple-cursors (:hint nil)
   "
      ^Up^            ^Down^        ^Other^
 ----------------------------------------------
