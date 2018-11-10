@@ -9,8 +9,7 @@
   ("b"  projectile-switch-to-buffer-other-window "buffer")
   ("q"  nil                                      "cancel" :color blue))
 
-(defhydra hydra-projectile (:color teal
-                            :hint nil)
+(defhydra hydra-projectile (:color teal :hint nil)
   "
      PROJECTILE: %(projectile-project-root)
 

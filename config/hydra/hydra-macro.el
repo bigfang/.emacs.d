@@ -3,7 +3,7 @@
 
 (defhydra hydra-macro (:hint nil :color pink :pre
                              (when defining-kbd-macro
-                                 (kmacro-end-macro 1)))
+                               (kmacro-end-macro 1)))
   "
   ^Create-Cycle^   ^Basic^           ^Insert^        ^Save^         ^Edit^
 ╭─────────────────────────────────────────────────────────────────────────╯
