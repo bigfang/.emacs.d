@@ -7,8 +7,10 @@
   :config
   (require 'hydra/hydra-dired)
   (require 'hydra/hydra-ibuffer)
+  (require 'hydra/hydra-info)
   (require 'hydra/hydra-macro)
 
+  (require 'hydra/hydra-avy)
   (require 'hydra/hydra-flycheck)
   (require 'hydra/hydra-git-gutter)
   (require 'hydra/hydra-multiple-cursors)
