@@ -12,11 +12,12 @@
   (require 'hydra/hydra-macro)
   (require 'hydra/hydra-rectangle)
 
-  (require 'hydra/hydra-avy)
   (require 'hydra/hydra-flycheck)
   (require 'hydra/hydra-git-gutter)
   (require 'hydra/hydra-multiple-cursors)
-  (require 'hydra/hydra-projectile))
+  (require 'hydra/hydra-projectile)
+
+  (require 'hydra/hydra-jump))
 
 
 (use-package ivy

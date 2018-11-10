@@ -65,7 +65,9 @@
 
   (evil-leader/set-key
     "," 'hydra-toggle/body
+
     "c" 'hydra-flycheck/body
+    "j" 'hydra-jump/body
     "g" 'hydra-git-gutter/body
     "p" 'hydra-projectile/body
     "v" 'magit-status)
@@ -141,14 +143,7 @@
     "iV" 'ivy-pop-view)
 
   (evil-leader/set-key
-    ;; j => jump
-    "jc" 'avy-goto-char-2
-    "jw" 'avy-goto-word-or-subword-1
-    "jl" 'avy-goto-line
-    "jr" 'avy-resume
-    "jj" 'ffap
-
-    ;; list => l
+        ;; list => l
     "lt" 'treemacs-select-window
     "ll" 'treemacs
     "la" 'ivy-imenu-anywhere
