@@ -14,8 +14,7 @@
   (require 'hydra/hydra-flycheck)
   (require 'hydra/hydra-git-gutter)
   (require 'hydra/hydra-multiple-cursors)
-  (require 'hydra/hydra-projectile)
-  (require 'hydra/hydra-yasnippet))
+  (require 'hydra/hydra-projectile))
 
 
 (use-package ivy
