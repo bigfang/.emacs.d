@@ -62,10 +62,11 @@
   :config
   (global-evil-leader-mode)
   (evil-leader/set-leader "SPC")
+
   (evil-leader/set-key
+    "c" 'hydra-flycheck/body
     "p" 'hydra-projectile/body
     "v" 'magit-status)
-
 
   (evil-leader/set-key
     "ESC" 'keyboard-quit
@@ -109,14 +110,7 @@
     "bb" 'ivy-switch-buffer
     "bn" 'next-buffer
     "bp" 'previous-buffer
-    "bk" 'kill-this-buffer
-
-    ;; check => c
-    "ce" 'flycheck-explain-error-at-point
-    ;; "cl" 'flycheck-list-errors
-    "cl" 'my/toggle-flyc-window
-    "cp" 'flycheck-previous-error
-    "cn" 'flycheck-next-error)
+    "bk" 'kill-this-buffer)
 
   (evil-leader/set-key
     ;; frame => f
