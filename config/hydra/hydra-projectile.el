@@ -16,8 +16,8 @@
     Navigation          Search/Replace          Buffers                Cache
 ------------------------------------------------------------------------------------------
   _d_: dired           _s_: ripgrep           _i_: Ibuffer           _c_: cache clear
-  _f_: file            _a_: ag                _b_: switch to buffer  _x_: remove known project
-  _g_: file dwim       _o_: multi-occur       _K_: Kill buffers      _X_: cleanup non-existing
+  _g_: file            _a_: ag                _b_: switch to buffer  _x_: remove known project
+  _f_: file dwim       _o_: multi-occur       _K_: Kill buffers      _X_: cleanup non-existing
   _e_: recent file     _r_: replace                                ^^_z_: cache current
 
 "
@@ -26,8 +26,8 @@
   ("p"   counsel-projectile-switch-project)
   ("O"   projectile-switch-open-project)
   ("d"   projectile-dired)
-  ("f"   counsel-projectile-find-file)
-  ("g"   counsel-projectile-find-file-dwim)
+  ("g"   counsel-projectile-find-file)
+  ("f"   counsel-projectile-find-file-dwim)
   ("e"   projectile-recentf)
   ("RET" projectile-run-eshell)
 

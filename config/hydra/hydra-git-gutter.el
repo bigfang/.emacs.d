@@ -2,7 +2,7 @@
 
 
 (defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
-                                      :hint nil)
+                            :hint nil)
   "
 Git gutter:
   _j_: next hunk        _s_tage hunk     _q_uit

@@ -65,6 +65,7 @@
 
   (evil-leader/set-key
     "c" 'hydra-flycheck/body
+    "g" 'hydra-git-gutter/body
     "p" 'hydra-projectile/body
     "v" 'magit-status)
 
@@ -177,12 +178,13 @@
     ;; undo => u
     "uv" 'undo-tree-visualize
     "uu" 'winner-undo
-    "ur" 'winner-redo)
+    "ur" 'winner-redo
 
     ;; execute => x
     "xe" 'eval-last-sexp
     "xv" 'ido-find-alternate-file
     "xx" 'smex)
+  )
 
 
 
