@@ -169,19 +169,7 @@
     "of" 'deft-find-file)
 
   (evil-leader/set-key
-    "p SPC" 'pyvenv-workon
-    ;; project => p
-    "pi" 'projectile-ibuffer
-    "pd" 'projectile-dired
-    "pe" 'projectile-recentf
-    "pr" 'projectile-replace
-    "po" 'projectile-switch-open-project
-    "pp" 'counsel-projectile-switch-project
-    "pb" 'counsel-projectile-switch-to-buffer
-    "pf" 'counsel-projectile-find-file
-    "ps" 'counsel-projectile-rg
-    "pa" 'counsel-projectile-ag
-    "p RET" 'projectile-run-eshell)
+    "p" 'hydra-projectile/body)
 
   (evil-leader/set-key
     ;; something => s
