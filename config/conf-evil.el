@@ -63,6 +63,11 @@
   (global-evil-leader-mode)
   (evil-leader/set-leader "SPC")
   (evil-leader/set-key
+    "p" 'hydra-projectile/body
+    "v" 'magit-status)
+
+
+  (evil-leader/set-key
     "ESC" 'keyboard-quit
     "SPC" 'switch-window
     "RET" 'other-frame
@@ -169,9 +174,6 @@
     "of" 'deft-find-file)
 
   (evil-leader/set-key
-    "p" 'hydra-projectile/body)
-
-  (evil-leader/set-key
     ;; something => s
     "sv" 'ivy-switch-view
     "sw" 'switch-window
@@ -181,26 +183,13 @@
     ;; undo => u
     "uv" 'undo-tree-visualize
     "uu" 'winner-undo
-    "ur" 'winner-redo
-
-    ;; version => v
-    "vm" 'git-timemachine
-    "vv" 'magit-status
-    "vr" 'magit-refresh-all
-    "vds" 'magit-diff-staged
-    "vdu" 'magit-diff-unstaged
-    "vdf" 'magit-diff-buffer-file
-    "vzz" 'magit-stash
-    "vzp" 'magit-stash-pop
-    "vb" 'magit-blame
-    "vll" 'magit-log-current
-    "vlf" 'magit-log-buffer-file
+    "ur" 'winner-redo)
 
     ;; execute => x
     "xe" 'eval-last-sexp
     "xv" 'ido-find-alternate-file
     "xx" 'smex)
-  )
+
 
 
 (use-package evil-magit
