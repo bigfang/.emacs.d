@@ -148,7 +148,6 @@
     "ur" 'winner-redo
 
     ;; execute => x
-    "xe" 'eval-last-sexp
     "xv" 'ido-find-alternate-file
     "xx" 'smex)
   )

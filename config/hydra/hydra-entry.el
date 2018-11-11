@@ -62,12 +62,12 @@
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
 
-  ("," hydra-toggle/body)
-  ("c" hydra-flycheck/body)
-  ("p" hydra-projectile/body)
-  ("g" hydra-git-gutter/body)
-  ("i" hydra-ivy/body)
-  ("v" magit-status)
+  ("," hydra-toggle/body "toggle modes")
+  ("c" hydra-flycheck/body "flycheck")
+  ("p" hydra-projectile/body "projectile")
+  ("g" hydra-git-gutter/body "git-gutter")
+  ("i" hydra-abo/body "abo-abo")
+  ("v" magit-status "magit")
 
   ;; cursor
   ("h" windmove-left :color red)

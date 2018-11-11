@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-ivy (:color teal :hint nil :columns 4)
+(defhydra hydra-abo (:color teal :hint nil :columns 4)
   ("i" swiper "swiper")
   ("b" counsel-ibuffer "ibuffer")
   ("f" counsel-find-file "find file")
@@ -19,5 +19,5 @@
   ("q" nil "cancel" :color blue))
 
 
-(provide 'hydra/hydra-ivy)
-;;; hydra-ivy.el ends here
+(provide 'hydra/hydra-abo)
+;;; hydra-abo.el ends here
