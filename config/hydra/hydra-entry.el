@@ -17,9 +17,10 @@
   ("," hydra-toggle/body "toggle modes")
   ("b" hydra-buffer/body "buffer")
   ("c" hydra-flycheck/body "flycheck")
-  ("p" hydra-projectile/body "projectile")
   ("g" hydra-git-gutter/body "git-gutter")
   ("i" hydra-abo/body "abo-abo")
+  ("j" hydra-jump/body "jump")
+  ("p" hydra-projectile/body "projectile")
 
   ("`" highlight-symbol-at-point "highlight symbol")
   ("." er/expand-region "expand-region")
@@ -27,10 +28,10 @@
   ("v" magit-status "magit")
 
   ;; cursor
-  ("h" windmove-left :color red)
-  ("j" windmove-down :color red)
-  ("k" windmove-up :color red)
-  ("l" windmove-right :color red)
+  ("H" windmove-left :color red)
+  ("J" windmove-down :color red)
+  ("K" windmove-up :color red)
+  ("L" windmove-right :color red)
   ("RET" other-frame :color red)
 
   ;; window
@@ -55,7 +56,7 @@
 
   ;; buffer
   ("w" save-buffer)
-  ("K" kill-buffer-and-window)
+  ("k" kill-buffer-and-window)
   ("TAB" previous-buffer)
   ("DEL" next-buffer)
 
