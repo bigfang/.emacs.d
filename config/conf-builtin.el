@@ -84,5 +84,10 @@
   :config (winner-mode t))
 
 
+(use-package zone
+  :config
+  (zone-when-idle 120))
+
+
 (provide 'conf-builtin)
 ;;; conf-builtin.el ends here
