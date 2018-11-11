@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-11-09 19:24:14>
+;; Time-stamp: <2018-11-11 15:27:35>
 
 
 
@@ -22,8 +22,6 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'conf-pkg)
-
-(use-package conf-utils)
 
 (use-package conf-look)
 (use-package conf-kbd)

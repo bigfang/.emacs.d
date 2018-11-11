@@ -4,7 +4,7 @@
 (whitespace-mode -1)
 
 
-(defhydra hydra-toggle (:color pink)
+(defhydra hydra-toggle (:color amaranth)
   "
 _a_ abbrev-mode:       %`abbrev-mode
 _d_ debug-on-error:    %`debug-on-error

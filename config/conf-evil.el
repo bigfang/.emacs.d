@@ -61,41 +61,29 @@
   :pin melpa-stable
   :config
   (global-evil-leader-mode)
-  (evil-leader/set-leader "SPC")
-
-  (evil-leader/set-key
-    "," 'hydra-toggle/body
-
-    "c" 'hydra-flycheck/body
-    "j" 'hydra-jump/body
-    "g" 'hydra-git-gutter/body
-    "p" 'hydra-projectile/body
-    "v" 'magit-status)
+  (evil-leader/set-leader "RET")
 
   (evil-leader/set-key
     "ESC" 'keyboard-quit
-    "SPC" 'switch-window
-    "RET" 'other-frame
-    "TAB" 'previous-buffer
-    "DEL" 'next-buffer
-    "<up>" 'buf-move-up
-    "<down>" 'buf-move-down
-    "<left>" 'buf-move-left
-    "<right>" 'buf-move-right
 
-    "0" 'delete-window
-    "1" 'delete-other-windows
+    ;; "0" 'delete-window
+    ;; "1" 'delete-other-windows
     "=" 'list-packages
     "." 'er/expand-region
     "`" 'highlight-symbol-at-point
     ";" 'comment-line
     "?" 'help-command
-    "\\" 'hsplit-last-buffer
-    "-" 'vsplit-last-buffer
+    "\\" (lambda ()
+           (interactive)
+           (split-window-horizontally)
+           (other-window 1))
+    "-" (lambda ()
+          (interactive)
+          (split-window-vertically)
+          (other-window 1))
 
     "F" 'ido-find-file
     "q" 'quit-window
-    "w" 'save-buffer
     "k" 'kill-buffer-and-window
 
     "C-x C-c" 'save-buffers-kill-terminal)
