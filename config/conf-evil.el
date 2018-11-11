@@ -114,23 +114,6 @@
     "ff" 'other-frame)
 
   (evil-leader/set-key
-    ;; ivy => i
-    "ii" 'swiper
-    "ib" 'counsel-ibuffer
-    "if" 'counsel-find-file
-    "ie" 'counsel-recentf
-    "im" 'counsel-imenu
-    "is" 'counsel-rg
-    "ir" 'counsel-rg
-    "ia" 'counsel-ag
-    "io" 'counsel-outline
-    "iz" 'counsel-fzf
-    "ia" 'ivy-imenu-anywhere
-    "iu" 'ivy-resume
-    "iv" 'ivy-push-view
-    "iV" 'ivy-pop-view)
-
-  (evil-leader/set-key
         ;; list => l
     "lt" 'treemacs-select-window
     "ll" 'treemacs

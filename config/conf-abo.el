@@ -16,6 +16,7 @@
 
   (require 'hydra/hydra-flycheck)
   (require 'hydra/hydra-git-gutter)
+  (require 'hydra/hydra-ivy)
   (require 'hydra/hydra-multiple-cursors)
   (require 'hydra/hydra-projectile)
 

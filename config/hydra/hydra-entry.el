@@ -66,6 +66,7 @@
   ("c" hydra-flycheck/body)
   ("p" hydra-projectile/body)
   ("g" hydra-git-gutter/body)
+  ("i" hydra-ivy/body)
   ("v" magit-status)
 
   ;; cursor
