@@ -66,25 +66,11 @@
   (evil-leader/set-key
     "ESC" 'keyboard-quit
 
-    ;; "0" 'delete-window
-    ;; "1" 'delete-other-windows
     "=" 'list-packages
-    "." 'er/expand-region
-    "`" 'highlight-symbol-at-point
-    ";" 'comment-line
     "?" 'help-command
-    "\\" (lambda ()
-           (interactive)
-           (split-window-horizontally)
-           (other-window 1))
-    "-" (lambda ()
-          (interactive)
-          (split-window-vertically)
-          (other-window 1))
 
     "F" 'ido-find-file
     "q" 'quit-window
-    "k" 'kill-buffer-and-window
 
     "C-x C-c" 'save-buffers-kill-terminal)
 
@@ -95,14 +81,6 @@
     "//" 'swiper
     "/s" 'google-this
     "/ RET" 'google-this-search)
-
-  (evil-leader/set-key
-    ;; buffer => b
-    "bi" 'ibuffer
-    "bb" 'ivy-switch-buffer
-    "bn" 'next-buffer
-    "bp" 'previous-buffer
-    "bk" 'kill-this-buffer)
 
   (evil-leader/set-key
     ;; frame => f
@@ -145,11 +123,7 @@
     ;; undo => u
     "uv" 'undo-tree-visualize
     "uu" 'winner-undo
-    "ur" 'winner-redo
-
-    ;; execute => x
-    "xv" 'ido-find-alternate-file
-    "xx" 'smex)
+    "ur" 'winner-redo)
   )
 
 

@@ -1,54 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; alpha
-(defun my/emacs-alpha-up ()
-  (interactive)
-  (let ((my/emacs-alpha-value (frame-parameter nil 'alpha)))
-    (setf (frame-parameter nil 'alpha) (if (<= (+ my/emacs-alpha-value 5) 100)
-                                           (+ my/emacs-alpha-value 5)
-                                         100))))
-(defun my/emacs-alpha-down ()
-  (interactive)
-  (let ((my/emacs-alpha-value (frame-parameter nil 'alpha)))
-    (setf (frame-parameter nil 'alpha) (if (>= (- my/emacs-alpha-value 5) 0)
-                                           (- my/emacs-alpha-value 5)
-                                         0))))
-
-
-(defun hydra-move-splitter-left (arg)
-  "Move window splitter left."
-  (interactive "p")
-  (if (let* ((windmove-wrap-around))
-        (windmove-find-other-window 'right))
-      (shrink-window-horizontally arg)
-    (enlarge-window-horizontally arg)))
-
-(defun hydra-move-splitter-right (arg)
-  "Move window splitter right."
-  (interactive "p")
-  (if (let* ((windmove-wrap-around))
-        (windmove-find-other-window 'right))
-      (enlarge-window-horizontally arg)
-    (shrink-window-horizontally arg)))
-
-(defun hydra-move-splitter-up (arg)
-  "Move window splitter up."
-  (interactive "p")
-  (if (let* ((windmove-wrap-around))
-        (windmove-find-other-window 'up))
-      (enlarge-window arg)
-    (shrink-window arg)))
-
-(defun hydra-move-splitter-down (arg)
-  "Move window splitter down."
-  (interactive "p")
-  (if (let* ((windmove-wrap-around))
-        (windmove-find-other-window 'up))
-      (shrink-window arg)
-    (enlarge-window arg)))
-
-
 (defhydra hydra-resize-window (:color amaranth)
   "resize window"
   ("h" hydra-move-splitter-left   "left" )
@@ -58,15 +10,20 @@
   ("q" nil "cancel" :color blue))
 
 
-(defhydra hydra-entry (:color pink :exit t :hint nil)
+(defhydra hydra-entry (:color pink :exit t :hint nil :columns 5)
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
 
   ("," hydra-toggle/body "toggle modes")
+  ("b" hydra-buffer/body "buffer")
   ("c" hydra-flycheck/body "flycheck")
   ("p" hydra-projectile/body "projectile")
   ("g" hydra-git-gutter/body "git-gutter")
   ("i" hydra-abo/body "abo-abo")
+
+  ("`" highlight-symbol-at-point "highlight symbol")
+  ("." er/expand-region "expand-region")
+  (";" comment-line "comment" :color red)
   ("v" magit-status "magit")
 
   ;; cursor
@@ -80,16 +37,16 @@
   ("SPC" switch-window)
   ("\\" (lambda ()
           (interactive)
-          (split-window-right)
-          (windmove-right)))
+           (split-window-horizontally)
+           (other-window 1)))
   ("-" (lambda ()
          (interactive)
-         (split-window-below)
-         (windmove-down)))
+          (split-window-vertically)
+          (other-window 1)))
+  ("Q" quit-window)
   ("0" delete-window)
   ("1" delete-other-windows)
   ("S" hydra-resize-window/body)
-
   ("z" (progn
          (winner-undo)
          (setq this-command 'winner-undo))
@@ -98,12 +55,9 @@
 
   ;; buffer
   ("w" save-buffer)
-  ("TAB" previous-buffer :color red)
-  ("DEL" next-buffer :color red)
-  ("<left>" buf-move-left :color red)
-  ("<right>" buf-move-right :color red)
-  ("<up>" buf-move-up :color red)
-  ("<down>" buf-move-down :color red)
+  ("K" kill-buffer-and-window)
+  ("TAB" previous-buffer)
+  ("DEL" next-buffer)
 
   ;; misc
   (">" my/emacs-alpha-up :color red)
@@ -113,6 +67,8 @@
   ("C-x C-c" save-buffers-kill-terminal)
 
   ("xe" eval-last-sexp)
+  ("xv" ido-find-alternate-file)
+  ("xx" smex)
 
   ("ESC" nil "cancel" :color blue)      ; FIXME
   ("q" nil "cancel" :color blue))

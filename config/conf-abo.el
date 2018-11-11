@@ -7,6 +7,8 @@
   :bind (:map evil-motion-state-map
          ("SPC" . hydra-entry/body))
   :config
+  (use-package hydra/hydra-utils)
+
   (require 'hydra/hydra-toggle)
   (require 'hydra/hydra-dired)
   (require 'hydra/hydra-ibuffer)
@@ -20,9 +22,10 @@
   (require 'hydra/hydra-multiple-cursors)
   (require 'hydra/hydra-projectile)
 
+  (use-package hydra/hydra-buffer)
   (require 'hydra/hydra-jump)
 
-  (require 'hydra/hydra-entry))
+  (use-package hydra/hydra-entry))
 
 
 (use-package ivy
