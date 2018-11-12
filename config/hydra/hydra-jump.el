@@ -26,6 +26,7 @@
   ("e" dumb-jump-go-prefer-external "Go external")
   ("x" dumb-jump-go-prefer-external-other-window "Go external other window")
 
+  ("."   xref-find-definitions "xref find")
   ("j" ffap :exit t)
 
   ("q" nil "quit"))

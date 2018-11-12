@@ -22,6 +22,7 @@
   (use-package hydra/hydra-abo)
   (use-package hydra/hydra-multiple-cursors)
   (use-package hydra/hydra-projectile)
+  (use-package hydra/hydra-launcher)
 
   (use-package hydra/hydra-buffer)
   (use-package hydra/hydra-jump)

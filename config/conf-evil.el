@@ -75,14 +75,6 @@
     "C-x C-c" 'save-buffers-kill-terminal)
 
   (evil-leader/set-key
-    ;; / => /
-    "/." 'xref-find-definitions
-    "/m" 'counsel-imenu
-    "//" 'swiper
-    "/s" 'google-this
-    "/ RET" 'google-this-search)
-
-  (evil-leader/set-key
         ;; list => l
     "lt" 'treemacs-select-window
     "ll" 'treemacs
@@ -107,14 +99,9 @@
   (evil-leader/set-key
     ;; something => s
     "sv" 'ivy-switch-view
-    "sw" 'switch-window
-    "sf" 'other-frame
-    "st" 'transpose-frame
 
     ;; undo => u
-    "uv" 'undo-tree-visualize
-    "uu" 'winner-undo
-    "ur" 'winner-redo)
+    "uv" 'undo-tree-visualize)
   )
 
 

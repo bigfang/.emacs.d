@@ -15,6 +15,7 @@
   ("C-p" previous-line :color red)
 
   ("," hydra-toggle/body "toggle modes")
+
   ("b" hydra-buffer/body "buffer")
   ("c" hydra-flycheck/body "flycheck")
   ("f" hydra-frame/body "frame")
@@ -22,6 +23,7 @@
   ("i" hydra-abo/body "abo-abo")
   ("j" hydra-jump/body "jump")
   ("p" hydra-projectile/body "projectile")
+  ("x" hydra-launcher/body "launcher")
 
   ("`" highlight-symbol-at-point "highlight symbol")
   ("." er/expand-region "expand-region")
@@ -67,10 +69,6 @@
   ("M-=" text-scale-increase :color red)
   ("M--" text-scale-decrease :color red)
   ("C-x C-c" save-buffers-kill-terminal)
-
-  ("xe" eval-last-sexp)
-  ("xv" ido-find-alternate-file)
-  ("xx" smex)
 
   ("ESC" nil "cancel" :color blue)      ; FIXME
   ("q" nil "cancel" :color blue))
