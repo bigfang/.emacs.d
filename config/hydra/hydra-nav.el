@@ -48,12 +48,12 @@ Git gutter:
 
 
 (defhydra hydra-highlight (:color pink :hint nil)
-  ("SPC" highlight-symbol-at-point "highlight")
+  ("SPC" highlight-symbol "highlight")
   ("p" highlight-symbol-prev "previous")
   ("n" highlight-symbol-next "next")
-  ("c" highlight-symbol-count "count" :color blue)
+  ("c" highlight-symbol-count "count")
   ("o" highlight-symbol-occur "occur" :color blue)
-  ("a" highlight-symbol-list-all "list" :color blue)
+  ("a" highlight-symbol-list-all "list")
   ("q" nil "cancel" :color blue))
 
 

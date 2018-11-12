@@ -6,10 +6,10 @@
                            :hint nil
                            :post (deactivate-mark))
   "
-  ^_k_^       _w_copy       _o_pen       _N_umber-lines            |\\     -,,,--,,_
-_h_   _l_     _y_ank        _t_ype       _e_xchange-point          /,`.-'`'   ..  \-;;,_
-  ^_j_^       _d_ kill      _c_lear      _r_eset-region-mark      |,4-  ) )_   .;.(  `'-'
-^^^^          _u_ndo        _g_ quit     ^ ^                     '---''(./..)-'(_\_)
+  ^_k_^     [_w_]copy      [_o_]open      [_N_]number-lines            |\\     -,,,--,,_
+_h_   _l_   [_y_]yank      [_t_]type      [_e_]exchange-point          /,`.-'`'   ..  \-;;,_
+  ^_j_^     [_d_]delete    [_c_]clear     [_r_]reset-region-mark      |,4-  ) )_   .;.(  `'-'
+^^^^        [_u_]undo      [_q_]quit      ^ ^                     '---''(./..)-'(_\_)
 "
   ("k" rectangle-previous-line)
   ("j" rectangle-next-line)
@@ -27,7 +27,7 @@ _h_   _l_     _y_ank        _t_ype       _e_xchange-point          /,`.-'`'   ..
            (deactivate-mark)
          (rectangle-mark-mode 1)))
   ("u" undo nil)
-  ("g" nil))      ;; ok
+  ("q" nil))
 
 (global-set-key (kbd "C-x SPC") 'hydra-rectangle/body)
 

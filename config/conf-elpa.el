@@ -27,7 +27,6 @@
   (setq highlight-indent-guides-method 'character)
   (setq highlight-indent-guides-responsive 'top
         highlight-indent-guides-delay 0.2)
-
   (setq highlight-indent-guides-auto-enabled nil)
   (set-face-background 'highlight-indent-guides-odd-face "DarkGrey")
   (set-face-background 'highlight-indent-guides-even-face "DimGrey")
@@ -37,7 +36,8 @@
 
 (use-package highlight-symbol
   :ensure t
-  :chords ("``" . highlight-symbol-at-point)
+  :chords ("``" . highlight-symbol)
+  :hook (prog-mode . highlight-symbol-mode)
   :config
   (setq highlight-symbol-idle-delay .5)
   :custom
