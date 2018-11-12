@@ -52,14 +52,14 @@ _z_ zone:
   ("e" counsel-recentf "recent file")
   ("m" counsel-imenu "imenu")
   ("s" counsel-rg "ripgrep")
-  ("r" counsel-rg "ripgrep")
   ("a" counsel-ag "ag")
   ("o" counsel-outline "outline")
   ("z" counsel-fzf "fzf")
   ("w" ivy-imenu-anywhere "imenu-anywhere")
-  ("u" ivy-resume "resume")
+  ("r" ivy-resume "resume")
   ("v" ivy-push-view "push view")
   ("V" ivy-pop-view "pop view")
+  ("S" ivy-switch-view "switch view")
   ("q" nil "cancel" :color blue))
 
 

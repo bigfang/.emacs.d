@@ -61,17 +61,6 @@
   (evil-leader/set-leader "RET")
 
   (evil-leader/set-key
-    "ESC" 'keyboard-quit
-
-    "=" 'list-packages
-    "?" 'help-command
-
-    "F" 'ido-find-file
-    "q" 'quit-window
-
-    "C-x C-c" 'save-buffers-kill-terminal)
-
-  (evil-leader/set-key
         ;; list => l
     "lt" 'treemacs-select-window
     "ll" 'treemacs
@@ -92,15 +81,6 @@
     ;; org-mode => o
     "od" 'deft
     "of" 'deft-find-file)
-
-  (evil-leader/set-key
-    ;; something => s
-    "sv" 'ivy-switch-view
-
-    ;; undo => u
-    "uv" 'undo-tree-visualize)
-  )
-
 
 
 (use-package evil-magit

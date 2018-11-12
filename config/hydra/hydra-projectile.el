@@ -21,7 +21,8 @@
   _e_: recent file     _r_: replace                                ^^_z_: cache current
 
 "
-  ("SPC" pyvenv-workon)
+  ("="   list-packages "list packages")
+  ("SPC" pyvenv-workon "python workon")
 
   ("p"   counsel-projectile-switch-project)
   ("O"   projectile-switch-open-project)
