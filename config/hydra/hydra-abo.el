@@ -7,6 +7,7 @@
 (defhydra hydra-toggle (:color amaranth)
   "
 _a_ abbrev-mode:       %`abbrev-mode
+_c_ cua-mode:          %`cua-mode
 _d_ debug-on-error:    %`debug-on-error
 _f_ auto-fill-mode:    %`auto-fill-function
 _t_ truncate-lines:    %`truncate-lines
@@ -17,6 +18,7 @@ _r_ rot13-mode:
 _z_ zone:
 "
   ("a" abbrev-mode nil)
+  ("c" cua-mode nil)
   ("d" toggle-debug-on-error nil)
   ("f" auto-fill-mode nil)
   ("t" toggle-truncate-lines nil)
