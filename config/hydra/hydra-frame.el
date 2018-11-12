@@ -5,7 +5,7 @@
   ("0" delete-frame "delete")
   ("1" delete-other-frames "delete other")
   ("2" make-frame-command "create")
-  ("n" make-frame-command "create")
+  ("c" make-frame-command "create")
   ("o" find-file-other-frame "find file")
   ("f" other-frame "other frame" :color red)
   ("t" transpose-frame)

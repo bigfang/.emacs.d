@@ -13,22 +13,24 @@
 (defhydra hydra-leader (:color pink :exit t :hint nil :idle 1 :columns 5)
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
+  ("C-x C-c" save-buffers-kill-terminal "exit" :color blue)
+  (";" comment-line "comment" :color red)
 
+
+  ("." er/expand-region "expand-region")
   ("," hydra-toggle/body "toggle modes")
 
+  ("i" hydra-abo/body "abo-abo")
   ("b" hydra-buffer/body "buffer")
   ("c" hydra-flycheck/body "flycheck")
   ("f" hydra-frame/body "frame")
   ("g" hydra-git-gutter/body "git-gutter")
-  ("i" hydra-abo/body "abo-abo")
+  ("h" hydra-highlight/body "highlight")
   ("j" hydra-jump/body "jump")
   ("p" hydra-projectile/body "projectile")
   ("x" hydra-launcher/body "launcher")
-
-  ("`" highlight-symbol-at-point "highlight symbol")
-  ("." er/expand-region "expand-region")
-  (";" comment-line "comment" :color red)
   ("v" magit-status "magit")
+
 
   ;; cursor
   ("H" windmove-left :color red)
@@ -68,7 +70,6 @@
   ("<" my/emacs-alpha-down :color red)
   ("M-=" text-scale-increase :color red)
   ("M--" text-scale-decrease :color red)
-  ("C-x C-c" save-buffers-kill-terminal)
 
   ("ESC" nil "cancel" :color blue)      ; FIXME
   ("q" nil "cancel" :color blue))

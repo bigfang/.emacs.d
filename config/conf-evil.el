@@ -48,9 +48,6 @@
   (define-key evil-motion-state-map "gb" 'dumb-jump-back)
   (define-key evil-motion-state-map "gl" 'dumb-jump-quick-look)
 
-  (define-key evil-motion-state-map (kbd "s-p") 'highlight-symbol-prev)
-  (define-key evil-motion-state-map (kbd "s-n") 'highlight-symbol-next)
-
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
