@@ -19,9 +19,13 @@
   ("g" hydra-git-gutter/body "git-gutter")
   ("h" hydra-highlight/body "highlight")
   ("j" hydra-jump/body "jump")
+  ("m" hydra-notes/body "notes")
+  ("o" hydra-org/body "org-mode")
   ("p" hydra-projectile/body "projectile")
   ("x" hydra-launcher/body "launcher")
+
   ("t" git-timemachine "git timemachine")
+  ("l" treemacs "treemacs")
   ("v" magit-status "magit")
 
 

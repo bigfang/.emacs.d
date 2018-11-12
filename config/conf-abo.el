@@ -13,6 +13,7 @@
   (use-package hydra/hydra-macro)
   (use-package hydra/hydra-rectangle)
 
+  (use-package hydra/hydra-org)
   (use-package hydra/hydra-multiple-cursors)
   (use-package hydra/hydra-projectile)
 

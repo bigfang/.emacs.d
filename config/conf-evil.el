@@ -53,36 +53,6 @@
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
 
 
-(use-package evil-leader
-  :ensure t
-  :pin melpa-stable
-  :config
-  (global-evil-leader-mode)
-  (evil-leader/set-leader "RET")
-
-  (evil-leader/set-key
-        ;; list => l
-    "lt" 'treemacs-select-window
-    "ll" 'treemacs
-    "la" 'ivy-imenu-anywhere
-    "li" 'imenu-list-smart-toggle)
-
-  (evil-leader/set-key
-    ;; mark => m
-    "ma" 'mc/mark-all-like-this
-    "mm" 'counsel-bookmark
-    "ml" 'bookmark-bmenu-list
-    "mn" 'remember-notes
-    "mr" 'remember
-    "mR" 'remember-region
-    "mc" 'remember-clipboard)
-
-  (evil-leader/set-key
-    ;; org-mode => o
-    "od" 'deft
-    "of" 'deft-find-file)
-
-
 (use-package evil-magit
   :ensure t)
 

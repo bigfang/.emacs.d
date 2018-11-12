@@ -21,9 +21,9 @@ _z_ zone:
   ("t" toggle-truncate-lines nil)
   ("w" whitespace-mode nil)
   ("v" view-mode nil)
-  ("r" toggle-rot13-mode nil :exit t)
-  ("z" zone nil)
-  ("q" nil "quit"))
+  ("r" toggle-rot13-mode nil :color blue)
+  ("z" zone nil :color blue)
+  ("q" nil "quit" :color blue))
 
 
 (defhydra hydra-launcher (:color blue :hint nil :idle .5 :columns 4)
@@ -60,6 +60,8 @@ _z_ zone:
   ("v" ivy-push-view "push view")
   ("V" ivy-pop-view "pop view")
   ("S" ivy-switch-view "switch view")
+
+  ("l" imenu-list-smart-toggle "imenu list")
   ("q" nil "cancel" :color blue))
 
 
