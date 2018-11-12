@@ -57,8 +57,6 @@
   ("TAB" previous-buffer)
   ("DEL" next-buffer)
 
-  ;; misc
-
   ("ESC" nil "cancel" :color blue)      ; FIXME
   ("q" nil "cancel" :color blue))
 

@@ -1,6 +1,16 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(defhydra hydra-buffer (:color teal :hint nil :idle .5)
+  ("i" ibuffer "ibuffer")
+  ("b" ivy-switch-buffer "switch")
+  ("n" next-buffer "next buffer" :color red)
+  ("p" previous-buffer "previous buffer" :color red)
+  ("k" kill-this-buffer "kill buffer")
+
+  ("q" nil "cancel" :color blue))
+
+
 (defhydra hydra-flycheck
   (:pre (progn (setq hydra-lv t) (flycheck-list-errors))
         :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))
@@ -51,6 +61,37 @@ Git gutter:
   ("o" highlight-symbol-occur "occur" :color blue)
   ("a" highlight-symbol-list-all "list" :color blue)
   ("q" nil "cancel" :color blue))
+
+
+(defhydra hydra-jump (:hint nil)
+  "
+      Chars              other                   dumb-jump
+-------------------------------------------------------------------------------
+[_c_]   char         [_w_]   word or subword    [_J_]   go
+[_C_]   char-2       [_s_]   subword            [_o_]   other window
+[_t_]   char-timer   [_l_]   line               [_i_]   prompt
+                                           ^^^^ [_b_]   back
+                   ^^[_j_]   ffap               [_l_]   quick look
+"
+  ("c" avy-goto-char :exit t)
+  ("C" avy-goto-char-2 :exit t)
+  ("t" avy-goto-char-timer :exit t)
+  ("w" avy-goto-word-or-subword-1 :exit t)
+  ("s" avy-goto-subword-1 :exit t)
+  ("l" avy-goto-line :exit t)
+
+  ("J" dumb-jump-go)
+  ("i" dumb-jump-go-prompt)
+  ("o" dumb-jump-go-other-window)
+  ("b" dumb-jump-back)
+  ("l" dumb-jump-quick-look)
+  ("e" dumb-jump-go-prefer-external "Go external")
+  ("x" dumb-jump-go-prefer-external-other-window "Go external other window")
+
+  ("."   xref-find-definitions "xref find")
+  ("j" ffap :exit t)
+
+  ("q" nil "quit"))
 
 
 (provide 'hydra/hydra-nav)
