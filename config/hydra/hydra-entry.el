@@ -10,7 +10,7 @@
   ("q" nil "cancel" :color blue))
 
 
-(defhydra hydra-entry (:color pink :exit t :hint nil :columns 5)
+(defhydra hydra-entry (:color pink :exit t :hint nil :idle 1 :columns 5)
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
 
@@ -32,7 +32,7 @@
   ("J" windmove-down :color red)
   ("K" windmove-up :color red)
   ("L" windmove-right :color red)
-  ("RET" other-frame :color red)
+  ("RET" other-frame)
 
   ;; window
   ("SPC" switch-window)

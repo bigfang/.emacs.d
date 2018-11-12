@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-buffer (:color teal :hint nil)
+(defhydra hydra-buffer (:color teal :hint nil :idle .5)
   ("i" ibuffer "ibuffer")
   ("b" ivy-switch-buffer "switch")
   ("n" next-buffer "next buffer" :color red)
