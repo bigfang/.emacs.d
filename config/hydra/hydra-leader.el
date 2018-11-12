@@ -1,15 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-resize-window (:color amaranth)
-  "resize window"
-  ("h" hydra-move-splitter-left   "left" )
-  ("j" hydra-move-splitter-down   "down")
-  ("k" hydra-move-splitter-up     "up")
-  ("l" hydra-move-splitter-right  "right")
-  ("q" nil "cancel" :color blue))
-
-
 (defhydra hydra-leader (:color pink :exit t :hint nil :idle 1 :columns 5)
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
@@ -20,7 +11,8 @@
   ("." er/expand-region "expand-region")
   ("," hydra-toggle/body "toggle modes")
 
-  ("i" hydra-abo/body "abo-abo")
+  ("a" hydra-adjust/body "adjust")
+  ("i" hydra-abo/body "ivy")
   ("b" hydra-buffer/body "buffer")
   ("c" hydra-flycheck/body "flycheck")
   ("f" hydra-frame/body "frame")
@@ -29,6 +21,7 @@
   ("j" hydra-jump/body "jump")
   ("p" hydra-projectile/body "projectile")
   ("x" hydra-launcher/body "launcher")
+  ("t" git-timemachine "git timemachine")
   ("v" magit-status "magit")
 
 
@@ -52,7 +45,6 @@
   ("Q" quit-window)
   ("0" delete-window)
   ("1" delete-other-windows)
-  ("S" hydra-resize-window/body)
   ("z" (progn
          (winner-undo)
          (setq this-command 'winner-undo))
@@ -66,10 +58,6 @@
   ("DEL" next-buffer)
 
   ;; misc
-  (">" my/emacs-alpha-up :color red)
-  ("<" my/emacs-alpha-down :color red)
-  ("M-=" text-scale-increase :color red)
-  ("M--" text-scale-decrease :color red)
 
   ("ESC" nil "cancel" :color blue)      ; FIXME
   ("q" nil "cancel" :color blue))

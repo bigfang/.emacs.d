@@ -8,11 +8,6 @@
   ("p" previous-buffer "previous buffer" :color red)
   ("k" kill-this-buffer "kill buffer")
 
-  ("H" buf-move-left :color red)
-  ("L" buf-move-right :color red)
-  ("K" buf-move-up :color red)
-  ("J" buf-move-down :color red)
-
   ("q" nil "cancel" :color blue))
 
 

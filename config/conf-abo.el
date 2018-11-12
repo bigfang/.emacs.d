@@ -7,18 +7,15 @@
   :bind (:map evil-motion-state-map
          ("SPC" . hydra-leader/body))
   :config
-  (use-package hydra/hydra-utils)
-
   (use-package hydra/hydra-toggle)
   (use-package hydra/hydra-dired)
-  (use-package hydra/hydra-frame)
+  (use-package hydra/hydra-ui)
   (use-package hydra/hydra-ibuffer)
   (use-package hydra/hydra-info)
   (use-package hydra/hydra-macro)
   (use-package hydra/hydra-rectangle)
 
-  (use-package hydra/hydra-flycheck)
-  (use-package hydra/hydra-git-gutter)
+  (use-package hydra/hydra-nav)
   (use-package hydra/hydra-abo)
   (use-package hydra/hydra-multiple-cursors)
   (use-package hydra/hydra-projectile)
