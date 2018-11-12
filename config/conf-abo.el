@@ -5,7 +5,7 @@
   :ensure t
   :after (dired ibuffer)
   :bind (:map evil-motion-state-map
-         ("SPC" . hydra-entry/body))
+         ("SPC" . hydra-leader/body))
   :config
   (use-package hydra/hydra-utils)
 
@@ -27,7 +27,7 @@
   (use-package hydra/hydra-buffer)
   (use-package hydra/hydra-jump)
 
-  (use-package hydra/hydra-entry))
+  (use-package hydra/hydra-leader))
 
 
 (use-package ivy

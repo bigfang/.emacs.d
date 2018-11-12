@@ -10,7 +10,7 @@
   ("q" nil "cancel" :color blue))
 
 
-(defhydra hydra-entry (:color pink :exit t :hint nil :idle 1 :columns 5)
+(defhydra hydra-leader (:color pink :exit t :hint nil :idle 1 :columns 5)
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
 
@@ -74,5 +74,5 @@
   ("q" nil "cancel" :color blue))
 
 
-(provide 'hydra/hydra-entry)
-;;; hydra-entry.el ends here
+(provide 'hydra/hydra-leader)
+;;; hydra-leader.el ends here
