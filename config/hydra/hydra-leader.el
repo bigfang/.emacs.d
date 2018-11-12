@@ -56,6 +56,9 @@
   ("k" kill-buffer-and-window)
   ("TAB" previous-buffer)
   ("DEL" next-buffer)
+  ("U" undo-tree-visualize :color blue)
+  ("u" undo-tree-undo :color red)
+  ("r" undo-tree-redo :color red)
 
   ("ESC" nil "cancel" :color blue)      ; FIXME
   ("q" nil "cancel" :color blue))
