@@ -9,21 +9,22 @@
   :config
   (use-package hydra/hydra-utils)
 
-  (require 'hydra/hydra-toggle)
-  (require 'hydra/hydra-dired)
-  (require 'hydra/hydra-ibuffer)
-  (require 'hydra/hydra-info)
-  (require 'hydra/hydra-macro)
-  (require 'hydra/hydra-rectangle)
+  (use-package hydra/hydra-toggle)
+  (use-package hydra/hydra-dired)
+  (use-package hydra/hydra-frame)
+  (use-package hydra/hydra-ibuffer)
+  (use-package hydra/hydra-info)
+  (use-package hydra/hydra-macro)
+  (use-package hydra/hydra-rectangle)
 
-  (require 'hydra/hydra-flycheck)
-  (require 'hydra/hydra-git-gutter)
-  (require 'hydra/hydra-abo)
-  (require 'hydra/hydra-multiple-cursors)
-  (require 'hydra/hydra-projectile)
+  (use-package hydra/hydra-flycheck)
+  (use-package hydra/hydra-git-gutter)
+  (use-package hydra/hydra-abo)
+  (use-package hydra/hydra-multiple-cursors)
+  (use-package hydra/hydra-projectile)
 
   (use-package hydra/hydra-buffer)
-  (require 'hydra/hydra-jump)
+  (use-package hydra/hydra-jump)
 
   (use-package hydra/hydra-entry))
 

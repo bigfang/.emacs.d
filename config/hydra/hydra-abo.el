@@ -12,7 +12,7 @@
   ("a" counsel-ag "ag")
   ("o" counsel-outline "outline")
   ("z" counsel-fzf "fzf")
-  ("a" ivy-imenu-anywhere "imenu-anywhere")
+  ("w" ivy-imenu-anywhere "imenu-anywhere")
   ("u" ivy-resume "resume")
   ("v" ivy-push-view "push view")
   ("V" ivy-pop-view "pop view")

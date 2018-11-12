@@ -17,6 +17,7 @@
   ("," hydra-toggle/body "toggle modes")
   ("b" hydra-buffer/body "buffer")
   ("c" hydra-flycheck/body "flycheck")
+  ("f" hydra-frame/body "frame")
   ("g" hydra-git-gutter/body "git-gutter")
   ("i" hydra-abo/body "abo-abo")
   ("j" hydra-jump/body "jump")

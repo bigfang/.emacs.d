@@ -83,15 +83,6 @@
     "/ RET" 'google-this-search)
 
   (evil-leader/set-key
-    ;; frame => f
-    "f0" 'delete-frame
-    "f1" 'delete-other-frames
-    "f2" 'make-frame-command
-    "fn" 'make-frame-command
-    "fo" 'find-file-other-frame
-    "ff" 'other-frame)
-
-  (evil-leader/set-key
         ;; list => l
     "lt" 'treemacs-select-window
     "ll" 'treemacs
