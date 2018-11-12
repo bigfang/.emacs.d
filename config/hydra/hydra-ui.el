@@ -75,6 +75,7 @@
 
 (defhydra hydra-frame (:color pink :exit t :hint nil :idle .5)
   ("0" delete-frame "delete")
+  ("d" delete-frame "delete")
   ("1" delete-other-frames "delete other")
   ("2" make-frame-command "create")
   ("c" make-frame-command "create")
