@@ -29,7 +29,7 @@
   "
 Git gutter:
   _j_: next hunk        _s_tage hunk     _q_uit
-  _k_: previous hunk    _r_evert hunk    _Q_uit and deactivate git-gutter
+  _k_: previous hunk    _r_evert hunk
   ^ ^                   _p_opup hunk
   _h_: first hunk
   _l_: last hunk        set start _R_evision
@@ -44,13 +44,7 @@ Git gutter:
   ("r" git-gutter:revert-hunk)
   ("p" git-gutter:popup-hunk)
   ("R" git-gutter:set-start-revision)
-  ("q" nil :color blue)
-  ("Q" (progn (git-gutter-mode -1)
-              ;; git-gutter-fringe doesn't seem to
-              ;; clear the markup right away
-              (sit-for 0.1)
-              (git-gutter:clear))
-   :color blue))
+  ("q" nil :color blue))
 
 
 (defhydra hydra-highlight (:color pink :hint nil)

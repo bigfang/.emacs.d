@@ -74,9 +74,6 @@
 (use-package avy
   :ensure t
   :bind (("M-g g" . avy-goto-word-or-subword-1)
-         ("<f1> f" . counsel-describe-function)
-         ("<f1> v" . counsel-describe-variable)
-         ("<f1> S" . counsel-info-lookup-symbol)
          ("M-g f" . avy-goto-line)))
 
 

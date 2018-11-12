@@ -12,6 +12,7 @@ _f_ auto-fill-mode:    %`auto-fill-function
 _t_ truncate-lines:    %`truncate-lines
 _w_ whitespace-mode:   %`whitespace-mode
 _v_ view-mode:         %`view-mode
+_m_ xterm-mouse-mode   %`xterm-mouse-mode
 _r_ rot13-mode:
 _z_ zone:
 "
@@ -21,6 +22,7 @@ _z_ zone:
   ("t" toggle-truncate-lines nil)
   ("w" whitespace-mode nil)
   ("v" view-mode nil)
+  ("m" xterm-mouse-mode nil)
   ("r" toggle-rot13-mode nil :color blue)
   ("z" zone nil :color blue)
   ("q" nil "quit" :color blue))
