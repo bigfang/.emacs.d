@@ -4,9 +4,24 @@
 (use-package hydra
   :ensure t
   :after (dired ibuffer)
+  :bind (:map evil-motion-state-map
+         ("SPC" . hydra-leader/body))
   :config
-  (require 'hydra/conf-dired)
-  (require 'hydra/conf-ibuffer))
+  (use-package hydra/hydra-dired)
+  (use-package hydra/hydra-ibuffer)
+  (use-package hydra/hydra-info)
+  (use-package hydra/hydra-macro)
+  (use-package hydra/hydra-rectangle)
+
+  (use-package hydra/hydra-org)
+  (use-package hydra/hydra-multiple-cursors)
+  (use-package hydra/hydra-projectile)
+
+  (use-package hydra/hydra-abo)
+  (use-package hydra/hydra-nav)
+  (use-package hydra/hydra-ui)
+
+  (use-package hydra/hydra-leader))
 
 
 (use-package ivy
@@ -59,9 +74,6 @@
 (use-package avy
   :ensure t
   :bind (("M-g g" . avy-goto-word-or-subword-1)
-         ("<f1> f" . counsel-describe-function)
-         ("<f1> v" . counsel-describe-variable)
-         ("<f1> S" . counsel-info-lookup-symbol)
          ("M-g f" . avy-goto-line)))
 
 

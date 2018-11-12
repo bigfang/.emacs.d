@@ -55,5 +55,5 @@ T - tag prefix
 (define-key dired-mode-map "." 'hydra-dired/body)
 
 
-(provide 'hydra/conf-dired)
-;;; conf-dired.el ends here
+(provide 'hydra/hydra-dired)
+;;; hydra-dired.el ends here

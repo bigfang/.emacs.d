@@ -50,21 +50,13 @@
 (global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
 (global-set-key (kbd "C-z s") 'isearch-forward)
-(global-set-key (kbd "C-z C-z") 'zone)
-(global-set-key (kbd "C-z C-x") 'toggle-rot13-mode)
 
-(global-set-key (kbd "C-`") 'toggle-truncate-lines)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
 (global-set-key (kbd "M-U") 'upcase-word)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-x j") 'ffap)
 (global-set-key (kbd "C-M-]") 'align-entire)
-
-(global-set-key (kbd "<s-up>") 'enlarge-window)
-(global-set-key (kbd "<s-down>") 'shrink-window)
-(global-set-key (kbd "<s-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<s-right>") 'enlarge-window-horizontally)
 
 (global-set-key (kbd "C-M-j")
                 (lambda ()

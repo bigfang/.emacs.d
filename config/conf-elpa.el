@@ -38,6 +38,8 @@
 (use-package highlight-symbol
   :ensure t
   :chords ("``" . highlight-symbol-at-point)
+  :config
+  (setq highlight-symbol-idle-delay .5)
   :custom
   (highlight-symbol-colors
    '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))

@@ -94,5 +94,5 @@
 (define-key ibuffer-mode-map "." 'hydra-ibuffer-main/body)
 
 
-(provide 'hydra/conf-ibuffer)
-;;; conf-ibuffer.el ends here
+(provide 'hydra/hydra-ibuffer)
+;;; hydra-ibuffer.el ends here
