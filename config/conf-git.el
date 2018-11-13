@@ -1,5 +1,16 @@
 ;; -*- mode: Emacs-Lisp -*-
 
+(use-package gitattributes-mode
+  :ensure t)
+
+(use-package gitconfig-mode
+  :ensure t)
+
+(use-package gitignore-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist
+               (cons "/.dockerignore\\'" 'gitignore-mode)))
 
 (use-package magit
   :ensure t
