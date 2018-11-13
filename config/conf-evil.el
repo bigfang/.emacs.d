@@ -27,7 +27,8 @@
   :hook (git-commit-mode . evil-insert-state)
   :init
   (setq evil-toggle-key "M-z"
-        evil-want-fine-undo nil
+        evil-want-keybinding nil        ; for evil-collection
+        evil-want-fine-undo t
         evil-want-change-word-to-end nil
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
@@ -57,8 +58,11 @@
   :ensure t)
 
 
-(use-package evil-ediff
-  :ensure t)
+(use-package evil-collection
+  :ensure t
+  :after evil
+  :config
+  (evil-collection-init '(calendar ediff magit)))
 
 
 (use-package evil-numbers
