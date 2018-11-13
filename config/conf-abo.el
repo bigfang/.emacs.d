@@ -28,6 +28,7 @@
   :ensure t
   :bind (:map ivy-minibuffer-map
          ("<escape>" . minibuffer-keyboard-quit)
+         ("M-u" . ivy-occur)
          ("s-n" . ivy-next-line-and-call)
          ("s-p" . ivy-previous-line-and-call)
          ("M-n" . ivy-next-line)
