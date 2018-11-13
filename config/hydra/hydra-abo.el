@@ -46,6 +46,7 @@ _z_ zone:
   ("e"   eval-last-sexp)
   ("v"   ido-find-alternate-file)
   ("x"   smex)
+  ("!"   shell-command)
   ("q"   nil "cancel" :color blue))
 
 
