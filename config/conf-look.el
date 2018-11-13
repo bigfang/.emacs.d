@@ -77,7 +77,7 @@
   (set-face-background 'show-paren-match (face-background 'default))
   (set-face-foreground 'show-paren-match "#def")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
-  (show-paren-mode t))
+  (show-paren-mode -1))
 
 
 

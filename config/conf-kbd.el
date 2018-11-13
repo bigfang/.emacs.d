@@ -51,6 +51,8 @@
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
 (global-set-key (kbd "C-z s") 'isearch-forward)
 
+(global-set-key (kbd "C-SPC") 'just-one-space)
+(global-set-key (kbd "M-SPC") 'set-mark-command)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
 (global-set-key (kbd "M-U") 'upcase-word)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)

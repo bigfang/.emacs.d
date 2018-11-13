@@ -13,8 +13,8 @@
 
 (defhydra hydra-flycheck
   (:pre (progn (setq hydra-lv t) (flycheck-list-errors))
-        :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))
-        :hint nil)
+   :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))
+   :hint nil)
   "Errors"
   ("f"  flycheck-error-list-set-filter                            "Filter")
   ("j"  flycheck-next-error                                       "Next")
@@ -25,6 +25,7 @@
 
 
 (defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
+                            :color pink
                             :hint nil)
   "
 Git gutter:

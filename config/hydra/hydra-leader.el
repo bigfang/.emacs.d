@@ -59,7 +59,7 @@
   ;; buffer
   ("w" save-buffer)
   ("k" kill-buffer-and-window)
-  ("TAB" previous-buffer)
+  ("<tab>" previous-buffer)
   ("DEL" next-buffer)
   ("U" undo-tree-visualize :color blue)
   ("u" undo-tree-undo :color red)
