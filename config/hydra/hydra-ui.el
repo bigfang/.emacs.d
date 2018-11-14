@@ -52,7 +52,7 @@
 
 
 (defhydra hydra-adjust (:color amaranth :hint nil :columns 3)
-  "adjust"
+  "Adjust windows"
   ("h" hydra-move-splitter-left   "window left" )
   ("j" hydra-move-splitter-down   "window down")
   ("k" hydra-move-splitter-up     "window up")
@@ -74,6 +74,7 @@
 
 
 (defhydra hydra-frame (:color pink :exit t :hint nil :idle .5 :columns 3)
+  "Frames"
   ("0" delete-frame "delete")
   ("d" delete-frame "delete")
   ("1" delete-other-frames "delete other")

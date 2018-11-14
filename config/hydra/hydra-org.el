@@ -2,6 +2,7 @@
 
 
 (defhydra hydra-notes (:color pink :exit t :hint nil :idle .5)
+  "bookmark Notes Remember "
   ("m" counsel-bookmark "jump bookmark")
   ("d" bookmark-delete "delete bookmark")
   ("l" bookmark-bmenu-list "list")
@@ -13,6 +14,7 @@
 
 
 (defhydra hydra-org (:color pink :exit t :hint nil :idle .5)
+  "Org-mode"
   ("d" deft "deft")
   ("f" deft-find-file "find file")
   ("q" nil "cancel" :color blue))

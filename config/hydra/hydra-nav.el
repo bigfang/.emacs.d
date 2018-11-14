@@ -1,13 +1,13 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-buffer (:color teal :hint nil :idle .5)
+(defhydra hydra-buffer (:color teal :hint nil :idle .5 :columns 3)
+  "Buffer"
   ("i" ibuffer "ibuffer")
   ("b" ivy-switch-buffer "switch")
   ("n" next-buffer "next buffer" :color red)
   ("p" previous-buffer "previous buffer" :color red)
   ("k" kill-this-buffer "kill buffer")
-
   ("q" nil "cancel" :color blue))
 
 
@@ -24,31 +24,34 @@
   ("q"  nil))
 
 
-(defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
+(defhydra hydra-git-gutter (; :body-pre (git-gutter-mode 1)
                             :color pink
                             :hint nil)
   "
 Git gutter:
-  _j_: next hunk        _s_tage hunk     _q_uit
-  _k_: previous hunk    _r_evert hunk
-  ^ ^                   _p_opup hunk
-  _h_: first hunk
-  _l_: last hunk        set start _R_evision
+  ^^^ Move ^^^   |    hunk
+-----^^^^^^------|---------------
+   ^ ^ _K_ ^ ^   |   _s_tage
+   _H_ ^+^ _L_   |   _r_evert
+   ^ ^ _J_ ^ ^   |   _p_opup
 "
-  ("j" git-gutter:next-hunk)
-  ("k" git-gutter:previous-hunk)
-  ("h" (progn (goto-char (point-min))
+  ("n" git-gutter:next-hunk "next hunk")
+  ("p" git-gutter:previous-hunk "prev hunk")
+  ("J" git-gutter:next-hunk)
+  ("K" git-gutter:previous-hunk)
+  ("H" (progn (goto-char (point-min))
               (git-gutter:next-hunk 1)))
-  ("l" (progn (goto-char (point-min))
+  ("L" (progn (goto-char (point-min))
               (git-gutter:previous-hunk 1)))
   ("s" git-gutter:stage-hunk)
   ("r" git-gutter:revert-hunk)
   ("p" git-gutter:popup-hunk)
-  ("R" git-gutter:set-start-revision)
+  ("R" git-gutter:set-start-revision "Set Start Revision")
   ("q" nil :color blue))
 
 
 (defhydra hydra-highlight (:color pink :hint nil)
+  "Highlight"
   ("SPC" highlight-symbol "highlight")
   ("p" highlight-symbol-prev "previous")
   ("n" highlight-symbol-next "next")
@@ -60,13 +63,13 @@ Git gutter:
 
 (defhydra hydra-jump (:hint nil)
   "
-      Chars              other                   dumb-jump
+   ^Chars^             ^other^                ^dumb-jump^
 -------------------------------------------------------------------------------
-[_c_]   char         [_w_]   word or subword    [_J_]   go
-[_C_]   char-2       [_s_]   subword            [_o_]   other window
-[_t_]   char-timer   [_l_]   line               [_i_]   prompt
-                                           ^^^^ [_b_]   back
-                   ^^[_j_]   ffap               [_l_]   quick look
+[_c_] char         [_w_] word / subword    [_J_] go
+[_C_] char-2       [_s_] subword           [_o_] other window
+[_t_] char-timer   [_l_] line              [_i_] prompt
+                                   ^^^^    [_b_] back
+                 ^^[_j_] ffap              [_l_] quick look
 "
   ("c" avy-goto-char :exit t)
   ("C" avy-goto-char-2 :exit t)
@@ -85,7 +88,6 @@ Git gutter:
 
   ("."   xref-find-definitions "xref find")
   ("j" ffap :exit t)
-
   ("q" nil "quit"))
 
 
