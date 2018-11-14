@@ -26,16 +26,16 @@
   ("r" mc/reverse-regions "reverse")
   ("q" nil :color blue))
 
-(global-set-key [remap undo-tree-undo] 'hydra-multiple-cursors/body)
+(global-set-key (kbd "C-:") 'hydra-multiple-cursors/body)
 
 
 
-(defhydra hydra-markdown-mode (:hint nil)
+(defhydra hydra-markdown-mode (:color pink :hint nil)
   "
 Formatting        C-c C-s    _s_: bold          _e_: italic     _b_: blockquote   _p_: pre-formatted    _c_: code
-Headings          C-c C-t    _h_: automatic     _1_: h1         _2_: h2           _3_: h3               _4_: h4
+Headings          C-c C-t    _H_: automatic     _1_: h1         _2_: h2           _3_: h3               _4_: h4
 Lists             C-c C-x    _m_: insert item
-Demote/Promote    C-c C-x    _l_: promote       _r_: demote     _u_: move up      _d_: move down
+Demote/Promote    C-c C-x    _i_: promote       _r_: demote     _u_: move up      _d_: move down
 Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote     _W_: wiki-link      _R_: reference
 
 "
@@ -45,7 +45,7 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
   ("p" markdown-insert-pre :color blue)
   ("c" markdown-insert-code)
 
-  ("h" markdown-insert-header-dwim)
+  ("H" markdown-insert-header-dwim)
   ("1" markdown-insert-header-atx-1)
   ("2" markdown-insert-header-atx-2)
   ("3" markdown-insert-header-atx-3)
@@ -53,7 +53,7 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
 
   ("m" markdown-insert-list-item)
 
-  ("l" markdown-promote)
+  ("i" markdown-promote)
   ("r" markdown-demote)
   ("d" markdown-move-down)
   ("u" markdown-move-up)
@@ -63,6 +63,7 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
   ("F" markdown-insert-footnote :color blue)
   ("W" markdown-insert-wiki-link :color blue)
   ("R" markdown-insert-reference-link-dwim :color blue)
+  ("<f9>" nil)
   ("q" nil "cancel" :color blue))
 
 (define-key markdown-mode-map [f9] 'hydra-markdown-mode/body)

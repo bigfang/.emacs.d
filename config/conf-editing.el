@@ -122,6 +122,7 @@
         mc/insert-numbers-default 1))
 
 
+;; TOTO: disable undo-tree key binding
 (use-package undo-tree
   :ensure t
   :config (global-undo-tree-mode))
