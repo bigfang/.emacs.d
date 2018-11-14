@@ -46,6 +46,7 @@ _z_ zone:
   ("e"   eval-last-sexp)
   ("v"   ido-find-alternate-file)
   ("x"   smex)
+  (":"   eval-expression)
   ("!"   shell-command)
   ("q"   nil "cancel" :color blue))
 
@@ -68,6 +69,47 @@ _z_ zone:
 
   ("l" imenu-list-smart-toggle "imenu list")
   ("q" nil "cancel" :color blue))
+
+(defhydra soo-ivy (:hint nil :color pink)
+  "
+ Move     ^^^^^^^^^^ | Call           ^^^^ | Options^^ | Action _w_/_s_/_a_: %s(ivy-action-name)
+----------^^^^^^^^^^-+----------------^^^^-+--------^^-+---------------------------------
+ _g_ ^ ^ _k_ ^ ^ _u_ | _f_ollow    _o_ccur | _c_alling: %-7s(if ivy-calling \"on\" \"off\") _C_ase-fold: %-10`ivy-case-fold-search
+ ^↨^ _h_ ^+^ _l_ ^↕^ | _TAB_ call      ^^  | _m_atcher: %-7s(ivy--matcher-desc) _t_runcate: %-11`truncate-lines
+ _G_ ^ ^ _j_ ^ ^ _d_ | _⏎_ done       ^^  | _<_/_>_: shrink/grow
+"
+  ;; arrows
+  ("j" ivy-next-line)
+  ("k" ivy-previous-line)
+  ("l" ivy-alt-done)
+  ("h" ivy-backward-delete-char)
+  ("g" ivy-beginning-of-buffer)
+  ("G" ivy-end-of-buffer)
+  ("d" ivy-scroll-up-command)
+  ("u" ivy-scroll-down-command)
+  ("e" ivy-scroll-down-command)
+  ;; actions
+  ("C-g" keyboard-escape-quit :exit t)
+  ("<escape>" keyboard-escape-quit :exit t)
+  ("C-o" nil)
+  ("q" nil)
+  ("f" ivy-alt-done :exit nil)
+  ("C-j" ivy-alt-done :exit nil)
+  ("RET" ivy-done :exit t)
+  ("C-m" ivy-done :exit t)
+  ("TAB" ivy-call)
+  ("c" ivy-toggle-calling)
+  ("m" ivy-rotate-preferred-builders)
+  (">" ivy-minibuffer-grow)
+  ("<" ivy-minibuffer-shrink)
+  ("w" ivy-prev-action)
+  ("s" ivy-next-action)
+  ("a" ivy-read-action)
+  ("t" (setq truncate-lines (not truncate-lines)))
+  ("C" ivy-toggle-case-fold)
+  ("o" ivy-occur :exit t))
+
+(define-key ivy-minibuffer-map (kbd "C-o") 'soo-ivy/body)
 
 
 (provide 'hydra/hydra-abo)
