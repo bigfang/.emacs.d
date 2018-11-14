@@ -73,7 +73,7 @@
   ("q" nil "cancel" :color blue))
 
 
-(defhydra hydra-frame (:color pink :exit t :hint nil :idle .5)
+(defhydra hydra-frame (:color pink :exit t :hint nil :idle .5 :columns 3)
   ("0" delete-frame "delete")
   ("d" delete-frame "delete")
   ("1" delete-other-frames "delete other")
@@ -81,6 +81,8 @@
   ("c" make-frame-command "create")
   ("o" find-file-other-frame "find file")
   ("f" other-frame "other frame" :color red)
+  ("DEL" ns-next-frame "next frame" :color red)
+  ("<tab>" ns-prev-frame "previous frame" :color red)
   ("q" nil "cancel" :color blue))
 
 
