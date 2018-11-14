@@ -14,11 +14,11 @@
   (use-package hydra/hydra-rectangle)
 
   (use-package hydra/hydra-org)
-  (use-package hydra/hydra-multiple-cursors)
   (use-package hydra/hydra-projectile)
 
   (use-package hydra/hydra-abo)
   (use-package hydra/hydra-nav)
+  (use-package hydra/hydra-editing)
   (use-package hydra/hydra-ui)
 
   (use-package hydra/hydra-leader))
