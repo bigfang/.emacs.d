@@ -24,7 +24,7 @@
   ("q"  nil))
 
 
-(defhydra hydra-git-gutter (; :body-pre (git-gutter-mode 1)
+(defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
                             :color pink
                             :hint nil)
   "
@@ -45,12 +45,13 @@ Git gutter:
               (git-gutter:previous-hunk 1)))
   ("s" git-gutter:stage-hunk)
   ("r" git-gutter:revert-hunk)
-  ("p" git-gutter:popup-hunk)
+  ("d" git-gutter:popup-hunk)
   ("R" git-gutter:set-start-revision "Set Start Revision")
   ("q" nil :color blue))
 
 
-(defhydra hydra-highlight (:color pink :hint nil)
+(defhydra hydra-highlight (:body-pre (highlight-symbol-mode 1)
+                           :color pink :hint nil :columns 3)
   "Highlight"
   ("SPC" highlight-symbol "highlight")
   ("p" highlight-symbol-prev "previous")

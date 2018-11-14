@@ -50,6 +50,7 @@ _z_ zone:
 
 
 (defhydra hydra-abo (:color teal :hint nil :idle .5 :columns 4)
+  "swiper"
   ("i" swiper "swiper")
   ("b" counsel-ibuffer "ibuffer")
   ("f" counsel-find-file "find file")
@@ -68,7 +69,7 @@ _z_ zone:
   ("l" imenu-list-smart-toggle "imenu list")
   ("q" nil "cancel" :color blue))
 
-(defhydra soo-ivy (:hint nil :color pink)
+(defhydra soo-hydra-ivy (:hint nil :color pink)
   "
  Move     ^^^^^^^^^^ | Call           ^^^^ | Options^^ | Action _w_/_s_/_a_: %s(ivy-action-name)
 ----------^^^^^^^^^^-+----------------^^^^-+--------^^-+---------------------------------
@@ -107,7 +108,9 @@ _z_ zone:
   ("C" ivy-toggle-case-fold)
   ("o" ivy-occur :exit t))
 
-(define-key ivy-minibuffer-map (kbd "C-o") 'soo-ivy/body)
+(eval-after-load
+    'ivy '(define-key ivy-minibuffer-map
+            (kbd "C-o") 'soo-hydra-ivy/body))
 
 
 (provide 'hydra/hydra-abo)
