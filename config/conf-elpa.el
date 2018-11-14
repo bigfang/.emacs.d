@@ -12,16 +12,16 @@
 
 (use-package google-translate
   :ensure t
-  :bind (("C-c t" . google-translate-at-point)
-         ("C-c T" . google-translate-smooth-translate))
-  :config
-  ;; (setq url-gateway-method 'socks)
-  ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
-  (require 'google-translate-smooth-ui)
+  :bind ("C-c t" . google-translate-smooth-translate)
+  :init
   (setq google-translate-default-source-language "en"
         google-translate-default-target-language "zh-CN")
   (setq google-translate-translation-directions-alist
-      '(("en" . "zh-CN") ("zh-CN" . "en"))))
+        '(("en" . "zh-CN") ("zh-CN" . "en") ("ja" . "zh-CN")))
+  :config
+  ;; (setq url-gateway-method 'socks)
+  ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
+  (require 'google-translate-smooth-ui))
 
 
 (use-package highlight-indent-guides
@@ -104,7 +104,7 @@
 
 (use-package smartparens
   :ensure t
-  :hook (prog-mode . smartparens-strict-mode)
+  ;; :hook (prog-mode . smartparens-strict-mode)
   :config
   (require 'smartparens-config)
   (smartparens-global-mode t)

@@ -37,9 +37,9 @@ _z_ zone:
   ("br"  (browse-url "https://www.reddit.com/") "reddit")
   ("bg"  (browse-url "https://github.com") "github")
 
+  ("f"   ido-find-file "ido file")
   ("s"   shell "shell")
-  ("t"   google-translate-at-point "google translate")
-  ("T"   google-translate-smooth-translate "google translate smooth")
+  ("t"   google-translate-smooth-translate "google translate")
   ("g"   google-this "google this")
   ("RET" google-this-search "google search")
 

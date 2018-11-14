@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-leader (:color pink :exit t :hint nil :idle .5 :columns 5)
+(defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
   "        === Hydra Leader ===    "
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)

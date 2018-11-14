@@ -27,7 +27,7 @@
   ("q" nil :color blue))
 
 (global-set-key (kbd "C-:") 'hydra-multiple-cursors/body)
-
+(bind-key* (kbd "C-_") 'hydra-multiple-cursors/body)
 
 
 (defhydra hydra-markdown-mode (:color pink :hint nil)

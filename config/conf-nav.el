@@ -75,11 +75,11 @@
 
 (use-package treemacs-evil
   :ensure t
-  :after treemacs)
+  :requires treemacs)
 
 (use-package treemacs-projectile
   :ensure t
-  :after treemacs
+  :requires treemacs
   :config
   (setq treemacs-header-function #'treemacs-projectile-create-header))
 

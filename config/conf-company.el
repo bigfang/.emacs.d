@@ -50,12 +50,12 @@
 (use-package company-quickhelp
   :disabled
   :if window-system
+  :requires company
   :ensure t
   :config
   (setq company-quickhelp-delay .3
         company-quickhelp-use-propertized-text t)
-  (eval-after-load 'company
-    '(define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin))
+  (define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin)
   (company-quickhelp-mode))
 
 

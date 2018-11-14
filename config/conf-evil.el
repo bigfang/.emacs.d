@@ -68,8 +68,8 @@
 (use-package evil-numbers
   :ensure t
   :config
-  (define-key evil-normal-state-map (kbd "M-<up>") 'evil-numbers/dec-at-pt)
-  (define-key evil-normal-state-map (kbd "M-<down>") 'evil-numbers/inc-at-pt))
+  (define-key evil-normal-state-map (kbd "M-<down>") 'evil-numbers/dec-at-pt)
+  (define-key evil-normal-state-map (kbd "M-<up>") 'evil-numbers/inc-at-pt))
 
 
 (use-package evil-surround
