@@ -8,7 +8,7 @@
   (defun my/org-table-font ()
     (interactive)
     (set-face-attribute 'org-table nil :font "PCMyungjo 16"))
-  (setq org-startup-folded nil))
+  (setq org-startup-folded t))
 
 
 (use-package deft

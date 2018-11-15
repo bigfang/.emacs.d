@@ -4,41 +4,45 @@
 (use-package company
   :ensure t
   :pin melpa-stable
-  :bind (("M-i" . indent-or-complete)
+  :bind (("M-i" . company-indent-or-complete-common)
          ;; ("TAB" . indent-or-complete)
          :map company-active-map
          ("<return>" . company-complete-selection)
          ("RET" . company-complete-selection)
          ("<space>" . my/abort-and-insert-space)
          ("SPC" . my/abort-and-insert-space)
-         ("M-i" . company-complete-common-or-cycle)
-         ("C-n" . company-complete-common-or-cycle)
-         ("C-p" . company-select-previous)
          ("<tab>" . company-complete-selection)
          ("TAB" . company-complete-selection)
          ("<backtab>" . company-select-previous)
-         ("S-TAB" . company-select-previous))
+         ("S-TAB" . company-select-previous)
+         ("C-n" . company-complete-common-or-cycle)
+         ("C-p" . company-select-previous)
+         ("M-i" . company-search-candidates)
+         ("M-o" . company-filter-candidates)
+         :map company-search-map
+         ("DEL" . company-search-abort)
+         ("<backspace>" . company-search-abort)
+         ("M-o" . company-search-toggle-filtering)
+         ("M-i" . company-search-repeat-forward)
+         ("M-j" . company-search-repeat-forward)
+         ("M-k" . company-search-repeat-backward))
   :hook (after-init . global-company-mode)
   :init
-  (defun indent-or-complete ()
-    (interactive)
-    (if (looking-at "\\_>")
-        (company-complete-common)
-      (indent-according-to-mode)))
-
-  (defun complete-or-indent ()
-    (interactive)
-    (if (company-manual-begin)
-        (company-complete-common)
-      (indent-according-to-mode)))
-
   (defun my/abort-and-insert-space ()
     (interactive)
     (progn
       (company-abort)
       (insert " ")))
   :config
-  (add-to-list 'company-backends 'company-yasnippet t)
+  ;; (add-to-list 'company-backends 'company-yasnippet t)
+  (setq company-backends
+        '(company-semantic
+          company-clang
+          company-files
+          (company-capf
+           company-keywords
+           company-dabbrev-code)
+          comapny-dabbrev))
   (setq company-tooltip-minimum 7
         company-minimum-prefix-length 3
         company-selection-wrap-around t
@@ -48,14 +52,13 @@
 
 
 (use-package company-quickhelp
-  :disabled
   :if window-system
   :requires company
   :ensure t
   :config
-  (setq company-quickhelp-delay .3
+  (setq company-quickhelp-delay 2
         company-quickhelp-use-propertized-text t)
-  (define-key company-active-map (kbd "C-c h") #'company-quickhelp-manual-begin)
+  (define-key company-active-map (kbd "M-/") #'company-quickhelp-manual-begin)
   (company-quickhelp-mode))
 
 
