@@ -78,6 +78,10 @@
          ("M-g f" . avy-goto-line)))
 
 
+(use-package counsel-tramp
+  :ensure t)
+
+
 (use-package counsel-projectile
   :ensure t
   :config (counsel-projectile-mode t))
