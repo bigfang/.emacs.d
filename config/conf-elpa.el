@@ -97,20 +97,6 @@
 ;; (require 'conf-lsp)
 
 
-(use-package evil-smartparens
-  :ensure t
-  :after (evil smartparens)
-  :hook (smartparens-enabled . evil-smartparens-mode))
-
-(use-package smartparens
-  :ensure t
-  ;; :hook (prog-mode . smartparens-strict-mode)
-  :config
-  (require 'smartparens-config)
-  (smartparens-global-mode t)
-  (show-smartparens-global-mode t))
-
-
 ;; --- regexp ---
 (use-package visual-regexp
   :ensure t)
