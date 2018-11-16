@@ -49,7 +49,10 @@
   :bind (:map elpy-mode-map
          ;; ("<C-return>" . evil-open-blow)
          ("M-i" . elpy-company-backend)
-         ("M-." . elpy-goto-definition))
+         ("M-." . elpy-goto-definition)
+         :map comint-mode-map
+         ("M-p" . comint-previous-input)
+         ("M-n" . comint-next-input))
   :init (elpy-enable)
   :config
   (evil-define-key 'normal elpy-mode-map (kbd "gd") 'elpy-goto-definition)

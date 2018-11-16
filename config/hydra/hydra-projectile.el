@@ -22,7 +22,8 @@
 
 "
   ("="   list-packages "list packages")
-  ("SPC" pyvenv-workon "python workon")
+  ("RET" pyvenv-workon "python workon")
+  ("DEL" run-python "IPython")
 
   ("p"   counsel-projectile-switch-project)
   ("o"   projectile-switch-open-project "opened project")
@@ -30,7 +31,7 @@
   ("g"   counsel-projectile-find-file)
   ("f"   counsel-projectile-find-file-dwim)
   ("e"   projectile-recentf)
-  ("RET" projectile-run-eshell)
+  ("SPC" projectile-run-eshell)
 
   ("a"   counsel-projectile-ag)
   ("s"   counsel-projectile-rg)
