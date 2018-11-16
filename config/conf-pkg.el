@@ -19,16 +19,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-
 (eval-when-compile
   (setq use-package-verbose t
         use-package-enable-imenu-support t)
   (require 'use-package))
-
-;; key-chords
-(use-package use-package-chords
-  :ensure t
-  :config (key-chord-mode 1))
+(require 'bind-key)
 
 
 ;; Mac OS exec-path
@@ -38,12 +33,28 @@
   :config
   (exec-path-from-shell-initialize))
 
+;; === system package ===
+(use-package use-package-ensure-system-package
+  :ensure t)
+
+;; (use-package rg
+;;   :ensure-system-package
+;;   (rg . ripgrep))
+
+(use-package fzf
+  :ensure-system-package fzf)
+
+
+;; key-chords
+(use-package use-package-chords
+  :ensure t
+  :config (key-chord-mode 1))
+
 
 (use-package emacs
   :bind (("M-n" . evil-scroll-line-down)
          ("M-p" . evil-scroll-line-up))
-  :chords (";;" . comment-line)
-  :diminish (abbrev-mode))
+  :chords (";;" . comment-line))
 
 
 ;; === packages ===
