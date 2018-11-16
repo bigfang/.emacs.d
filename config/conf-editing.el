@@ -98,10 +98,10 @@
       (string-inflection-all-cycle))
      ;; for python
      ((eq major-mode 'python-mode)
-      (string-inflection-python-style-cycle))
+      (string-inflection-cycle))
      (t
       ;; default
-      (string-inflection-all-style-cycle)))))
+      (string-inflection-all-cycle)))))
 
 
 (use-package move-text

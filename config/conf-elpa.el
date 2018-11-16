@@ -107,8 +107,7 @@
 ;; --- emoji ---
 (use-package emojify
   :ensure t
-  :config
-  (add-hook 'after-init-hook #'global-emojify-mode))
+  :hook (after-init . global-emojify-mode))
 
 (use-package company-emoji
   :ensure t

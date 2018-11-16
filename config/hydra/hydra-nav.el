@@ -45,7 +45,7 @@ Git gutter:
               (git-gutter:previous-hunk 1)))
   ("s" git-gutter:stage-hunk)
   ("r" git-gutter:revert-hunk)
-  ("d" git-gutter:popup-hunk)
+  ("D" git-gutter:popup-hunk)
   ("R" git-gutter:set-start-revision "Set Start Revision")
   ("q" nil :color blue))
 
@@ -62,33 +62,34 @@ Git gutter:
   ("q" nil "cancel" :color blue))
 
 
-(defhydra hydra-jump (:hint nil)
+(defhydra hydra-jump (:color teal :hint nil)
   "
    ^Chars^             ^other^                ^dumb-jump^
 -------------------------------------------------------------------------------
 [_c_] char         [_w_] word / subword    [_J_] go
-[_C_] char-2       [_s_] subword           [_o_] other window
+[_s_] char-2       [_S_] subword           [_o_] other window
 [_t_] char-timer   [_l_] line              [_i_] prompt
-                                   ^^^^    [_b_] back
+[_g_] line                               ^^[_b_] back
                  ^^[_j_] ffap              [_l_] quick look
 "
-  ("c" avy-goto-char :exit t)
-  ("C" avy-goto-char-2 :exit t)
-  ("t" avy-goto-char-timer :exit t)
-  ("w" avy-goto-word-or-subword-1 :exit t)
-  ("s" avy-goto-subword-1 :exit t)
-  ("l" avy-goto-line :exit t)
+  ("c" avy-goto-char)
+  ("s" avy-goto-char-2)
+  ("t" avy-goto-char-timer)
+  ("w" avy-goto-word-or-subword-1)
+  ("S" avy-goto-subword-1)
+  ("g" avy-goto-line)
 
   ("J" dumb-jump-go)
   ("i" dumb-jump-go-prompt)
   ("o" dumb-jump-go-other-window)
-  ("b" dumb-jump-back)
+  ("b" dumb-jump-back :color red)
   ("l" dumb-jump-quick-look)
   ("e" dumb-jump-go-prefer-external "Go external")
   ("x" dumb-jump-go-prefer-external-other-window "Go external other window")
 
-  ("."   xref-find-definitions "xref find")
-  ("j" ffap :exit t)
+  ("." xref-find-definitions "xref find def")
+  ("/" xref-find-references "xref find ref")
+  ("j" ffap)
   ("q" nil "quit"))
 
 
