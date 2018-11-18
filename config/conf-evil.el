@@ -54,15 +54,23 @@
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
 
 
-(use-package evil-magit
-  :ensure t)
-
-
 (use-package evil-collection
   :ensure t
   :after evil
   :config
   (evil-collection-init '(calendar ediff magit)))
+
+
+(use-package evil-goggles
+  :ensure t
+  :config
+  (setq evil-goggles-duration 0.100)
+  (evil-goggles-mode)
+  (evil-goggles-use-diff-faces))
+
+
+(use-package evil-magit
+  :ensure t)
 
 
 (use-package evil-numbers
