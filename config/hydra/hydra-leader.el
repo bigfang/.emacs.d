@@ -19,18 +19,16 @@
   ("b" hydra-buffer/body "buffer...")
   ("c" hydra-flycheck/body "flycheck...")
   ("f" hydra-frame/body "frame...")
-  ("g" hydra-git-gutter/body "git-gutter...")
   ("h" hydra-highlight/body "highlight...")
   ("j" hydra-jump/body "jump...")
   ("m" hydra-multiple-cursors/body "notes...")
   ("M" hydra-notes/body "notes...")
   ("o" hydra-org/body "org-mode...")
   ("p" hydra-projectile/body "projectile...")
+  ("v" hydra-git/body "git")
   ("x" hydra-launcher/body "launcher...")
 
-  ("t" git-timemachine "git timemachine")
   ("l" treemacs "treemacs")
-  ("v" magit-status "magit")
 
 
   ;; cursor

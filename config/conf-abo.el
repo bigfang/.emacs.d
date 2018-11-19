@@ -17,8 +17,9 @@
   (use-package hydra/hydra-projectile)
 
   (use-package hydra/hydra-abo)
-  (use-package hydra/hydra-nav)
+  (use-package hydra/hydra-git)
   (use-package hydra/hydra-editing)
+  (use-package hydra/hydra-nav)
   (use-package hydra/hydra-ui)
 
   (use-package hydra/hydra-leader))
