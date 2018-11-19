@@ -54,7 +54,12 @@
 
 (use-package swiper
   :ensure t
-  :bind ("C-s" . swiper)
+  :bind (("C-s" . swiper)
+         ("C-S" . swiper-all)
+         :map swiper-map
+         ("M-q" . swiper-query-replace)
+         ("C-'" . swiper-avy)
+         ("C-7" . swiper-mc))
   :config
   (define-key evil-motion-state-map "/" 'swiper))
 

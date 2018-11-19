@@ -66,7 +66,7 @@
                (display-buffer-reuse-window
                 display-buffer-below-selected)
                (split-window-sensibly)
-               (window-height   . 0.2)
+               (window-height   . 0.3)
                (reusable-frames . visible)))
 
 

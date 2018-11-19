@@ -68,7 +68,7 @@
   ("u" undo-tree-undo :color red)
   ("r" undo-tree-redo :color red)
 
-  ("ESC" nil "cancel" :color blue)      ; FIXME
+  ("<escape>" nil "cancel" :color blue)
   ("q" nil "cancel" :color blue))
 
 

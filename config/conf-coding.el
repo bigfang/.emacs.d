@@ -25,6 +25,8 @@
 (use-package projectile
   :ensure t
   :pin melpa-stable
+  :bind (:map projectile-mode-map
+         ("s-p" . projectile-command-map))
   :config
   (setq projectile-completion-system 'ivy)
   (projectile-mode))
