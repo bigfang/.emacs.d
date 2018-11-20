@@ -97,6 +97,11 @@
 ;; (require 'conf-lsp)
 
 
+(use-package eyebrowse
+  :ensure t
+  :config (eyebrowse-mode t))
+
+
 ;; --- regexp ---
 (use-package visual-regexp
   :ensure t)

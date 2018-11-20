@@ -18,6 +18,7 @@
   ("i" hydra-abo/body "ivy...")
   ("b" hydra-buffer/body "buffer...")
   ("c" hydra-flycheck/body "flycheck...")
+  ("e" hydra-eyebrowse/body "eyebrowse...")
   ("f" hydra-frame/body "frame...")
   ("h" hydra-highlight/body "highlight...")
   ("j" hydra-jump/body "jump...")

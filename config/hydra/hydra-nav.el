@@ -11,6 +11,28 @@
   ("q" nil "cancel" :color blue))
 
 
+(defhydra hydra-eyebrowse (:color blue :hint nil :columns 2)
+  "eyebrowse"
+  ("p"  eyebrowse-prev-window-config       "prev config" :color red)
+  ("n"  eyebrowse-next-window-config       "next config" :color red)
+  ("e"  eyebrowse-last-window-config       "last config")
+  ("s"  eyebrowse-switch-to-window-config  "switch config")
+  ("c"  eyebrowse-create-window-config     "create config")
+  ("d"  eyebrowse-close-window-config      "delete current config")
+  ("m"  eyebrowse-rename-window-config     "rename current config")
+  ("0"  eyebrowse-switch-to-window-config-0)
+  ("1"  eyebrowse-switch-to-window-config-1)
+  ("2"  eyebrowse-switch-to-window-config-2)
+  ("3"  eyebrowse-switch-to-window-config-3)
+  ("4"  eyebrowse-switch-to-window-config-4)
+  ("5"  eyebrowse-switch-to-window-config-5)
+  ("6"  eyebrowse-switch-to-window-config-6)
+  ("7"  eyebrowse-switch-to-window-config-7)
+  ("8"  eyebrowse-switch-to-window-config-8)
+  ("9"  eyebrowse-switch-to-window-config-9)
+  ("q"  nil "quit"))
+
+
 (defhydra hydra-flycheck
   (:pre (progn (setq hydra-lv t) (flycheck-list-errors))
    :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))

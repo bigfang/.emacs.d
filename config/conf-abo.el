@@ -44,7 +44,7 @@
           (t . ivy--regex-plus)))
   (setq ivy-use-virtual-buffers t
         ivy-count-format "(%d/%d) "
-        ivy-height 12)
+        ivy-height 15)
   (ivy-mode 1))
 
 

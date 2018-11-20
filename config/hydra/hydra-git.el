@@ -27,6 +27,7 @@ Git gutter:
 
 
 (defhydra hydra-git (:color blue :hint nil)
+  "Git"
   ("b" magit-blame "git blame")
   ("g" hydra-git-gutter/body "git-gutter...")
   ("t" git-timemachine "git timemachine")
