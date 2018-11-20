@@ -4,6 +4,7 @@
 (use-package evil
   :ensure t
   :pin melpa-stable
+  :chords ("kj" . evil-normal-state)
   :bind (:map evil-motion-state-map
          ("gD" . evil-goto-definition)
          ("^" . evil-window-top)
@@ -19,11 +20,11 @@
          ([remap evil-jump-item] . evil-execute-macro)
 
          :map evil-insert-state-map
-         ([escape] . evil-normal-state)     ; DO NOT USE "ESC"!
+         ([escape] . evil-normal-state)      ; DO NOT USE "ESC"!
          ("C-o" . evil-execute-in-normal-state)
 
          :map evil-emacs-state-map
-         ([escape] . evil-normal-state))     ; DO NOT USE "ESC"!
+         ([escape] . evil-normal-state))     ; DO NOT USE "ESC" or "<escape>"!
   :hook (git-commit-mode . evil-insert-state)
   :init
   (setq evil-toggle-key "M-z"
@@ -88,13 +89,6 @@
 
 (use-package evil-textobj-syntax
   :ensure t)
-
-
-(use-package evil-escape
-  :ensure t
-  :config
-  (setq-default evil-escape-key-sequence "kj")
-  (evil-escape-mode))
 
 
 (provide 'conf-evil)

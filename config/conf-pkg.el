@@ -34,17 +34,10 @@
   :config
   (exec-path-from-shell-initialize))
 
-;; === system package ===
+
+;; ensure system package
 (use-package use-package-ensure-system-package
   :ensure t)
-
-;; (use-package rg
-;;   :ensure-system-package
-;;   (rg . ripgrep))
-
-(use-package fzf
-  :ensure-system-package fzf)
-
 
 ;; key-chords
 (use-package use-package-chords

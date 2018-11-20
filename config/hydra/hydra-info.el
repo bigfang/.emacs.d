@@ -1,8 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-info (:color blue
-                             :hint nil)
+(defhydra hydra-info (:color teal :hint nil)
   "
 Info-mode:
 

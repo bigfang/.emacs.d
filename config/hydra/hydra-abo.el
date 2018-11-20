@@ -29,26 +29,17 @@ _z_ zone:
   ("m" xterm-mouse-mode nil)
   ("r" toggle-rot13-mode nil :color blue)
   ("z" zone nil :color blue)
-  ("q" nil "quit" :color blue))
+  ("q" nil :color blue))
 
 
-(defhydra hydra-launcher (:color blue :hint nil :idle .5 :columns 4)
-  ("bs" (browse-url "https://bbs.saraba1st.com/2b/forum-75-1.html") "Stage1st")
-  ("bt" (browse-url "http://club.tgfcer.com/forum-25-1.html") "TGFC")
-  ("bx" (browse-url "https://xueqiu.com") "xueqiu")
-  ("br" (browse-url "https://www.reddit.com") "reddit")
-  ("bg" (browse-url "https://github.com") "github")
-
+(defhydra hydra-execute (:color teal :hint nil :idle .5 :columns 3)
   ("f" ido-find-file "ido file")
-  ("s" shell "shell")
-  ("t" google-translate-smooth-translate "google translate")
-  ("g" google-this "google this")
-  ("RET" google-this-search "google search")
+  ("v" ido-find-alternate-file "refresh")
 
-  ("e" eval-last-sexp)
-  ("v" ido-find-alternate-file)
-  ("x" smex)
-  ("q" nil "cancel" :color blue))
+  ("s" shell "shell")
+  ("e" eval-last-sexp "eval sexp")
+  ("x" smex "smex")
+  ("q" nil :color blue))
 
 
 (defhydra hydra-abo (:color teal :hint nil :idle .5 :columns 4)
@@ -69,7 +60,7 @@ _z_ zone:
   ("S" ivy-switch-view "switch view")
 
   ("l" imenu-list-smart-toggle "imenu list")
-  ("q" nil "cancel" :color blue))
+  ("q" nil :color blue))
 
 (defhydra soo-hydra-ivy (:hint nil :color pink)
   "

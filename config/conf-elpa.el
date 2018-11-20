@@ -2,7 +2,8 @@
 
 
 (use-package fzf
-  :ensure t)
+  :ensure t
+  :ensure-system-package fzf)
 
 
 (use-package google-this

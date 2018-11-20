@@ -63,7 +63,7 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
   ("W" markdown-insert-wiki-link :color blue)
   ("R" markdown-insert-reference-link-dwim :color blue)
   ("<f9>" nil)
-  ("q" nil "cancel" :color blue))
+  ("q" nil :color blue))
 
 (define-key markdown-mode-map [f9] 'hydra-markdown-mode/body)
 

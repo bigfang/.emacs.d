@@ -70,7 +70,7 @@
   ("0" (text-scale-set 0) "reset")
 
   ("t" transpose-frame "transpose")
-  ("q" nil "cancel" :color blue))
+  ("q" nil :color blue))
 
 
 (defhydra hydra-frame (:color pink :exit t :hint nil :idle .5 :columns 3)
@@ -84,7 +84,7 @@
   ("f" other-frame "other frame" :color red)
   ("DEL" ns-next-frame "next frame" :color red)
   ("<tab>" ns-prev-frame "previous frame" :color red)
-  ("q" nil "cancel" :color blue))
+  ("q" nil :color blue))
 
 
 (provide 'hydra/hydra-ui)

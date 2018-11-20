@@ -26,7 +26,7 @@ Git gutter:
   ("q" nil :color blue))
 
 
-(defhydra hydra-git (:color blue :hint nil)
+(defhydra hydra-git (:color teal :hint nil)
   "Git"
   ("b" magit-blame "git blame")
   ("g" hydra-git-gutter/body "git-gutter...")

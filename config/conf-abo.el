@@ -3,9 +3,12 @@
 
 (use-package hydra
   :ensure t
-  :after (dired ibuffer)
-  :bind (:map evil-motion-state-map
-         ("SPC" . hydra-leader/body))
+  :after (swiper)
+  :bind (("C-SPC" . hydra-leader/body)
+         ("C-s" . hydra-captain/body)
+         :map evil-motion-state-map
+         ("SPC" . hydra-leader/body)
+         ("/" . hydra-captain/body))
   :config
   (use-package hydra/hydra-dired)
   (use-package hydra/hydra-ibuffer)
@@ -13,16 +16,8 @@
   (use-package hydra/hydra-macro)
   (use-package hydra/hydra-rectangle)
 
-  (use-package hydra/hydra-org)
-  (use-package hydra/hydra-projectile)
-
-  (use-package hydra/hydra-abo)
-  (use-package hydra/hydra-git)
-  (use-package hydra/hydra-editing)
-  (use-package hydra/hydra-nav)
-  (use-package hydra/hydra-ui)
-
-  (use-package hydra/hydra-leader))
+  (use-package hydra/hydra-leader)
+  (use-package hydra/hydra-captain))
 
 
 (use-package ivy
@@ -55,18 +50,17 @@
 
 (use-package swiper
   :ensure t
-  :bind (("C-s" . swiper)
-         ("C-S" . swiper-all)
+  :bind (("C-S" . swiper-all)
+         ;; ("C-s" . swiper)
          :map swiper-map
          ("M-q" . swiper-query-replace)
          ("C-'" . swiper-avy)
-         ("C-7" . swiper-mc))
-  :config
-  (define-key evil-motion-state-map "/" 'swiper))
+         ("C-7" . swiper-mc)))
 
 
 (use-package counsel
   :ensure t
+  :ensure-system-package (rg . ripgrep)
   :bind (("M-x" . counsel-M-x)
          ("M-y" . counsel-yank-pop)))
 

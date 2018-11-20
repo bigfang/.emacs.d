@@ -1,8 +1,18 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package hydra/hydra-org)
+(use-package hydra/hydra-projectile)
+
+(use-package hydra/hydra-abo)
+(use-package hydra/hydra-git)
+(use-package hydra/hydra-editing)
+(use-package hydra/hydra-nav)
+(use-package hydra/hydra-ui)
+
+
 (defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
-  "        === Hydra Leader ===    "
+  "      --- Hydra Leader ---    "
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
   ("C-x C-c" save-buffers-kill-terminal :color blue)
@@ -10,9 +20,9 @@
   ("!" shell-command "shell command")
   (";" comment-line "comment" :color red)
 
-
   ("." er/expand-region "expand-region")
-  ("," hydra-toggle/body "toggle modes...")
+  ("'" hydra-multiple-cursors/body "multiple-cursors")
+  ("`" hydra-toggle/body "toggle modes...")
 
   ("a" hydra-adjust/body "adjust...")
   ("i" hydra-abo/body "ivy...")
@@ -22,12 +32,11 @@
   ("f" hydra-frame/body "frame...")
   ("h" hydra-highlight/body "highlight...")
   ("j" hydra-jump/body "jump...")
-  ("m" hydra-multiple-cursors/body "notes...")
-  ("M" hydra-notes/body "notes...")
+  ("m" hydra-notes/body "notes...")
   ("o" hydra-org/body "org-mode...")
   ("p" hydra-projectile/body "projectile...")
   ("v" hydra-git/body "git")
-  ("x" hydra-launcher/body "launcher...")
+  ("x" hydra-execute/body "execute...")
 
   ("l" treemacs "treemacs")
 
@@ -67,8 +76,8 @@
   ("u" undo-tree-undo :color red)
   ("r" undo-tree-redo :color red)
 
-  ("<escape>" nil "cancel" :color blue)
-  ("q" nil "cancel" :color blue))
+  ("<escape>" nil :color blue)
+  ("q" nil :color blue))
 
 
 (provide 'hydra/hydra-leader)

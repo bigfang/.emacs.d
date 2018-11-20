@@ -7,7 +7,7 @@
   ("g"  projectile-find-file-dwim-other-window   "file dwim")
   ("d"  projectile-find-dir-other-window         "dir")
   ("b"  projectile-switch-to-buffer-other-window "buffer")
-  ("q"  nil                                      "cancel" :color blue))
+  ("q"  nil "cancel" :color blue))
 
 (defhydra hydra-projectile (:color teal :hint nil :idle .5)
   "
