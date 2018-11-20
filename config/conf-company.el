@@ -42,7 +42,7 @@
           (company-capf
            company-keywords
            company-dabbrev-code)
-          comapny-dabbrev))
+          company-dabbrev))
   (setq company-tooltip-minimum 7
         company-minimum-prefix-length 3
         company-selection-wrap-around t

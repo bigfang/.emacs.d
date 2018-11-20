@@ -86,6 +86,10 @@
   (global-evil-surround-mode 1))
 
 
+(use-package evil-textobj-syntax
+  :ensure t)
+
+
 (use-package evil-escape
   :ensure t
   :config
