@@ -51,6 +51,16 @@
   (highlight-symbol-foreground-color "black"))
 
 
+(use-package pdf-tools
+  :ensure t
+  ;; :ensure-system-package (pkg-config automake poppler)
+  :magic ("%PDF" . pdf-view-mode)
+  :bind (:map pdf-view-mode-map
+         ("M-n" . pdf-view-next-line-or-next-page)
+         ("M-p" . pdf-view-previous-line-or-previous-page))
+  :config (pdf-tools-install))
+
+
 (use-package pyim
   :ensure t
   :config
@@ -96,11 +106,6 @@
 
 ;; --- lsp ---
 ;; (require 'conf-lsp)
-
-
-(use-package eyebrowse
-  :ensure t
-  :config (eyebrowse-mode t))
 
 
 ;; --- regexp ---

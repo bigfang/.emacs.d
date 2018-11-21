@@ -21,6 +21,11 @@
         dumb-jump-prefer-searcher 'rg))
 
 
+(use-package eyebrowse
+  :ensure t
+  :config (eyebrowse-mode t))
+
+
 (use-package imenu-anywhere
   :ensure t)
 
