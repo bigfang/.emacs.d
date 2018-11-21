@@ -32,7 +32,7 @@
 
 (use-package imenu-list
   :ensure t
-  :bind ("C-'" . imenu-list-smart-toggle)
+  :bind ("C-;" . imenu-list-smart-toggle)
   :config
   (setq imenu-list-size 0.12
         imenu-list-auto-resize t)

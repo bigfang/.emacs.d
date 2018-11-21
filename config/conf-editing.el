@@ -80,7 +80,9 @@
 ;; === packages ===
 (use-package expand-region
   :ensure t
-  :bind (("C-;" . er/expand-region))
+  :bind (("M-." . er/expand-region)
+         :map evil-normal-state-map
+         ("M-." . er/expand-region))
   :config
   (setq expand-region-contract-fast-key ","))
 
@@ -125,7 +127,16 @@
 ;; key-binding -- https://emacs.stackexchange.com/a/2557
 (use-package undo-tree
   :ensure t
-  :config (global-undo-tree-mode))
+  :bind (:map evil-normal-state-map
+         ("u" . undo)
+         ("C-r" . redo))
+  :config
+  (global-undo-tree-mode)
+  (bind-key* "C-?" 'uncomment-region)
+  (bind-key* "M-_" 'uncomment-region)
+  (bind-key* "s-z" 'comment-dwim)
+  (bind-key* "C-_" 'comment-dwim)
+  (bind-key* "C-/" 'comment-dwim))
 
 
 (provide 'conf-editing)
