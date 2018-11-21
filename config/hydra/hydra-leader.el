@@ -73,8 +73,6 @@
   ("<tab>" previous-buffer)
   ("DEL" next-buffer)
   ("U" undo-tree-visualize :color blue)
-  ("u" undo-tree-undo :color red)
-  ("r" undo-tree-redo :color red)
 
   ("<escape>" nil :color blue)
   ("q" nil :color blue))
