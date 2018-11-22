@@ -12,14 +12,16 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra-captain (:color teal :exit t :hint nil :idle .5 :columns 3)
+(defhydra hydra-captain (:color teal :exit t :hint nil :columns 3)
   "      --- Hydra Captain ---    "
   ("." xref-find-definitions "xref find def")
   ("'" xref-find-references "xref find ref")
+  (";" xref-find-apropos "xref find apropos")
 
   ("/" swiper "swiper")
   ("a" swiper-all "swiper-all")
   ("j" ffap)
+  ("f" ido-find-file "ido file")
 
   ("t" google-translate-smooth-translate "google translate")
   ("g" google-this "google this")

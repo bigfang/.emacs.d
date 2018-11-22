@@ -57,9 +57,12 @@
 
 (use-package evil-collection
   :ensure t
-  :after evil
+  :after (evil hydra-leader)
   :config
-  (evil-collection-init '(calendar ediff magit)))
+  (evil-collection-init
+   '(bookmark calendar ediff dired ibuffer magit))
+  (evil-define-key 'normal ibuffer-mode-map (kbd ".") 'hydra-ibuffer-main/body)
+  (evil-define-key 'normal dired-mode-map (kbd ".") 'hydra-dired/body))
 
 
 (use-package evil-goggles

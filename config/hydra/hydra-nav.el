@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-buffer (:color teal :hint nil :idle .5 :columns 3)
+(defhydra hydra-buffer (:color teal :hint nil :columns 3)
   "Buffer"
   ("i" ibuffer "ibuffer")
   ("b" ivy-switch-buffer "switch")
@@ -55,6 +55,7 @@
   ("c" highlight-symbol-count "count")
   ("o" highlight-symbol-occur "occur" :color blue)
   ("a" highlight-symbol-list-all "list")
+  ("d" highlight-symbol-remove-all "remove all")
   ("q" nil :color blue))
 
 

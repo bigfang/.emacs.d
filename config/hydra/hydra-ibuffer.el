@@ -27,8 +27,11 @@
   ("/" hydra-ibuffer-filter/body :color blue)
 
   ("o" ibuffer-visit-buffer-other-window "other window" :color blue)
-  ("q" quit-window "quit ibuffer" :color blue)
+  ("q" nil "toggle hydra" :color blue)
   ("." nil "toggle hydra" :color blue))
+
+(define-key ibuffer-mode-map "." 'hydra-ibuffer-main/body)
+
 
 (defhydra hydra-ibuffer-mark (:color teal :columns 5
                               :after-exit (hydra-ibuffer-main/body))
@@ -90,8 +93,6 @@
   ("<" ibuffer-filter-by-size-lt "size")
   ("/" ibuffer-filter-disable "disable")
   ("b" hydra-ibuffer-main/body "back" :color blue))
-
-(define-key ibuffer-mode-map "." 'hydra-ibuffer-main/body)
 
 
 (provide 'hydra/hydra-ibuffer)

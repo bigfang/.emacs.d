@@ -55,7 +55,7 @@
          :map swiper-map
          ("M-q" . swiper-query-replace)
          ("C-'" . swiper-avy)
-         ("C-7" . swiper-mc)))
+         ("M-c" . swiper-mc)))
 
 
 (use-package counsel

@@ -1,13 +1,14 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-notes (:color pink :exit t :hint nil :idle .5 :columns 3)
-  "Notes "
-  ("m" counsel-bookmark "jump bookmark")
+(defhydra hydra-mark (:color pink :exit t :hint nil :columns 3)
+  "Marks"
+  ("m" counsel-bookmark "bookmark")
   ("d" bookmark-delete "delete bookmark")
-  ("l" bookmark-bmenu-list "list")
-  ("n" remember-notes "notes")
-  ("r" remember "remember")
+  ("l" bookmark-bmenu-list "list" :exit t)
+
+  ("n" remember-notes "notes" :exit t)
+  ("r" remember "remember" :exit t)
   ("R" remember-region "remember region")
   ("c" remember-clipboard "remember clipboard")
   ("q" nil :color blue))
@@ -28,7 +29,7 @@
 (evil-define-key 'normal deft-mode-map (kbd ".") 'hydra-deft/body)
 
 
-(defhydra hydra-org (:color pink :exit t :hint nil :idle .5)
+(defhydra hydra-org (:color pink :exit t :hint nil)
   "Org-mode"
   ("d" deft "deft")
   ("q" nil :color blue))

@@ -32,23 +32,21 @@ _z_ zone:
   ("q" nil :color blue))
 
 
-(defhydra hydra-execute (:color teal :hint nil :idle .5 :columns 3)
-  ("f" ido-find-file "ido file")
-  ("v" ido-find-alternate-file "refresh")
-
+(defhydra hydra-execute (:color teal :hint nil :columns 3)
   ("s" shell "shell")
   ("e" eval-last-sexp "eval sexp")
+  ("v" ido-find-alternate-file "refresh")
   ("x" smex "smex")
   ("q" nil :color blue))
 
 
-(defhydra hydra-abo (:color teal :hint nil :idle .5 :columns 4)
+(defhydra hydra-abo (:color teal :hint nil :columns 4)
   "swiper"
-  ("i" swiper "swiper")
+  ("i" counsel-imenu "imenu")
   ("b" counsel-ibuffer "ibuffer")
   ("f" counsel-find-file "find file")
   ("e" counsel-recentf "recent file")
-  ("m" counsel-imenu "imenu")
+  ("m" counsel-mark-ring "mark ring")
   ("s" counsel-rg "ripgrep")
   ("a" counsel-ag "ag")
   ("o" counsel-outline "outline")
@@ -59,6 +57,7 @@ _z_ zone:
   ("V" ivy-pop-view "pop view")
   ("S" ivy-switch-view "switch view")
 
+  ("d" ido-dired "dired")
   ("l" imenu-list-smart-toggle "imenu list")
   ("q" nil :color blue))
 

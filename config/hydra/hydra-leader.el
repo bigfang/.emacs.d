@@ -30,15 +30,18 @@
   ("c" hydra-flycheck/body "flycheck...")
   ("e" hydra-eyebrowse/body "eyebrowse...")
   ("f" hydra-frame/body "frame...")
-  ("h" hydra-highlight/body "highlight...")
+  ("h" (lambda ()
+         (interactive)
+         (highlight-symbol)
+         (hydra-highlight/body)) "highlight...")
   ("j" hydra-jump/body "jump...")
-  ("m" hydra-notes/body "notes...")
+  ("m" hydra-mark/body "marks...")
   ("o" hydra-org/body "org-mode...")
   ("p" hydra-projectile/body "projectile...")
   ("v" hydra-git/body "git")
   ("x" hydra-execute/body "execute...")
 
-  ("l" treemacs "treemacs")
+  ("t" treemacs "treemacs")
 
 
   ;; cursor
@@ -52,20 +55,15 @@
   ("SPC" switch-window)
   ("\\" (lambda ()
           (interactive)
-           (split-window-horizontally)
-           (other-window 1)))
+          (split-window-horizontally)
+          (other-window 1)))
   ("-" (lambda ()
          (interactive)
-          (split-window-vertically)
-          (other-window 1)))
-  ("Q" quit-window)
+         (split-window-vertically)
+         (other-window 1)))
+  ("z" quit-window)
   ("0" delete-window)
   ("1" delete-other-windows)
-  ("z" (progn
-         (winner-undo)
-         (setq this-command 'winner-undo))
-       :color red)
-  ("Z" winner-redo :color red)
 
   ;; buffer
   ("w" save-buffer)

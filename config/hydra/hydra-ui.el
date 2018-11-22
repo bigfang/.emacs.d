@@ -63,6 +63,12 @@
   ("K" buf-move-up     "buffer up")
   ("J" buf-move-down   "buffer down")
 
+  ("[" (progn
+         (winner-undo)
+         (setq this-command 'winner-undo))
+   :color red)
+  ("]" winner-redo :color red)
+
   (">" my/emacs-alpha-up   "transparent up")
   ("<" my/emacs-alpha-down "transparent down")
   ("=" text-scale-increase "zoom in")
@@ -73,7 +79,7 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra-frame (:color pink :exit t :hint nil :idle .5 :columns 3)
+(defhydra hydra-frame (:color pink :exit t :hint nil :columns 3)
   "Frames"
   ("0" delete-frame "delete")
   ("d" delete-frame "delete")
