@@ -34,7 +34,7 @@
 Formatting        C-c C-s    _s_: bold          _e_: italic     _b_: blockquote   _p_: pre-formatted    _c_: code
 Headings          C-c C-t    _H_: automatic     _1_: h1         _2_: h2           _3_: h3               _4_: h4
 Lists             C-c C-x    _m_: insert item
-Demote/Promote    C-c C-x    _i_: promote       _r_: demote     _u_: move up      _d_: move down
+Demote/Promote    C-c C-x    _i_: promote       _r_: demote     _↑_: move up      _↓_: move down
 Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote     _W_: wiki-link      _R_: reference
 
 "
@@ -54,8 +54,8 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
 
   ("i" markdown-promote)
   ("r" markdown-demote)
-  ("d" markdown-move-down)
-  ("u" markdown-move-up)
+  ("<down>" markdown-move-down)
+  ("<up>" markdown-move-up)
 
   ("L" markdown-insert-link :color blue)
   ("U" markdown-insert-uri :color blue)

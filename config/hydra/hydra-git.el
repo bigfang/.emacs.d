@@ -9,7 +9,7 @@ Git gutter:
 -----^^^^^^------|---------------
    ^ ^ _K_ ^ ^   |   _s_tage
    _H_ ^+^ _L_   |   _r_evert
-   ^ ^ _J_ ^ ^   |   _p_opup
+   ^ ^ _J_ ^ ^   |   _D_ popup diff
 "
   ("n" git-gutter:next-hunk "next hunk")
   ("p" git-gutter:previous-hunk "prev hunk")

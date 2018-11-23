@@ -57,6 +57,7 @@ _z_ zone:
   ("V" ivy-pop-view "pop view")
   ("S" ivy-switch-view "switch view")
 
+  ("I" image-dired "image dired")
   ("d" ido-dired "dired")
   ("l" imenu-list-smart-toggle "imenu list")
   ("q" nil :color blue))

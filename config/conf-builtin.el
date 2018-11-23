@@ -40,11 +40,6 @@
   (auto-image-file-mode t))
 
 
-(use-package image-mode
-  :bind (:map image-mode-map
-        ("u" . image-scroll-down)))
-
-
 (use-package ls-lisp
   :config
   (setq ls-lisp-use-insert-directory-program nil

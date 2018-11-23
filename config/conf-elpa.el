@@ -25,6 +25,11 @@
   (require 'google-translate-smooth-ui))
 
 
+(use-package image+
+  :ensure t
+  :after image)
+
+
 (use-package highlight-indent-guides
   :ensure t
   :hook (prog-mode . highlight-indent-guides-mode)

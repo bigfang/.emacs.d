@@ -36,6 +36,7 @@ emacs-custom.el
 eshell/
 elpa/
 auto-save-list/
+image-dired/
 url/
 pyim/
 emojis/

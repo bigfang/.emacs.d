@@ -42,9 +42,7 @@
         evil-visual-state-cursor '("LightGreen" box)
         evil-insert-state-cursor '("LightGoldenrod" box))
   (evil-mode 1)
-  (evil-set-initial-state 'ibuffer-mode nil)
-  (evil-set-initial-state 'dired-mode nil)
-  (evil-set-initial-state 'image-mode 'emacs)
+  (evil-set-initial-state 'deft-mode nil)
 
   (define-key evil-motion-state-map "gd" 'dumb-jump-go)
   (define-key evil-motion-state-map "gb" 'dumb-jump-back)
@@ -57,12 +55,16 @@
 
 (use-package evil-collection
   :ensure t
-  :after (evil hydra-leader)
+  :after evil
   :config
   (evil-collection-init
-   '(bookmark calendar ediff dired ibuffer magit))
-  (evil-define-key 'normal ibuffer-mode-map (kbd ".") 'hydra-ibuffer-main/body)
-  (evil-define-key 'normal dired-mode-map (kbd ".") 'hydra-dired/body))
+   '(bookmark
+     calendar
+     ediff
+     dired
+     ibuffer
+     image image-dired image+
+     magit)))
 
 
 (use-package evil-goggles
