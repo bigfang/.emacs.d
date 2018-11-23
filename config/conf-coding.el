@@ -61,7 +61,8 @@
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
           python-shell-interpreter-args "-i --simple-prompt"))
-  (setq python-indent-offset 4)
+  (setq python-indent-offset 4
+        python-indent-guess-indent-offset-verbose nil)
   (setq elpy-rpc-backend "jedi")
   (remove-hook 'elpy-modules 'elpy-module-flymake))
 

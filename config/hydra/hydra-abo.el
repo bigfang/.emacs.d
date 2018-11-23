@@ -33,6 +33,7 @@ _z_ zone:
 
 
 (defhydra hydra-execute (:color teal :hint nil :columns 3)
+  ("c" quick-calc "quick calc")
   ("s" shell "shell")
   ("e" eval-last-sexp "eval sexp")
   ("v" ido-find-alternate-file "refresh")
@@ -47,6 +48,7 @@ _z_ zone:
   ("f" counsel-find-file "find file")
   ("e" counsel-recentf "recent file")
   ("m" counsel-mark-ring "mark ring")
+  ("g" counsel-git-grep "git-grep")
   ("s" counsel-rg "ripgrep")
   ("a" counsel-ag "ag")
   ("o" counsel-outline "outline")
