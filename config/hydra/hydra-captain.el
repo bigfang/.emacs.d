@@ -13,7 +13,7 @@
 
 
 (defhydra hydra-captain (:color teal :exit t :hint nil :columns 3)
-  "      --- Hydra Captain ---    "
+  "      --- Hydra Captain ---    "
   ("." xref-find-definitions "xref find def")
   ("'" xref-find-references "xref find ref")
   (";" xref-find-apropos "xref find apropos")

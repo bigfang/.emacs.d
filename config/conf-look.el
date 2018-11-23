@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(setq frame-title-format "%b %z %p @ %m >_< %f")
+(setq frame-title-format "%b 🌵 %f")
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message ";; (〜￣▽￣)〜〜(￣▽￣〜)\n\n")
 (setq visible-bell nil)
@@ -50,7 +50,7 @@
 (use-package minions
   :ensure t
   :config
-  (setq minions-mode-line-lighter ">_<")
+  (setq minions-mode-line-lighter "⌘")
   (minions-mode 1))
 
 

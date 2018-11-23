@@ -12,7 +12,7 @@
 
 
 (defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
-  "      --- Hydra Leader ---    "
+  "      --- Hydra Leader ---    "
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
   ("C-x C-c" save-buffers-kill-terminal :color blue)
