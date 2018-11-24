@@ -1,7 +1,11 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(setq frame-title-format "%b 🌵 %f")
+(setq frame-title-format
+      '("%b" "🌵"
+        (:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%f"))))
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message ";; (〜￣▽￣)〜〜(￣▽￣〜)\n\n")
 (setq visible-bell nil)
@@ -15,6 +19,8 @@
 
 
 ;; === theme ===
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
 (set-frame-parameter nil 'alpha 95)
 ;; (set-cursor-color "#cd5c5c")
 (set-face-attribute 'region nil :background "#4682b4" :foreground "black")
