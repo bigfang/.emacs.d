@@ -100,6 +100,17 @@
   (global-set-key (kbd "<f2> u") 'counsel-unicode-char))
 
 
+(use-package avy
+  :ensure t
+  :bind (("M-g g" . avy-goto-word-or-subword-1)
+         ("M-g f" . avy-goto-line)))
+
+
+(use-package tiny
+  :ensure t
+  :bind ("C-'" . tiny-expand))
+
+
 ;; ===
 (use-package all-the-icons-ivy
   :ensure t
@@ -111,12 +122,6 @@
   :config
   (setq ivy-rich-path-style 'abbrev)
   (ivy-rich-mode 1))
-
-
-(use-package avy
-  :ensure t
-  :bind (("M-g g" . avy-goto-word-or-subword-1)
-         ("M-g f" . avy-goto-line)))
 
 
 (use-package counsel-tramp
