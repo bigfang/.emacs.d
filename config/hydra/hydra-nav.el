@@ -7,7 +7,7 @@
   ("b" ivy-switch-buffer "switch")
   ("n" next-buffer "next buffer" :color red)
   ("p" previous-buffer "previous buffer" :color red)
-  ("k" kill-this-buffer "kill buffer")
+  ("k" kill-buffer-and-window "kill buffer window")
   ("q" nil :color blue))
 
 

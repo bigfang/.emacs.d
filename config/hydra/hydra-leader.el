@@ -41,6 +41,7 @@
   ("v" hydra-git/body "git")
   ("x" hydra-execute/body "execute...")
 
+  ("l" beacon-blink)
   ("t" treemacs "treemacs")
 
 
@@ -67,7 +68,7 @@
 
   ;; buffer
   ("w" save-buffer)
-  ("k" kill-buffer-and-window)
+  ("k" kill-this-buffer)
   ("<tab>" previous-buffer)
   ("DEL" next-buffer)
   ("U" undo-tree-visualize :color blue)
