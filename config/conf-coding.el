@@ -45,26 +45,27 @@
 
 ;; === programming languages ===
 ;; python
-(use-package elpy
+(use-package pyvenv
+  :ensure t)
+
+(use-package anaconda-mode
   :ensure t
-  :pin melpa-stable
-  :bind (:map elpy-mode-map
-         ;; ("<C-return>" . evil-open-blow)
-         ("M-i" . elpy-company-backend)
-         ("M-." . elpy-goto-definition)
-         :map comint-mode-map
-         ("M-p" . comint-previous-input)
-         ("M-n" . comint-next-input))
-  :init (elpy-enable)
+  :hook
+  (python-mode . anaconda-mode)
+  (python-mode . anaconda-eldoc-mode)
   :config
-  (evil-define-key 'normal elpy-mode-map (kbd "gd") 'elpy-goto-definition)
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
           python-shell-interpreter-args "-i --simple-prompt"))
-  (setq python-indent-offset 4
-        python-indent-guess-indent-offset-verbose nil)
-  (setq elpy-rpc-backend "jedi")
-  (remove-hook 'elpy-modules 'elpy-module-flymake))
+  (evil-define-key 'normal anaconda-mode-map (kbd "ga") 'anaconda-mode-find-assignments)
+  (evil-define-key 'normal anaconda-mode-map (kbd "gr") 'anaconda-mode-find-references)
+  (evil-define-key 'normal anaconda-mode-map (kbd "gd") 'anaconda-mode-find-definitions))
+
+(use-package company-anaconda
+  :ensure t
+  :after company anaconda-mode
+  :config
+  (add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
 
 ;; elixir
