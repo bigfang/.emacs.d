@@ -140,7 +140,6 @@
 
 
 (provide 'conf-abo)
-;;; conf-abo.el ends here
 
 
 ;; Call `ivy-immediate-done' if you want to use whatever you typed in the

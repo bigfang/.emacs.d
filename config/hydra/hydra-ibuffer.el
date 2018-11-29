@@ -96,4 +96,3 @@
 
 
 (provide 'hydra/hydra-ibuffer)
-;;; hydra-ibuffer.el ends here

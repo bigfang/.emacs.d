@@ -69,4 +69,3 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
 
 
 (provide 'hydra/hydra-editing)
-;;; hydra-editing.el ends here

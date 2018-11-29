@@ -76,4 +76,3 @@
 
 
 (provide 'conf-pkg)
-;;; conf-pkg.el ends here

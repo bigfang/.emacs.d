@@ -38,4 +38,3 @@ Git gutter:
 
 
 (provide 'hydra/hydra-git)
-;;; hydra-git.el ends here

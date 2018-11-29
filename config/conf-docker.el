@@ -24,4 +24,3 @@
 
 
 (provide 'conf-docker)
-;;; conf-docker.el ends here

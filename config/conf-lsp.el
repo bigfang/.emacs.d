@@ -30,4 +30,3 @@
 
 
 (provide 'conf-lsp)
-;;; conf-lsp.el ends here

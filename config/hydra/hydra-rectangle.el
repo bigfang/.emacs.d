@@ -33,4 +33,3 @@ _h_   _l_   [_y_]yank      [_t_]type      [_e_]exchange-point          /,`.-'`' 
 
 
 (provide 'hydra/hydra-rectangle)
-;;; hydra-rectangle.el ends here

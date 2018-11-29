@@ -97,4 +97,3 @@
 
 
 (provide 'conf-evil)
-;;; conf-evil.el ends here

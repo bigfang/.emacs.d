@@ -83,4 +83,3 @@
 
 
 (provide 'conf-ibuffer)
-;;; conf-ibuffer.el ends here

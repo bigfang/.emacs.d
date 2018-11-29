@@ -139,4 +139,3 @@
 
 
 (provide 'conf-editing)
-;;; conf-editing.el ends here

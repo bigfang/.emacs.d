@@ -191,4 +191,3 @@
 
 
 (provide 'conf-elpa)
-;;; conf-elpa.el ends here

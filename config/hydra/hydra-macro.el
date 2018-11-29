@@ -38,4 +38,3 @@
 
 
 (provide 'hydra/hydra-macro)
-;;; hydra-macro.el ends here

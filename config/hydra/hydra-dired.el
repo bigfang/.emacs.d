@@ -56,4 +56,3 @@ T - tag prefix
 
 
 (provide 'hydra/hydra-dired)
-;;; hydra-dired.el ends here

@@ -63,4 +63,3 @@ Info-mode:
 
 
 (provide 'hydra/hydra-info)
-;;; hydra-info.el ends here

@@ -68,4 +68,3 @@
 
 
 (provide 'conf-company)
-;;; conf-company.el ends here

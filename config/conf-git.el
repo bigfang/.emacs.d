@@ -66,4 +66,3 @@
 
 
 (provide 'conf-git)
-;;; conf-git.el ends here

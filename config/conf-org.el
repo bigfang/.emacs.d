@@ -54,4 +54,3 @@
 
 
 (provide 'conf-org)
-;;; conf-org.el ends here
