@@ -10,6 +10,7 @@
          ("SPC" . hydra-leader/body)
          ("/" . hydra-captain/body))
   :config
+  (use-package hydra/hydra-builtin)
   (use-package hydra/hydra-dired)
   (use-package hydra/hydra-ibuffer)
   (use-package hydra/hydra-info)

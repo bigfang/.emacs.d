@@ -11,22 +11,16 @@
 (use-package flycheck
   :ensure t
   :pin melpa-stable
-  :hook (elpy-mode . flycheck-mode)
+  :hook (prog-mode . flycheck-mode)
   :config
-  (defun my/toggle-flyc-window ()
-    (interactive)
-    (if (get-buffer-window "*Flycheck errors*" t)
-        (with-selected-window
-            (get-buffer-window "*Flycheck errors*" t)
-          (delete-window))
-      (flycheck-list-errors))))
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 
 (use-package projectile
   :ensure t
   :pin melpa-stable
-  :bind (:map projectile-mode-map
-         ("s-p" . projectile-command-map))
+  :bind-keymap
+  ("s-p" . projectile-command-map)
   :config
   (setq projectile-completion-system 'ivy)
   (projectile-mode))

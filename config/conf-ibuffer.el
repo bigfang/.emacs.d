@@ -5,6 +5,7 @@
   :ensure nil
   :bind (("C-x C-b" . ibuffer)
          :map ibuffer-mode-map
+         ("SPC" . hydra-leader/body)
          ("j" . ibuffer-forward-line)
          ("k" . ibuffer-backward-line))
   :hook

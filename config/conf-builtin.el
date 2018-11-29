@@ -20,6 +20,7 @@
 
 (use-package dired
   :bind (:map dired-mode-map
+         ("SPC" . hydra-leader/body)
          ("j" . dired-next-line)
          ("k" . dired-previous-line)
          ("J" . dired-goto-file)
