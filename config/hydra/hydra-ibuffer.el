@@ -31,7 +31,6 @@
   ("." nil "toggle hydra" :color blue))
 
 (define-key ibuffer-mode-map "." 'hydra-ibuffer-main/body)
-(evil-define-key 'normal ibuffer-mode-map (kbd ".") 'hydra-ibuffer-main/body)
 
 
 (defhydra hydra-ibuffer-mark (:color teal :columns 5

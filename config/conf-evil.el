@@ -58,11 +58,7 @@
   :after evil
   :config
   (evil-collection-init
-   '(bookmark
-     calendar
-     ediff
-     dired
-     ibuffer
+   '(bookmark calendar ediff
      image image-dired image+
      magit)))
 
@@ -94,6 +90,12 @@
 
 (use-package evil-textobj-syntax
   :ensure t)
+
+
+(evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line)
+(evil-define-key 'normal dired-mode-map (kbd "k") 'dired-previous-line)
+(evil-define-key 'normal ibuffer-mode-map (kbd "j") 'ibuffer-forward-line)
+(evil-define-key 'normal ibuffer-mode-map (kbd "k") 'ibuffer-backward-line)
 
 
 (provide 'conf-evil)

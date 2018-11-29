@@ -53,7 +53,6 @@ T - tag prefix
   ("." nil :color blue))
 
 (define-key dired-mode-map "." 'hydra-dired/body)
-(evil-define-key 'normal dired-mode-map (kbd ".") 'hydra-dired/body)
 
 
 (provide 'hydra/hydra-dired)
