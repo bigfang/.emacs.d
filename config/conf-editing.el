@@ -72,7 +72,6 @@
 
             ;; (linum-mode t)
             (hs-minor-mode t)
-            (highlight-indentation-mode -1)
             (prettify-symbols-mode t)))
 
 

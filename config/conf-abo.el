@@ -102,7 +102,8 @@
 
 (use-package avy
   :ensure t
-  :bind (("M-g g" . avy-goto-word-or-subword-1)
+  :bind (("M-g c" . avy-goto-char-2)
+         ("M-g g" . avy-goto-word-or-subword-1)
          ("M-g f" . avy-goto-line)))
 
 

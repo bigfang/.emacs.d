@@ -19,6 +19,11 @@
 
 
 (use-package dired
+  :bind (:map dired-mode-map
+         ("j" . dired-next-line)
+         ("k" . dired-previous-line)
+         ("J" . dired-goto-file)
+         ("K" . dired-do-kill-lines))
   :config
   (setq dired-listing-switches "-lahv"
         dired-recursive-copies 'top
@@ -90,8 +95,7 @@
 
 
 (use-package zone
-  :config
-  (zone-when-idle 300))
+  :config (zone-when-idle 300))
 
 
 (provide 'conf-builtin)

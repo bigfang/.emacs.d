@@ -54,6 +54,7 @@
   (python-mode . anaconda-mode)
   (python-mode . anaconda-eldoc-mode)
   :config
+  (unbind-key "M-r" anaconda-mode-map)
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
           python-shell-interpreter-args "-i --simple-prompt"))

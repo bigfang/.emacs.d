@@ -6,15 +6,16 @@
 
 (defhydra hydra-toggle (:color amaranth)
   "
-_a_ abbrev-mode:       %`abbrev-mode
-_c_ cua-mode:          %`cua-mode
-_d_ debug-on-error:    %`debug-on-error
-_f_ auto-fill-mode:    %`auto-fill-function
-_t_ truncate-lines:    %`truncate-lines
-_w_ whitespace-mode:   %`whitespace-mode
-_o_ ioutline-mode:     %`outline-minor-mode
-_v_ view-mode:         %`view-mode
-_m_ xterm-mouse-mode   %`xterm-mouse-mode
+_a_ abbrev-mode:         %`abbrev-mode
+_c_ cua-mode:            %`cua-mode
+_d_ debug-on-error:      %`debug-on-error
+_f_ auto-fill-mode:      %`auto-fill-function
+_t_ truncate-lines:      %`truncate-lines
+_w_ whitespace-mode:     %`whitespace-mode
+_o_ ioutline-mode:       %`outline-minor-mode
+_v_ view-mode:           %`view-mode
+_m_ xterm-mouse-mode     %`xterm-mouse-mode
+_n_ line-numbers-mode    %`display-line-numbers-mode
 _r_ rot13-mode:
 _z_ zone:
 "
@@ -27,6 +28,7 @@ _z_ zone:
   ("o" outline-minor-mode nil)
   ("v" view-mode nil)
   ("m" xterm-mouse-mode nil)
+  ("n" display-line-numbers-mode nil)
   ("r" toggle-rot13-mode nil :color blue)
   ("z" zone nil :color blue)
   ("q" nil :color blue))

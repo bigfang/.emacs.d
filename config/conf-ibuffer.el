@@ -3,7 +3,10 @@
 
 (use-package ibuffer
   :ensure nil
-  :bind ("C-x C-b" . ibuffer)
+  :bind (("C-x C-b" . ibuffer)
+         :map ibuffer-mode-map
+         ("j" . ibuffer-forward-line)
+         ("k" . ibuffer-backward-line))
   :hook
   (ibuffer-mode . (lambda ()
                     (ibuffer-switch-to-saved-filter-groups "Default")))

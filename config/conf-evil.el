@@ -6,6 +6,8 @@
   :pin melpa-stable
   :chords ("kj" . evil-normal-state)
   :bind (:map evil-motion-state-map
+         ("'" . evil-goto-mark)
+         ("`" . evil-goto-mark-line)
          ("gD" . evil-goto-definition)
          ("^" . evil-window-top)
          ("$" . evil-window-bottom)
@@ -43,6 +45,8 @@
         evil-insert-state-cursor '("LightGoldenrod" box))
   (evil-mode 1)
   (evil-set-initial-state 'deft-mode nil)
+  (evil-set-initial-state 'dired-mode 'emacs)
+  (evil-set-initial-state 'ibuffer-mode 'emacs)
 
   (define-key evil-motion-state-map "gd" 'dumb-jump-go)
   (define-key evil-motion-state-map "gb" 'dumb-jump-back)
@@ -90,12 +94,6 @@
 
 (use-package evil-textobj-syntax
   :ensure t)
-
-
-(evil-define-key 'normal dired-mode-map (kbd "j") 'dired-next-line)
-(evil-define-key 'normal dired-mode-map (kbd "k") 'dired-previous-line)
-(evil-define-key 'normal ibuffer-mode-map (kbd "j") 'ibuffer-forward-line)
-(evil-define-key 'normal ibuffer-mode-map (kbd "k") 'ibuffer-backward-line)
 
 
 (provide 'conf-evil)
