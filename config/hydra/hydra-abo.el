@@ -2,6 +2,7 @@
 
 
 (whitespace-mode -1)
+(display-line-numbers-mode -1)
 
 
 (defhydra hydra-toggle (:color amaranth)

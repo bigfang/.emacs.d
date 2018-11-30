@@ -1,6 +1,14 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package darkroom
+  :ensure t
+  :hook
+  ((org-mode markdown-mode) . darkroom-mode)
+  :config
+  (setq darkroom-text-scale-increase 1))
+
+
 (use-package fzf
   :ensure t
   :ensure-system-package fzf)
