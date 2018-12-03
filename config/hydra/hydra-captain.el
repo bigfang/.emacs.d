@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-browse (:color teal :hint nil :columns 1)
+(defhydra hydra-browse (:color teal :hint nil :columns 2)
   "visit website"
   ("g" (browse-url "https://github.com") "GitHub")
   ("r" (browse-url "https://www.reddit.com") "Reddit")
@@ -9,6 +9,8 @@
   ("t" (browse-url "http://club.tgfcer.com/forum-25-1.html") "TGFC")
   ("x" (browse-url "https://xueqiu.com") "xueqiu")
   ("z" (browse-url "https://zhihu.com") "zhihu")
+  ("." (browse-url ".") "current directory")
+  ("RET" (browse-url-of-buffer) "current buffer")
   ("q" nil :color blue))
 
 
