@@ -69,8 +69,10 @@
   ;; buffer
   ("w" save-buffer)
   ("k" kill-this-buffer)
-  ("<tab>" previous-buffer)
-  ("DEL" next-buffer)
+  ("<tab>" projectile-previous-project-buffer)
+  ("DEL" projectile-next-project-buffer)
+  ("<" previous-buffer "prev buffer" :color red)
+  (">" next-buffer "next buffer" :color red)
   ("U" undo-tree-visualize :color blue)
 
   ("<escape>" nil :color blue)

@@ -96,7 +96,7 @@
 
 
 (use-package zone
-  :config (zone-when-idle 300))
+  :config (zone-when-idle 600))
 
 
 (provide 'conf-builtin)

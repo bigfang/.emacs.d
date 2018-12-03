@@ -55,7 +55,7 @@
   ("c" highlight-symbol-count "count")
   ("o" highlight-symbol-occur "occur" :color blue)
   ("a" highlight-symbol-list-all "list")
-  ("d" highlight-symbol-remove-all "remove all")
+  ("x" highlight-symbol-remove-all "remove all")
   ("q" nil :color blue))
 
 
