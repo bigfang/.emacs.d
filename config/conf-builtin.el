@@ -24,7 +24,9 @@
          ("j" . dired-next-line)
          ("k" . dired-previous-line)
          ("J" . dired-goto-file)
-         ("K" . dired-do-kill-lines))
+         ("K" . dired-do-kill-lines)
+         ("G" . end-of-buffer)
+         ("V" . dired-do-chgrp))
   :config
   (setq dired-listing-switches "-lahv"
         dired-recursive-copies 'top

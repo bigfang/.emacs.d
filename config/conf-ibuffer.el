@@ -7,7 +7,8 @@
          :map ibuffer-mode-map
          ("SPC" . hydra-leader/body)
          ("j" . ibuffer-forward-line)
-         ("k" . ibuffer-backward-line))
+         ("k" . ibuffer-backward-line)
+         ("G" . end-of-buffer))
   :hook
   (ibuffer-mode . (lambda ()
                     (ibuffer-switch-to-saved-filter-groups "Default")))
