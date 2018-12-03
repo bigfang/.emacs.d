@@ -9,6 +9,7 @@
 (use-package hydra/hydra-editing)
 (use-package hydra/hydra-nav)
 (use-package hydra/hydra-ui)
+(use-package hydra/hydra-adapter)
 
 
 (defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
@@ -24,7 +25,7 @@
   ("'" hydra-multiple-cursors/body "multiple-cursors")
   ("`" hydra-toggle/body "toggle modes...")
 
-  ("a" hydra-adjust/body "adjust...")
+  ("a" hydra-adapter "adapter...")
   ("i" hydra-abo/body "ivy...")
   ("b" hydra-buffer/body "buffer...")
   ("c" hydra-flycheck/body "flycheck...")
