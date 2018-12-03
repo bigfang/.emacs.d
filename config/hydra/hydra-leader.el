@@ -3,13 +3,22 @@
 
 (use-package hydra/hydra-org)
 (use-package hydra/hydra-projectile)
+(use-package hydra/hydra-alchemist)
 
 (use-package hydra/hydra-abo)
 (use-package hydra/hydra-git)
 (use-package hydra/hydra-editing)
 (use-package hydra/hydra-nav)
 (use-package hydra/hydra-ui)
-(use-package hydra/hydra-adapter)
+
+
+(defun hydra-adapter ()
+  "adapter"
+  (interactive)
+  (cond
+   ((bound-and-true-p alchemist-mode) (hydra-alchemist/body))
+   (t (message "Must in a correct minor mode"))
+   ))
 
 
 (defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
@@ -26,6 +35,7 @@
   ("`" hydra-toggle/body "toggle modes...")
 
   ("a" hydra-adapter "adapter...")
+
   ("i" hydra-abo/body "ivy...")
   ("b" hydra-buffer/body "buffer...")
   ("c" hydra-flycheck/body "flycheck...")
