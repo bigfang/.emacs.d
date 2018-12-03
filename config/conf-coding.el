@@ -77,6 +77,8 @@
 
 (use-package alchemist
   :ensure t
+  :init
+  (setq alchemist-key-command-prefix (kbd "M-g M-a"))
   :config
   (setq alchemist-mix-env "dev")
   (evil-define-key 'normal alchemist-mode-map (kbd "gd") 'alchemist-goto-definition-at-point)
