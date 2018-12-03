@@ -76,14 +76,25 @@
 
 (use-package pyim
   :ensure t
+  :bind
+  ("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
   :config
   (setq default-input-method "pyim"
         pyim-default-scheme 'pyim-shuangpin)
   (setq pyim-fuzzy-pinyin-alist nil)
-  (pyim-isearch-mode -1))
+  (setq-default pyim-english-input-switch-functions
+                '(pyim-probe-dynamic-english
+                  pyim-probe-isearch-mode
+                  pyim-probe-program-mode
+                  pyim-probe-org-structure-template))
+  (setq-default pyim-punctuation-half-width-functions
+                '(pyim-probe-punctuation-line-beginning
+                  pyim-probe-punctuation-after-punctuation))
+  (pyim-isearch-mode 1))
 
 (use-package pyim-basedict
   :ensure nil
+  :after pyim
   :config (pyim-basedict-enable))
 
 
