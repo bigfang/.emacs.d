@@ -40,7 +40,9 @@
 
 (use-package toc-org
   :ensure t
-  :hook (org-mode . toc-org-enable))
+  :hook (org-mode . toc-org-enable)
+  :config
+  (setq toc-org-hrefify-default "org"))
 
 
 
