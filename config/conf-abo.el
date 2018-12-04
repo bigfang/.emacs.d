@@ -48,8 +48,6 @@
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
-         ("C-m" . ivy-alt-done)             ;RET, default C-j
-         ("C-j" . ivy-done)                 ;Default C-m
          ("<escape>" . minibuffer-keyboard-quit)
          ("M-u" . ivy-occur)
          ("s-n" . ivy-next-line-and-call)
@@ -155,11 +153,11 @@
 ;; | Command                    | ivy map        | Function                                                          |
 ;; |                            | Bindings       |                                                                   |
 ;; |----------------------------+----------------+-------------------------------------------------------------------|
-;; | ivy-done                   | C-j            | Exit the minibuffer with the selected candidate.                  |
-;; |                            | (default: C-m) | Try to leave `ivy' as soon as possible.                           |
+;; | ivy-done                   | C-m or RET     | Exit the minibuffer with the selected candidate.                  |
+;; |                            |                | Try to leave `ivy' as soon as possible.                           |
 ;; |----------------------------+----------------+-------------------------------------------------------------------|
-;; | ivy-alt-done               | C-m or RET     | Exit the minibuffer with the selected candidate.                  |
-;; |                            | (default: C-j) | When ARG is t, acts like `ivy-immediate-done'.                    |
+;; | ivy-alt-done               | C-j            | Exit the minibuffer with the selected candidate.                  |
+;; |                            |                | When ARG is t, acts like `ivy-immediate-done'.                    |
 ;; |                            |                | Try NOT to leave `ivy' at the soonest. For                        |
 ;; |                            |                | instance, if a directory name completion is                       |
 ;; |                            |                | possible, do that and list that directory's                       |
