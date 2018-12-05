@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-browse (:color teal :hint nil :columns 2)
+(defhydra hydra-browse (:color teal :hint nil :columns 3)
   "visit website"
   ("g" (browse-url "https://github.com") "GitHub")
   ("r" (browse-url "https://www.reddit.com") "Reddit")
@@ -14,7 +14,7 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra-captain (:color teal :exit t :hint nil :columns 3)
+(defhydra hydra-captain (:color teal :exit t :hint nil :columns 4)
   "      --- Hydra Captain ---    "
   ("." xref-find-definitions "xref find def")
   (";" xref-find-references "xref find ref")

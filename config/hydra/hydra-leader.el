@@ -5,6 +5,7 @@
 (use-package hydra/hydra-projectile)
 (use-package hydra/hydra-alchemist)
 
+(use-package hydra/hydra-coding)
 (use-package hydra/hydra-abo)
 (use-package hydra/hydra-git)
 (use-package hydra/hydra-editing)
@@ -12,13 +13,23 @@
 (use-package hydra/hydra-ui)
 
 
+(defhydra hydra-adapter-default (:color teal :hint nil :columns 3)
+  "default adapter"
+   ("o" list-packages "list packages")
+   ("j" ffap "ffap")
+   ("z" fzf-directory "fzf-directory")
+   ("." (browse-url ".") "current directory")
+   ("q" nil :color blue))
+
 (defun hydra-adapter ()
   "adapter"
   (interactive)
   (cond
+   ((eq major-mode 'org-mode) (hydra-org/body))
+   ((eq major-mode 'python-mode) (hydra-python/body))
+   ((eq major-mode 'markdown-mode) (hydra-markdown-mode/body))
    ((bound-and-true-p alchemist-mode) (hydra-alchemist/body))
-   (t (message "Must in a correct minor mode"))
-   ))
+   (t (hydra-adapter-default/body))))
 
 
 (defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
@@ -34,8 +45,9 @@
   ("'" hydra-multiple-cursors/body "multiple-cursors")
   ("`" hydra-toggle/body "toggle modes...")
 
-  ("a" hydra-adapter "adapter...")
+  ("o" hydra-adapter "adapter...")
 
+  ("a" hydra-avy/body "avy...")
   ("i" hydra-abo/body "ivy...")
   ("b" hydra-buffer/body "buffer...")
   ("c" hydra-flycheck/body "flycheck...")
@@ -45,14 +57,15 @@
          (interactive)
          (highlight-symbol)
          (hydra-highlight/body)) "highlight...")
-  ("j" hydra-jump/body "jump...")
+  ("j" hydra-dumb-jump/body "jump...")
   ("m" hydra-mark/body "marks...")
-  ("o" hydra-org/body "org-mode...")
   ("p" hydra-projectile/body "projectile...")
   ("v" hydra-git/body "git")
   ("x" hydra-execute/body "execute...")
 
-  ("l" beacon-blink)
+  ("d" deft "deft")
+  ("g" magit-status "magit")
+  ("l" beacon-blink "blink cursor")
   ("t" treemacs "treemacs")
 
 

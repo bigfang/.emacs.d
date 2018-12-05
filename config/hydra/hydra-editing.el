@@ -65,7 +65,5 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
   ("<f9>" nil)
   ("q" nil :color blue))
 
-(define-key markdown-mode-map [f9] 'hydra-markdown-mode/body)
-
 
 (provide 'hydra/hydra-editing)

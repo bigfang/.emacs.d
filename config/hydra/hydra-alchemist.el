@@ -11,12 +11,14 @@
 
   ("r" alchemist-iex-run "iex")
   ("h" alchemist-help-search-at-point "help")
+  ("s" alchemist-project-toggle-file-and-tests "switch lib/test")
+  ("S" alchemist-project-toggle-file-and-tests-other-window "Switch lib/test")
   ("f" alchemist-project-find-test "test files")
   ("l" alchemist-project-find-lib "lib files")
   ("t" alchemist-mix-test "test")
 
-  ("M" alchemist-mix "mix")
-  ("H" alchemist-help "help")
+  ("M" alchemist-mix "Mix:")
+  ("H" alchemist-help "Help:")
   ("q" nil :color blue))
 
 

@@ -59,32 +59,43 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra-jump (:color teal :hint nil)
+(defhydra hydra-avy (:color teal :hint nil)
   "
-   ^Chars^             ^other^                ^dumb-jump^
--------------------------------------------------------------------------------
-[_c_] char         [_w_] word / subword    [_j_] go
-[_s_] char-2       [_S_] subword           [_o_] other window
-[_t_] char-timer   [_l_] line              [_i_] prompt
-[_g_] line                               ^^[_b_] back
-                                       ^^^^[_l_] quick look
+     ^Chars^            ^word^              ^other^
+------------------------------------------------------------
+ [_c_]  char         [_w_]  word         [_s_]  symbol
+ [_v_]  char-2       [_e_]  subword
+ [_t_]  char-timer                     ^^[_l_]  line
 "
   ("c" avy-goto-char)
-  ("s" avy-goto-char-2)
+  ("v" avy-goto-char-2)
   ("t" avy-goto-char-timer)
   ("w" avy-goto-word-or-subword-1)
-  ("S" avy-goto-subword-1)
-  ("g" avy-goto-line)
+  ("e" avy-goto-subword-1)
+  ("s" avy-goto-symbol-1)
+  ("l" avy-goto-line)
 
+  ("q" nil "cancel" :color blue))
+
+
+(defhydra hydra-dumb-jump (:color teal :hint nil)
+  "
+     ^jump^                        ^other^
+----------------------------------------------
+ [_j_] go                     [_l_] quick look
+ [_o_] go other window        [_i_] prompt
+ [_e_] external               [_b_] back
+ [_x_] external other window
+"
   ("j" dumb-jump-go)
-  ("i" dumb-jump-go-prompt)
   ("o" dumb-jump-go-other-window)
-  ("b" dumb-jump-back :color red)
+  ("i" dumb-jump-go-prompt)
   ("l" dumb-jump-quick-look)
-  ("e" dumb-jump-go-prefer-external "Go external")
-  ("x" dumb-jump-go-prefer-external-other-window "Go external other window")
+  ("b" dumb-jump-back :color red)
+  ("e" dumb-jump-go-prefer-external)
+  ("x" dumb-jump-go-prefer-external-other-window)
 
-  ("q" nil "quit"))
+  ("q" nil))
 
 
 (provide 'hydra/hydra-nav)

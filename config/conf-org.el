@@ -16,7 +16,7 @@
   :ensure t
   :commands (deft)
   :config
-  (setq deft-directory "~/notes"
+  (setq deft-directory "~/org"
         deft-recursive t
         deft-default-extension "org"
         deft-extensions '("org" "md"))

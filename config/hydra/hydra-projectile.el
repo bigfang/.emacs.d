@@ -21,10 +21,6 @@
   _e_: recent file     _r_: replace                                ^^_z_: cache current
 
 "
-  ("="   list-packages "list packages")
-  ("RET" pyvenv-workon "python workon")
-  ("DEL" run-python "IPython")
-
   ("p"   counsel-projectile-switch-project)
   ("o"   projectile-switch-open-project "opened project")
   ("d"   projectile-dired)

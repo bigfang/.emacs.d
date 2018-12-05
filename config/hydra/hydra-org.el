@@ -31,8 +31,7 @@
 
 (defhydra hydra-org (:color pink :exit t :hint nil)
   "Org-mode"
-  ("d" deft "deft")
-  ("q" nil :color blue))
+  ("q" nil "quit" :color blue))
 
 
 (provide 'hydra/hydra-org)

@@ -48,6 +48,7 @@
   (python-mode . anaconda-mode)
   (python-mode . anaconda-eldoc-mode)
   :config
+  (setq python-indent-guess-indent-offset-verbose nil)
   (unbind-key "M-r" anaconda-mode-map)
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
