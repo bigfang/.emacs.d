@@ -96,4 +96,8 @@
   :ensure t)
 
 
+(with-eval-after-load 'evil
+  (global-set-key (kbd "<M-Return>") 'vi-open-below))
+
+
 (provide 'conf-evil)

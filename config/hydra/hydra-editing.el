@@ -29,7 +29,7 @@
 (bind-key* (kbd "C-/") 'hydra-multiple-cursors/body)
 
 
-(defhydra hydra-markdown-mode (:color pink :hint nil)
+(defhydra hydra-markdown (:color pink :hint nil)
   "
 Formatting        C-c C-s    _s_: bold          _e_: italic     _b_: blockquote   _p_: pre-formatted    _c_: code
 Headings          C-c C-t    _H_: automatic     _1_: h1         _2_: h2           _3_: h3               _4_: h4

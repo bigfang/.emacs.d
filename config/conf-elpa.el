@@ -90,7 +90,7 @@
   (setq-default pyim-punctuation-half-width-functions
                 '(pyim-probe-punctuation-line-beginning
                   pyim-probe-punctuation-after-punctuation))
-  (pyim-isearch-mode 1))
+  (pyim-isearch-mode -1))
 
 (use-package pyim-basedict
   :ensure nil
