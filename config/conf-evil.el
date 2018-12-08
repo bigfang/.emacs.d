@@ -18,6 +18,8 @@
 
          :map evil-normal-state-map
          ("zi" . hs-hide-level)
+         ("C-n" . next-line)
+         ("C-p" . previous-line)
          ("C-y" . yank)                  ; evil-scroll-line-up
          ([remap evil-jump-item] . evil-execute-macro)
 

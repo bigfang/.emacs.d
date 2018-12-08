@@ -26,11 +26,13 @@ Git gutter:
   ("q" nil :color blue))
 
 
-(defhydra hydra-git (:color teal :hint nil :columns 2)
+(defhydra hydra-git (:color teal :hint nil :columns 3)
   "Git"
+  ("i" magit-init "git init")
   ("b" magit-blame "git blame")
   ("h" magit-log-buffer-file "file history")
   ("d" magit-diff-buffer-file "file diff")
+  ("r" magit-refresh-all "refresh all")
   ("g" hydra-git-gutter/body "git-gutter...")
   ("t" git-timemachine "git timemachine")
   ("v" magit-status "magit")
