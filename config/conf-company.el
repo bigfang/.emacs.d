@@ -51,7 +51,15 @@
         company-show-numbers t))
 
 
+(use-package company-posframe
+  :disabled
+  :ensure t
+  :config
+  (company-posframe-mode 1))
+
+
 (use-package company-quickhelp
+  :disabled
   :if window-system
   :requires company
   :ensure t

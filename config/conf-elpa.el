@@ -1,6 +1,17 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package posframe
+  :ensure t)
+
+(use-package ivy-posframe
+  :ensure t
+  :config
+  (push '(counsel-M-x . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist)
+  (push '(t . ivy-posframe-display-at-point) ivy-display-functions-alist)
+  (ivy-posframe-enable))
+
+
 (use-package darkroom
   :ensure t
   :hook
@@ -90,7 +101,8 @@
   (setq-default pyim-punctuation-half-width-functions
                 '(pyim-probe-punctuation-line-beginning
                   pyim-probe-punctuation-after-punctuation))
-  (pyim-isearch-mode -1))
+  (pyim-isearch-mode -1)
+  (setq pyim-page-tooltip 'posframe))
 
 (use-package pyim-basedict
   :ensure nil
