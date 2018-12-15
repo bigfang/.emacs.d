@@ -20,23 +20,6 @@
   (desktop-save-mode t))
 
 
-(use-package dired
-  :bind (:map dired-mode-map
-         ("SPC" . hydra-leader/body)
-         ("j" . dired-next-line)
-         ("k" . dired-previous-line)
-         ("J" . dired-goto-file)
-         ("K" . dired-do-kill-lines)
-         ("G" . end-of-buffer)
-         ("V" . dired-do-chgrp))
-  :config
-  (setq dired-listing-switches "-lahv"
-        dired-recursive-copies 'top
-        dired-recursive-deletes 'top
-        dired-dwim-target t)
-  (put 'dired-find-alternate-file 'disabled nil))
-
-
 (use-package ido
   :bind (("C-x b" . ido-switch-buffer))
   :config

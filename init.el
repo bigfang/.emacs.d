@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-11-11 15:27:35>
+;; Time-stamp: <2018-12-13 23:34:10>
 
 
 
@@ -26,6 +26,7 @@
 (use-package conf-look)
 (use-package conf-kbd)
 (use-package conf-builtin)
+(use-package conf-dired)
 (use-package conf-ibuffer)
 (use-package conf-org)
 
