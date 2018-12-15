@@ -58,9 +58,6 @@ _z_ zone:
   ("z" counsel-fzf "fzf")
   ("w" ivy-imenu-anywhere "imenu-anywhere")
   ("r" ivy-resume "resume")
-  ("v" ivy-push-view "push view")
-  ("V" ivy-pop-view "pop view")
-  ("S" ivy-switch-view "switch view")
 
   ("I" image-dired "image dired")
   ("d" ido-dired "dired")

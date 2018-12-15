@@ -66,16 +66,6 @@
   (load custom-file))
 
 
-;; display-buffer
-(add-to-list 'display-buffer-alist
-             '("\\*.*\\*"
-               (display-buffer-reuse-window
-                display-buffer-below-selected)
-               (split-window-sensibly)
-               (window-height   . 0.3)
-               (reusable-frames . visible)))
-
-
 ;; show paren
 (use-package paren
   :ensure t
