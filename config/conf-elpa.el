@@ -12,6 +12,12 @@
   (ivy-posframe-enable))
 
 
+(use-package deadgrep
+  :ensure t
+  :config
+  (setq-default deadgrep--search-type 'regexp))
+
+
 (use-package darkroom
   :ensure t
   :hook
@@ -42,6 +48,15 @@
   ;; (setq url-gateway-method 'socks)
   ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
   (require 'google-translate-smooth-ui))
+
+
+(use-package helpful
+  :ensure t
+  :bind
+  ("<f1> ." . helpful-at-point)
+  ("<f1> k" . helpful-key)
+  ("<f1> f" . helpful-callable)
+  ("<f1> v" . helpful-variable))
 
 
 (use-package image+

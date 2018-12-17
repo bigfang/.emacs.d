@@ -48,6 +48,7 @@
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
+         ("C-SPC" . ivy-restrict-to-matches) ; default "S-SPC"
          ("<escape>" . minibuffer-keyboard-quit)
          ("M-u" . ivy-occur)
          ("s-n" . ivy-next-line-and-call)
@@ -92,8 +93,8 @@
          ("M-y" . counsel-yank-pop))
   :config
   (global-set-key (kbd "<f1> b") 'counsel-descbinds)
-  (global-set-key (kbd "<f1> f") 'counsel-describe-function)
-  (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+  ;; (global-set-key (kbd "<f1> f") 'counsel-describe-function)
+  ;; (global-set-key (kbd "<f1> v") 'counsel-describe-variable)
   (global-set-key (kbd "<f1> l") 'counsel-find-library)
   (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
   (global-set-key (kbd "<f2> u") 'counsel-unicode-char))

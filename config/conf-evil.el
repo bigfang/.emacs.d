@@ -46,9 +46,12 @@
         evil-visual-state-cursor '("LightGreen" box)
         evil-insert-state-cursor '("LightGoldenrod" box))
   (evil-mode 1)
+  (evil-set-initial-state 'special-mode 'emacs)
+  (evil-set-initial-state 'deadgrep-mode 'emacs)
   (evil-set-initial-state 'deft-mode nil)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
+  (evil-set-initial-state 'helpful-mode 'emacs)
 
   (define-key evil-motion-state-map "gd" 'dumb-jump-go)
   (define-key evil-motion-state-map "gb" 'dumb-jump-back)
