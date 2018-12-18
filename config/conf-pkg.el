@@ -3,13 +3,13 @@
 (require 'package)
 
 ;; elpa repos
-(setq package-archives '(("gnu"   . "https://elpa.gnu.org/packages/")
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
                          ("melpa-stable" . "https://stable.melpa.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
-;; (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
-;; (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
+;; (add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
 
-;; (setq package-archives '(("gnu"   . "https://elpa.emacs-china.org/gnu/")
+;; (setq package-archives '(("gnu" . "https://elpa.emacs-china.org/gnu/")
 ;;                          ("melpa-stable" . "https://elpa.emacs-china.org/melpa-stable/")
 ;;                          ("melpa" . "https://elpa.emacs-china.org/melpa/")))
 

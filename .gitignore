@@ -28,6 +28,7 @@ ac-comphist.dat
 notes
 company-statistics-cache.el
 smex-items
+history
 
 .mc-lists.el
 emacs-custom.el

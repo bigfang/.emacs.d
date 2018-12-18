@@ -1,12 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; === library ===
-(use-package posframe
-  :ensure t)
-
-
-
 ;; === packages ===
 (use-package deadgrep
   :ensure t
@@ -102,7 +96,7 @@
 
 
 (use-package pyim
-  :ensure t
+  :ensure posframe
   :bind
   ("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
   :config

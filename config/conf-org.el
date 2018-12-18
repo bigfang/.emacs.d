@@ -12,6 +12,12 @@
         org-startup-indented t))
 
 
+(use-package org-drill
+  :ensure org-plus-contrib
+  :pin org
+  :commands org-drill)
+
+
 (use-package deft
   :ensure t
   :commands (deft)
