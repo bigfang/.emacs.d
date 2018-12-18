@@ -33,7 +33,7 @@
    (t (hydra-adapter-default/body))))
 
 
-(defhydra hydra-leader (:color teal :exit t :hint nil :idle .5 :columns 5)
+(defhydra hydra-leader (:color teal :exit t :hint nil :idle .2 :columns 5)
   "      --- Hydra Leader ---    "
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
@@ -68,7 +68,6 @@
   ("g" magit-status "magit")
   ("l" beacon-blink "blink cursor")
   ("t" treemacs "treemacs")
-
 
   ;; cursor
   ("H" windmove-left :color red)

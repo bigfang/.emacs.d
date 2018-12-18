@@ -1,6 +1,16 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+;; display-buffer
+(add-to-list 'display-buffer-alist
+             '("\\*.*\\*"
+               (display-buffer-reuse-window
+                display-buffer-below-selected)
+               (split-window-sensibly)
+               (window-height   . 0.3)
+               (reusable-frames . visible)))
+
+
 (use-package shackle
   :ensure t
   :config
