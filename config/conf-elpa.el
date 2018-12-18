@@ -1,17 +1,13 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+;; === library ===
 (use-package posframe
   :ensure t)
 
-(use-package ivy-posframe
-  :ensure t
-  :config
-  (push '(counsel-M-x . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist)
-  (push '(t . ivy-posframe-display-at-point) ivy-display-functions-alist)
-  (ivy-posframe-enable))
 
 
+;; === packages ===
 (use-package deadgrep
   :ensure t
   :config
@@ -59,11 +55,6 @@
   ("<f1> v" . helpful-variable))
 
 
-(use-package image+
-  :ensure t
-  :after image)
-
-
 (use-package highlight-indent-guides
   :ensure t
   :hook (prog-mode . highlight-indent-guides-mode)
@@ -88,6 +79,16 @@
   (highlight-symbol-colors
    '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
   (highlight-symbol-foreground-color "black"))
+
+
+;; or htmlfontify
+(use-package htmlize
+  :ensure t)
+
+
+(use-package image+
+  :ensure t
+  :after image)
 
 
 (use-package pdf-tools
@@ -159,6 +160,36 @@
 ;; (require 'conf-lsp)
 
 
+;; --- kurecolor ---
+(use-package kurecolor
+  :ensure t
+  :config
+  (progn
+    (defhydra hydra-kurecolor (:color pink :hint  nil)
+      "
+Inc/Dec      _j_/_J_ brightness      _k_/_K_ saturation      _l_/_L_ hue
+Set          _sj_ ^^ brightness      _sk_ ^^ saturation      _sl_ ^^ hue
+Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
+             _rh_ ^^ RGB → Hex       _hr_ ^^ Hex → RGB       _hR_ ^^ Hex → RGBA
+"
+      ("j"  kurecolor-decrease-brightness-by-step)
+      ("J"  kurecolor-increase-brightness-by-step)
+      ("k"  kurecolor-decrease-saturation-by-step)
+      ("K"  kurecolor-increase-saturation-by-step)
+      ("l"  kurecolor-decrease-hue-by-step)
+      ("L"  kurecolor-increase-hue-by-step)
+      ("sj" kurecolor-set-brightness :color blue)
+      ("sk" kurecolor-set-saturation :color blue)
+      ("sl" kurecolor-set-hue :color blue)
+      ("gj" kurecolor-hex-val-group :color blue)
+      ("gk" kurecolor-hex-sat-group :color blue)
+      ("gl" kurecolor-hex-hue-group :color blue)
+      ("rh" kurecolor-cssrgb-at-point-or-region-to-hex :color blue)
+      ("hr" kurecolor-hexcolor-at-point-or-region-to-css-rgb :color blue)
+      ("hR" kurecolor-hexcolor-at-point-or-region-to-css-rgba :color blue)
+      ("q"  nil :color blue))))
+
+
 ;; --- regexp ---
 (use-package visual-regexp
   :ensure t)
@@ -206,10 +237,13 @@
 
 
 ;; === desabled ===
-;; or htmlfontify
-(use-package htmlize
+(use-package ivy-posframe
   :disabled
-  :ensure t)
+  :ensure t
+  :config
+  (push '(counsel-M-x . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist)
+  (push '(t . ivy-posframe-display-at-point) ivy-display-functions-alist)
+  (ivy-posframe-enable))
 
 
 (use-package fill-column-indicator
