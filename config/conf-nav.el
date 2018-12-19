@@ -18,12 +18,52 @@
          ("M-g z" . dumb-jump-go-prefer-external-other-window))
   :config
   (setq dumb-jump-selector 'ivy
-        dumb-jump-prefer-searcher 'rg))
+        dumb-jump-prefer-searcher 'rg)
+  :init
+  (defhydra hydra-dumb-jump (:color teal :hint nil)
+    "
+     ^jump^                        ^other^
+----------------------------------------------
+ [_j_] go                     [_l_] quick look
+ [_o_] go other window        [_i_] prompt
+ [_e_] external               [_b_] back
+ [_x_] external other window
+"
+    ("j" dumb-jump-go)
+    ("o" dumb-jump-go-other-window)
+    ("i" dumb-jump-go-prompt)
+    ("l" dumb-jump-quick-look)
+    ("b" dumb-jump-back :color red)
+    ("e" dumb-jump-go-prefer-external)
+    ("x" dumb-jump-go-prefer-external-other-window)
+    ("q" nil)))
 
 
 (use-package eyebrowse
   :ensure t
-  :config (eyebrowse-mode t))
+  :config
+  (eyebrowse-mode t)
+
+  (defhydra hydra-eyebrowse (:color teal :hint nil :columns 2)
+    "eyebrowse"
+    ("p"  eyebrowse-prev-window-config       "prev config" :color red)
+    ("n"  eyebrowse-next-window-config       "next config" :color red)
+    ("e"  eyebrowse-last-window-config       "last config")
+    ("s"  eyebrowse-switch-to-window-config  "switch config")
+    ("c"  eyebrowse-create-window-config     "create config")
+    ("d"  eyebrowse-close-window-config      "delete current config")
+    ("m"  eyebrowse-rename-window-config     "rename current config")
+    ("0"  eyebrowse-switch-to-window-config-0)
+    ("1"  eyebrowse-switch-to-window-config-1)
+    ("2"  eyebrowse-switch-to-window-config-2)
+    ("3"  eyebrowse-switch-to-window-config-3)
+    ("4"  eyebrowse-switch-to-window-config-4)
+    ("5"  eyebrowse-switch-to-window-config-5)
+    ("6"  eyebrowse-switch-to-window-config-6)
+    ("7"  eyebrowse-switch-to-window-config-7)
+    ("8"  eyebrowse-switch-to-window-config-8)
+    ("9"  eyebrowse-switch-to-window-config-9)
+    ("q"  nil :color blue)))
 
 
 (use-package imenu-anywhere

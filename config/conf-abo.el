@@ -104,7 +104,24 @@
   :ensure t
   :bind (("M-g c" . avy-goto-char-2)
          ("M-g g" . avy-goto-word-or-subword-1)
-         ("M-g f" . avy-goto-line)))
+         ("M-g f" . avy-goto-line))
+  :config
+  (defhydra hydra-avy (:color teal :hint nil)
+    "
+     ^Chars^            ^word^              ^other^
+------------------------------------------------------------
+ [_c_]  char         [_w_]  word         [_s_]  symbol
+ [_v_]  char-2       [_e_]  subword
+ [_t_]  char-timer                     ^^[_l_]  line
+"
+    ("c" avy-goto-char)
+    ("v" avy-goto-char-2)
+    ("t" avy-goto-char-timer)
+    ("w" avy-goto-word-or-subword-1)
+    ("e" avy-goto-subword-1)
+    ("s" avy-goto-symbol-1)
+    ("l" avy-goto-line)
+    ("q" nil "cancel" :color blue)))
 
 
 (use-package tiny

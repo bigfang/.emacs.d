@@ -67,12 +67,24 @@
   :ensure t
   :chords ("``" . highlight-symbol)
   :hook (prog-mode . highlight-symbol-mode)
-  :config
-  (setq highlight-symbol-idle-delay .5)
   :custom
   (highlight-symbol-colors
    '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
-  (highlight-symbol-foreground-color "black"))
+  (highlight-symbol-foreground-color "black")
+  :config
+  (setq highlight-symbol-idle-delay .5)
+
+  (defhydra hydra-highlight (:body-pre (highlight-symbol-mode 1)
+                             :color pink :hint nil :columns 3)
+    "Highlight"
+    ("SPC" highlight-symbol "highlight")
+    ("p" highlight-symbol-prev "previous")
+    ("n" highlight-symbol-next "next")
+    ("c" highlight-symbol-count "count")
+    ("o" highlight-symbol-occur "occur" :color blue)
+    ("a" highlight-symbol-list-all "list")
+    ("x" highlight-symbol-remove-all "remove all")
+    ("q" nil :color blue)))
 
 
 ;; or htmlfontify

@@ -5,11 +5,8 @@
 (use-package hydra/hydra-projectile)
 (use-package hydra/hydra-alchemist)
 
-(use-package hydra/hydra-coding)
 (use-package hydra/hydra-abo)
 (use-package hydra/hydra-git)
-(use-package hydra/hydra-editing)
-(use-package hydra/hydra-nav)
 (use-package hydra/hydra-ui)
 
 

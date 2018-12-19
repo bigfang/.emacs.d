@@ -13,7 +13,19 @@
   :pin melpa-stable
   :hook (prog-mode . flycheck-mode)
   :config
-  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
+
+  (defhydra hydra-flycheck
+    (:pre (progn (setq hydra-lv t) (flycheck-list-errors))
+          :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))
+          :hint nil)
+    "Errors"
+    ("f"  flycheck-error-list-set-filter                            "Filter")
+    ("j"  flycheck-next-error                                       "Next")
+    ("k"  flycheck-previous-error                                   "Previous")
+    ("gg" flycheck-first-error                                      "First")
+    ("G"  (progn (goto-char (point-max)) (flycheck-previous-error)) "Last")
+    ("q"  nil)))
 
 
 (use-package projectile
@@ -55,7 +67,13 @@
           python-shell-interpreter-args "-i --simple-prompt"))
   (evil-define-key 'normal anaconda-mode-map (kbd "ga") 'anaconda-mode-find-assignments)
   (evil-define-key 'normal anaconda-mode-map (kbd "gr") 'anaconda-mode-find-references)
-  (evil-define-key 'normal anaconda-mode-map (kbd "gd") 'anaconda-mode-find-definitions))
+  (evil-define-key 'normal anaconda-mode-map (kbd "gd") 'anaconda-mode-find-definitions)
+
+  (defhydra hydra-python (:color teal :hint nil)
+    "python"
+    ("o" pyvenv-workon "python workon")
+    ("r" run-python "IPython")
+    ("q" nil :color blue)))
 
 (use-package company-anaconda
   :ensure t
@@ -98,7 +116,13 @@
 
 
 (use-package csv-mode
-  :ensure t)
+  :ensure t
+  :config
+  (defhydra hydra-csv (:color teal :hint nil)
+    "csv"
+    ("o" csv-align-fields "align")
+    ("u" csv-unalign-fields "unalign")
+    ("q" nil :color blue)))
 
 (use-package json-mode
   :ensure t)
