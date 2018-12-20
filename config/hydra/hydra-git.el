@@ -63,6 +63,7 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
 (defhydra hydra-git (:color teal :hint nil :columns 3)
   "Git"
   ("i" magit-init "git init")
+  ("c" magit-clone "git clone")
   ("b" magit-blame "git blame")
   ("h" magit-log-buffer-file "file history")
   ("d" magit-diff-buffer-file "file diff")
