@@ -28,4 +28,4 @@
                                       (hydra-move-text/body)))
 
 
-(provide 'hydra/hydra-builtin)
+(provide 'hydras-builtin)

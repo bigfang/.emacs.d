@@ -47,4 +47,4 @@
   ("q"   nil "cancel" :color blue))
 
 
-(provide 'hydra/hydra-projectile)
+(provide 'hydras-projectile)

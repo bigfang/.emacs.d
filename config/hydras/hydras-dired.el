@@ -55,4 +55,4 @@ T - tag prefix
 (define-key dired-mode-map "." 'hydra-dired/body)
 
 
-(provide 'hydra/hydra-dired)
+(provide 'hydras-dired)

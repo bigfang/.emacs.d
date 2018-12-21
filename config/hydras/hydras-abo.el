@@ -108,4 +108,4 @@ _z_ zone:
             (kbd "C-o") 'soo-hydra-ivy/body))
 
 
-(provide 'hydra/hydra-abo)
+(provide 'hydras-abo)

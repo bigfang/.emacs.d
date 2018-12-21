@@ -37,4 +37,4 @@
   ("q" nil :color blue))
 
 
-(provide 'hydra/hydra-macro)
+(provide 'hydras-macro)

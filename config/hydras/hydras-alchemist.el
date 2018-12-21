@@ -88,4 +88,4 @@
   ("q" nil :color blue))
 
 
-(provide 'hydra/hydra-alchemist)
+(provide 'hydras-alchemist)

@@ -35,4 +35,4 @@
   ("q" nil :color blue))
 
 
-(provide 'hydra/hydra-captain)
+(provide 'hydras-captain)

@@ -1,13 +1,13 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package hydra/hydra-org)
-(use-package hydra/hydra-projectile)
-(use-package hydra/hydra-alchemist)
+(use-package hydras-org)
+(use-package hydras-projectile)
+(use-package hydras-alchemist)
 
-(use-package hydra/hydra-abo)
-(use-package hydra/hydra-git)
-(use-package hydra/hydra-ui)
+(use-package hydras-abo)
+(use-package hydras-git)
+(use-package hydras-ui)
 
 
 (defhydra hydra-adapter-default (:color teal :hint nil :columns 3)
@@ -100,4 +100,4 @@
   ("q" nil :color blue))
 
 
-(provide 'hydra/hydra-leader)
+(provide 'hydras-leader)

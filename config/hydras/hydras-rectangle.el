@@ -32,4 +32,4 @@ _h_   _l_   [_y_]yank      [_t_]type      [_e_]exchange-point          /,`.-'`' 
 (global-set-key (kbd "C-x SPC") 'hydra-rectangle/body)
 
 
-(provide 'hydra/hydra-rectangle)
+(provide 'hydras-rectangle)

@@ -97,4 +97,4 @@
   ("q" nil :color blue))
 
 
-(provide 'hydra/hydra-ui)
+(provide 'hydras-ui)

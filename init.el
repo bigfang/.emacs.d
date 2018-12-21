@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-12-15 16:51:19>
+;; Time-stamp: <2018-12-21 13:37:32>
 
 
 
@@ -19,7 +19,9 @@
       erc-startup-file-list '("~/.emacs.d/.ercrc.el"))
 
 
-(add-to-list 'load-path "~/.emacs.d/config")
+(add-to-list 'load-path (concat user-emacs-directory "config"))
+(add-to-list 'load-path (concat user-emacs-directory "config/hydras"))
+
 
 (require 'conf-pkg)
 

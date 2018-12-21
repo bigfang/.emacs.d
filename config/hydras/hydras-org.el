@@ -72,4 +72,4 @@ Links, footnotes  C-c C-a    _L_: link          _U_: uri        _F_: footnote   
   ("q" nil :color blue))
 
 
-(provide 'hydra/hydra-org)
+(provide 'hydras-org)

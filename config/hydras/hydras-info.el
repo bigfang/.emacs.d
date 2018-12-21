@@ -62,4 +62,4 @@ Info-mode:
   ("C-g" nil "cancel" :color blue))
 
 
-(provide 'hydra/hydra-info)
+(provide 'hydras-info)

@@ -95,4 +95,4 @@
   ("b" hydra-ibuffer-main/body "back" :color blue))
 
 
-(provide 'hydra/hydra-ibuffer)
+(provide 'hydras-ibuffer)

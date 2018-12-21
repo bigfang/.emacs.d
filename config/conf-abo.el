@@ -10,15 +10,15 @@
          ("SPC" . hydra-leader/body)
          ("/" . hydra-captain/body))
   :config
-  (use-package hydra/hydra-builtin)
-  (use-package hydra/hydra-dired)
-  (use-package hydra/hydra-ibuffer)
-  (use-package hydra/hydra-info)
-  (use-package hydra/hydra-macro)
-  (use-package hydra/hydra-rectangle)
+  (use-package hydras-builtin)
+  (use-package hydras-dired)
+  (use-package hydras-ibuffer)
+  (use-package hydras-info)
+  (use-package hydras-macro)
+  (use-package hydras-rectangle)
 
-  (use-package hydra/hydra-leader)
-  (use-package hydra/hydra-captain))
+  (use-package hydras-leader)
+  (use-package hydras-captain))
 
 
 ;; https://github.com/abo-abo/hydra/wiki/Hydra-Colors#colorful-hydras
