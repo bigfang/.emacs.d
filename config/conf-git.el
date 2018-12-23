@@ -37,6 +37,10 @@
   (setq magit-completing-read-function 'ivy-completing-read))
 
 
+(use-package forge
+  :ensure t)
+
+
 (use-package git-gutter
   :ensure t
   :config
