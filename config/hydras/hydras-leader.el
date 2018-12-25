@@ -58,6 +58,7 @@
   ("j" hydra-dumb-jump/body "jump...")
   ("m" hydra-mark/body "marks...")
   ("p" hydra-projectile/body "projectile...")
+  ("u" hydra-undo-tree/body "undo-tree...")
   ("v" hydra-git/body "git")
   ("x" hydra-execute/body "execute...")
 
@@ -94,7 +95,6 @@
   ("DEL" projectile-next-project-buffer)
   ("<" previous-buffer "prev buffer" :color red)
   (">" next-buffer "next buffer" :color red)
-  ("U" undo-tree-visualize :color blue)
 
   ("<escape>" nil :color blue)
   ("q" nil :color blue))

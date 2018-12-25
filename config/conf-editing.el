@@ -160,8 +160,19 @@
   (bind-key* "C-?" 'uncomment-region)
   (bind-key* "M-_" 'uncomment-region)
   (bind-key* "s-z" 'comment-dwim)
-  (bind-key* "C-_" 'comment-dwim)
-  (bind-key* "C-/" 'comment-dwim))
+  (bind-key* "C-/" 'comment-dwim)
+  ;; (bind-key* "C-_" 'comment-dwim)
+
+  (defhydra hydra-undo-tree (:hint nil)
+    "
+  _p_: undo  _n_: redo _s_: save _l_: load   "
+    ("p" undo-tree-undo)
+    ("n" undo-tree-redo)
+    ("s" undo-tree-save-history)
+    ("l" undo-tree-load-history)
+    ("u" undo-tree-visualize "visualize" :color blue)
+    ("q" nil :color blue))
+  (global-set-key (kbd "C-x u") 'hydra-undo-tree/undo-tree-undo))
 
 
 (provide 'conf-editing)
