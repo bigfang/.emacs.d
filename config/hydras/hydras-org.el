@@ -1,22 +1,43 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra-mark (:color pink :exit t :hint nil :columns 3)
-  "Marks"
-  ("m" counsel-bookmark "bookmark")
-  ("d" bookmark-delete "delete bookmark")
-  ("l" bookmark-bmenu-list "list" :exit t)
+(defhydra hydra-org-template (:color blue :hint nil)
+  "
+ [_c_] center     [_C_] comment    [_h_] html     [_i_] INDEX:
+ [_e_] example    [_v_] verse      [_a_] ascii    [_H_] HTML:
+ [_s_] src        [_V_] verbatim   [_l_] latex    [_A_] ASCII:
+ [_o_] quote      ^ ^              ^ ^            [_L_] LaTeX:
+ ^ ^              ^ ^              ^ ^            [_I_] INCLUDE:
+"
+  ("c" (hot-expand "<c"))
+  ("e" (hot-expand "<e"))
+  ("s" (hot-expand "<s"))
+  ("o" (hot-expand "<q"))
+  ("C" (hot-expand "<C"))
+  ("v" (hot-expand "<v"))
+  ("V" (hot-expand "<V"))
+  ("h" (hot-expand "<h"))
+  ("a" (hot-expand "<a"))
+  ("l" (hot-expand "<l"))
+  ("i" (hot-expand "<i"))
+  ("H" (hot-expand "<H"))
+  ("A" (hot-expand "<A"))
+  ("L" (hot-expand "<L"))
+  ("I" (hot-expand "<I"))
+  ("<" self-insert-command "ins")
+  ("q" nil "quit"))
 
-  ("n" remember-notes "notes" :exit t)
-  ("r" remember "remember" :exit t)
-  ("R" remember-region "remember region")
-  ("c" remember-clipboard "remember clipboard")
-  ("q" nil :color blue))
+(defun hot-expand (str)
+  "Expand org template."
+  (insert str)
+  (org-try-structure-completion))
 
-
-(defhydra hydra-org (:color pink :exit t :hint nil)
-  "Org-mode"
-  ("q" nil "quit" :color blue))
+(with-eval-after-load 'org
+  (define-key org-mode-map "<"
+    (lambda () (interactive)
+      (if (looking-back "^")
+          (hydra-org-template/body)
+        (self-insert-command 1)))))
 
 
 (defhydra hydra-deft (:color pink :hint nil :columns 3)

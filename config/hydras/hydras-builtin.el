@@ -28,4 +28,17 @@
                                       (hydra-move-text/body)))
 
 
+(defhydra hydra-mark (:color pink :exit t :hint nil :columns 3)
+  "Marks"
+  ("m" counsel-bookmark "bookmark")
+  ("d" bookmark-delete "delete bookmark")
+  ("l" bookmark-bmenu-list "list" :exit t)
+
+  ("n" remember-notes "notes" :exit t)
+  ("r" remember "remember" :exit t)
+  ("R" remember-region "remember region")
+  ("c" remember-clipboard "remember clipboard")
+  ("q" nil :color blue))
+
+
 (provide 'hydras-builtin)
