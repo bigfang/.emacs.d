@@ -114,6 +114,11 @@
   (setq js2-basic-offset 2))
 
 
+;; rust
+(use-package rust-mode
+  :ensure t)
+
+
 
 (use-package csv-mode
   :ensure t
