@@ -69,4 +69,16 @@
   (add-hook 'git-timemachine-mode-hook #'evil-normalize-keymaps))
 
 
+(use-package magit-todos
+  :ensure t
+  :hook (magit-mode . magit-todos-mode)
+  :config
+  (setq magit-todos-ignored-keywords nil)
+  (setq magit-todos-keywords-list
+        '("TODO" "DOING" "DONE" "FIXME"
+          "DONT" "FAIL" "MAYBE" "NOTE" "HACK"
+          "NEXT" "THEM" "PROG" "OKAY"
+          "KLUDGE" "TEMP" "XXX" "???")))
+
+
 (provide 'conf-git)

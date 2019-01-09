@@ -20,7 +20,6 @@ flycheck_*.el
 \!*
 *~
 
-.DS_Store
 tramp
 recentf
 projectile.cache

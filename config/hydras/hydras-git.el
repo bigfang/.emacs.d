@@ -68,9 +68,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("h" magit-log-buffer-file "file history")
   ("d" magit-diff-buffer-file "file diff")
   ("r" magit-refresh-all "refresh all")
+  ("v" magit-status "magit")
   ("g" hydra-git-gutter/body "git-gutter...")
   ("t" git-timemachine "git timemachine")
-  ("v" magit-status "magit")
+  ("l" magit-todos-list "list todos")
   ("q" nil :color blue))
 
 
