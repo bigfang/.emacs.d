@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2018-12-21 13:37:32>
+;; Time-stamp: <2019-01-17 18:58:17>
 
 
 
@@ -12,6 +12,9 @@
 
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
+
+(setq user-full-name "bigfang"
+      user-mail-address "bitair@gmail.com")
 
 (setq enable-recursive-minibuffers t)
 (setq bookmark-default-file "~/.emacs.d/.emacs.bmk"

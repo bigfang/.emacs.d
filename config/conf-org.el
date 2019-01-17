@@ -52,6 +52,48 @@
   (setq toc-org-hrefify-default "org"))
 
 
+(use-package org-page
+  :ensure t
+  :config
+  (setq op/repository-directory "~/repo/op-blog"
+        op/site-domain "http://bigfang.net"
+        op/site-main-title "╮(╯3╰)╭"
+        op/site-sub-title "虽然不太明白，但是好厉害啊"
+        op/personal-disqus-shortname "bigfang"
+        op/personal-google-analytics-id "UA-37180058-1"
+        op/personal-github-link "https://github.com/bigfang"
+        op/hashover-comments t)
+  (setq op/theme 'mdo)
+  (setq op/category-config-alist
+      '(("blog"
+         :show-meta t
+         :show-comment t
+         :uri-generator op/generate-uri
+         :uri-template "/blog/%y-%m-%d/%t"
+         :sort-by :date
+         :category-index t)
+        ("wiki"
+         :show-meta t
+         :show-comment nil
+         :uri-generator op/generate-uri
+         :uri-template "/wiki/%t"
+         :sort-by :mod-date
+         :category-index t)
+        ("index"
+         :show-meta nil
+         :show-comment nil
+         :uri-generator op/generate-uri
+         :uri-template "/"
+         :sort-by :date
+         :category-index t)
+        ("about"
+         :show-meta nil
+         :show-comment nil
+         :uri-generator op/generate-uri
+         :uri-template "/about"
+         :sort-by :date
+         :category-index nil))))
+
 
 ;; === markdown ===
 (use-package markdown-mode
