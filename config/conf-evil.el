@@ -81,6 +81,7 @@
 
 
 (use-package evil-magit
+  :disabled
   :ensure t)
 
 

@@ -82,6 +82,11 @@
   (add-to-list 'company-backends '(company-anaconda :with company-capf)))
 
 
+;; erlang
+(use-package erlang
+  :ensure t)
+
+
 ;; elixir
 (use-package elixir-mode
   :ensure t

@@ -13,6 +13,7 @@
 
 
 (use-package org-drill
+  :disabled
   :ensure org-plus-contrib
   :pin org
   :commands org-drill)
