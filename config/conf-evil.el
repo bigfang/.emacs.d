@@ -52,6 +52,7 @@
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
   (evil-set-initial-state 'helpful-mode 'emacs)
+  (evil-set-initial-state 'paradox-menu-mode 'normal)
 
   (define-key evil-motion-state-map "gd" 'dumb-jump-go)
   (define-key evil-motion-state-map "gb" 'dumb-jump-back)
@@ -81,7 +82,6 @@
 
 
 (use-package evil-magit
-  :disabled
   :ensure t)
 
 

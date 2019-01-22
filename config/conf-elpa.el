@@ -48,6 +48,9 @@
 (use-package helpful
   :ensure t
   :bind
+  (:map helpful-mode-map
+   ("j" . next-line)
+   ("k" . previous-line))
   ("<f1> ." . helpful-at-point)
   ("<f1> k" . helpful-key)
   ("<f1> f" . helpful-callable)
@@ -70,7 +73,6 @@
 
 (use-package highlight-symbol
   :ensure t
-  :chords ("``" . highlight-symbol)
   :hook (prog-mode . highlight-symbol-mode)
   :custom
   (highlight-symbol-colors
