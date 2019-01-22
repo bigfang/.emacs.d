@@ -81,6 +81,12 @@
   (evil-goggles-use-diff-faces))
 
 
+(use-package evil-lion
+  :ensure t
+  :config
+  (evil-lion-mode))
+
+
 (use-package evil-magit
   :ensure t)
 
