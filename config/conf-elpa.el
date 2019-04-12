@@ -13,14 +13,6 @@
   (setq-default deadgrep--search-type 'regexp))
 
 
-(use-package darkroom
-  :ensure t
-  :hook
-  ((org-mode markdown-mode) . darkroom-mode)
-  :config
-  (setq darkroom-text-scale-increase 1))
-
-
 (use-package fzf
   :ensure t
   :ensure-system-package fzf)
@@ -48,13 +40,13 @@
 (use-package helpful
   :ensure t
   :bind
-  (:map helpful-mode-map
-   ("j" . next-line)
-   ("k" . previous-line))
   ("<f1> ." . helpful-at-point)
   ("<f1> k" . helpful-key)
   ("<f1> f" . helpful-callable)
-  ("<f1> v" . helpful-variable))
+  ("<f1> v" . helpful-variable)
+  (:map helpful-mode-map
+   ("j" . next-line)
+   ("k" . previous-line)))
 
 
 (use-package highlight-indent-guides

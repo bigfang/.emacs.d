@@ -64,6 +64,12 @@
   (add-hook 'write-contents-functions #'whitespace-cleanup*))
 
 ;; prog-mode hooks
+(add-hook 'org-mode-hook
+          (lambda ()
+            (text-scale-increase 1)))
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            (text-scale-increase 1)))
 (add-hook 'prog-mode-hook
           (lambda ()
             (setq truncate-lines t)
@@ -103,12 +109,6 @@
      (t
       ;; default
       (string-inflection-all-cycle)))))
-
-
-(use-package move-text
-  :ensure t
-  :bind (("<C-S-up>" . move-text-up)
-         ("<C-S-down>" . move-text-down)))
 
 
 (use-package multiple-cursors

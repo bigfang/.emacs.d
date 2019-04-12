@@ -16,9 +16,9 @@
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 
   (defhydra hydra-flycheck
-    (:pre (progn (setq hydra-lv t) (flycheck-list-errors))
-          :post (progn (setq hydra-lv nil) (quit-windows-on "*Flycheck errors*"))
-          :hint nil)
+    (:pre (progn (flycheck-list-errors))
+     :post (progn (quit-windows-on "*Flycheck errors*"))
+     :hint nil)
     "Errors"
     ("f"  flycheck-error-list-set-filter                            "Filter")
     ("j"  flycheck-next-error                                       "Next")
