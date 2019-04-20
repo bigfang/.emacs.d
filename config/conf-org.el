@@ -9,7 +9,8 @@
     (interactive)
     (set-face-attribute 'org-table nil :font "PCMyungjo 16"))
   (setq org-startup-folded 'content
-        org-startup-indented t))
+        org-startup-indented t)
+  (setq org-enforce-todo-dependencies t))
 
 
 (use-package org-drill

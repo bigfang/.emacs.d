@@ -88,7 +88,9 @@
 
 
 (use-package evil-magit
-  :ensure t)
+  :ensure t
+  :config
+  (evil-define-key 'normal magit-mode-map (kbd "SPC") 'hydra-leader/body))
 
 
 (use-package evil-numbers

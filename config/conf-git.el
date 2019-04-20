@@ -15,7 +15,9 @@
 (use-package magit
   :ensure t
   :pin melpa-stable
-  :bind ("C-c v" . magit-status)
+  :bind (("C-c v" . magit-status)
+         :map transient-map
+         ("q" . transient-quit-one))
   :config
   (setq magit-display-buffer-function
         (lambda (buffer)

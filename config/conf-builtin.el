@@ -83,6 +83,7 @@
 
 
 (use-package zone
+  :disabled
   :config (zone-when-idle 600))
 
 
