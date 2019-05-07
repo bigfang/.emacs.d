@@ -103,7 +103,8 @@
         switch-window-increase 12
         switch-window-shortcut-appearance 'asciiart
         switch-window-minibuffer-shortcut ?x)
-  (setq switch-window-shortcut-style 'qwerty))
+  (setq switch-window-multiple-frames nil
+        switch-window-shortcut-style 'qwerty))
 
 
 (use-package transpose-frame
