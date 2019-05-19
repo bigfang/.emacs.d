@@ -58,7 +58,7 @@
   (let* ((modified-before-p (buffer-modified-p)))
     (whitespace-cleanup)
     (if (not modified-before-p)
-        (not-modified))))
+        (set-buffer-modified-p))))
 
 (defun whitespace-cleanup-on-save ()
   (add-hook 'write-contents-functions #'whitespace-cleanup*))

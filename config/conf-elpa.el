@@ -292,7 +292,8 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 ;; === desabled ===
 (use-package ivy-posframe
-  :disabled
+  ;; :disabled
+  :requires posframe
   :ensure t
   :config
   (push '(counsel-M-x . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist)

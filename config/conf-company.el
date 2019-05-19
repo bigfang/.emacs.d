@@ -53,6 +53,7 @@
 
 (use-package company-posframe
   :disabled
+  :requires (company posframe)
   :ensure t
   :config
   (company-posframe-mode 1))
