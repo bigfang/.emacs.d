@@ -119,6 +119,20 @@
   (setq js2-basic-offset 2))
 
 
+;; typescript
+(use-package typescript-mode
+  :ensure t
+  :config
+  (setq typescript-indent-level 2))
+
+(use-package tide
+  :ensure t
+  :after (typescript-mode company flycheck)
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . tide-hl-identifier-mode)
+         (before-save . tide-format-before-save)))
+
+
 ;; rust
 (use-package rust-mode
   :ensure t)
