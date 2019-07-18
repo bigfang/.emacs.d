@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-04-20 20:52:22>
+;; Time-stamp: <2019-07-18 11:47:17>
 
 
 
@@ -34,6 +34,7 @@
 (use-package conf-dired)
 (use-package conf-ibuffer)
 (use-package conf-org)
+(use-package conf-hooks)
 
 (use-package conf-evil)
 (use-package conf-nav)
