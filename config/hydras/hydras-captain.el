@@ -22,7 +22,7 @@
 
   ("/" swiper "swiper")
   ("a" swiper-all "swiper-all")
-  ("j" ffap)
+  ("j" ffap "ffap")
   ("f" ido-find-file "ido file")
 
   ("t" google-translate-smooth-translate "google translate")

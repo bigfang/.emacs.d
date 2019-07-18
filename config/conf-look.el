@@ -52,6 +52,8 @@
 (column-number-mode t)
 (size-indication-mode -1)
 
+(set-face-attribute 'mode-line nil :box '(:line-width -1 :color "DimGrey") :slant 'italic)
+(set-face-attribute 'mode-line-inactive nil :box '(:line-width -1 :color "grey30") :weight 'light)
 
 (use-package minions
   :ensure t
