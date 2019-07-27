@@ -18,6 +18,7 @@
             (setq truncate-lines t)
             (setq fill-column 80)
 
+            (flyspell-prog-mode)
             ;; (linum-mode t)
             (hs-minor-mode t)
             (prettify-symbols-mode t)))

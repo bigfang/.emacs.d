@@ -49,6 +49,11 @@
    ("k" . previous-line)))
 
 
+(use-package highlight-escape-sequences
+  :ensure t
+  :hook (prog-mode . hes-mode))
+
+
 (use-package highlight-indent-guides
   :ensure t
   :hook (prog-mode . highlight-indent-guides-mode)
