@@ -43,6 +43,11 @@
   :config (recentf-mode t))
 
 
+(use-package time-stamp
+  :config
+  (setq time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S"))
+
+
 (use-package tramp
   :config
   (setq tramp-default-method "ssh"

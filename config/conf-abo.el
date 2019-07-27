@@ -65,9 +65,9 @@
           (t . ivy--regex-plus)))
   (setq ivy-use-virtual-buffers t
         ivy-count-format "(%d/%d) "
-        ivy-virtual-abbreviatea 'abbreviate
-        ivy-format-function 'ivy-format-function-arrow
+        ivy-virtual-abbreviate 'abbreviate
         ivy-height 15)
+  (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-arrow)
   (ivy-mode 1))
 
 

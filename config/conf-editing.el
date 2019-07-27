@@ -3,6 +3,7 @@
 
 (setq-default fill-column 80)
 (setq-default indent-tabs-mode nil)
+(setq-default line-spacing nil)
 (setq delete-by-moving-to-trash t)      ; 删除至系统回收站
 (setq echo-keystrokes 0.1)              ; 按键连击间隔
 (setq backward-delete-char-untabify-method 'hungry) ; 删除键行为
@@ -35,7 +36,6 @@
   :config
   ;; time-stamp
   (add-hook 'before-save-hook 'time-stamp)
-  (setq time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S")
 
   ;; Auto-save and Backups
   ;; (setq auto-save-default nil)

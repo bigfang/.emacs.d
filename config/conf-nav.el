@@ -100,7 +100,6 @@
           "m" "r" "t" "z" "x" "c"
           "q" "h" "j" "k" "l" "b"))
   (setq switch-window-threshold 2
-        switch-window-increase 12
         switch-window-shortcut-appearance 'asciiart
         switch-window-minibuffer-shortcut ?x)
   (setq switch-window-multiple-frames nil

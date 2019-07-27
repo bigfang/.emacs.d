@@ -27,14 +27,14 @@
   :ensure t
   :bind ("C-c t" . google-translate-smooth-translate)
   :init
-  (setq google-translate-default-source-language "en"
-        google-translate-default-target-language "zh-CN")
-  (setq google-translate-translation-directions-alist
-        '(("en" . "zh-CN") ("zh-CN" . "en") ("ja" . "zh-CN")))
+  (require 'google-translate-smooth-ui)
   :config
   ;; (setq url-gateway-method 'socks)
   ;; (setq socks-server '("Default server" "127.0.0.1" 1080 5))
-  (require 'google-translate-smooth-ui))
+  (setq google-translate-default-source-language "en"
+        google-translate-default-target-language "zh-CN")
+  (setq google-translate-translation-directions-alist
+        '(("en" . "zh-CN") ("zh-CN" . "en") ("ja" . "zh-CN"))))
 
 
 (use-package helpful
@@ -163,7 +163,7 @@
 (use-package pyim
   :ensure t
   :bind
-  ("M-j" . pyim-convert-code-at-point) ;与 pyim-probe-dynamic-english 配合
+  ("M-j" . pyim-convert-string-at-point) ;与 pyim-probe-dynamic-english 配合
   :config
   (setq default-input-method "pyim"
         pyim-default-scheme 'pyim-shuangpin)
