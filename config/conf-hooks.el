@@ -1,15 +1,7 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defun whitespace-cleanup* ()
-  (let* ((modified-before-p (buffer-modified-p)))
-    (whitespace-cleanup)
-    (if (not modified-before-p)
-        (set-buffer-modified-p))))
-
-(defun whitespace-cleanup-on-save ()
-  (add-hook 'write-contents-functions #'whitespace-cleanup*))
-
+(add-hook 'before-save-hook 'whitespace-cleanup)
 
 
 (add-hook 'org-mode-hook
@@ -25,7 +17,6 @@
           (lambda ()
             (setq truncate-lines t)
             (setq fill-column 80)
-            (whitespace-cleanup-on-save)
 
             ;; (linum-mode t)
             (hs-minor-mode t)
