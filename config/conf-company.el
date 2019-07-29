@@ -51,6 +51,12 @@
         company-show-numbers t))
 
 
+(use-package company-box
+  :ensure t
+  :init (setq company-box-icons-alist 'company-box-icons-all-the-icons)
+  :hook (company-mode . company-box-mode))
+
+
 (use-package company-posframe
   :disabled
   :requires (company posframe)
@@ -64,16 +70,17 @@
   :if window-system
   :requires company
   :ensure t
+  :bind (:map company-active-map
+         ("M-/" . company-quickhelp-manual-begin))
   :config
   (setq company-quickhelp-delay 2
         company-quickhelp-use-propertized-text t)
-  (define-key company-active-map (kbd "M-/") #'company-quickhelp-manual-begin)
   (company-quickhelp-mode))
 
 
-(use-package company-statistics
+(use-package company-prescient
   :ensure t
-  :config (company-statistics-mode 1))
+  :config (prescient-persist-mode +1))
 
 
 (provide 'conf-company)

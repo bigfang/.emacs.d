@@ -20,21 +20,20 @@ flycheck_*.el
 \!*
 *~
 
+notes
 tramp
 recentf
 projectile.cache
-ac-comphist.dat
-notes
-company-statistics-cache.el
 smex-items
 history
+var/prescient-save.el
 
 .mc-lists.el
 emacs-custom.el
 
 .cache/
-eshell/
 elpa/
+eshell/
 auto-save-list/
 image-dired/
 url/
