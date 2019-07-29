@@ -25,6 +25,7 @@
   (cond
    ((eq major-mode 'org-mode) (hydra-org/body))
    ((eq major-mode 'python-mode) (hydra-python/body))
+   ((eq major-mode 'json-mode) (hydra-json/body))
    ((eq major-mode 'markdown-mode) (hydra-markdown/body))
    ((eq major-mode 'csv-mode) (hydra-csv/body))
    ((bound-and-true-p alchemist-mode) (hydra-alchemist/body))
