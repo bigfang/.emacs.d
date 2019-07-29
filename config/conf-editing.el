@@ -94,7 +94,7 @@
   :config
   (setq mc/edit-lines-empty-lines 'ignore
         mc/insert-numbers-default 1)
-
+  :init
   (defhydra hydra-multiple-cursors (:color pink :hint nil)
     "
      ^Up^            ^Down^        ^Other^
@@ -133,9 +133,9 @@
   (bind-key* "C-?" 'uncomment-region)
   (bind-key* "M-_" 'uncomment-region)
   (bind-key* "s-z" 'comment-dwim)
-  (bind-key* "C-/" 'comment-dwim)
+  ;; (bind-key* "C-/" 'comment-dwim)
   ;; (bind-key* "C-_" 'comment-dwim)
-
+  :init
   (defhydra hydra-undo-tree (:hint nil)
     "
   _p_: undo  _n_: redo _s_: save _l_: load   "

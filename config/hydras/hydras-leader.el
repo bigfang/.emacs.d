@@ -8,6 +8,7 @@
 (use-package hydras-abo)
 (use-package hydras-git)
 (use-package hydras-ui)
+(use-package hydras-pdf)
 
 
 (defhydra hydra-adapter-default (:color teal :hint nil :columns 3)
