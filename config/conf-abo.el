@@ -134,6 +134,17 @@
   :ensure t
   :config (all-the-icons-ivy-setup))
 
+(use-package ivy-posframe
+  :requires posframe
+  :ensure t
+  :config
+  (setq ivy-posframe-display-functions-alist
+        '((swiper          . ivy-posframe-display-at-window-bottom-left)
+          (complete-symbol . ivy-posframe-display-at-point)
+          (counsel-M-x     . ivy-posframe-display-at-window-bottom-left)
+          (t               . ivy-posframe-display)))
+  (ivy-posframe-mode 1))
+
 (use-package ivy-rich
   :ensure t
   :after (ivy counsel)

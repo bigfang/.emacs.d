@@ -222,16 +222,6 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 
 ;; === desabled ===
-(use-package ivy-posframe
-  ;; :disabled
-  :requires posframe
-  :ensure t
-  :config
-  (push '(counsel-M-x . ivy-posframe-display-at-window-bottom-left) ivy-display-functions-alist)
-  (push '(t . ivy-posframe-display-at-point) ivy-display-functions-alist)
-  (ivy-posframe-enable))
-
-
 (use-package fill-column-indicator
   :disabled
   :ensure t
