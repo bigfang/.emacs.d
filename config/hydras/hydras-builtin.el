@@ -1,6 +1,33 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(defun rag/align-whitespace (start end)
+  "Align columns by whitespace"
+  (interactive "r")
+  (align-regexp start end
+                "\\(\\s-*\\)\\s-" 1 1 t))
+
+(defun rag/align-equals (start end)
+  "Align columns by equals sign"
+  (interactive "r")
+  (align-regexp start end
+                "\\(\\s-*\\)=" 1 1 t))
+
+(defun rag/align-columns (begin end)
+  "Align text columns"
+  (interactive "r")
+  ;; align-regexp syntax:  align-regexp (beg end regexp &optional group spacing repeat)
+  (align-regexp begin end "\\(\\s-+\\)[a-zA-Z0-9=(),?':`\.{}]" 1 1 t)
+  (indent-region begin end)) ; indent the region correctly after alignment
+
+(defhydra hydra-align (:color blue)
+  ("r" align-regexp "regexp")
+  ("c" rag/align-columns "column")
+  ("=" rag/align-equals "equals")
+  ("w" rag/align-whitespace "whitespace")
+  ("q" nil "quit"))
+
+
 (defhydra hydra-buffer (:color teal :hint nil :columns 3)
   "Buffer"
   ("i" ibuffer "ibuffer")

@@ -57,6 +57,7 @@
          (highlight-symbol)
          (hydra-highlight/body)) "highlight...")
   ("j" hydra-dumb-jump/body "jump...")
+  ("l" hydra-align/body "align...")
   ("m" hydra-mark/body "marks...")
   ("p" hydra-projectile/body "projectile...")
   ("u" hydra-undo-tree/body "undo-tree...")
@@ -65,7 +66,6 @@
 
   ("d" deft "deft")
   ("g" magit-status "magit")
-  ("l" beacon-blink "blink cursor")
   ("t" treemacs "treemacs")
 
   ;; cursor

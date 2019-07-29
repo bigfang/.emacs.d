@@ -20,6 +20,8 @@
   (";" xref-find-references "xref find ref")
   ("'" xref-find-apropos "xref find apropos")
 
+  ("l" beacon-blink "blink cursor")
+
   ("/" swiper "swiper")
   ("a" swiper-all "swiper-all")
   ("j" ffap "ffap")
