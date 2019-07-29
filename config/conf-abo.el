@@ -3,7 +3,7 @@
 
 (use-package hydra
   :ensure t
-  :after (swiper)
+  :after swiper
   :bind (("C-SPC" . hydra-leader/body)
          ("C-s" . hydra-captain/body)
          :map evil-motion-state-map

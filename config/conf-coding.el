@@ -86,10 +86,10 @@
 (use-package erlang
   :ensure t)
 
-
 ;; elixir
 (use-package elixir-mode
   :ensure t
+  :interpreter "elixir"
   :config
   (add-hook 'elixir-format-hook
             (lambda ()
@@ -113,11 +113,11 @@
 (use-package js2-mode
   :ensure t
   :mode "\\.js\\'"
+  :interpreter "node"
   :bind (:map js2-mode-map
          ("<return>" . newline-and-indent))
   :config
   (setq js2-basic-offset 2))
-
 
 ;; typescript
 (use-package typescript-mode
@@ -138,7 +138,48 @@
   :ensure t)
 
 
+;; haskell
+(use-package haskell-mode
+  :ensure t
+  :hook ((haskell-mode . turn-on-haskell-doc-mode)
+         (haskell-mode . turn-on-haskell-indent)
+         (haskell-mode . interactive-haskell-mode)))
 
+
+
+;; === web develop ===
+(use-package css-mode
+  :config
+  (setq css-indent-offset 2))
+
+
+(use-package emmet-mode
+  :ensure t
+  :hook (sgml-mode css-mode web-mode)
+  :bind (:map emmet-mode-keymap
+         ("C-j" . nil)
+         ("<C-return>" . nil)
+         ("<M-return>" . emmet-expand-line)
+         ("M-j" . emmet-expand-line))
+  :config
+  (setq emmet-indentation 2
+        emmet-preview-default nil))
+
+
+(use-package web-mode
+  :ensure t
+  :config
+  (setq web-mode-markup-indent-offset 2
+        web-mode-css-indent-offset 2
+        web-mode-code-indent-offset 2))
+
+
+(use-package vue-mode
+  :ensure t)
+
+
+
+;; === others ===
 (use-package csv-mode
   :ensure t
   :config
