@@ -132,6 +132,18 @@
          (typescript-mode . tide-hl-identifier-mode)
          (before-save . tide-format-before-save)))
 
+;; prettier
+(use-package prettier-js
+  :ensure t
+  :hook ((js2-mode . prettier-js-mode)
+         (typescript-mode . prettier-js-mode)
+         (web-mode . prettier-js-mode))
+  :config
+  (setq prettier-js-args
+        '("--trailing-comma" "all"
+          "--single-quote" "true"
+          "--no-semi")))
+
 
 ;; rust
 (use-package rust-mode
