@@ -26,6 +26,7 @@ recentf
 projectile.cache
 smex-items
 history
+.lsp-session-v1
 var/prescient-save.el
 
 .mc-lists.el
@@ -41,3 +42,4 @@ pyim/
 emojis/
 
 anaconda-mode/
+mspyls/

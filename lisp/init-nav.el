@@ -70,17 +70,6 @@
   :ensure t)
 
 
-(use-package imenu-list
-  :ensure t
-  :bind ("C-;" . imenu-list-smart-toggle)
-  :hook (imenu-list-after-jump . recenter-top-bottom)
-  :config
-  (setq imenu-list-size 0.12
-        imenu-list-auto-resize t
-        imenu-list-focus-after-activation t)
-  (evil-set-initial-state 'imenu-list-major-mode 'emacs))
-
-
 (use-package switch-window
   :ensure t
   :bind

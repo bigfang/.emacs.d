@@ -45,10 +45,19 @@
 
 ;; === programming languages ===
 ;; python
+(use-package python
+  :config
+  (defhydra hydra:python (:color teal :hint nil)
+    "python"
+    ("o" pyvenv-workon "workon")
+    ("r" run-python "IPython")
+    ("q" nil :color blue)))
+
 (use-package pyvenv
   :ensure t)
 
 (use-package anaconda-mode
+  :disabled
   :ensure t
   :hook
   (python-mode . anaconda-mode)
@@ -59,17 +68,10 @@
   (when (executable-find "ipython")
     (setq python-shell-interpreter "ipython"
           python-shell-interpreter-args "-i --simple-prompt"))
-  (evil-define-key 'normal anaconda-mode-map (kbd "ga") 'anaconda-mode-find-assignments)
-  (evil-define-key 'normal anaconda-mode-map (kbd "gr") 'anaconda-mode-find-references)
-  (evil-define-key 'normal anaconda-mode-map (kbd "gd") 'anaconda-mode-find-definitions)
-
-  (defhydra hydra:python (:color teal :hint nil)
-    "python"
-    ("o" pyvenv-workon "python workon")
-    ("r" run-python "IPython")
-    ("q" nil :color blue)))
+  (evil-define-key 'normal anaconda-mode-map (kbd "ga") 'anaconda-mode-find-assignments))
 
 (use-package company-anaconda
+  :disabled
   :ensure t
   :after company anaconda-mode
   :config
@@ -108,6 +110,11 @@
   :config
   (setq js-indent-level 2))
 
+(use-package add-node-modules-path
+  :ensure t
+  :hook ((js-mode . add-node-modules-path)
+         (typescript-mode . add-node-modules-path)))
+
 (use-package js2-mode
   :ensure t
   :mode "\\.js\\'"
@@ -123,24 +130,17 @@
   :config
   (setq typescript-indent-level 2))
 
-(use-package tide
-  :ensure t
-  :after (typescript-mode company flycheck)
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . tide-hl-identifier-mode)
-         (before-save . tide-format-before-save)))
-
 ;; prettier
 (use-package prettier-js
   :ensure t
+  ;; :config
+  ;; (setq prettier-js-args
+  ;;       '("--trailing-comma" "all"
+  ;;         "--single-quote" "true"
+  ;;         "--no-semi"))
   :hook ((js2-mode . prettier-js-mode)
          (typescript-mode . prettier-js-mode)
-         (web-mode . prettier-js-mode))
-  :config
-  (setq prettier-js-args
-        '("--trailing-comma" "all"
-          "--single-quote" "true"
-          "--no-semi")))
+         (web-mode . prettier-js-mode)))
 
 
 ;; rust

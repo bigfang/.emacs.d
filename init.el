@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-07-30 11:19:46>
+;; Time-stamp: <2019-07-30 16:39:16>
 
 
 
@@ -44,6 +44,7 @@
 (use-package init-coding)
 (use-package init-git)
 (use-package init-company)
+(use-package init-lsp)
 (use-package init-shackle)
 (use-package init-docker)
 (use-package init-elpa)

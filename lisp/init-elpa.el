@@ -166,11 +166,6 @@
 
 
 ;; === beta zone ===
-
-;; --- lsp ---
-;; (require 'init-lsp)
-
-
 ;; --- kurecolor ---
 (use-package kurecolor
   :ensure t
