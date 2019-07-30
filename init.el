@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-07-18 11:47:17>
+;; Time-stamp: <2019-07-30 11:19:46>
 
 
 
@@ -22,30 +22,31 @@
       erc-startup-file-list '("~/.emacs.d/.ercrc.el"))
 
 
-(add-to-list 'load-path (concat user-emacs-directory "config"))
-(add-to-list 'load-path (concat user-emacs-directory "config/hydras"))
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "hydras" user-emacs-directory))
 
 
-(require 'conf-pkg)
 
-(use-package conf-look)
-(use-package conf-kbd)
-(use-package conf-builtin)
-(use-package conf-dired)
-(use-package conf-ibuffer)
-(use-package conf-org)
-(use-package conf-hooks)
+(require 'init-pkg)
 
-(use-package conf-evil)
-(use-package conf-nav)
-(use-package conf-editing)
-(use-package conf-abo)
-(use-package conf-coding)
-(use-package conf-git)
-(use-package conf-company)
-(use-package conf-shackle)
-(use-package conf-docker)
-(use-package conf-elpa)
+(use-package init-look)
+(use-package init-kbd)
+(use-package init-builtin)
+(use-package init-dired)
+(use-package init-ibuffer)
+(use-package init-org)
+(use-package init-hooks)
+
+(use-package init-evil)
+(use-package init-nav)
+(use-package init-editing)
+(use-package init-abo)
+(use-package init-coding)
+(use-package init-git)
+(use-package init-company)
+(use-package init-shackle)
+(use-package init-docker)
+(use-package init-elpa)
 
 
 ;; automatically garbage collect when switch away from emacs
