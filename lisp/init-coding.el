@@ -37,9 +37,11 @@
   :pin melpa
   :hook (prog-mode . yas-minor-mode)
   :config
-  (yas-reload-all)
-  (use-package yasnippet-snippets
-    :ensure t))
+  (yas-reload-all))
+
+(use-package yasnippet-snippets
+  :ensure t
+  :after yasnippet)
 
 
 

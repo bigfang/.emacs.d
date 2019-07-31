@@ -8,7 +8,10 @@
   :bind (:map evil-motion-state-map
          ("'" . evil-goto-mark)
          ("`" . evil-goto-mark-line)
+         ("/" . swiper)
          ("gD" . evil-goto-definition)
+         ("g." . xref-find-definitions)
+         ("g'" . xref-find-references)
          ("^" . evil-window-top)
          ("$" . evil-window-bottom)
          ("H" . evil-first-non-blank)
@@ -56,7 +59,7 @@
 
   (define-key evil-motion-state-map "gd" 'dumb-jump-go)
   (define-key evil-motion-state-map "gb" 'dumb-jump-back)
-  (define-key evil-motion-state-map "gl" 'dumb-jump-quick-look)
+  (define-key evil-motion-state-map "go" 'dumb-jump-quick-look)
 
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
@@ -108,10 +111,6 @@
 
 (use-package evil-textobj-syntax
   :ensure t)
-
-
-(with-eval-after-load 'evil
-  (global-set-key (kbd "<M-Return>") 'vi-open-below))
 
 
 (provide 'init-evil)

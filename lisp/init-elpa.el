@@ -3,8 +3,7 @@
 
 ;; === library ===
 (use-package posframe
-  :ensure t
-  :defer t)
+  :ensure t)
 
 
 ;; === packages ===

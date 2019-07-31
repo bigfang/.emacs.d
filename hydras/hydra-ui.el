@@ -81,7 +81,7 @@
 
 (defhydra hydra:frame (:color pink :exit t :hint nil :columns 3)
   "Frames"
-  ("a" hydra:adjust/body "adjust")
+  ("a" hydra:adjust/body "adjust...")
   ("0" delete-frame "delete")
   ("d" delete-frame "delete")
   ("1" delete-other-frames "delete other")

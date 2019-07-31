@@ -32,7 +32,6 @@
 
 
 (use-package files
-  :ensure nil
   :config
   ;; time-stamp
   (add-hook 'before-save-hook 'time-stamp)
@@ -90,6 +89,7 @@
          ("C->" . mc/mark-next-like-this)
          ("C-<" . mc/mark-previous-like-this)
          ("C-c C->" . mc/mark-all-like-this)
+         ("C-?" . mc/mark-all-like-this)
          ("C-S-<mouse-1>" . mc/add-cursor-on-click))
   :config
   (setq mc/edit-lines-empty-lines 'ignore
@@ -130,7 +130,7 @@
          ("C-r" . redo))
   :config
   (global-undo-tree-mode)
-  (bind-key* "C-?" 'uncomment-region)
+  ;; (bind-key* "C-?" 'uncomment-region)
   (bind-key* "M-_" 'uncomment-region)
   (bind-key* "s-z" 'comment-dwim)
   ;; (bind-key* "C-/" 'comment-dwim)

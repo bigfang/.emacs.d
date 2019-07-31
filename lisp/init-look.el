@@ -70,7 +70,6 @@
 
 ;; show paren
 (use-package paren
-  :ensure t
   :config
   (set-face-background 'show-paren-match (face-background 'default))
   (set-face-foreground 'show-paren-match "#def")
@@ -95,8 +94,7 @@
 
 (use-package dimmer
   :ensure t
-  :config
-  (dimmer-mode))
+  :config (dimmer-mode))
 
 
 (provide 'init-look)

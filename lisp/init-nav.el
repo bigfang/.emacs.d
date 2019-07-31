@@ -29,6 +29,7 @@
  [_e_] external               [_b_] back
  [_x_] external other window
 "
+    ("J" ffap "ffap")
     ("j" dumb-jump-go)
     ("o" dumb-jump-go-other-window)
     ("i" dumb-jump-go-prompt)

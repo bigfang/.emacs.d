@@ -2,7 +2,6 @@
 
 
 (use-package ibuffer
-  :ensure nil
   :bind (("C-x C-b" . ibuffer)
          :map ibuffer-mode-map
          ("SPC" . hydra:leader/body)

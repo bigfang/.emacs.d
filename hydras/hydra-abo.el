@@ -37,6 +37,7 @@ _z_ zone:
 
 (defhydra hydra:execute (:color teal :hint nil :columns 3)
   ("c" quick-calc "quick calc")
+  ("C" calendar "calendar")
   ("s" shell "shell")
   ("e" eval-last-sexp "eval sexp")
   ("v" ido-find-alternate-file "refresh")

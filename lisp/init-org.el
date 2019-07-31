@@ -30,6 +30,7 @@
         deft-extensions '("org" "md"))
   (setq deft-use-filename-as-title nil)
   (evil-define-key 'insert deft-mode-map (kbd "C-g") 'deft-filter-clear)
+  (evil-define-key 'normal deft-mode-map (kbd "RET") 'deft-complete)
   (evil-define-key 'normal deft-mode-map (kbd "n") 'deft-new-file)
   (evil-define-key 'normal deft-mode-map (kbd "R") 'deft-rename-file)
   (evil-define-key 'normal deft-mode-map (kbd "D") 'deft-delete-file)

@@ -1,23 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-(use-package hydra-builtin)
-(use-package hydra-dired)
-(use-package hydra-ibuffer)
-(use-package hydra-info)
-(use-package hydra-macro)
-(use-package hydra-rectangle)
-
-(use-package hydra-org)
-(use-package hydra-projectile)
-(use-package hydra-alchemist)
-(use-package hydra-pdf)
-
-(use-package hydra-abo)
-(use-package hydra-git)
-(use-package hydra-ui)
-
-(use-package hydra-adapter)
-
 
 (defhydra hydra:leader (:color teal :exit t :hint nil :idle .2 :columns 5)
   "      --- Hydra Leader ---    "
@@ -30,7 +12,6 @@
 
   ("." er/expand-region "expand-region")
   ("'" hydra:multiple-cursors/body "multiple-cursors")
-  ("`" hydra:toggle/body "toggle modes...")
 
   ("o" hydra:adapter "adapter...")
 

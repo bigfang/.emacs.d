@@ -15,7 +15,16 @@
 (use-package lsp-ui
   :ensure t
   :hook (lsp-mode . lsp-ui-mode)
-  :bind ("C-;" . lsp-ui-imenu)
+  :bind (("C-;" . lsp-ui-imenu)
+         :map lsp-ui-imenu-mode-map
+         ("SPC" . hydra:leader/body)
+         ("C-;" . lsp-ui-imenu--kill)
+         ("TAB" . lsp-ui-imenu--next-kind)
+         ("<backtab>" . lsp-ui-imenu--prev-kind)
+         ("j" . next-line)
+         ("k" . previous-line)
+         ("M-n" . next-line)
+         ("M-p" . previous-line))
   :config
   (setq lsp-ui-doc-enable t
         lsp-ui-doc-use-webkit nil

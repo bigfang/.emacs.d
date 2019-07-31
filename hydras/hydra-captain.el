@@ -14,22 +14,31 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra:captain (:color teal :exit t :hint nil :columns 4)
-  "      --- Hydra Captain ---    "
+(defhydra hydra:captain (:color teal :exit t :hint nil :columns 5)
+  "⊞      --- Hydra Captain ---    "
   ("." xref-find-definitions "xref find def")
-  (";" xref-find-references "xref find ref")
-  ("'" xref-find-apropos "xref find apropos")
+  ("'" xref-find-references "xref find ref")
+  (";" xref-find-apropos "xref find apropos")
 
-  ("l" beacon-blink "blink cursor")
+  ("/" swiper-all "swiper-all")
+  ("RET" lsp-ui-imenu "lsp imenu")
+  ("TAB" hydra:toggle/body "toggle modes...")
+  ("SPC" beacon-blink "blink cursor")
+  ("DEL" hydra:adjust/body "adjust...")
 
-  ("/" swiper "swiper")
-  ("a" swiper-all "swiper-all")
-  ("j" ffap "ffap")
   ("f" ido-find-file "ido file")
+  ("j" ffap "ffap")
+  ;; same as hydra:execute
+  ("c" quick-calc "quick calc")
+  ("C" calendar "calendar")
+  ("s" shell "shell")
+  ("e" eval-last-sexp "eval sexp")
+  ("v" ido-find-alternate-file "refresh")
+  ("x" smex "smex")
 
   ("t" google-translate-smooth-translate "google translate")
   ("g" google-this "google this")
-  ("RET" google-this-search "google search")
+  ("G" google-this-search "google search")
 
   ("b" hydra:browse/body "visit website")
 
