@@ -11,10 +11,10 @@
          ("RET" . company-complete-selection)
          ("<space>" . my/abort-and-insert-space)
          ("SPC" . my/abort-and-insert-space)
-         ("<tab>" . company-complete-selection)
-         ("TAB" . company-complete-selection)
-         ("<backtab>" . company-select-previous)
-         ("S-TAB" . company-select-previous)
+         ("<tab>" . my/page-down-or-yas-expand)
+         ("TAB" . my/page-down-or-yas-expand)
+         ("<backtab>" . company-previous-page)
+         ("S-TAB" . company-previous-page)
          ("C-n" . company-complete-common-or-cycle)
          ("C-p" . company-select-previous)
          ("M-i" . company-search-candidates)
@@ -28,23 +28,28 @@
          ("M-k" . company-search-repeat-backward))
   :hook (after-init . global-company-mode)
   :init
+  (defun my/page-down-or-yas-expand ()
+    (interactive)
+    (progn
+      (company-next-page)
+      (yas-expand)))
   (defun my/abort-and-insert-space ()
     (interactive)
     (progn
       (company-abort)
       (insert " ")))
   :config
-  ;; (add-to-list 'company-backends 'company-yasnippet t)
   (setq company-backends
-        '(company-semantic
-          company-clang
-          company-files
-          (company-capf
-           company-keywords
-           company-dabbrev-code)
-          company-dabbrev))
+        '((company-yasnippet
+           company-capf
+           company-files
+           company-dabbrev-code
+           company-keywords)
+           (company-abbrev
+            company-dabbrev)))
   (setq company-tooltip-minimum 7
-        company-minimum-prefix-length 3
+        company-tooltip-minimum-width 28
+        company-minimum-prefix-length 2
         company-selection-wrap-around t
         company-tooltip-align-annotations t
         company-transformers '(company-sort-by-occurrence)
@@ -52,6 +57,7 @@
 
 
 (use-package company-box
+  :disabled
   :ensure t
   :init (setq company-box-icons-alist 'company-box-icons-all-the-icons)
   :hook (company-mode . company-box-mode))
@@ -76,11 +82,6 @@
   (setq company-quickhelp-delay 2
         company-quickhelp-use-propertized-text t)
   (company-quickhelp-mode))
-
-
-(use-package company-prescient
-  :ensure t
-  :config (prescient-persist-mode +1))
 
 
 (provide 'init-company)

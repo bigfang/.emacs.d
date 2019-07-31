@@ -56,7 +56,7 @@
 
 (use-package company-lsp
   :ensure t
-  :init
+  :config
   (add-to-list 'company-backends 'company-lsp))
 
 

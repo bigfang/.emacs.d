@@ -169,6 +169,22 @@
 
 
 ;; === beta zone ===
+;; --- prescient ---
+(use-package prescient
+  :ensure t
+  :config (prescient-persist-mode))
+
+(use-package company-prescient
+  :ensure t
+  :config
+  (company-prescient-mode t))
+
+(use-package ivy-prescient
+  :ensure t
+  :config
+  (ivy-prescient-mode t))
+
+
 ;; --- kurecolor ---
 (use-package kurecolor
   :ensure t
@@ -214,6 +230,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 (use-package company-emoji
   :ensure t
   :requires company
+  :after company-lsp              ; fix company-backends order
   :config
   (add-to-list 'company-backends 'company-emoji))
 

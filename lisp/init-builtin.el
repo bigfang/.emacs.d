@@ -15,8 +15,8 @@
   :unless (daemonp)
   :config
   (add-to-list 'desktop-path "~/.emacs.d/")
-  (push '(company-posframe-mode . nil)
-        desktop-minor-mode-table)
+  (add-to-list 'desktop-minor-mode-table
+               '(company-posframe-mode . nil) t)
   (desktop-save-mode t))
 
 
