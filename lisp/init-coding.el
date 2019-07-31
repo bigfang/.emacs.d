@@ -54,7 +54,8 @@
     ("q" nil :color blue)))
 
 (use-package pyvenv
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package anaconda-mode
   :disabled
@@ -80,7 +81,8 @@
 
 ;; erlang
 (use-package erlang
-  :ensure t)
+  :ensure t
+  :defer t)
 
 ;; elixir
 (use-package elixir-mode
@@ -127,6 +129,7 @@
 ;; typescript
 (use-package typescript-mode
   :ensure t
+  :defer t
   :config
   (setq typescript-indent-level 2))
 
@@ -145,7 +148,8 @@
 
 ;; rust
 (use-package rust-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 ;; haskell
@@ -185,13 +189,15 @@
 
 
 (use-package vue-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 
 ;; === others ===
 (use-package csv-mode
   :ensure t
+  :defer t
   :config
   (defhydra hydra:csv (:color teal :hint nil)
     "csv"
@@ -201,6 +207,7 @@
 
 (use-package json-mode
   :ensure t
+  :defer t
   :config
   (setq json-reformat:indent-width 2)
 
@@ -216,16 +223,20 @@
     ("q" nil :color blue)))
 
 (use-package nginx-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package protobuf-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package toml-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package yaml-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 (provide 'init-coding)

@@ -3,18 +3,21 @@
 
 ;; === library ===
 (use-package posframe
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 ;; === packages ===
 (use-package deadgrep
   :ensure t
+  :defer t
   :config
   (setq-default deadgrep--search-type 'regexp))
 
 
 (use-package fzf
   :ensure t
+  :defer t
   :ensure-system-package fzf)
 
 
@@ -93,7 +96,8 @@
 
 ;; or htmlfontify
 (use-package htmlize
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 (use-package image+

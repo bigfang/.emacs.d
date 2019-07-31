@@ -98,7 +98,8 @@
 
 ;; === markdown ===
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :defer t)
 
 (use-package markdown-toc
   :ensure t

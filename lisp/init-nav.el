@@ -67,7 +67,8 @@
 
 
 (use-package imenu-anywhere
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 (use-package switch-window
