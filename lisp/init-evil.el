@@ -3,7 +3,7 @@
 
 (use-package evil
   :ensure t
-  :pin melpa-stable
+  :pin melpa
   :chords ("kj" . evil-normal-state)
   :bind (:map evil-motion-state-map
          ("'" . evil-goto-mark)

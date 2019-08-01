@@ -14,7 +14,7 @@
 
 (use-package magit
   :ensure t
-  :pin melpa-stable
+  :pin melpa
   :bind (("C-c v" . magit-status)
          :map transient-map
          ("q" . transient-quit-one))

@@ -3,7 +3,7 @@
 
 (use-package company
   :ensure t
-  :pin melpa-stable
+  :pin melpa
   :bind (("M-i" . company-indent-or-complete-common)
          ;; ("TAB" . indent-or-complete)
          :map company-active-map

@@ -4,7 +4,7 @@
 ;; === coding ===
 (use-package flycheck
   :ensure t
-  :pin melpa-stable
+  :pin melpa
   :hook (prog-mode . flycheck-mode)
   :config
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
@@ -24,7 +24,7 @@
 
 (use-package projectile
   :ensure t
-  :pin melpa-stable
+  :pin melpa
   :bind-keymap
   ("s-p" . projectile-command-map)
   :config
