@@ -103,6 +103,13 @@
   (define-key evil-normal-state-map (kbd "M-<up>") 'evil-numbers/inc-at-pt))
 
 
+(use-package evil-embrace
+  :ensure t
+  :hook (org-mode . embrace-org-mode-hook)
+  :bind ("C-," . embrace-commander)
+  :init
+  (evil-embrace-enable-evil-surround-integration))
+
 (use-package evil-surround
   :ensure t
   :config
