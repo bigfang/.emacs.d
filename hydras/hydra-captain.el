@@ -16,10 +16,6 @@
 
 (defhydra hydra:captain (:color teal :exit t :hint nil :columns 5)
   "⊞      --- Hydra Captain ---    "
-  ("." xref-find-definitions "xref find def")
-  ("'" xref-find-references "xref find ref")
-  (";" xref-find-apropos "xref find apropos")
-
   ("/" swiper-all "swiper-all")
   ("RET" lsp-ui-imenu "lsp imenu")
   ("TAB" hydra:toggle/body "toggle modes...")

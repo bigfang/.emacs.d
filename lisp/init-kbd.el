@@ -47,20 +47,20 @@
 
 
 (global-set-key (kbd "C-z r") 'revert-buffer)
-(global-set-key (kbd "C-z M-ESC") 'suspend-frame)
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
 (global-set-key (kbd "C-z s") 'isearch-forward)
 
-(global-set-key (kbd "C-`") 'just-one-space)
-(global-set-key (kbd "M-SPC") 'set-mark-command)
+(global-set-key (kbd "C-0") 'universal-argument)
 (global-set-key (kbd "<C-tab>") 'indent-for-tab-command)
 (global-set-key (kbd "M-U") 'upcase-word)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "C-x j") 'ffap)
-(global-set-key (kbd "C-M-]") 'align-entire)
+(global-set-key (kbd "M-,") 'xref-pop-marker-stack)
+(global-set-key (kbd "M-.") 'xref-find-definitions)   ; default
+(global-set-key (kbd "M-'") 'xref-find-references)
 
-(global-set-key (kbd "C-M-j")
+(global-set-key (kbd "M-^")
                 (lambda ()
                   (interactive)
                   (join-line -1)))

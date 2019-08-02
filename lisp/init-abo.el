@@ -4,8 +4,8 @@
 (use-package hydra
   :ensure t
   :after swiper
-  :bind (("C-SPC" . hydra:leader/body)
-         ("C-s" . hydra:captain/body)
+  :bind (("C-`" . hydra:leader/body)
+         ("C-~" . hydra:captain/body)
          :map evil-motion-state-map
          ("SPC" . hydra:leader/body)
          ("RET" . hydra:captain/body))
@@ -19,6 +19,7 @@
 
   (use-package hydra-org)
   (use-package hydra-projectile)
+  (use-package hydra-lsp)
   (use-package hydra-alchemist)
   (use-package hydra-pdf)
 
@@ -89,8 +90,7 @@
 
 (use-package swiper
   :ensure t
-  :bind (("C-S" . swiper-all)
-         ;; ("C-s" . swiper)
+  :bind (("C-s" . swiper-all)
          :map swiper-map
          ("M-q" . swiper-query-replace)
          ("C-'" . swiper-avy)
@@ -121,10 +121,11 @@
     "
      ^Chars^            ^word^              ^other^
 ------------------------------------------------------------
- [_c_]  char         [_w_]  word         [_s_]  symbol
- [_v_]  char-2       [_e_]  subword
- [_t_]  char-timer                     ^^[_l_]  line
+ [_c_]  char         [_a_]  word         [_s_]  symbol
+ [_v_]  char-2       [_w_]  [sub]word
+ [_t_]  char-timer   [_e_]  subword      [_l_]  line
 "
+    ("a" avy-goto-word-1 "godo word")
     ("c" avy-goto-char)
     ("v" avy-goto-char-2)
     ("t" avy-goto-char-timer)

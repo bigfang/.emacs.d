@@ -104,9 +104,8 @@ _z_ zone:
   ("C" ivy-toggle-case-fold)
   ("o" ivy-occur :exit t))
 
-(eval-after-load
-    'ivy '(define-key ivy-minibuffer-map
-            (kbd "C-o") 'soo-hydra:ivy/body))
+(with-eval-after-load 'ivy
+  (define-key ivy-minibuffer-map (kbd "C-o") 'soo-hydra:ivy/body))
 
 
 (provide 'hydra-abo)

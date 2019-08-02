@@ -24,7 +24,7 @@
           ("*Completions*"                                   :size 0.3  :align t     )
           ("*undo-tree*"             :regexp t               :size 0.15 :align left  )
           (occur-mode                           :select t    :size 0.4  :align t     )
-          ("*Help*"                             :select t    :size 0.3  :align t     )
+          ("*Help*"                             :select t    :size 0.3  :align t     :inhibit-window-quit nil )
           (helpful-mode                         :select t    :size 0.4  :align t     )
           (flycheck-error-list-mode             :select nil  :size 0.3  :align t     )
 

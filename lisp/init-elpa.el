@@ -83,7 +83,7 @@
   (defhydra hydra:highlight (:body-pre (highlight-symbol-mode 1)
                              :color pink :hint nil :columns 3)
     "Highlight"
-    ("SPC" highlight-symbol "highlight")
+    ("." highlight-symbol "highlight")
     ("p" highlight-symbol-prev "previous")
     ("n" highlight-symbol-next "next")
     ("c" highlight-symbol-count "count")
@@ -95,8 +95,7 @@
 
 ;; or htmlfontify
 (use-package htmlize
-  :ensure t
-  :defer t)
+  :ensure t)
 
 
 (use-package image+
