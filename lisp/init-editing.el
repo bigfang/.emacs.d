@@ -57,11 +57,9 @@
 ;; === packages ===
 (use-package expand-region
   :ensure t
-  :bind (("M-." . er/expand-region)
-         :map evil-normal-state-map
-         ("M-." . er/expand-region))
+  :bind ("C-=" . er/expand-region)
   :config
-  (setq expand-region-contract-fast-key ","))
+  (setq expand-region-contract-fast-key "-"))
 
 
 (use-package string-inflection
@@ -126,8 +124,8 @@
 (use-package undo-tree
   :ensure t
   :bind (:map evil-normal-state-map
-         ("u" . undo)
-         ("C-r" . redo))
+         ("u" . undo-tree-undo)
+         ("C-r" . undo-tree-redo))
   :config
   (global-undo-tree-mode)
   ;; (bind-key* "C-?" 'uncomment-region)

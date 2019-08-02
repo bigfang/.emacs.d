@@ -16,6 +16,9 @@
   :ensure t
   :hook (lsp-mode . lsp-ui-mode)
   :bind (("C-;" . lsp-ui-imenu)
+         :map lsp-ui-mode-map
+         ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+         ([remap xref-find-references] . lsp-ui-peek-find-references)
          :map lsp-ui-imenu-mode-map
          ("SPC" . hydra:leader/body)
          ("C-;" . lsp-ui-imenu--kill)
@@ -36,9 +39,11 @@
 
         lsp-ui-sideline-enable t
         lsp-ui-sideline-ignore-duplicate t)
-  (evil-define-key 'normal lsp-ui-mode-map (kbd "ga") 'lsp-ui-peek-find-implementation)
-  (evil-define-key 'normal lsp-ui-mode-map (kbd "gr") 'lsp-ui-peek-find-references)
-  (evil-define-key 'normal lsp-ui-mode-map (kbd "gd") 'lsp-ui-peek-find-definitions))
+
+  (with-eval-after-load 'evil-maps
+    (evil-define-key 'motion lsp-ui-mode-map (kbd "ga") 'lsp-ui-peek-find-implementation)
+    (evil-define-key 'motion lsp-ui-mode-map (kbd "gr") 'lsp-ui-peek-find-references)
+    (evil-define-key 'motion lsp-ui-mode-map (kbd "gd") 'lsp-ui-peek-find-definitions)))
 
 
 ;; |------------+-----------------------------------------|

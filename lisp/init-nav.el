@@ -15,7 +15,11 @@
          ("M-g j" . dumb-jump-go)
          ("M-g i" . dumb-jump-go-prompt)
          ("M-g x" . dumb-jump-go-prefer-external)
-         ("M-g z" . dumb-jump-go-prefer-external-other-window))
+         ("M-g z" . dumb-jump-go-prefer-external-other-window)
+         :map evil-motion-state-map
+         ("g." . dumb-jump-go)
+         ("gb" . dumb-jump-back)
+         ("go" . dumb-jump-quick-look))
   :config
   (setq dumb-jump-selector 'ivy
         dumb-jump-prefer-searcher 'rg)

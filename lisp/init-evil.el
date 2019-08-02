@@ -9,22 +9,29 @@
          ("'" . evil-goto-mark)
          ("`" . evil-goto-mark-line)
          ("/" . swiper)
-         ("gD" . evil-goto-definition)
-         ("g." . xref-find-definitions)
-         ("g'" . xref-find-references)
+
          ("^" . evil-window-top)
          ("$" . evil-window-bottom)
          ("H" . evil-first-non-blank)
          ("L" . evil-end-of-line)
+
          ("C-e" . evil-end-of-line)      ; evil-scroll-line-down
-         ([remap evil-execute-macro] . evil-jump-item)
+         ("@" . evil-jump-item)
+         ("%" . nil)
 
          :map evil-normal-state-map
+         ("j" . evil-next-visual-line)
+         ("k" . evil-previous-visual-line)
+         ("gj" . evil-next-line)
+         ("gk" . evil-previous-line)
+
          ("zi" . hs-hide-level)
+         ("M-." . xref-find-definitions)
          ("C-n" . next-line)
          ("C-p" . previous-line)
          ("C-y" . yank)                  ; evil-scroll-line-up
-         ([remap evil-jump-item] . evil-execute-macro)
+         ("@" . nil)
+         ("%" . evil-execute-macro)
 
          :map evil-insert-state-map
          ([escape] . evil-normal-state)      ; DO NOT USE "ESC"!
@@ -50,16 +57,13 @@
         evil-insert-state-cursor '("LightGoldenrod" box))
   (evil-mode 1)
   (evil-set-initial-state 'special-mode 'emacs)
-  (evil-set-initial-state 'deadgrep-mode 'emacs)
-  (evil-set-initial-state 'deft-mode nil)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
-  (evil-set-initial-state 'helpful-mode 'emacs)
-  (evil-set-initial-state 'paradox-menu-mode 'normal)
 
-  (define-key evil-motion-state-map "gd" 'dumb-jump-go)
-  (define-key evil-motion-state-map "gb" 'dumb-jump-back)
-  (define-key evil-motion-state-map "go" 'dumb-jump-quick-look)
+  (evil-set-initial-state 'deadgrep-mode 'emacs)
+  (evil-set-initial-state 'deft-mode nil)
+  (evil-set-initial-state 'helpful-mode 'motion)
+  (evil-set-initial-state 'paradox-menu-mode 'motion)
 
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
