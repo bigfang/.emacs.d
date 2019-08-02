@@ -117,16 +117,17 @@
 (use-package add-node-modules-path
   :ensure t
   :hook ((js-mode . add-node-modules-path)
+         (js2-mode . add-node-modules-path)
+         (vue-mode . add-node-modules-path)
          (typescript-mode . add-node-modules-path)))
 
 (use-package js2-mode
   :ensure t
   :mode "\\.js\\'"
   :interpreter "node"
-  :bind (:map js2-mode-map
-         ("<return>" . newline-and-indent))
   :config
-  (setq js2-basic-offset 2))
+  (setq js2-basic-offset 2
+        js2-strict-missing-semi-warning nil))
 
 ;; typescript
 (use-package typescript-mode
@@ -143,9 +144,10 @@
   ;;       '("--trailing-comma" "all"
   ;;         "--single-quote" "true"
   ;;         "--no-semi"))
-  :hook ((js2-mode . prettier-js-mode)
-         (typescript-mode . prettier-js-mode)
-         (web-mode . prettier-js-mode)))
+  ;; :hook ((js2-mode . prettier-js-mode)
+  ;;        (typescript-mode . prettier-js-mode)
+  ;;        (web-mode . prettier-js-mode))
+  :bind ("C-z p" . prettier-js))
 
 
 ;; rust
