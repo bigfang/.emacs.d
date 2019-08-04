@@ -43,7 +43,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("l" smerge-keep-lower)
   ("a" smerge-keep-all)
   ("RET" smerge-keep-current)
-  ("\C-m" smerge-keep-current)
   ("<" smerge-diff-base-upper)
   ("=" smerge-diff-upper-lower)
   (">" smerge-diff-base-lower)
@@ -52,12 +51,10 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("C" smerge-combine-with-next)
   ("r" smerge-resolve)
   ("k" smerge-kill-current)
-  ("ZZ" (lambda ()
-          (interactive)
-          (save-buffer)
-          (bury-buffer))
-   "Save and bury buffer" :color blue)
+
+  ("u" undo "undo")
   ("q" nil :color blue))
+(define-key smerge-mode-map (kbd "M-m") 'hydra:smerge/body)
 
 
 (defhydra hydra:git (:color teal :hint nil :columns 3)
