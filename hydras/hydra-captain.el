@@ -20,9 +20,8 @@
   ("RET" lsp-ui-imenu "lsp imenu")
   ("TAB" hydra:toggle/body "toggle modes...")
   ("SPC" beacon-blink "blink cursor")
-  ("DEL" hydra:adjust/body "adjust...")
 
-  ("f" ido-find-file "ido file")
+  ("f" hydra:adjust/body "adjust...")
   ("j" ffap "ffap")
   ;; same as hydra:execute
   ("c" quick-calc "quick calc")

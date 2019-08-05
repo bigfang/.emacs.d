@@ -8,7 +8,7 @@
 (use-package docker
   :ensure t
   :after evil
-  :bind ("C-z d" . docker)
+  :bind ("M-o d" . docker)
   :config
   (evil-set-initial-state 'docker-image-mode 'emacs)
   (evil-set-initial-state 'docker-container-mode 'emacs)

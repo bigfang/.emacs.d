@@ -27,7 +27,7 @@
 
 (use-package google-translate
   :ensure t
-  :bind ("C-c t" . google-translate-smooth-translate)
+  :bind ("C-z t" . google-translate-smooth-translate)
   :init
   (require 'google-translate-smooth-ui)
   :config
