@@ -103,7 +103,7 @@
 
 (use-package transpose-frame
   :ensure t
-  :bind ("C-z t" . transpose-frame))
+  :bind ("M-o t" . transpose-frame))
 
 
 (use-package treemacs
