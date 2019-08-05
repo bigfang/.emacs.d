@@ -103,6 +103,12 @@
   :after image)
 
 
+(use-package move-text
+  :ensure t
+  :bind (("<C-S-up>" . move-text-up)
+         ("<C-S-down>" . move-text-down)))
+
+
 (use-package pdf-tools
   :ensure t
   ;; :ensure-system-package (pkg-config automake poppler)
