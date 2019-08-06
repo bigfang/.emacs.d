@@ -1,6 +1,29 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(defhydra hydra:diff-hl (:color pink :hint nil)
+  "
+diff-hl:
+  ^^^ Move ^^^   |    hunk
+-----^^^^^^------|---------------
+   ^ ^ _K_ ^ ^   |   _m_ark
+   _H_ ^+^ _L_   |   _r_evert
+   ^ ^ _J_ ^ ^   |   _=_ diff
+"
+  ("n" diff-hl-next-hunk "next hunk")
+  ("p" diff-hl-previous-hunk "prev hunk")
+  ("J" diff-hl-next-hunk)
+  ("K" diff-hl-previous-hunk)
+  ("H" (progn (goto-char (point-min))
+              (diff-hl-next-hunk)))
+  ("L" (progn (goto-char (point-max))
+              (diff-hl-previous-hunk)))
+  ("m" diff-hl-mark-hunk)
+  ("=" diff-hl-diff-goto-hunk :color blue)
+  ("r" diff-hl-revert-hunk)
+  ("q" nil :color blue))
+
+
 (defhydra hydra:git-gutter (:body-pre (git-gutter-mode 1)
                             :color pink :hint nil)
   "
@@ -17,7 +40,7 @@ Git gutter:
   ("K" git-gutter:previous-hunk)
   ("H" (progn (goto-char (point-min))
               (git-gutter:next-hunk 1)))
-  ("L" (progn (goto-char (point-min))
+  ("L" (progn (goto-char (point-max))
               (git-gutter:previous-hunk 1)))
   ("s" git-gutter:stage-hunk)
   ("r" git-gutter:revert-hunk)
@@ -61,13 +84,12 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   "Git"
   ("i" magit-init "git init")
   ("c" magit-clone "git clone")
-  ("b" magit-blame "git blame")
-  ("h" magit-log-buffer-file "file history")
-  ("d" magit-diff-buffer-file "file diff")
   ("r" magit-refresh-all "refresh all")
-  ("v" magit-status "magit")
+  ("f" magit-diff-buffer-file "file diff")
+  ("v" magit-file-dispatch "magit file...")
+  ("d" hydra:diff-hl/body "diff-hl...")
   ("g" hydra:git-gutter/body "git-gutter...")
-  ("t" git-timemachine "git timemachine")
+  ("h" git-timemachine "timemachine")
   ("l" magit-todos-list "list todos")
   ("q" nil :color blue))
 

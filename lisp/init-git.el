@@ -19,6 +19,11 @@
          :map transient-map
          ("q" . transient-quit-one))
   :config
+  (add-to-list 'magit-section-initial-visibility-alist '(untracked . show))
+  (add-to-list 'magit-section-initial-visibility-alist '(unstaged . show))
+  (add-to-list 'magit-section-initial-visibility-alist '(unpulled . show))
+  (add-to-list 'magit-section-initial-visibility-alist '(unpushed . show))
+
   (setq magit-display-buffer-function
         (lambda (buffer)
           (display-buffer

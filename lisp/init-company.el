@@ -7,6 +7,7 @@
   :bind (("M-i" . company-indent-or-complete-common)
          ;; ("TAB" . indent-or-complete)
          :map company-active-map
+         ("M-." . company-other-backend)
          ("<return>" . company-complete-selection)
          ("RET" . company-complete-selection)
          ("<space>" . my/abort-and-insert-space)
@@ -17,7 +18,7 @@
          ("S-TAB" . company-previous-page)
          ("C-n" . company-complete-common-or-cycle)
          ("C-p" . company-select-previous)
-         ("M-i" . company-search-candidates)
+         ("M-i" . company-complete-common-or-cycle)
          ("M-o" . company-filter-candidates)
          :map company-search-map
          ("DEL" . company-search-abort)
@@ -69,19 +70,6 @@
   :ensure t
   :config
   (company-posframe-mode 1))
-
-
-(use-package company-quickhelp
-  :disabled
-  :if window-system
-  :requires company
-  :ensure t
-  :bind (:map company-active-map
-         ("M-/" . company-quickhelp-manual-begin))
-  :config
-  (setq company-quickhelp-delay 2
-        company-quickhelp-use-propertized-text t)
-  (company-quickhelp-mode))
 
 
 (provide 'init-company)
