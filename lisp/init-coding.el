@@ -59,27 +59,6 @@
   :ensure t
   :defer t)
 
-(use-package anaconda-mode
-  :disabled
-  :ensure t
-  :hook
-  (python-mode . anaconda-mode)
-  (python-mode . anaconda-eldoc-mode)
-  :config
-  (setq python-indent-guess-indent-offset-verbose nil)
-  (unbind-key "M-r" anaconda-mode-map)
-  (when (executable-find "ipython")
-    (setq python-shell-interpreter "ipython"
-          python-shell-interpreter-args "-i --simple-prompt"))
-  (evil-define-key 'normal anaconda-mode-map (kbd "ga") 'anaconda-mode-find-assignments))
-
-(use-package company-anaconda
-  :disabled
-  :ensure t
-  :after company anaconda-mode
-  :config
-  (add-to-list 'company-backends '(company-anaconda :with company-capf)))
-
 
 ;; erlang
 (use-package erlang
