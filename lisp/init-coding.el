@@ -26,9 +26,11 @@
   :ensure t
   :pin melpa
   :bind-keymap
-  ("s-p" . projectile-command-map)
+  ("M-o p" . projectile-command-map)
   :config
   (setq projectile-completion-system 'ivy)
+  (setq projectile-mode-line-function
+        '(lambda () (format " [%s]" (projectile-project-name))))
   (projectile-mode))
 
 
