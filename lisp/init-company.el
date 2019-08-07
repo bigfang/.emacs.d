@@ -48,7 +48,8 @@
            company-keywords)
            (company-abbrev
             company-dabbrev)))
-  (setq company-tooltip-minimum 7
+  (setq company-async-timeout 5
+        company-tooltip-minimum 7
         company-tooltip-minimum-width 28
         company-minimum-prefix-length 2
         company-selection-wrap-around t
