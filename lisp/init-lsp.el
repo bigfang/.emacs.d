@@ -9,7 +9,13 @@
   (setq lsp-auto-guess-root t
         lsp-prefer-flymake nil
         lsp-enable-symbol-highlighting nil
-        lsp-imenu-sort-methods '(position kind)))
+        lsp-imenu-sort-methods '(position kind))
+
+  (use-package lsp-pyls
+    :config
+    (setq lsp-pyls-plugins-pylint-enabled nil
+          lsp-pyls-configuration-sources ["flake8"]))
+  )
 
 
 (use-package lsp-ui
@@ -63,18 +69,6 @@
   :ensure t
   :config
   (add-to-list 'company-backends 'company-lsp))
-
-
-;; python
-(use-package lsp-python-ms
-  :ensure t
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
-                          (lsp-deferred)))
-  :config
-  (when (executable-find "ipython")
-    (setq python-shell-interpreter "ipython"
-          python-shell-interpreter-args "-i --simple-prompt")))
 
 
 (provide 'init-lsp)

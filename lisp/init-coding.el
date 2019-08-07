@@ -51,6 +51,10 @@
 ;; python
 (use-package python
   :config
+  (when (executable-find "ipython")
+    (setq python-shell-interpreter "ipython"
+          python-shell-interpreter-args "-i --simple-prompt"))
+
   (defhydra hydra:python (:color teal :hint nil)
     "python"
     ("o" pyvenv-workon "workon")
@@ -60,6 +64,14 @@
 (use-package pyvenv
   :ensure t
   :defer t)
+
+(use-package lsp-python-ms
+  :disabled
+  :ensure t
+  :hook
+  (python-mode . (lambda ()
+                   (require 'lsp-python-ms)
+                   (lsp-deferred))))
 
 
 ;; erlang
