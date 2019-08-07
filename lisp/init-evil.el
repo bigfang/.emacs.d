@@ -34,7 +34,7 @@
          ("%" . evil-execute-macro)
 
          :map evil-insert-state-map
-         ([escape] . evil-normal-state)      ; DO NOT USE "ESC"!
+         ([escape] . evil-normal-state)      ; DO NOT USE "ESC" or "<escape>"!
          ("C-o" . evil-execute-in-normal-state)
 
          :map evil-emacs-state-map

@@ -62,17 +62,24 @@
 
 
 (use-package view
-  :bind (("C-z z" . view-mode)
+  :bind (("M-o z" . view-mode)
+         ("C-z C-z" . view-mode)
          :map view-mode-map
-         ("b" . backward-char)
-         ("f" . forward-char)
+         ("<escape>" . keyboard-quit)
          ("C-n" . next-line)
-         ("C-p" . previous-line)
-         ("p" . evil-scroll-line-up)
-         ("n" . evil-scroll-line-down)))
+         ("C-p" . previous-line))
+  :hook (view-mode . my/change-view-mode-state)
+  :config
+  (defun my/change-view-mode-state ()
+    (cond
+     ((eq buffer-read-only t) (evil-motion-state))
+     ((eq buffer-read-only nil) (evil-normal-state))))
+  (evil-define-key 'motion view-mode-map (kbd "n") 'evil-scroll-line-down)
+  (evil-define-key 'motion view-mode-map (kbd "p") 'evil-scroll-line-up))
 
 
 (use-package which-func
+  :disabled
   :config
   (setq which-func-unknown "n/a")
   (which-function-mode t))
