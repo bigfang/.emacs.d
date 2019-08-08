@@ -1,14 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
-;; Time-stamp: <2018-02-15 12:13:26>
+;; Time-stamp: <2019-08-08 13:42:05>
 
 ;; (require 'gnushush)
 ;; (setq gnushush-fqdn "unknown")
 
-
-;; personal info
-(setq user-full-name "bigfang"
-      user-mail-address "bitair@gmail.com")
 
 ;; (setq gnus-parameters
 ;;       (nconc

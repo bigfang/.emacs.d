@@ -1,6 +1,12 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(use-package emacs
+  :bind (("M-n" . evil-scroll-line-down)
+         ("M-p" . evil-scroll-line-up))
+  :chords (";;" . comment-line))
+
+
 ;; define key-map C-z
 (define-prefix-command 'ctl-z-map)
 (global-set-key (kbd "C-z") 'ctl-z-map)
@@ -69,11 +75,7 @@
 (global-set-key (kbd "M-,") 'xref-pop-marker-stack)
 (global-set-key (kbd "M-.") 'xref-find-definitions)   ; default
 (global-set-key (kbd "M-'") 'xref-find-references)
-
-(global-set-key (kbd "M-^")
-                (lambda ()
-                  (interactive)
-                  (join-line -1)))
+(global-set-key (kbd "M-^") '(lambda () (interactive) (join-line -1)))
 
 
 (global-set-key (kbd "H-i") 'erc)
