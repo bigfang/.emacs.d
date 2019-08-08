@@ -30,6 +30,7 @@
                          (mode . clojure-mode)))
            ("Web" (or (mode . html-mode)
                       (mode . web-mode)
+                      (mode . vue-mode)
                       (mode . js-mode)
                       (mode . js2-mode)
                       (mode . typescript-mode)

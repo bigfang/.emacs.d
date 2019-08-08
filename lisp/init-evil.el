@@ -26,6 +26,7 @@
          ("gk" . evil-previous-line)
 
          ("zi" . hs-hide-level)
+         ("C-." . er/expand-region)
          ("M-." . xref-find-definitions)
          ("C-n" . next-line)
          ("C-p" . previous-line)
@@ -64,6 +65,9 @@
   (evil-set-initial-state 'deft-mode nil)
   (evil-set-initial-state 'helpful-mode 'motion)
   (evil-set-initial-state 'paradox-menu-mode 'motion)
+
+  (global-set-key (kbd "M-n") 'evil-scroll-line-down)
+  (global-set-key (kbd "M-p") 'evil-scroll-line-up)
 
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map

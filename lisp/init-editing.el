@@ -57,9 +57,9 @@
 ;; === packages ===
 (use-package expand-region
   :ensure t
-  :bind ("C-=" . er/expand-region)
+  :bind ("C-." . er/expand-region)
   :config
-  (setq expand-region-contract-fast-key "-"))
+  (setq expand-region-contract-fast-key ","))
 
 
 (use-package string-inflection
@@ -95,6 +95,7 @@
   :init
   (defhydra hydra:multiple-cursors (:color pink :hint nil)
     "
+    Multiple Cursors
      ^Up^            ^Down^        ^Other^
 ----------------------------------------------
 [_p_]   Next    [_n_]   Next    [_L_] Edit lines
@@ -117,7 +118,7 @@
     ("s" mc/sort-regions "sort")
     ("r" mc/reverse-regions "reverse")
     ("q" nil :color blue))
-  (bind-key* (kbd "C-/") 'hydra:multiple-cursors/body))
+  (global-set-key (kbd "C-'") 'hydra:multiple-cursors/body))
 
 
 ;; key-binding -- https://emacs.stackexchange.com/a/2557
@@ -129,21 +130,21 @@
   :config
   (global-undo-tree-mode)
   ;; (bind-key* "C-?" 'uncomment-region)
-  (bind-key* "M-_" 'uncomment-region)
-  (bind-key* "s-z" 'comment-dwim)
+  ;; (bind-key* "M-_" 'uncomment-region)
+  ;; (bind-key* "s-z" 'comment-dwim)
   ;; (bind-key* "C-/" 'comment-dwim)
   ;; (bind-key* "C-_" 'comment-dwim)
   :init
   (defhydra hydra:undo-tree (:hint nil)
     "
-  _p_: undo  _n_: redo _s_: save _l_: load   "
-    ("p" undo-tree-undo)
-    ("n" undo-tree-redo)
+    [_u_]: undo  [_r_]: redo  [_s_]: save  [_l_]: load  "
+    ("u" undo-tree-undo)
+    ("r" undo-tree-redo)
     ("s" undo-tree-save-history)
     ("l" undo-tree-load-history)
-    ("u" undo-tree-visualize "visualize" :color blue)
+    ("/" undo-tree-visualize "visualize" :color blue)
     ("q" nil :color blue))
-  (global-set-key (kbd "C-x u") 'hydra:undo-tree/undo-tree-undo))
+  (bind-key* (kbd "C-x u") 'hydra:undo-tree/body))
 
 
 (provide 'init-editing)

@@ -13,7 +13,7 @@ _d_ debug-on-error:      %`debug-on-error
 _f_ auto-fill-mode:      %`auto-fill-function
 _t_ truncate-lines:      %`truncate-lines
 _w_ whitespace-mode:     %`whitespace-mode
-_o_ ioutline-mode:       %`outline-minor-mode
+_o_ outline-mode:        %`outline-minor-mode
 _v_ view-mode:           %`view-mode
 _m_ xterm-mouse-mode     %`xterm-mouse-mode
 _n_ line-numbers-mode    %`display-line-numbers-mode
