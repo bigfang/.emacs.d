@@ -71,7 +71,10 @@
   :hook
   (python-mode . (lambda ()
                    (require 'lsp-python-ms)
-                   (lsp-deferred))))
+                   (lsp-deferred)))
+  :init
+  (setq lsp-python-ms-dir
+        (expand-file-name "var/mspyls/" user-emacs-directory)))
 
 
 ;; erlang

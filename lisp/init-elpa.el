@@ -109,6 +109,29 @@
          ("<C-S-down>" . move-text-down)))
 
 
+(use-package paradox
+  :ensure t
+  :after evil
+  :config
+  (paradox-enable)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "I") 'evil-insert-state)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "n") 'paradox-next-entry)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "p") 'paradox-previous-entry)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "q") 'paradox-quit-and-close)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "j") 'paradox-next-entry)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "k") 'paradox-previous-entry)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "i") 'package-menu-mark-install)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "d") 'package-menu-mark-delete)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "x") 'paradox-menu-execute)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "r") 'paradox-menu--refresh)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "v") 'paradox-menu-visit-homepage)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "u") 'package-menu-mark-unmark)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "U") 'package-menu-mark-upgrades)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "l") 'paradox-menu-view-commit-list)
+  (evil-define-key 'motion paradox-menu-mode-map (kbd "f") 'hydra-paradox-filter/body)
+  (setq paradox-execute-asynchronously t))
+
+
 (use-package pdf-tools
   :ensure t
   ;; :ensure-system-package (pkg-config automake poppler)

@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-07-30 16:39:16>
+;; Time-stamp: <2019-08-08 14:10:12>
 
 
 
@@ -17,14 +17,12 @@
       user-mail-address (concat "bitair" "@" "gmail.com"))
 
 (setq enable-recursive-minibuffers t)
-(setq bookmark-default-file "~/.emacs.d/.emacs.bmk"
-      gnus-init-file "~/.emacs.d/.gnus.el"
+(setq gnus-init-file "~/.emacs.d/.gnus.el"
       erc-startup-file-list '("~/.emacs.d/.ercrc.el"))
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "hydras" user-emacs-directory))
-
 
 
 (require 'init-pkg)

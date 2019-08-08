@@ -1,9 +1,21 @@
 # -*- mode: gitignore; -*-
 
-.emacs.*
+# [#].[#]
+\#*\#
+.\#*
+\!*
+*~
 *.elc
 *.eld
-*.bmk
+
+
+emacs-custom.el
+
+elpa/
+var/
+
+
+# gnus
 *.newsrc*
 
 # Org-mode
@@ -13,33 +25,3 @@
 # flymake Flycheck
 *_flymake.*
 flycheck_*.el
-
-# [#].[#]
-\#*#
-.\#*
-\!*
-*~
-
-notes
-tramp
-recentf
-projectile.cache
-smex-items
-history
-company-statistics-cache.el
-.lsp-session-v1
-var/prescient-save.el
-
-.mc-lists.el
-emacs-custom.el
-
-.cache/
-elpa/
-eshell/
-auto-save-list/
-image-dired/
-url/
-pyim/
-emojis/
-
-mspyls/

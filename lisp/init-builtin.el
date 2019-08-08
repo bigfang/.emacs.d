@@ -14,7 +14,6 @@
 (use-package desktop
   :unless (daemonp)
   :config
-  (add-to-list 'desktop-path "~/.emacs.d/")
   (add-to-list 'desktop-minor-mode-table
                '(company-posframe-mode . nil) t)
   (desktop-save-mode t))
@@ -23,7 +22,6 @@
 (use-package ido
   :bind (("C-x b" . ido-switch-buffer))
   :config
-  (setq ido-save-directory-list-file "~/.emacs.d/.emacs.ido.last")
   (ido-mode t)
   (ido-everywhere t))
 
