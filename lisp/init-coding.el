@@ -9,16 +9,16 @@
   :config
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc))
 
-  (defhydra hydra:flycheck
-    (:pre (progn (flycheck-list-errors))
-     :post (progn (quit-windows-on "*Flycheck errors*"))
-     :hint nil)
-    "Errors"
-    ("f"  flycheck-error-list-set-filter                            "Filter")
-    ("j"  flycheck-next-error                                       "Next")
-    ("k"  flycheck-previous-error                                   "Previous")
-    ("gg" flycheck-first-error                                      "First")
-    ("G"  (progn (goto-char (point-max)) (flycheck-previous-error)) "Last")
+  (defhydra hydra:flycheck (:pre (flycheck-list-errors)
+                            :post (quit-windows-on "*Flycheck errors*")
+                            :hint nil)
+    "Flycheck"
+    ("f"  flycheck-error-list-set-filter    "Filter")
+    ("j"  flycheck-next-error               "Next")
+    ("k"  flycheck-previous-error           "Previous")
+    ("H" flycheck-first-error              "First")
+    ("L"  (progn (goto-char (point-max))
+                 (flycheck-previous-error)) "Last")
     ("q"  nil)))
 
 

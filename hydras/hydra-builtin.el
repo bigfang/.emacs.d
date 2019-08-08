@@ -38,16 +38,23 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra:mark (:color pink :exit t :hint nil :columns 3)
-  "Marks"
-  ("m" counsel-bookmark "bookmark")
-  ("d" bookmark-delete "delete bookmark")
-  ("l" bookmark-bmenu-list "list" :exit t)
+(defhydra hydra:mark (:color pink :exit t :hint nil)
+  "
+    bookmark             remember
+---------------------------------------------
+   [_m_]: mark          [_n_]: notes
+   [_d_]: delete        [_r_]: remember
+   [_l_]: list          [_c_]: clipboard
+   ^^                   [_R_]: region
+"
+  ("m" counsel-bookmark)
+  ("d" bookmark-delete)
+  ("l" bookmark-bmenu-list :exit t)
 
-  ("n" remember-notes "notes" :exit t)
-  ("r" remember "remember" :exit t)
-  ("R" remember-region "remember region")
-  ("c" remember-clipboard "remember clipboard")
+  ("n" remember-notes :exit t)
+  ("r" remember :exit t)
+  ("R" remember-region)
+  ("c" remember-clipboard)
   ("q" nil :color blue))
 
 

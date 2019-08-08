@@ -1,21 +1,23 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra:rectangle (:body-pre (rectangle-mark-mode 1)
+(defhydra hydra:rectangle (:body-pre (progn (evil-emacs-state)
+                                            (rectangle-mark-mode 1))
                            :color pink
                            :hint nil
-                           :post (deactivate-mark))
+                           :post (progn (deactivate-mark)
+                                        (evil-normal-state)))
   "
   ^_k_^     [_w_]copy      [_o_]open      [_N_]number-lines            |\\     -,,,--,,_
 _h_   _l_   [_y_]yank      [_t_]type      [_e_]exchange-point          /,`.-'`'   ..  \-;;,_
-  ^_j_^     [_d_]delete    [_c_]clear     [_r_]reset-region-mark      |,4-  ) )_   .;.(  `'-'
-^^^^        [_u_]undo      [_q_]quit      ^ ^                     '---''(./..)-'(_\_)
+  ^_j_^     [_x_]kill      [_c_]clear     [_r_]reset-region-mark      |,4-  ) )_   .;.(  `'-'
+^^^^        [_u_]undo      [_q_]quit      ^ ^                        '---''(./..)-'(_\_)
 "
   ("k" rectangle-previous-line)
   ("j" rectangle-next-line)
   ("h" rectangle-backward-char)
   ("l" rectangle-forward-char)
-  ("d" kill-rectangle)                    ;; C-x r k
+  ("x" kill-rectangle)                    ;; C-x r k
   ("y" yank-rectangle)                    ;; C-x r y
   ("w" copy-rectangle-as-kill)            ;; C-x r M-w
   ("o" open-rectangle)                    ;; C-x r o
