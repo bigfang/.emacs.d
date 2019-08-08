@@ -15,10 +15,10 @@
   ("!" shell-command "shell command")
 
   (";" indent-rigidly "indent-rigidly")
-  ("'" nil "nil")
+  ("'" hydra:multiple-cursors/body "multiple-cursors...")
   ("," embrace-commander "embrace")
   ("." er/expand-region "expand-region")
-  ("/" hydra:multiple-cursors/body "multiple-cursors...")
+  ("/" hydra:undo-tree/body "undo-tree...")
 
   ("o" hydra:adapter "adapter...")
 
@@ -39,7 +39,7 @@
   ("p" hydra:projectile/body "projectile...")
   ;; ("r" nil "nil")
   ("s" hydra:align/body "align...")
-  ("u" hydra:undo-tree/body "undo-tree...")
+  ;; ("u" hydra:undo-tree/body "undo-tree...")
   ("v" hydra:git/body "git...")
   ("x" hydra:execute/body "execute...")
   ;; ("y" nil "nil")

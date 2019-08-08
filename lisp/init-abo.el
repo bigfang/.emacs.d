@@ -144,7 +144,7 @@
 
 (use-package tiny
   :ensure t
-  :bind ("C-'" . tiny-expand))
+  :bind ("C-z /" . tiny-expand))
 
 
 ;; ===
