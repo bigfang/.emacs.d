@@ -80,8 +80,11 @@
   :config
   (setq highlight-symbol-idle-delay .5)
 
-  (defhydra hydra:highlight (:body-pre (highlight-symbol-mode 1)
-                             :color pink :hint nil :columns 3)
+  (defhydra hydra:highlight (:color pink :hint nil :columns 3
+                             :body-pre (progn (highlight-symbol-mode -1)
+                                              (when (thing-at-point 'symbol)
+                                                (highlight-symbol)))
+                             :post (highlight-symbol-mode 1)) ;FIXME:
     "Highlight"
     ("." highlight-symbol "highlight")
     ("p" highlight-symbol-prev "previous")
@@ -90,6 +93,7 @@
     ("o" highlight-symbol-occur "occur" :color blue)
     ("a" highlight-symbol-list-all "list")
     ("x" highlight-symbol-remove-all "remove all")
+    ("M-q" highlight-symbol-query-replace "replace")
     ("q" nil :color blue)))
 
 
@@ -223,7 +227,7 @@
 ;; --- kurecolor ---
 (use-package kurecolor
   :ensure t
-  :bind (("C-z K" . hydra:kurecolor/body))
+  :bind (("M-o k" . hydra:kurecolor/body))
   :config
   (defhydra hydra:kurecolor (:color pink :hint  nil)
     "
@@ -244,9 +248,9 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
     ("gj" kurecolor-hex-val-group :color blue)
     ("gk" kurecolor-hex-sat-group :color blue)
     ("gl" kurecolor-hex-hue-group :color blue)
-    ("rh" kurecolor-cssrgb-at-point-or-region-to-hex :color blue)
-    ("hr" kurecolor-hexcolor-at-point-or-region-to-css-rgb :color blue)
-    ("hR" kurecolor-hexcolor-at-point-or-region-to-css-rgba :color blue)
+    ("rh" kurecolor-cssrgb-at-point-or-region-to-hex)
+    ("hr" kurecolor-hexcolor-at-point-or-region-to-css-rgb)
+    ("hR" kurecolor-hexcolor-at-point-or-region-to-css-rgba)
     ("q"  nil :color blue)))
 
 

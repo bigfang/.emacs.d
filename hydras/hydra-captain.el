@@ -31,6 +31,7 @@
   ("v" ido-find-alternate-file "refresh")
   ("x" smex "smex")
 
+  ("k" hydra:kurecolor/body "kurecolor..." :color teal)
   ("t" google-translate-smooth-translate "google translate")
   ("g" google-this "google this")
   ("G" google-this-search "google search")
