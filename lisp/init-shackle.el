@@ -32,7 +32,7 @@
           ;; ("*Shell Command Output*"             :select nil                          )
           ;; ("\\*Async Shell.*\\*"     :regexp t  :ignore t                            )
           ;; ("\\*poporg.*\\*"          :regexp t  :select t    :other t                )
-          ;; (deadgrep-mode                        :select t    :size 0.6  :align t     :inhibit-window-quit t  )
+          (deadgrep-mode                        :select t                            :inhibit-window-quit t  :same t  )
           ("*info*"                             :select t                            :inhibit-window-quit t  :same t  )
           ("\\*[Wo]*Man.*\\*"        :regexp t  :select t    :other t                :inhibit-window-quit t  )
           ("*Messages*"                         :select nil  :other t                :inhibit-window-quit t  )
