@@ -86,8 +86,9 @@
 ;; key chords
 (key-chord-define-global ";;" 'comment-line)
 (key-chord-define-global ",," 'cycle-spacing)
-(key-chord-define-global "\\\\" 'indent-rigidly)
-(key-chord-define-global "//" 'evil-search-forward)
+(key-chord-define-global "//" 'zap-to-char)
+(key-chord-define-global "\\\\" 'zap-up-to-char)
+(key-chord-define-global "``" 'indent-rigidly)
 
 
 (global-set-key (kbd "M-SPC") 'just-one-space) ; 切换输入法
