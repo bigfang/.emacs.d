@@ -195,6 +195,13 @@
   (which-key-mode))
 
 
+(use-package zzz-to-char
+  :ensure t
+  :chords
+  ("\\\\" . zzz-up-to-char)
+  ("//" . zzz-to-char))
+
+
 
 ;; === beta zone ===
 ;; --- prescient ---
