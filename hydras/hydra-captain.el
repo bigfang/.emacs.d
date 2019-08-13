@@ -18,8 +18,8 @@
   "⊞      --- Hydra Captain ---    "
   ("/" swiper-all "swiper-all")
   ("RET" lsp-ui-imenu "lsp imenu")
-  ("TAB" hydra:toggle/body "toggle modes...")
-  ("SPC" beacon-blink "blink cursor")
+  ("SPC" hydra:toggle/body "toggle modes...")
+  ("DEL" beacon-blink "blink cursor")
 
   ("f" hydra:adjust/body "adjust...")
   ("j" ffap "ffap")
@@ -31,6 +31,7 @@
   ("v" ido-find-alternate-file "refresh")
   ("x" smex "smex")
 
+  ("d" deft "deft")
   ("k" hydra:kurecolor/body "kurecolor..." :color teal)
   ("t" google-translate-smooth-translate "google translate")
   ("g" google-this "google this")

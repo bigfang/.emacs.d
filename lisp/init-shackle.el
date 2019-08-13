@@ -32,6 +32,7 @@
           ;; ("*Shell Command Output*"             :select nil                          )
           ;; ("\\*Async Shell.*\\*"     :regexp t  :ignore t                            )
           ;; ("\\*poporg.*\\*"          :regexp t  :select t    :other t                )
+          ("*rg*"                               :select t                            :inhibit-window-quit t  :same t  )
           (deadgrep-mode                        :select t                            :inhibit-window-quit t  :same t  )
           ("*info*"                             :select t                            :inhibit-window-quit t  :same t  )
           ("\\*[Wo]*Man.*\\*"        :regexp t  :select t    :other t                :inhibit-window-quit t  )
