@@ -33,7 +33,7 @@
   ("j" hydra:dumb-jump/body "jump...")
   ("l" hydra:lsp/body "lsp-mode...")
   ("m" hydra:mark/body "marks...")
-  ;; ("n" nil "nil")
+  ("n" hydra:narrow/body "narrow...")
   ("p" hydra:projectile/body "projectile...")
   ;; ("r" nil "nil")
   ("s" hydra:align/body "align...")
