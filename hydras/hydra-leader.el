@@ -25,6 +25,7 @@
   ("a" hydra:avy/body "avy...")
   ("b" hydra:buffer/body "buffer...")
   ("c" hydra:flycheck/body "flycheck...")
+   ;; ("d" nil "nil")
   ("e" hydra:eyebrowse/body "eyebrowse...")
   ("f" hydra:frame/body "frame...")
   ("h" hydra:highlight/body "highlight...")
@@ -41,7 +42,6 @@
   ("x" hydra:execute/body "execute...")
   ;; ("y" nil "nil")
 
-  ("d" deft "deft")
   ("g" magit-status "magit")
   ("t" treemacs "treemacs")
 

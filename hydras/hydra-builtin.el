@@ -24,7 +24,7 @@
   ("r" align-regexp "regexp")
   ("c" rag/align-columns "column")
   ("=" rag/align-equals "equals")
-  ("w" rag/align-whitespace "whitespace")
+  ("SPC" rag/align-whitespace "whitespace")
   ("q" nil "quit"))
 
 

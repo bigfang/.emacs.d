@@ -5,7 +5,7 @@
 (display-line-numbers-mode -1)
 
 
-(defhydra hydra:toggle (:color amaranth)
+(defhydra hydra:toggle (:color amaranth :hint nil)
   "
 _a_ abbrev-mode:         %`abbrev-mode
 _c_ cua-mode:            %`cua-mode
@@ -17,21 +17,19 @@ _o_ outline-mode:        %`outline-minor-mode
 _v_ view-mode:           %`view-mode
 _m_ xterm-mouse-mode     %`xterm-mouse-mode
 _n_ line-numbers-mode    %`display-line-numbers-mode
-_r_ rot13-mode:
-_z_ zone:
 "
-  ("a" abbrev-mode nil)
-  ("c" cua-mode nil)
-  ("d" toggle-debug-on-error nil)
-  ("f" auto-fill-mode nil)
-  ("t" toggle-truncate-lines nil)
-  ("w" whitespace-mode nil)
-  ("o" outline-minor-mode nil)
-  ("v" view-mode nil)
-  ("m" xterm-mouse-mode nil)
-  ("n" display-line-numbers-mode nil)
-  ("r" toggle-rot13-mode nil :color blue)
-  ("z" zone nil :color blue)
+  ("a" abbrev-mode)
+  ("c" cua-mode)
+  ("d" toggle-debug-on-error)
+  ("f" auto-fill-mode)
+  ("t" toggle-truncate-lines)
+  ("w" whitespace-mode)
+  ("o" outline-minor-mode)
+  ("v" view-mode)
+  ("m" xterm-mouse-mode)
+  ("n" display-line-numbers-mode)
+  ("r" toggle-rot13-mode "rot13" :color blue)
+  ("z" zone "zone" :color blue)
   ("q" nil :color blue))
 
 
@@ -46,24 +44,29 @@ _z_ zone:
 
 
 (defhydra hydra:abo (:color teal :hint nil :columns 4)
-  "swiper"
-  ("i" counsel-imenu "imenu")
+  "ivy counsel"
+  ("i" counsel-semantic-or-imenu "imenu")
   ("b" counsel-ibuffer "ibuffer")
+  ("d" counsel-dired-jump "dired")
   ("f" counsel-find-file "find file")
   ("e" counsel-recentf "recent file")
   ("m" counsel-mark-ring "mark ring")
+
   ("g" counsel-git-grep "git-grep")
   ("s" counsel-rg "ripgrep")
   ("a" counsel-ag "ag")
+
+  ("c" counsel-colors-web "web colors")
+  ("C" counsel-colors-emacs "emacs colors")
+  ("l" counsel-hydra-heads "hydra heads")
   ("o" counsel-outline "outline")
-  ("z" counsel-fzf "fzf")
   ("w" ivy-imenu-anywhere "imenu-anywhere")
   ("r" ivy-resume "resume")
+  ("h" counsel-command-history "history")
 
-  ("I" image-dired "image dired")
-  ("d" ido-dired "dired")
-  ("l" imenu-list-smart-toggle "imenu list")
+  ("D" image-dired "image dired")
   ("q" nil :color blue))
+
 
 (defhydra soo-hydra:ivy (:hint nil :color pink)
   "

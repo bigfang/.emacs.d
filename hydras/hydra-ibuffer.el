@@ -30,7 +30,8 @@
   ("q" nil "toggle hydra" :color blue)
   ("." nil "toggle hydra" :color blue))
 
-(define-key ibuffer-mode-map "." 'hydra:ibuffer-main/body)
+(with-eval-after-load 'ibuffer
+  (define-key ibuffer-mode-map "." 'hydra:ibuffer-main/body))
 
 
 (defhydra hydra:ibuffer-mark (:color teal :columns 5
