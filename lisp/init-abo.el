@@ -165,6 +165,7 @@
 ;; ===
 (use-package all-the-icons-ivy
   :ensure t
+  :requires all-the-icons
   :config (all-the-icons-ivy-setup))
 
 (use-package ivy-posframe

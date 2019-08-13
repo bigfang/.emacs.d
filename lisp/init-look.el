@@ -81,10 +81,12 @@
 
 ;; === packages ===
 (use-package all-the-icons
+  :if (display-graphic-p)
   :ensure t)
 
 (use-package all-the-icons-dired
   :ensure t
+  :requires all-the-icons
   :hook (dired-mode . all-the-icons-dired-mode))
 
 
@@ -94,6 +96,7 @@
 
 
 (use-package dimmer
+  :if (display-graphic-p)
   :ensure t
   :config (dimmer-mode))
 
