@@ -38,6 +38,31 @@
   ("q" nil :color blue))
 
 
+(defhydra hydra:narrow (:color pink :exit t :hint nil)
+  "
+  Narrowing
+     ^org^           ^naomal^
+--^^^^--------------------------
+  _b_: block       _n_: region
+  _e_: element     _d_: defun
+  _s_: subtree     _p_: page
+"
+  ("n" narrow-to-region)
+  ("d" narrow-to-defun)
+  ("p" narrow-to-page)
+
+  ("b" org-narrow-to-block)
+  ("e" org-narrow-to-element)
+  ("s" org-narrow-to-subtree)
+
+  ("w" (lambda ()
+         (interactive)
+         (widen)
+         (recenter))
+   "widen")
+  ("q" nil :color blue))
+
+
 (defhydra hydra:mark (:color pink :exit t :hint nil)
   "
     bookmark             remember
