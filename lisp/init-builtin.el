@@ -14,6 +14,11 @@
 (use-package desktop
   :unless (daemonp)
   :config
+  (defun my/desktop-save ()
+    (interactive)
+    (if (eq (desktop-owner) (emacs-pid))
+        (desktop-save desktop-dirname)))
+
   (add-to-list 'desktop-minor-mode-table
                '(company-posframe-mode . nil) t)
   (desktop-save-mode t))
@@ -39,6 +44,10 @@
 
 (use-package recentf
   :config (recentf-mode t))
+
+
+(use-package savehist
+  :config (savehist-mode t))
 
 
 (use-package time-stamp
