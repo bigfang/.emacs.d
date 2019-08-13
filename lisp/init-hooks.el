@@ -1,6 +1,18 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(defalias 'save 'my/save)
+
+(defun my/save ()
+  "save states"
+  (interactive)
+  (my/desktop-save)
+  (savehist-save)
+  (bookmark-save)
+  (message "Save Desktop savehist bookmark DONE"))
+
+
+
 (add-hook 'before-save-hook 'whitespace-cleanup)
 
 
