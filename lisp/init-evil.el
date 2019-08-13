@@ -35,11 +35,11 @@
          ("%" . evil-execute-macro)
 
          :map evil-insert-state-map
-         ([escape] . evil-normal-state)      ; DO NOT USE "ESC" or "<escape>"!
+         ("<escape>" . evil-normal-state)
          ("C-o" . evil-execute-in-normal-state)
 
          :map evil-emacs-state-map
-         ([escape] . evil-normal-state))     ; DO NOT USE "ESC" or "<escape>"!
+         ([escape] . evil-normal-state))     ; M-x DO NOT USE "ESC" or "<escape>"!
   :hook (git-commit-mode . evil-insert-state)
   :init
   (setq evil-toggle-key "M-z"
@@ -61,7 +61,7 @@
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
 
-  (evil-set-initial-state 'deadgrep-mode 'emacs)
+  (evil-set-initial-state 'deadgrep-mode 'motion)
   (evil-set-initial-state 'deft-mode nil)
   (evil-set-initial-state 'helpful-mode 'motion)
   (evil-set-initial-state 'paradox-menu-mode 'motion)

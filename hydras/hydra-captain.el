@@ -14,13 +14,18 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra:captain (:color teal :exit t :hint nil :columns 5)
+(defhydra hydra:captain (:color teal :exit t :hint nil :idle .2 :columns 5)
   "⊞      --- Hydra Captain ---    "
   ("/" swiper-all "swiper-all")
   ("RET" lsp-ui-imenu "lsp imenu")
   ("SPC" hydra:toggle/body "toggle modes...")
-  ("DEL" beacon-blink "blink cursor")
-
+  ("TAB" beginning-of-defun "beginning of defun")
+  ("DEL" (lambda (arg)
+           (interactive "p")
+           (forward-line)
+           (end-of-defun arg)
+           (backward-char))
+   "end of defun")
   ("f" hydra:adjust/body "adjust...")
   ("j" ffap "ffap")
   ;; same as hydra:execute
