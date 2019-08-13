@@ -64,6 +64,8 @@
 (global-set-key (kbd "M-o TAB") (kbd "C-x TAB"))
 (global-set-key (kbd "M-o M-o") (kbd "C-c C-c"))
 (global-set-key (kbd "M-o M-k") (kbd "C-c C-k"))
+(global-set-key (kbd "M-o M-a") (kbd "C-M-a"))
+(global-set-key (kbd "M-o M-e") (kbd "C-M-e"))
 (global-set-key (kbd "M-o r") 'revert-buffer)
 (global-set-key (kbd "M-o k") 'kill-this-buffer)
 
@@ -77,7 +79,8 @@
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "M-U") 'upcase-word)
-(global-set-key (kbd "M-O") (kbd "C-g"))
+(global-set-key (kbd "M-V") 'scroll-down-command)
+(global-set-key (kbd "M-2") (kbd "C-g"))
 (global-set-key (kbd "M-,") 'xref-pop-marker-stack)
 (global-set-key (kbd "M-.") 'xref-find-definitions)   ; default
 (global-set-key (kbd "M-'") 'xref-find-references)

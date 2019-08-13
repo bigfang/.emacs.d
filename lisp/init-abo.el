@@ -128,9 +128,9 @@
 
 (use-package avy
   :ensure t
-  :bind (("M-g c" . avy-goto-char-2)
-         ("M-g g" . avy-goto-word-or-subword-1)
-         ("M-g f" . avy-goto-line))
+  :bind (("M-g g" . avy-goto-char-2)
+         ("M-g w" . avy-goto-word-or-subword-1)
+         ("M-g l" . avy-goto-line))
   :config
   (defhydra hydra:avy (:color teal :hint nil)
     "
@@ -140,9 +140,9 @@
  [_v_]  char-2       [_w_]  [sub]word
  [_t_]  char-timer   [_e_]  subword      [_l_]  line
 "
-    ("a" avy-goto-word-1 "godo word")
+    ("v" avy-goto-word-1 "goto word")
     ("c" avy-goto-char)
-    ("v" avy-goto-char-2)
+    ("a" avy-goto-char-2)
     ("t" avy-goto-char-timer)
     ("w" avy-goto-word-or-subword-1)
     ("e" avy-goto-subword-1)

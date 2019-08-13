@@ -92,6 +92,7 @@
 
 (use-package beacon
   :ensure t
+  :bind ("M-o SPC" . beacon-blink)
   :config (beacon-mode t))
 
 
