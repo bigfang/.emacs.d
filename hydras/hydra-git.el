@@ -10,8 +10,10 @@ diff-hl:
    _H_ ^+^ _L_   |   _r_evert
    ^ ^ _J_ ^ ^   |   _=_ diff
 "
-  ("n" diff-hl-next-hunk "next hunk")
-  ("p" diff-hl-previous-hunk "prev hunk")
+  ("n" (progn (diff-hl-next-hunk)
+              (recenter)) "next hunk")
+  ("p" (progn (diff-hl-previous-hunk)
+              (recenter)) "prev hunk")
   ("J" diff-hl-next-hunk)
   ("K" diff-hl-previous-hunk)
   ("H" (progn (goto-char (point-min))
@@ -34,8 +36,10 @@ Git gutter:
    _H_ ^+^ _L_   |   _r_evert
    ^ ^ _J_ ^ ^   |   _=_ diff
 "
-  ("n" git-gutter:next-hunk "next hunk")
-  ("p" git-gutter:previous-hunk "prev hunk")
+  ("n" (lambda (arg) (interactive "p")
+         (git-gutter:next-hunk arg) (recenter)) "next hunk")
+  ("p" (lambda (arg) (interactive "p")
+         (git-gutter:previous-hunk arg) (recenter)) "prev hunk")
   ("J" git-gutter:next-hunk)
   ("K" git-gutter:previous-hunk)
   ("H" (progn (goto-char (point-min))

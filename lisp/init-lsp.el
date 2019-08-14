@@ -63,6 +63,8 @@
 ;; | ts/js      | npm i -D typescript-language-server     |
 ;; | vue        | npm i -D vue-language-server            |
 ;; |------------+-----------------------------------------|
+;; | python     | pip install python-language-server[all] |
+;; |------------+-----------------------------------------|
 
 
 (use-package company-lsp
