@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-08-08 14:10:12>
+;; Time-stamp: <2019-08-15 23:48:39>
 
 
 
@@ -39,6 +39,7 @@
 (use-package init-nav)
 (use-package init-editing)
 (use-package init-abo)
+(use-package init-selected)
 (use-package init-coding)
 (use-package init-git)
 (use-package init-company)

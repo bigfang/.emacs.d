@@ -131,7 +131,7 @@
   :bind (("M-g g" . avy-goto-char-2)
          ("M-g w" . avy-goto-word-or-subword-1)
          ("M-g l" . avy-goto-line))
-  :config
+  :init
   (defhydra hydra:avy (:color teal :hint nil)
     "
      ^Chars^            ^word^              ^other^
