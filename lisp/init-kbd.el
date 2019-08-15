@@ -37,11 +37,12 @@
 ;; Terminal
 (unless (display-graphic-p)
   (load-theme 'wombat t)
+  (blink-cursor-mode t)
   (menu-bar-mode -1))
 
 ;; Terminal mouse scroll
 (unless (display-graphic-p)
-  (global-set-key (kbd "C-z x") 'xterm-mouse-mode)
+  (global-set-key (kbd "M-o x") 'xterm-mouse-mode)
   (global-set-key (kbd "<mouse-4>") '(lambda ()
                                        (interactive)
                                        (scroll-down 1)))
@@ -53,8 +54,7 @@
                                           (scroll-down 1)))
   (global-set-key (kbd "<wheel-up>") '(lambda ()
                                         (interactive)
-                                        (scroll-up 1)))
-  (xterm-mouse-mode t))
+                                        (scroll-up 1))))
 
 
 (global-set-key (kbd "C-z k") 'kill-this-buffer)
