@@ -112,10 +112,9 @@
 
 (use-package add-node-modules-path
   :ensure t
-  :hook ((js-mode . add-node-modules-path)
-         (js2-mode . add-node-modules-path)
-         (vue-mode . add-node-modules-path)
-         (typescript-mode . add-node-modules-path)))
+  :commands add-node-modules-path
+  :hook
+  (js-mode js2-mode vue-mode typescript-mode))
 
 (use-package js2-mode
   :ensure t
