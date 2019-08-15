@@ -47,6 +47,9 @@
 (use-package eyebrowse
   :ensure t
   :config
+  (setq eyebrowse-mode-line-separator " "
+        eyebrowse-default-workspace-slot 0
+        eyebrowse-new-workspace t)
   (eyebrowse-mode t)
 
   (defhydra hydra:eyebrowse (:color teal :hint nil :columns 2)
