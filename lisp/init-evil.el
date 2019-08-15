@@ -51,11 +51,11 @@
   :config
   (setq evil-operator-state-cursor '("goldenrod1" evil-half-cursor)
         evil-motion-state-cursor '("orchid" box)
-        evil-replace-state-cursor '("MediumPurple1" box)
+        evil-replace-state-cursor '("MediumPurple1" hbar)
         evil-emacs-state-cursor '("DeepSkyBlue" box)
         evil-normal-state-cursor '("IndianRed" box)
         evil-visual-state-cursor '("LightGreen" box)
-        evil-insert-state-cursor '("LightGoldenrod" box))
+        evil-insert-state-cursor '("LightGoldenrod" bar))
   (evil-mode 1)
   (evil-set-initial-state 'special-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs)
@@ -72,6 +72,12 @@
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
+
+
+(use-package evil-terminal-cursor-changer
+  :unless (display-graphic-p)
+  :ensure t
+  :config (etcc-on))
 
 
 (use-package evil-collection

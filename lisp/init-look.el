@@ -73,7 +73,7 @@
 (use-package paren
   :config
   (set-face-background 'show-paren-match (face-background 'default))
-  (set-face-foreground 'show-paren-match "#def")
+  (set-face-foreground 'show-paren-match "yellow")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
   (show-paren-mode t))
 
