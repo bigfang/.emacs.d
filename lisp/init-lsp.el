@@ -3,7 +3,11 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook (prog-mode . lsp-deferred)
+  :hook ((typescript-mode . lsp-deferred)
+         (js-mode . lsp-deferred)
+         (js2-mode . lsp-deferred)
+         (vue-mode . lsp-deferred)
+         (python-mode . lsp-deferred))
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-auto-guess-root t
