@@ -29,7 +29,7 @@
    ;; ("d" nil "nil")
   ("e" hydra:eyebrowse/body "eyebrowse...")
   ("f" hydra:frame/body "frame...")
-  ("h" hydra:highlight/body "highlight...")
+  ("h" hydra:symbol-overlay/body "highlight...")
   ("i" hydra:abo/body "ivy...")
   ("j" hydra:dumb-jump/body "jump...")
   ("l" hydra:lsp/body "lsp-mode...")
