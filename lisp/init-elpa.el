@@ -67,33 +67,6 @@
   (set-face-foreground 'highlight-indent-guides-top-character-face "wheat4"))
 
 
-(use-package highlight-symbol
-  :ensure t
-  :hook (prog-mode . highlight-symbol-mode)
-  :custom
-  (highlight-symbol-colors
-   '("yellow" "DeepPink" "cyan" "MediumPurple1" "SpringGreen1" "DarkOrange" "HotPink1" "RoyalBlue1" "OliveDrab"))
-  (highlight-symbol-foreground-color "black")
-  :config
-  (setq highlight-symbol-idle-delay .5)
-
-  (defhydra hydra:highlight (:color pink :hint nil :columns 3
-                             :body-pre (progn (highlight-symbol-mode -1)
-                                              (when (thing-at-point 'symbol)
-                                                (highlight-symbol)))
-                             :post (highlight-symbol-mode 1)) ;FIXME:
-    "Highlight"
-    ("." highlight-symbol "highlight")
-    ("p" highlight-symbol-prev "previous")
-    ("n" highlight-symbol-next "next")
-    ("c" highlight-symbol-count "count")
-    ("o" highlight-symbol-occur "occur" :color blue)
-    ("a" highlight-symbol-list-all "list")
-    ("x" highlight-symbol-remove-all "remove all")
-    ("M-q" highlight-symbol-query-replace "replace")
-    ("q" nil :color blue)))
-
-
 ;; or htmlfontify
 (use-package htmlize
   :ensure t)
@@ -220,6 +193,47 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
   :hook (prog-mode))
 
 
+(use-package symbol-overlay
+  :ensure t
+  :commands symbol-overlay-mode
+  :bind (:map symbol-overlay-map
+         ("h" . nil)
+         ("?" . symbol-overlay-map-help)
+         ("." . symbol-overlay-put)
+         ("c" . symbol-overlay-count)
+         ("M-q" . symbol-overlay-query-replace)
+         ("X" . symbol-overlay-remove-all))
+  :chords (".." . symbol-overlay-put)
+  :hook (prog-mode . symbol-overlay-mode)
+  :config
+  (defhydra hydra:symbol-overlay (:color pink :hint nil
+                                  :body-pre (when (thing-at-point 'symbol)
+                                              (symbol-overlay-put)))
+    "
+    ^_p_^      _e_  echo         _._  highlight  _s_  isearch
+  _<_   _>_    _d_  definition   _x_  remove     _M-q_  query-replace
+    ^_n_^      _w_  save         _c_  count      _r_  rename
+"
+      ("." symbol-overlay-put)
+      ("<" symbol-overlay-jump-first)
+      (">" symbol-overlay-jump-last)
+      ("p" symbol-overlay-jump-prev)
+      ("n" symbol-overlay-jump-next)
+      ("x" symbol-overlay-remove-all)
+      ("d" symbol-overlay-jump-to-definition)
+      ("c" symbol-overlay-count)
+
+      ("e" symbol-overlay-echo-mark)
+      ("t" symbol-overlay-toggle-in-scope)
+      ("w" symbol-overlay-save-symbol)
+      ("s" symbol-overlay-isearch-literally :color blue)
+      ("M-q" symbol-overlay-query-replace :color blue)
+      ("r" symbol-overlay-rename  :color blue)
+
+      ("q" nil))
+  )
+
+
 (use-package which-key
   :ensure t
   :config
@@ -230,8 +244,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 (use-package zzz-to-char
   :ensure t
   :chords
-  ("\\\\" . zzz-up-to-char)
-  ("//" . zzz-to-char))
+  ("\\\\" . zzz-to-char))
 
 
 

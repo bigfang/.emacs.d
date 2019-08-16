@@ -51,7 +51,7 @@
     (enlarge-window arg)))
 
 
-(defhydra hydra:adjust (:color amaranth :hint nil :columns 3)
+(defhydra hydra:adjust (:color amaranth :hint nil :columns 5)
   "Adjust windows"
   ("h" hydra:move-splitter-left   "window left" )
   ("j" hydra:move-splitter-down   "window down")
@@ -66,8 +66,8 @@
   ("[" (progn
          (winner-undo)
          (setq this-command 'winner-undo))
-   :color red)
-  ("]" winner-redo :color red)
+   "winner undo" :color red)
+  ("]" winner-redo "winner redo":color red)
 
   (">" my/emacs-alpha-up   "transparent up")
   ("<" my/emacs-alpha-down "transparent down")

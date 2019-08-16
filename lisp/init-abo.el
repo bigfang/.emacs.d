@@ -60,7 +60,7 @@
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
-         ("C-SPC" . ivy-restrict-to-matches) ; default "S-SPC"
+         ("M-i" . ivy-restrict-to-matches) ; default "S-SPC"
          ("<escape>" . minibuffer-keyboard-quit)
          ("M-u" . ivy-occur)
          ("C-M-n" . my/ivy-next-line-and-call)
