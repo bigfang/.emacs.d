@@ -3,6 +3,7 @@
 
 ;; === library ===
 (use-package posframe
+  :if (display-graphic-p)
   :ensure t)
 
 
@@ -162,6 +163,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 
 (use-package pdf-tools
+  :if (display-graphic-p)
   :ensure t
   ;; :ensure-system-package (pkg-config automake poppler)
   :magic ("%PDF" . pdf-view-mode)
@@ -198,6 +200,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 
 (use-package rainbow-delimiters
+  :if (display-graphic-p)
   :ensure t
   :hook (prog-mode . rainbow-delimiters-mode)
   :custom-face

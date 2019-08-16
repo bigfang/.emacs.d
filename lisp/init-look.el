@@ -73,7 +73,7 @@
 (use-package paren
   :config
   (set-face-background 'show-paren-match (face-background 'default))
-  (set-face-foreground 'show-paren-match "#def")
+  (set-face-foreground 'show-paren-match "yellow")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
   (show-paren-mode t))
 
@@ -81,19 +81,23 @@
 
 ;; === packages ===
 (use-package all-the-icons
+  :if (display-graphic-p)
   :ensure t)
 
 (use-package all-the-icons-dired
   :ensure t
+  :requires all-the-icons
   :hook (dired-mode . all-the-icons-dired-mode))
 
 
 (use-package beacon
   :ensure t
+  :bind ("M-o SPC" . beacon-blink)
   :config (beacon-mode t))
 
 
 (use-package dimmer
+  :if (display-graphic-p)
   :ensure t
   :config (dimmer-mode))
 

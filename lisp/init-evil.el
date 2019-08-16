@@ -36,11 +36,11 @@
          ("%" . evil-execute-macro)
 
          :map evil-insert-state-map
-         ([escape] . evil-normal-state)      ; DO NOT USE "ESC" or "<escape>"!
+         ("<escape>" . evil-normal-state)
          ("C-o" . evil-execute-in-normal-state)
 
          :map evil-emacs-state-map
-         ([escape] . evil-normal-state))     ; DO NOT USE "ESC" or "<escape>"!
+         ([escape] . evil-normal-state))     ; M-x DO NOT USE "ESC" or "<escape>"!
   :hook (git-commit-mode . evil-insert-state)
   :init
   (setq evil-toggle-key "M-z"
@@ -52,17 +52,17 @@
   :config
   (setq evil-operator-state-cursor '("goldenrod1" evil-half-cursor)
         evil-motion-state-cursor '("orchid" box)
-        evil-replace-state-cursor '("MediumPurple1" box)
+        evil-replace-state-cursor '("MediumPurple1" hbar)
         evil-emacs-state-cursor '("DeepSkyBlue" box)
         evil-normal-state-cursor '("IndianRed" box)
         evil-visual-state-cursor '("LightGreen" box)
-        evil-insert-state-cursor '("LightGoldenrod" box))
+        evil-insert-state-cursor '("LightGoldenrod" bar))
   (evil-mode 1)
   (evil-set-initial-state 'special-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
 
-  (evil-set-initial-state 'deadgrep-mode 'emacs)
+  (evil-set-initial-state 'deadgrep-mode 'motion)
   (evil-set-initial-state 'deft-mode nil)
   (evil-set-initial-state 'helpful-mode 'motion)
   (evil-set-initial-state 'paradox-menu-mode 'motion)
@@ -73,6 +73,12 @@
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
     (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
+
+
+(use-package evil-terminal-cursor-changer
+  :unless (display-graphic-p)
+  :ensure t
+  :config (etcc-on))
 
 
 (use-package evil-collection

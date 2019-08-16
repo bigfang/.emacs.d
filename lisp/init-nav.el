@@ -110,6 +110,7 @@
 
 
 (use-package treemacs
+  :if (display-graphic-p)
   :ensure t
   :config
   (setq treemacs-project-follow-cleanup t

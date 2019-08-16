@@ -11,6 +11,7 @@
   ("C-n" next-line :color red)
   ("C-p" previous-line :color red)
   ("C-x C-c" save-buffers-kill-terminal :color blue)
+  ("M-o c" save-buffers-kill-terminal :color blue)
   (":" eval-expression "evil expression")
   ("!" shell-command "shell command")
 
@@ -69,7 +70,7 @@
   ;; buffer
   ("w" save-buffer)
   ("k" kill-this-buffer)
-  ("<tab>" projectile-previous-project-buffer)
+  ("TAB" projectile-previous-project-buffer)
   ("DEL" projectile-next-project-buffer)
   ("<" previous-buffer "prev buffer" :color red)
   (">" next-buffer "next buffer" :color red)
