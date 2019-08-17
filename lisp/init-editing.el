@@ -15,7 +15,6 @@
 
 (global-auto-revert-mode t)
 (delete-selection-mode t)               ; 退格键删除选中区域
-(electric-pair-mode t)
 (transient-mark-mode t)                 ; 高亮选中区域
 (pixel-scroll-mode -1)
 
@@ -51,6 +50,12 @@
 
     ;; final blank line
   (setq require-final-newline t))
+
+
+(use-package elec-pair
+  :config
+  (setq electric-pair-inhibit-predicate 'electric-pair-conservative-inhibit)
+  (electric-pair-mode t))
 
 
 

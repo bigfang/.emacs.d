@@ -1,16 +1,6 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(use-package cua-base
-  :config
-  ;; (setq cua-highlight-region-shift-only t) ;; no transient mark mode
-  ;; (setq cua-toggle-set-mark nil) ;; original set-mark behavior, i.e. no transient-mark-mode
-  ;; (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
-  ;; (setq cua-delete-selection nil)
-  (setq cua-enable-cua-keys nil)
-  (cua-mode -1))
-
-
 (use-package desktop
   :unless (daemonp)
   :config
