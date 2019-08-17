@@ -33,6 +33,7 @@
             ;; (flyspell-prog-mode)
             ;; (linum-mode t)
             (hs-minor-mode t)
+            (outline-minor-mode t)
             (prettify-symbols-mode t)))
 (add-hook 'prog-mode-hook
           (lambda ()
