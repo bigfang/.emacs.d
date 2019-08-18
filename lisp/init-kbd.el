@@ -95,7 +95,8 @@
 
 ;; key chords
 (key-chord-define-global ";;" 'comment-line)
-(key-chord-define-global ",," 'untabify)
+;; (key-chord-define-global ",," 'untabify)
+;; (key-chord-define-global ".." 'tabify)
 (key-chord-define-global "//" 'zap-to-char)
 (key-chord-define-global "\\\\" 'zap-up-to-char)
 (key-chord-define-global "``" 'cycle-spacing)
