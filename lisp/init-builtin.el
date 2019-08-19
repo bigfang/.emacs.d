@@ -4,11 +4,6 @@
 (use-package desktop
   :unless (daemonp)
   :config
-  (defun my/desktop-save ()
-    (interactive)
-    (if (eq (desktop-owner) (emacs-pid))
-        (desktop-save desktop-dirname)))
-
   (add-to-list 'desktop-minor-mode-table
                '(company-posframe-mode . nil) t)
   (desktop-save-mode t))
