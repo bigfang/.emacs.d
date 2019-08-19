@@ -21,6 +21,7 @@
          ("%" . nil)
 
          :map evil-normal-state-map
+         ("q" . keyboard-quit)
          ("j" . evil-next-visual-line)
          ("k" . evil-previous-visual-line)
          ("gj" . evil-next-line)

@@ -86,6 +86,13 @@
       (string-inflection-all-cycle)))))
 
 
+(use-package paredit
+  :ensure t
+  :chords (",," . hydra:paredit/body)
+  :config
+  (use-package hydra-paredit))
+
+
 (use-package multiple-cursors
   :ensure t
   :bind (("C-S-c C-S-c" . mc/edit-lines)

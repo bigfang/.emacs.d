@@ -243,8 +243,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 (use-package zzz-to-char
   :ensure t
-  :chords
-  ("\\\\" . zzz-to-char))
+  :chords ("\\\\" . zzz-to-char))
 
 
 
