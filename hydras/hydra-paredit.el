@@ -1,44 +1,62 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(defun toggle-paredit-mode (stat)
+  (if stat
+      (progn (paredit-mode +1)
+             (message "paredit-mode enabled"))
+    (progn (paredit-mode -1)
+           (message "paredit-mode disabled"))))
+
+(defun before-create ()
+  (setq-default local-paredit? paredit-mode)
+  (enable-paredit-mode)
+  (evil-emacs-state))
+
+(defun before-exit ()
+  (toggle-paredit-mode local-paredit?)
+  (evil-normal-state))
+
+
 (defhydra hydra:paredit (:color pink :hint nil
-                         :body-pre (evil-emacs-state)
-                         :post (evil-normal-state))
+                         :body-pre (before-create)
+                         :post (before-exit))
   "
-     ^barf/slurp^          split/join            warp/splice
---^^^^-------------------------------------------------------------------
-  _<S-left>_ : <--(      _S_: split            M-(/M-\": warp
-  _<S-right>_: (-->      _J_: join             M-s: splice
-  _<M-left>_ : <--)      ^^M-q: reindent       <M-up>/<M-down>: up/down
-  _<M-right>_: )-->      _C-M-l_: recenter     _R_: raise
+     ^barf/slurp^    |     ^^wrap/splice^^^     |   ^split/join^  |        ^misc^
+--^^-----------------|----^^^^-^----------------|----^^-----------|-----^^---------------
+  _<S-left>_ : <--(  |   ^M-(^ / ^M-\"^: wrap   |    _S_: split   |   ^^[M-q]: reindent
+  _<S-right>_: (-->  |   ^M-s^: splice  ^^^     |    _J_: join    |   _C-M-l_: recenter
+  _<M-left>_ : <--)  |   ^<M-up>^ / ^<M-down>^ ^|   ^^        [_,_]: toggle
+  _<M-right>_: )-->    [_R_]: raise  [_?_]: convolute ^^^   [_TAB_]: trigger
 "
-  ("TAB" paredit-mode :color blue)
+  ("TAB" (toggle-paredit-mode (not local-paredit?)) :exit t)
   ("," paredit-mode)
 
-  ;; barf / slurp
+  ;; Barfage & Slurpage
   ("<S-left>" paredit-backward-slurp-sexp)
   ("<S-right>" paredit-backward-barf-sexp)
   ("<M-left>" paredit-forward-barf-sexp)
   ("<M-right>" paredit-forward-slurp-sexp)
 
-  ;; split / join
+  ;; Depth-Changing
+  ;; split & join
   ("S" paredit-split-sexp)
   ("J" paredit-join-sexps)
-  ;; ("M-q" paredit-reindent-defun)
-  ("C-M-l" paredit-recenter-on-sexp)
-
-  ;; warp / splice
+  ;; wraping & splicing
   ;; ("M-(" paredit-wrap-round)
   ;; ("M-\"" paredit-meta-doublequote)
   ;; ("M-s" paredit-splice-sexp)
   ;; ("<M-up>" paredit-splice-sexp-killing-backward)
   ;; ("<M-down>" paredit-splice-sexp-killing-forward)
-
-  ;; misc
+  ;; bonus
   ("R" paredit-raise-sexp)
   ("?" paredit-convolute-sexp)
 
-  ;; inertion
+  ;; misc
+  ;; ("M-q" paredit-reindent-defun)
+  ("C-M-l" paredit-recenter-on-sexp)
+
+  ;; Basic Insertion Commands
   ("\"" paredit-doublequote)
   ("\\" paredit-backslash)
   ("(" paredit-open-round)
@@ -51,14 +69,14 @@
   ("M-;" paredit-comment-dwim)
   ("C-j" paredit-new-line)
 
-  ;; delete
+  ;; Deleting & Killing
   ("C-d" paredit-forward-delete)
   ("M-d" paredit-forward-kill-word)
   ("DEL" paredit-backward-delete)
   ("M-DEL" paredit-backward-kill-word)
   ("C-k" paredit-kill)
 
-  ;; structural navigation
+  ;; Movement & Navigation
   ("a" beginning-of-defun)
   ("e" end-of-defun)
   ("f" paredit-forward)
@@ -68,13 +86,15 @@
   ("n" paredit-forward-up)
   ("p" paredit-backward-down)
 
-  ;; basic movement
+  ;; Evil Movement
   ("H" back-to-indentation)
   ("L" move-end-of-line)
   ("h" backward-char)
   ("j" next-line)
   ("k" previous-line)
   ("l" forward-char)
+
+  ;; c g i m o r s t v w x y z
 
   ("q" nil))
 
