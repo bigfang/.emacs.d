@@ -1,15 +1,15 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defalias 'save 'my/save)
+(defalias 'save 'my/save-states)
 
-(defun my/save ()
+(defun my/save-states ()
   "save states"
   (interactive)
-  (my/desktop-save)
+  (desktop-save desktop-dirname)
   (savehist-save)
   (bookmark-save)
-  (message "Save Desktop savehist bookmark DONE"))
+  (message "Save Desktop Savehist Bookmark DONE"))
 
 
 

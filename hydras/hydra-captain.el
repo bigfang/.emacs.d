@@ -19,13 +19,7 @@
   ("/" swiper-all "swiper-all")
   ("RET" lsp-ui-imenu "lsp imenu")
   ("SPC" hydra:toggle/body "toggle modes...")
-  ("TAB" beginning-of-defun "beginning of defun")
-  ("DEL" (lambda (arg)
-           (interactive "p")
-           (forward-line)
-           (end-of-defun arg)
-           (backward-char))
-   "end of defun")
+
   ("f" hydra:adjust/body "adjust...")
   ("j" ffap "ffap")
   ;; same as hydra:execute
@@ -33,6 +27,7 @@
   ("C" calendar "calendar")
   ("s" shell "shell")
   ("e" eval-last-sexp "eval sexp")
+  ("E" eval-buffer "eval buffer")
   ("v" ido-find-alternate-file "refresh")
   ("x" smex "smex")
 
