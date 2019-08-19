@@ -97,6 +97,7 @@
 
 
 (use-package dimmer
+  :disabled
   :if (display-graphic-p)
   :ensure t
   :config (dimmer-mode))
