@@ -8,32 +8,21 @@
          ;; ("TAB" . indent-or-complete)
          :map company-active-map
          ("M-." . company-other-backend)
-         ("<return>" . company-complete-selection)
          ("RET" . company-complete-selection)
-         ("<space>" . my/abort-and-insert-space)
          ("SPC" . my/abort-and-insert-space)
-         ("<tab>" . my/page-down-or-yas-expand)
-         ("TAB" . my/page-down-or-yas-expand)
-         ("<backtab>" . company-previous-page)
-         ("S-TAB" . company-previous-page)
+         ("TAB" . company-complete-common)
          ("C-n" . company-complete-common-or-cycle)
          ("C-p" . company-select-previous)
          ("M-i" . company-complete-common-or-cycle)
          ("M-o" . company-filter-candidates)
          :map company-search-map
          ("DEL" . company-search-abort)
-         ("<backspace>" . company-search-abort)
          ("M-o" . company-search-toggle-filtering)
          ("M-i" . company-search-repeat-forward)
          ("M-j" . company-search-repeat-forward)
          ("M-k" . company-search-repeat-backward))
   :hook (after-init . global-company-mode)
   :init
-  (defun my/page-down-or-yas-expand ()
-    (interactive)
-    (progn
-      (company-next-page)
-      (yas-expand)))
   (defun my/abort-and-insert-space ()
     (interactive)
     (progn

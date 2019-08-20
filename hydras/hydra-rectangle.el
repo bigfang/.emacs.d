@@ -1,10 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra:rectangle (:body-pre (progn (evil-emacs-state)
-                                            (rectangle-mark-mode 1))
-                           :color pink
+(defhydra hydra:rectangle (:color pink
                            :hint nil
+                           :body-pre (progn (evil-emacs-state)
+                                            (rectangle-mark-mode 1))
                            :post (progn (deactivate-mark)
                                         (evil-normal-state)))
   "
@@ -31,7 +31,10 @@ _h_   _l_   [_y_]yank      [_t_]type      [_e_]exchange-point          /,`.-'`' 
   ("u" undo nil)
   ("q" nil))
 
-(global-set-key (kbd "C-x SPC") 'hydra:rectangle/body)
+(global-set-key (kbd "M-o SPC") '(lambda ()
+                                   (interactive)
+                                   (evil-insert-state)
+                                   (rectangle-mark-mode)))
 
 
 (provide 'hydra-rectangle)

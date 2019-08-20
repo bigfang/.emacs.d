@@ -60,6 +60,8 @@
 (use-package ivy
   :ensure t
   :bind (:map ivy-minibuffer-map
+         ("M-j" . pyim-convert-string-at-point)
+         ("C-\\" . ivy-yank-word)
          ("M-i" . ivy-restrict-to-matches) ; default "S-SPC"
          ("<escape>" . minibuffer-keyboard-quit)
          ("M-u" . ivy-occur)
@@ -135,17 +137,19 @@
     "
      ^Chars^            ^word^              ^other^
 ------------------------------------------------------------
- [_c_]  char         [_a_]  word         [_s_]  symbol
- [_v_]  char-2       [_w_]  [sub]word
+ [_c_]  char         [_v_]  word         [_s_]  symbol
+ [_a_]  char-2       [_w_]  [sub]word    [_r_]  resume
  [_t_]  char-timer   [_e_]  subword      [_l_]  line
 "
-    ("v" avy-goto-word-1 "goto word")
     ("c" avy-goto-char)
     ("a" avy-goto-char-2)
+    ("o" avy-goto-char-2)
     ("t" avy-goto-char-timer)
+    ("v" avy-goto-word-1)
     ("w" avy-goto-word-or-subword-1)
     ("e" avy-goto-subword-1)
     ("s" avy-goto-symbol-1)
+    ("r" avy-resume)
     ("l" avy-goto-line)
     ("q" nil "cancel" :color blue)))
 

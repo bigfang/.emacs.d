@@ -21,6 +21,14 @@
   (auto-image-file-mode t))
 
 
+(use-package indent
+  :bind (:map indent-rigidly-map
+         ("[" . indent-rigidly-left)
+         ("]" . indent-rigidly-right)
+         ("<" . indent-rigidly-left-to-tab-stop)
+         (">" . indent-rigidly-right-to-tab-stop)))
+
+
 (use-package ls-lisp
   :config
   (setq ls-lisp-use-insert-directory-program nil

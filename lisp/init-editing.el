@@ -104,6 +104,7 @@
   :config
   (setq mc/edit-lines-empty-lines 'ignore
         mc/always-repeat-command t
+        mc/always-run-for-all t
         mc/insert-numbers-default 1)
   :init
   (defhydra hydra:multiple-cursors (:color pink :hint nil)

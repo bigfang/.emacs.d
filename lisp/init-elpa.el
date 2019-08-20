@@ -157,14 +157,14 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
   (setq pyim-fuzzy-pinyin-alist nil)
   (setq-default pyim-english-input-switch-functions
                 '(pyim-probe-dynamic-english
-                  pyim-probe-isearch-mode
+                  ;; pyim-probe-isearch-mode
                   pyim-probe-program-mode
                   pyim-probe-org-structure-template))
   (setq-default pyim-punctuation-half-width-functions
                 '(pyim-probe-punctuation-line-beginning
                   pyim-probe-punctuation-after-punctuation))
   (pyim-isearch-mode -1)
-  (setq pyim-page-tooltip 'posframe))
+  (setq pyim-page-tooltip 'popup))
 
 (use-package pyim-basedict
   :ensure nil
@@ -248,6 +248,13 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 
 ;; === beta zone ===
+(use-package keyfreq
+  :ensure t
+  :config
+  (keyfreq-mode 1)
+  (keyfreq-autosave-mode 1))
+
+
 (use-package rg
   :ensure t
   :ensure-system-package (rg . ripgrep))

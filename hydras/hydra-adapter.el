@@ -3,7 +3,7 @@
 
 (defhydra hydra:adapter-default (:color teal :hint nil :columns 3)
   "default adapter"
-   ("o" list-packages "list packages")
+   ("a" list-packages "list packages")
    ("j" ffap "ffap")
    ("z" fzf-directory "fzf-directory")
    ("." (browse-url ".") "current directory")

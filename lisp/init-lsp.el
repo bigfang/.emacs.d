@@ -30,7 +30,7 @@
          ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
          ([remap xref-find-references] . lsp-ui-peek-find-references)
          :map lsp-ui-imenu-mode-map
-         ("SPC" . hydra:leader/body)
+         ("SPC" . lsp-ui-imenu--kill)
          ("C-;" . lsp-ui-imenu--kill)
          ("TAB" . lsp-ui-imenu--next-kind)
          ("<backtab>" . lsp-ui-imenu--prev-kind)

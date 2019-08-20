@@ -15,7 +15,9 @@
         dired-recursive-copies 'top
         dired-recursive-deletes 'top
         dired-dwim-target t)
-  (put 'dired-find-alternate-file 'disabled nil))
+  (put 'dired-find-alternate-file 'disabled nil)
+
+  (use-package dired-x))
 
 
 (use-package dired-collapse

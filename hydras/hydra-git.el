@@ -82,7 +82,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("r" smerge-resolve)
   ("d" smerge-kill-current)
 
-  ("u" undo "undo")
   ("q" nil :color blue))
 (define-key smerge-mode-map (kbd "M-m") 'hydra:smerge/body)
 
