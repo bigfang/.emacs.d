@@ -3,12 +3,11 @@
 
 (defhydra hydra:diff-hl (:color pink :hint nil)
   "
-diff-hl:
-  ^^^ Move ^^^   |    hunk
------^^^^^^------|-----^^-------
-   ^ ^ _K_ ^ ^   |   _m_ark
-   _H_ ^+^ _L_   |   _r_evert
-   ^ ^ _J_ ^ ^   |   _=_ diff
+  ^^^ Move ^^^   |         ^hunk^
+-----^^^^^^------|-----^^---------^^---------
+   ^ ^ _K_ ^ ^   |   _m_ark      _s_tage
+   _H_ ^+^ _L_   |   _r_evert    _n_ext
+   ^ ^ _J_ ^ ^   |   _=_ diff    _p_rev
 "
   ("n" (progn (diff-hl-next-hunk)
               (recenter)) "next hunk")
@@ -21,12 +20,14 @@ diff-hl:
   ("L" (progn (goto-char (point-max))
               (diff-hl-previous-hunk)))
   ("m" diff-hl-mark-hunk)
+  ("s" git-gutter:stage-hunk "stage")
   ("=" diff-hl-diff-goto-hunk :color blue)
   ("r" diff-hl-revert-hunk)
   ("q" nil :color blue))
 
 
 (defhydra hydra:git-gutter (:body-pre (git-gutter-mode 1)
+                            :post (git-gutter-mode -1)
                             :color pink :hint nil)
   "
 Git gutter:
