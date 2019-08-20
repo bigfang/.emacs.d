@@ -50,8 +50,8 @@
 
 (use-package git-gutter
   :ensure t
-  :config
-  (global-git-gutter-mode +1)
+  ;; :config
+  ;; (global-git-gutter-mode +1)
   :custom
   (git-gutter:disabled-modes '(asm-mode hexl-mode image-mode)))
 
@@ -63,6 +63,7 @@
    (dired-mode . diff-hl-dired-mode))
   :config
   (global-diff-hl-mode)
+  (global-diff-hl-amend-mode)
   (diff-hl-flydiff-mode)
   (unless (display-graphic-p)
     (diff-hl-margin-mode)))
