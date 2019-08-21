@@ -55,7 +55,6 @@
 
 (use-package view
   :bind (("M-o z" . view-mode)
-         ("C-z C-z" . view-mode)
          :map view-mode-map
          ("<escape>" . keyboard-quit)
          ("C-n" . next-line)

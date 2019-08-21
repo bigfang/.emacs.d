@@ -1,14 +1,10 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-;; define key-map C-z
-(define-prefix-command 'ctl-z-map)
-(global-set-key (kbd "C-z") 'ctl-z-map)
-
 ;; overwrite key-map M-o
 (define-prefix-command 'alt-o-map)
 (global-set-key (kbd "M-o") 'alt-o-map)
-(global-set-key (kbd "M-o M-f") 'facemenu-keymap)
+(define-key alt-o-map (kbd "M-f") 'facemenu-keymap)
 
 
 ;; Windows
@@ -42,7 +38,7 @@
 
 ;; Terminal mouse scroll
 (unless (display-graphic-p)
-  (global-set-key (kbd "M-o x") 'xterm-mouse-mode)
+  (define-key alt-o-map (kbd "x") 'xterm-mouse-mode)
   (global-set-key (kbd "<mouse-4>") '(lambda ()
                                        (interactive)
                                        (scroll-down 1)))
@@ -57,17 +53,14 @@
                                         (scroll-up 1))))
 
 
-(global-set-key (kbd "C-z k") 'kill-this-buffer)
-(global-set-key (kbd "C-z s") 'isearch-forward)
-
-(global-set-key (kbd "M-o RET") (kbd "C-x C-o"))
-(global-set-key (kbd "M-o TAB") (kbd "C-x TAB"))
-(global-set-key (kbd "M-o M-o") (kbd "C-c C-c"))
-(global-set-key (kbd "M-o M-k") (kbd "C-c C-k"))
-(global-set-key (kbd "M-o M-a") (kbd "C-M-a"))
-(global-set-key (kbd "M-o M-e") (kbd "C-M-e"))
-(global-set-key (kbd "M-o r") 'revert-buffer)
-(global-set-key (kbd "M-o k") 'kill-this-buffer)
+(define-key alt-o-map (kbd "RET") (kbd "C-x C-o"))
+(define-key alt-o-map (kbd "M-o") (kbd "C-c C-c"))
+(define-key alt-o-map (kbd "M-k") (kbd "C-c C-k"))
+(define-key alt-o-map (kbd "a") (kbd "C-M-a"))
+(define-key alt-o-map (kbd "e") (kbd "C-M-e"))
+(define-key alt-o-map (kbd "r") 'revert-buffer)
+(define-key alt-o-map (kbd "k") 'kill-this-buffer)
+(define-key alt-o-map (kbd "s") 'isearch-forward)
 
 (global-set-key (kbd "<C-left>")
                 '(lambda (arg)
@@ -75,8 +68,8 @@
                    (beginning-of-line)
                    (hs-hide-level arg)))
 (global-set-key (kbd "<C-right>") 'hs-show-block)
-(global-set-key (kbd "C-0") 'universal-argument)
 (global-set-key (kbd "C-x k") 'kill-buffer-and-window)
+(global-set-key (kbd "C-z") 'universal-argument)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "M-U") 'upcase-word)
 (global-set-key (kbd "M-V") 'scroll-down-command)
@@ -94,12 +87,12 @@
 
 
 ;; key chords
-(key-chord-define-global ";;" 'comment-line)
-;; (key-chord-define-global ",," 'untabify)
-;; (key-chord-define-global ".." 'tabify)
-(key-chord-define-global "//" 'zap-to-char)
-(key-chord-define-global "\\\\" 'zap-up-to-char)
 (key-chord-define-global "``" 'cycle-spacing)
+(key-chord-define-global ";;" 'comment-line)
+;; (key-chord-define-global ",," nil)
+;; (key-chord-define-global ".." nil)
+(key-chord-define-global "//" 'nil)
+(key-chord-define-global "\\\\" 'nil)
 
 
 (global-set-key (kbd "M-SPC") 'just-one-space) ; 切换输入法

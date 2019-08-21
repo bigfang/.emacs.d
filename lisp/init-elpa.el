@@ -29,7 +29,7 @@
 
 (use-package google-translate
   :ensure t
-  :bind ("C-z t" . google-translate-smooth-translate)
+  :bind ("M-o t" . google-translate-smooth-translate)
   :init
   (require 'google-translate-smooth-ui)
   :config
@@ -243,7 +243,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 (use-package zzz-to-char
   :ensure t
-  :chords ("\\\\" . zzz-to-char))
+  :bind ("C-s" . zzz-to-char))
 
 
 

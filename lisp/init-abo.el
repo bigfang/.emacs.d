@@ -105,8 +105,7 @@
 
 (use-package swiper
   :ensure t
-  :bind (("C-s" . swiper-all)
-         :map swiper-map
+  :bind (:map swiper-map
          ("M-q" . swiper-query-replace)
          ("C-'" . swiper-avy)
          ("M-c" . swiper-mc)))
@@ -159,7 +158,7 @@
 
 (use-package tiny
   :ensure t
-  :bind ("C-z /" . tiny-expand))
+  :bind ("M-o /" . tiny-expand))
 
 
 ;; ===

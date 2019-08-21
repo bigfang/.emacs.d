@@ -3,10 +3,10 @@
 
 (use-package buffer-move
   :ensure t
-  :bind (("C-z <up>" . buf-move-up)
-         ("C-z <down>" . buf-move-down)
-         ("C-z <left>" . buf-move-left)
-         ("C-z <right>" . buf-move-right)))
+  :bind (("M-o <up>" . buf-move-up)
+         ("M-o <down>" . buf-move-down)
+         ("M-o <left>" . buf-move-left)
+         ("M-o <right>" . buf-move-right)))
 
 
 (use-package dumb-jump
@@ -106,7 +106,7 @@
 
 (use-package transpose-frame
   :ensure t
-  :bind ("M-o t" . transpose-frame))
+  :bind ("M-o T" . transpose-frame))
 
 
 (use-package treemacs
