@@ -56,6 +56,8 @@
 (define-key alt-o-map (kbd "RET") (kbd "C-x C-o"))
 (define-key alt-o-map (kbd "M-o") (kbd "C-c C-c"))
 (define-key alt-o-map (kbd "M-k") (kbd "C-c C-k"))
+(define-key alt-o-map (kbd "M-e") (kbd "C-c C-e"))
+(define-key alt-o-map (kbd "M-q") (kbd "C-c C-q"))
 (define-key alt-o-map (kbd "a") (kbd "C-M-a"))
 (define-key alt-o-map (kbd "e") (kbd "C-M-e"))
 (define-key alt-o-map (kbd "r") 'revert-buffer)

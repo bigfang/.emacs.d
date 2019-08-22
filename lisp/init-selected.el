@@ -42,16 +42,19 @@
          ("q" . (lambda () (interactive) (evil-normal-state) (keyboard-quit)))
          ("u" . undo)
 
-         ("TAB" . untabify)
-         ("<backtab>" . tabify)
-         ("=" . align-entire)
+         ("TAB" . tabify)
+         ("<backtab>" . untabify)
+         ("=" . count-words-region)
          ("\\" . indent-region)
          ("/" . indent-rigidly)
          (";" . comment-or-uncomment-region)
          ("." . er/expand-region)
+
+         ("m" . mc/mark-all-in-region-regexp)
          (">" . mc/mark-next-like-this)
          ("<" . mc/mark-previous-like-this)
          ("?" . mc/mark-all-like-this)
+         ("," . hydra:multiple-cursors/body)
 
          ("x" . kill-region)
          ("w" . kill-ring-save)
@@ -61,7 +64,7 @@
          ("M-p" . move-text-up)
 
          ("E" . eval-region)
-         ("G" . google-this)
+         ("g" . google-this)
          ("f" . fill-region)
          ("l" . hydra:align/body)
          ("n" . my/narrow-selected-dwim)

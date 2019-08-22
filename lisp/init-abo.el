@@ -162,7 +162,7 @@
 
 (use-package tiny
   :ensure t
-  :bind ("M-o /" . tiny-expand))
+  :bind ("C-'" . tiny-expand))
 
 
 ;; ===

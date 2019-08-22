@@ -234,6 +234,12 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
   )
 
 
+(use-package visual-regexp
+  :ensure t
+  :bind ("M-o q" . vr/query-replace)
+        ("M-o m" . vr/mc-mark))
+
+
 (use-package which-key
   :ensure t
   :config
@@ -277,13 +283,6 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
   :config
   (ivy-prescient-mode t))
 
-
-;; --- regexp ---
-(use-package visual-regexp
-  :ensure t)
-
-(use-package visual-regexp-steroids
-  :ensure t)
 
 ;; --- emoji ---
 (use-package emojify

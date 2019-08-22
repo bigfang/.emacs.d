@@ -118,13 +118,13 @@
   :init
   (defhydra hydra:multiple-cursors (:color pink :hint nil)
     "
-    Multiple Cursors
-     ^Up^            ^Down^        ^Other^
-----------------------------------------------
-[_p_]   Next    [_n_]   Next    [_L_] Edit lines
-[_P_]   Skip    [_N_]   Skip    [_a_] Mark all
-[_M-p_] Unmark  [_M-n_] Unmark  [_r_] Mark by regexp
-^ ^             ^ ^             [_q_] Quit
+  Multiple Cursors
+     ^Up^            ^Down^          ^Other^
+--^^--------------^^--------------^^------------------
+  [_p_]   Next    [_n_]   Next    [_L_] Edit lines
+  [_P_]   Skip    [_N_]   Skip    [_a_] Mark all
+  [_M-p_] Unmark  [_M-n_] Unmark  [_s_] Sort regions
+  ^ ^             ^ ^             [_q_] Quit
 "
     ("L" mc/edit-lines :exit t)
     ("a" mc/mark-all-like-this :exit t)
@@ -134,14 +134,13 @@
     ("p" mc/mark-previous-like-this)
     ("P" mc/skip-to-previous-like-this)
     ("M-p" mc/unmark-previous-like-this)
-    ("r" mc/mark-all-in-region-regexp :exit t)
 
-    ("0" mc/insert-numbers "insert numbers")
-    ("z" mc/insert-letters "insert latters")
-    ("s" mc/sort-regions "sort")
+    ("s" mc/sort-regions)
     ("r" mc/reverse-regions "reverse")
+    ("d" mc/insert-numbers "insert numbers")
+    ("z" mc/insert-letters "insert latters")
     ("q" nil :color blue))
-  (global-set-key (kbd "C-'") 'hydra:multiple-cursors/body))
+  (global-set-key (kbd "C-,") 'hydra:multiple-cursors/body))
 
 
 ;; key-binding -- https://emacs.stackexchange.com/a/2557
@@ -160,12 +159,12 @@
   :init
   (defhydra hydra:undo-tree (:hint nil)
     "
-    [_u_]: undo  [_r_]: redo  [_s_]: save  [_l_]: load  "
-    ("u" undo-tree-undo)
-    ("r" undo-tree-redo)
+    [_p_]: undo  [_n_]: redo  [_s_]: save  [_l_]: load  "
+    ("p" undo-tree-undo)
+    ("n" undo-tree-redo)
     ("s" undo-tree-save-history)
     ("l" undo-tree-load-history)
-    ("/" undo-tree-visualize "visualize" :color blue)
+    ("u" undo-tree-visualize "visualize" :color blue)
     ("q" nil :color blue))
   (bind-key* (kbd "C-x u") 'hydra:undo-tree/body))
 

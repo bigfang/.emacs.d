@@ -33,16 +33,6 @@ _n_ line-numbers-mode    %`display-line-numbers-mode
   ("q" nil :color blue))
 
 
-(defhydra hydra:execute (:color teal :hint nil :columns 3)
-  ("c" quick-calc "quick calc")
-  ("C" calendar "calendar")
-  ("s" shell "shell")
-  ("e" eval-last-sexp "eval sexp")
-  ("v" ido-find-alternate-file "refresh")
-  ("x" smex "smex")
-  ("q" nil :color blue))
-
-
 (defhydra hydra:abo (:color teal :hint nil :columns 4)
   "ivy counsel"
   ("i" counsel-semantic-or-imenu "imenu")

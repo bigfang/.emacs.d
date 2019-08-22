@@ -29,20 +29,20 @@
 
   ("f" hydra:adjust/body "adjust...")
   ("j" ffap "ffap")
-  ;; same as hydra:execute
-  ("c" quick-calc "quick calc")
-  ("C" calendar "calendar")
-  ("s" shell "shell")
+
+  ("c" calendar "calendar")
+  ("C" quick-calc "quick calc")
+  ("s" eshell "eshell")
   ("e" eval-last-sexp "eval sexp")
   ("E" eval-buffer "eval buffer")
-  ("v" ido-find-alternate-file "refresh")
+  ("v" revert-buffer "revert buffer")
   ("x" smex "smex")
+  ("z" fzf-directory "fzf-directory")
 
   ("d" deft "deft")
   ("k" hydra:kurecolor/body "kurecolor..." :color teal)
   ("t" google-translate-smooth-translate "google translate")
   ("g" google-this "google this")
-  ("G" google-this-search "google search")
 
   ("b" hydra:browse/body "visit website")
 

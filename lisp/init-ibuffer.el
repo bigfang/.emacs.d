@@ -38,6 +38,7 @@
                       (mode . css-mode)))
            ("Org" (or (mode . json-mode)
                       (mode . yaml-mode)
+                      (mode . docker-compose-mode)
                       (mode . rst-mode)
                       (mode . markdown-mode)
                       (mode . dockerfile-mode)

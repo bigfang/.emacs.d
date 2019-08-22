@@ -1,13 +1,13 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defhydra hydra:adapter-default (:color teal :hint nil :columns 3)
+(defhydra hydra:adapter-default (:color teal :hint nil :columns 6)
   "default adapter"
-   ("a" list-packages "list packages")
-   ("j" ffap "ffap")
-   ("z" fzf-directory "fzf-directory")
-   ("." (browse-url ".") "current directory")
-   ("q" nil :color blue))
+  ("a" list-packages "list packages")
+  ("j" ffap "ffap")
+  ("z" fzf-directory "fzf-directory")
+  ("." (browse-url ".") "current directory")
+  ("q" nil :color blue))
 
 (defun hydra:adapter ()
   "adapter"
