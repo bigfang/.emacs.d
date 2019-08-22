@@ -33,7 +33,7 @@
   ("j" hydra:dumb-jump/body "jump...")
   ("l" hydra:lsp/body "lsp-mode...")
   ("m" hydra:mark/body "marks...")
-  ("n" hydra:narrow/body "narrow...")
+  ("n" my/narrow-dwim "fat or thin...")
   ("o" hydra:avy/body "avy...")
   ("p" hydra:projectile/body "projectile...")
   ("r" hydra:rectangle/body "rectangle...")

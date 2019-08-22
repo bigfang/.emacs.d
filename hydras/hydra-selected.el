@@ -28,7 +28,7 @@
     ("G" google-this "google")
     ("f" fill-region "fill")
     ("l" hydra:align/body "align...")
-    ("n" my/narrow-or-wide "narrow")
+    ("n" my/narrow-dwim "narrow")
 
     ("q" nil :color blue))
 

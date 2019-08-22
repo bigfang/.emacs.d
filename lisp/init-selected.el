@@ -1,6 +1,28 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
+(defun my/narrow-selected-dwim (start end)
+  "Restrict editing in this buffer to the current region, indirectly."
+  (interactive "r")
+  (deactivate-mark)
+  (let ((buf (clone-indirect-buffer "*Clone*" t)))
+    (with-current-buffer buf
+      (if (eq start end)
+          (narrow-to-defun)
+        (narrow-to-region start end)))
+    (switch-to-buffer buf)))
+
+(defun my/narrow-dwim (start end)
+  (interactive "r")
+  (if (buffer-narrowed-p)
+      (if (string-prefix-p "*Clone*" (buffer-name))
+          (kill-buffer-and-window)
+        (widen))
+    (if (eq start end)
+        (hydra:narrow/body)
+      (my/narrow-selected-dwim start end))))
+
+
 (use-package selected
   :ensure t
   :demand t
@@ -15,22 +37,6 @@
             '(lambda ()
                ;; (define-key evil-normal-state-map "q" 'keyboard-quit)
                (define-key evil-motion-state-map (kbd "SPC") 'hydra:leader/body)))
-
-  (defun my/narrow-to-region-indirect (start end)
-    "Restrict editing in this buffer to the current region, indirectly."
-    (interactive "r")
-    (deactivate-mark)
-    (let ((buf (clone-indirect-buffer nil t)))
-      (with-current-buffer buf
-        (narrow-to-region start end))
-      (switch-to-buffer buf)))
-  (defun my/narrow-or-wide (start end)
-    (interactive "r")
-    (if (buffer-narrowed-p)
-        (progn
-          (widen)
-          (recenter-top-bottom))
-      (my/narrow-to-region-indirect start end)))
   :bind (:map selected-keymap
          ("SPC" . hydra:selected/body)
          ("q" . (lambda () (interactive) (evil-normal-state) (keyboard-quit)))
@@ -58,7 +64,7 @@
          ("G" . google-this)
          ("f" . fill-region)
          ("l" . hydra:align/body)
-         ("n" . my/narrow-to-region-indirect)
+         ("n" . my/narrow-selected-dwim)
 
          :map selected-org-mode-map
          ("t" . org-table-convert-region))

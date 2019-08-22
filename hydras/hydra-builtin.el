@@ -39,7 +39,7 @@
   "Buffer"
   ("i" ibuffer "ibuffer")
   ("b" ivy-switch-buffer "switch")
-  ("b" clone-indirect-buffer-other-window "clone")
+  ("c" clone-indirect-buffer-other-window "clone")
   ("n" next-buffer "next buffer" :color red)
   ("p" previous-buffer "previous buffer" :color red)
   ("k" kill-buffer-and-window "kill buffer window")
@@ -55,7 +55,7 @@
   _e_: element     _d_: defun
   _s_: subtree     _p_: page
 "
-  ("n" narrow-to-region)
+  ("n" my/narrow-selected-dwim)
   ("d" narrow-to-defun)
   ("p" narrow-to-page)
 

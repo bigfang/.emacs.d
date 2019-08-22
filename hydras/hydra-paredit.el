@@ -1,20 +1,13 @@
 ;; -*- mode: Emacs-Lisp -*-
 
 
-(defun toggle-paredit-mode (stat)
-  (if stat
-      (progn (paredit-mode +1)
-             (message "paredit-mode enabled"))
-    (progn (paredit-mode -1)
-           (message "paredit-mode disabled"))))
-
 (defun before-create ()
   (setq-default local-paredit? paredit-mode)
   (enable-paredit-mode)
   (evil-emacs-state))
 
 (defun before-exit ()
-  (toggle-paredit-mode local-paredit?)
+  (my/toggle-paredit-mode local-paredit?)
   (evil-normal-state))
 
 
@@ -29,7 +22,7 @@
   _<M-left>_ : <--)  |   ^<M-up>^ / ^<M-down>^ ^|   ^^        [_,_]: toggle
   _<M-right>_: )-->    [_R_]: raise  [_?_]: convolute ^^^   [_TAB_]: trigger
 "
-  ("TAB" (toggle-paredit-mode (not local-paredit?)) :exit t)
+  ("TAB" (my/toggle-paredit-mode (not local-paredit?)) :exit t)
   ("," paredit-mode)
 
   ;; Barfage & Slurpage

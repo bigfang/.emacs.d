@@ -89,7 +89,16 @@
 (use-package paredit
   :ensure t
   :chords (",," . hydra:paredit/body)
+  :init
+  (defun my/toggle-paredit-mode (stat)
+    (if stat
+        (progn (paredit-mode +1)
+               (message "paredit-mode enabled"))
+      (progn (paredit-mode -1)
+             (message "paredit-mode disabled"))))
   :config
+  (add-hook 'evil-insert-state-entry-hook 'enable-paredit-mode)
+  (add-hook 'evil-insert-state-exit-hook 'disable-paredit-mode)
   (use-package hydra-paredit))
 
 
