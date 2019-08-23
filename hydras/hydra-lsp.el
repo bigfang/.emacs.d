@@ -3,27 +3,30 @@
 
 (defhydra hydra:lsp (:color teal :hint nil)
   "
- ^Buffer^               ^Server^                                     ^^^Symbol^^^
--^^---------------------^^------------------------------------------------------------------------^^^^^^
- [_f_] format           [_M-r_] restart            [_d_] declaration  [_i_] implementation  [_o_] doc
- [_m_] imenu            [_S_]   shutdown           [_._] definition   [_t_] type            [_r_] rename
- [_x_] execute action   [_M-s_] describe session   [_'_] references   [_l_] sideline
+     ^Buffer^    ^|      ^Server^      |         ^^Symbol^^           |      ^Doc^
+--^^-------------^+-------^^-----------+--^^^^------------------------+---^^-------------
+  [_\\_] format   |  [_R_]   restart   |  [_d_] decl  [_t_] type def  |  [_o_] doc
+  [_m_] imenu    ^|  [_S_]   shutdown  |  [_._] def   [_s_] symbol    |  [_l_] sideline
+  [_x_] execute  ^|  [_M-s_] session   |  [_'_] refs                ^^|  [_c_] flycheck
+  [_r_] rename   ^|                  ^^|  [_i_] impl                ^^|
 "
+  ("r" lsp-rename)
   ("d" lsp-find-declaration)
   ("t" lsp-find-type-definition)
-  ("." lsp-ui-peek-find-definitions)
-  ("'" lsp-ui-peek-find-references)
-  ("i" lsp-ui-peek-find-implementation)
+  ("." lsp-find-definitions)
+  ("'" lsp-find-references)
+  ("i" lsp-find-implementation)
+  ("s" lsp-ui-peek-find-workspace-symbol)
   ("l" lsp-ui-sideline-toggle-symbols-info)
   ("o" lsp-ui-doc-mode)
-  ("r" lsp-rename)
+  ("c" lsp-ui-flycheck-list)
 
-  ("f" lsp-format-buffer)
+  ("\\" lsp-format-buffer)
   ("m" lsp-ui-imenu)
   ("x" lsp-execute-code-action)
 
   ("M-s" lsp-describe-session)
-  ("M-r" lsp-restart-workspace)
+  ("R" lsp-restart-workspace)
   ("S" lsp-shutdown-workspace)
 
   ("q" nil :color blue))

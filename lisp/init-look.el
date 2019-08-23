@@ -34,6 +34,7 @@
   (load-theme 'solarized-dark t))
 
 (use-package doom-themes
+  :if (display-graphic-p)
   :ensure t
   :init
   (setq doom-themes-enable-bold t

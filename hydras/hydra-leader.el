@@ -20,10 +20,9 @@
   ;; ("," embrace-commander "embrace")
   ("," hydra:multiple-cursors/body "multiple-cursors...")
   ("." er/expand-region "expand-region")
-  ("/" re-builder)
+  ;; ("/" re-builder)
 
-  ("a" hydra:adapter "adapter...")
-
+  ;; ("a" nil "nil")
   ("b" hydra:buffer/body "buffer...")
   ("c" hydra:flycheck/body "flycheck...")
    ;; ("d" nil "nil")
@@ -43,6 +42,7 @@
   ("v" hydra:git/body "git...")
   ;; ("x" hydra:execute/body "execute...")
   ;; ("y" nil "nil")
+  ("z" hydra:adapter "adapter...")
 
   ("g" magit-status "magit")
   ("t" treemacs "treemacs")
@@ -64,7 +64,6 @@
          (interactive)
          (split-window-vertically)
          (other-window 1)))
-  ("z" quit-window)
   ("0" delete-window)
   ("1" delete-other-windows)
 

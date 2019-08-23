@@ -39,6 +39,11 @@
          ("M-n" . next-line)
          ("M-p" . previous-line))
   :config
+  (with-eval-after-load 'evil-maps
+    (evil-define-key 'motion lsp-ui-mode-map (kbd "gi") 'lsp-ui-peek-find-implementation)
+    (evil-define-key 'motion lsp-ui-mode-map (kbd "gr") 'lsp-ui-peek-find-references)
+    (evil-define-key 'motion lsp-ui-mode-map (kbd "gd") 'lsp-ui-peek-find-definitions))
+
   (setq lsp-ui-doc-enable nil
         lsp-ui-doc-use-webkit nil
         lsp-ui-doc-include-signature t
@@ -48,12 +53,7 @@
         lsp-ui-flycheck-enable t
 
         lsp-ui-sideline-enable t
-        lsp-ui-sideline-ignore-duplicate t)
-
-  (with-eval-after-load 'evil-maps
-    (evil-define-key 'motion lsp-ui-mode-map (kbd "ga") 'lsp-ui-peek-find-implementation)
-    (evil-define-key 'motion lsp-ui-mode-map (kbd "gr") 'lsp-ui-peek-find-references)
-    (evil-define-key 'motion lsp-ui-mode-map (kbd "gd") 'lsp-ui-peek-find-definitions)))
+        lsp-ui-sideline-ignore-duplicate t))
 
 
 ;; |------------+-----------------------------------------|

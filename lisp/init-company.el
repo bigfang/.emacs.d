@@ -8,6 +8,8 @@
          ;; ("TAB" . indent-or-complete)
          :map company-active-map
          ("M-." . company-other-backend)
+         ("DEL" . company-abort)
+         ("<escape>" . company-abort)
          ("RET" . company-complete-selection)
          ("SPC" . my/abort-and-insert-space)
          ("TAB" . company-complete-common)

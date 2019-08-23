@@ -89,6 +89,11 @@
 (use-package paredit
   :ensure t
   :chords (",," . hydra:paredit/body)
+  :bind (:map paredit-mode-map
+         ("<S-left>" . paredit-backward-slurp-sexp)
+         ("<S-right>" . paredit-backward-barf-sexp)
+         ("<M-left>" . paredit-forward-barf-sexp)
+         ("<M-right>" . paredit-forward-slurp-sexp))
   :init
   (defun my/toggle-paredit-mode (stat)
     (if stat

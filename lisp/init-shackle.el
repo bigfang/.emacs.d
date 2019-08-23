@@ -7,7 +7,7 @@
                (display-buffer-reuse-window
                 display-buffer-below-selected)
                (split-window-sensibly)
-               (window-height   . 0.3)
+               (window-height   . 0.4)
                (reusable-frames . visible)))
 
 
@@ -24,8 +24,7 @@
           ("*Completions*"                                   :size 0.3  :align t     )
           ("*undo-tree*"             :regexp t               :size 0.15 :align left  )
           (occur-mode                           :select t    :size 0.4  :align t     )
-          ("*Help*"                             :select t    :size 0.3  :align t     :inhibit-window-quit nil )
-          (helpful-mode                         :select t    :size 0.4  :align t     )
+          ;; ("*Help*"                             :select t    :size 0.3  :align t     :inhibit-window-quit nil )
           (flycheck-error-list-mode             :select nil  :size 0.3  :align t     )
 
           ;; ("*eshell*"                           :select t    :size 0.6  :align t     )

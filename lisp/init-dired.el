@@ -9,7 +9,8 @@
          ("J" . dired-goto-file)
          ("K" . dired-do-kill-lines)
          ("G" . end-of-buffer)
-         ("V" . dired-do-chgrp))
+         ("V" . dired-do-chgrp)
+         ("C-s" . isearch-forward))
   :config
   (setq dired-listing-switches "-lahv"
         dired-recursive-copies 'top

@@ -43,14 +43,15 @@
 
 (use-package helpful
   :ensure t
-  :bind
-  ("<f1> ." . helpful-at-point)
-  ("<f1> k" . helpful-key)
-  ("<f1> f" . helpful-callable)
-  ("<f1> v" . helpful-variable)
-  (:map helpful-mode-map
-   ("j" . next-line)
-   ("k" . previous-line)))
+  :bind ("<f1> ." . helpful-at-point)
+        ("<f1> k" . helpful-key)
+        ("<f1> f" . helpful-callable)
+        ("<f1> v" . helpful-variable)
+  :config
+  (evil-define-key 'motion helpful-mode-map (kbd "n") 'forward-button)
+  (evil-define-key 'motion helpful-mode-map (kbd "p") 'backward-button)
+
+  (setq helpful-max-buffers 1))
 
 
 (use-package highlight-indent-guides

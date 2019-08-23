@@ -3,9 +3,9 @@
 
 (defhydra hydra:adapter-default (:color teal :hint nil :columns 6)
   "default adapter"
-  ("a" list-packages "list packages")
+  ("l" list-packages "list packages")
   ("j" ffap "ffap")
-  ("z" fzf-directory "fzf-directory")
+  ("z" quit-window "quit window")
   ("." (browse-url ".") "current directory")
   ("q" nil :color blue))
 

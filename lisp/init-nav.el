@@ -85,6 +85,7 @@
   :ensure t
   :bind
   (("C-x o" . switch-window)
+   ("M-o o" . switch-window)
    :map switch-window-extra-map
    ("i" . nil)
    ("k" . 'switch-window-mvborder-up)

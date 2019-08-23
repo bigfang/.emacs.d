@@ -58,6 +58,9 @@
         evil-visual-state-cursor '("LightGreen" box)
         evil-insert-state-cursor '("LightGoldenrod" bar))
   (evil-mode 1)
+  (with-current-buffer "*Messages*" (evil-emacs-state))
+  (add-hook 'messages-buffer-mode-hook #'(lambda () (evil-emacs-state)))
+
   (evil-set-initial-state 'special-mode 'emacs)
   (evil-set-initial-state 'dired-mode 'emacs)
   (evil-set-initial-state 'ibuffer-mode 'emacs)
@@ -128,10 +131,6 @@
   :ensure t
   :config
   (global-evil-surround-mode 1))
-
-
-(use-package evil-textobj-syntax
-  :ensure t)
 
 
 (provide 'init-evil)

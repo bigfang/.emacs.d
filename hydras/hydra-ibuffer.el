@@ -3,12 +3,12 @@
 
 (defhydra hydra:ibuffer-main (:color pink :hint nil)
   "
- ^Navigation^ | ^Mark^        | ^Actions^        | ^View^
--^----------^-+-^----^--------+-^-------^--------+-^----^-------
-  _k_:    ʌ   | _m_: mark     | _D_: delete      | _g_: refresh
- _RET_: visit | _u_: unmark   | _S_: save        | _s_: sort
-  _j_:    v   | _*_: specific | _a_: all actions | _/_: filter
--^----------^-+-^----^--------+-^-------^--------+-^----^-------
+  ^Navigation^  |  ^Mark^        |  ^Actions^        |  ^View^
+--^----------^--+--^----^--------+--^-------^--------+--^----^----------
+   _k_:    ʌ    |  _m_: mark     |  _D_: delete      |  _g_: refresh
+  _RET_: visit  |  _u_: unmark   |  _S_: save        |  _s_: sort...
+   _j_:    v    |  _*_: mark...  |  _a_: actions...  |  _/_: filter...
+--^----------^--+--^----^--------+--^-------^--------+--^----^----------
 "
   ("j" ibuffer-forward-line)
   ("RET" ibuffer-visit-buffer :color blue)
@@ -47,7 +47,9 @@
   ("e" ibuffer-mark-dissociated-buffers "dissociated")
   ("h" ibuffer-mark-help-buffers "help")
   ("z" ibuffer-mark-compressed-file-buffers "compressed")
-  ("b" hydra:ibuffer-main/body "back" :color blue))
+
+  ("b" hydra:ibuffer-main/body "back" :color blue)
+  ("q" hydra:ibuffer-main/body "back" :color blue))
 
 (defhydra hydra:ibuffer-action (:color teal :columns 4
                                 :after-exit
@@ -70,7 +72,9 @@
   ("V" ibuffer-do-revert "revert")
   ("W" ibuffer-do-view-and-eval "view-and-eval")
   ("X" ibuffer-do-shell-command-pipe "shell-command-pipe")
-  ("b" nil "back"))
+
+  ("b" nil "back")
+  ("q" nil "back"))
 
 (defhydra hydra:ibuffer-sort (:color amaranth :columns 3)
   "Sort"
@@ -80,7 +84,9 @@
   ("s" ibuffer-do-sort-by-size "size")
   ("f" ibuffer-do-sort-by-filename/process "filename")
   ("m" ibuffer-do-sort-by-major-mode "mode")
-  ("b" hydra:ibuffer-main/body "back" :color blue))
+
+  ("b" hydra:ibuffer-main/body "back" :color blue)
+  ("q" hydra:ibuffer-main/body "back" :color blue))
 
 (defhydra hydra:ibuffer-filter (:color amaranth :columns 4)
   "Filter"
@@ -93,7 +99,9 @@
   (">" ibuffer-filter-by-size-gt "size")
   ("<" ibuffer-filter-by-size-lt "size")
   ("/" ibuffer-filter-disable "disable")
-  ("b" hydra:ibuffer-main/body "back" :color blue))
+
+  ("b" hydra:ibuffer-main/body "back" :color blue)
+  ("q" hydra:ibuffer-main/body "back" :color blue))
 
 
 (provide 'hydra-ibuffer)
