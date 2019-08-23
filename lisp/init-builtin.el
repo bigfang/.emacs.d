@@ -21,6 +21,15 @@
   (auto-image-file-mode t))
 
 
+(use-package imenu
+  :config
+  (setq hydra-imenu-generic-expression
+        '("Hydras" "^\\s-*(defhydra\\s-+\\(\\(?:\\sw\\|\\s_\\|\\\\.\\)+\\)" 1))
+  (add-hook 'emacs-lisp-mode-hook
+            (lambda ()
+              (add-to-list 'imenu-generic-expression hydra-imenu-generic-expression))))
+
+
 (use-package indent
   :bind (:map indent-rigidly-map
          ("[" . indent-rigidly-left)
