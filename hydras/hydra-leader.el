@@ -45,7 +45,7 @@
   ("z" hydra:adapter "adapter...")
 
   ("g" magit-status "magit")
-  ("t" treemacs "treemacs")
+  ;; ("t" nil "nil")
 
   ;; cursor
   ("H" windmove-left :color red)

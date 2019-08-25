@@ -49,19 +49,4 @@
         company-show-numbers t))
 
 
-(use-package company-box
-  :disabled
-  :ensure t
-  :init (setq company-box-icons-alist 'company-box-icons-all-the-icons)
-  :hook (company-mode . company-box-mode))
-
-
-(use-package company-posframe
-  :disabled
-  :requires (company posframe)
-  :ensure t
-  :config
-  (company-posframe-mode 1))
-
-
 (provide 'init-company)

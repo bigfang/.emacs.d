@@ -109,28 +109,7 @@
 
 (use-package transpose-frame
   :ensure t
-  :bind ("M-o T" . transpose-frame))
-
-
-(use-package treemacs
-  :if (display-graphic-p)
-  :ensure t
-  :config
-  (setq treemacs-project-follow-cleanup t
-        treemacs-width 30)
-  (treemacs-follow-mode t)
-  (treemacs-filewatch-mode t)
-  (treemacs-fringe-indicator-mode t))
-
-(use-package treemacs-evil
-  :ensure t
-  :requires treemacs)
-
-(use-package treemacs-projectile
-  :ensure t
-  :requires treemacs
-  :config
-  (setq treemacs-header-function #'treemacs-projectile-create-header))
+  :bind ("M-o t" . transpose-frame))
 
 
 (provide 'init-nav)

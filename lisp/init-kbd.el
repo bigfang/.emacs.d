@@ -62,7 +62,6 @@
 (define-key alt-o-map (kbd "e") (kbd "C-M-e"))
 (define-key alt-o-map (kbd "r") 'revert-buffer)
 (define-key alt-o-map (kbd "k") 'kill-buffer-and-window)
-(define-key alt-o-map (kbd "s") 'isearch-forward)
 
 (global-set-key (kbd "<C-left>")
                 '(lambda (arg)
@@ -70,7 +69,7 @@
                    (beginning-of-line)
                    (hs-hide-level arg)))
 (global-set-key (kbd "<C-right>") 'hs-show-block)
-(global-set-key (kbd "C-z") 'universal-argument)
+(global-set-key (kbd "C-r") 'universal-argument)
 (global-set-key (kbd "M-/") 'hippie-expand)
 (global-set-key (kbd "M-I") 'tab-to-tab-stop)
 (global-set-key (kbd "M-U") 'upcase-word)

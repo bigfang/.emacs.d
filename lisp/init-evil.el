@@ -32,6 +32,7 @@
          ("C-n" . next-line)
          ("C-p" . previous-line)
          ("C-y" . yank)                  ; evil-scroll-line-up
+         ("C-r" . universal-argument)
          ("@" . nil)
          ("%" . evil-execute-macro)
 

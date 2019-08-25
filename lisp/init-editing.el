@@ -152,8 +152,7 @@
 (use-package undo-tree
   :ensure t
   :bind (:map evil-normal-state-map
-         ("u" . undo-tree-undo)
-         ("C-r" . undo-tree-redo))
+         ("u" . undo-tree-undo))
   :config
   (global-undo-tree-mode)
   ;; (bind-key* "C-?" 'uncomment-region)

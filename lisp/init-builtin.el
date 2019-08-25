@@ -3,10 +3,7 @@
 
 (use-package desktop
   :unless (daemonp)
-  :config
-  (add-to-list 'desktop-minor-mode-table
-               '(company-posframe-mode . nil) t)
-  (desktop-save-mode t))
+  :config (desktop-save-mode t))
 
 
 (use-package ido
@@ -23,11 +20,11 @@
 
 (use-package imenu
   :config
-  (setq hydra-imenu-generic-expression
-        '("Hydras" "^\\s-*(defhydra\\s-+\\(\\(?:\\sw\\|\\s_\\|\\\\.\\)+\\)" 1))
   (add-hook 'emacs-lisp-mode-hook
             (lambda ()
-              (add-to-list 'imenu-generic-expression hydra-imenu-generic-expression))))
+              (add-to-list
+               'imenu-generic-expression
+               '("Hydras" "^\\s-*(defhydra\\s-+\\(\\(?:\\sw\\|\\s_\\|\\\\.\\)+\\)" 1)))))
 
 
 (use-package indent
