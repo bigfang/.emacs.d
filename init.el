@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-08-15 23:48:39>
+;; Time-stamp: <2019-08-26 10:09:41>
 
 
 
@@ -36,10 +36,10 @@
 (use-package init-hooks)
 
 (use-package init-evil)
-(use-package init-nav)
-(use-package init-editing)
 (use-package init-abo)
 (use-package init-selected)
+(use-package init-nav)
+(use-package init-editing)
 (use-package init-coding)
 (use-package init-git)
 (use-package init-company)
