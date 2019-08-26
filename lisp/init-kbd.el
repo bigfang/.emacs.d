@@ -125,5 +125,8 @@
   "Map KEY from escape sequence \"\e[emacs-KEY\."
   (define-key function-key-map (concat "\e[emacs-" key) (kbd key)))
 
+(unless (display-graphic-p)
+  (my/global-map-and-set-key "C-?" 'undo-tree-redo))
+
 
 (provide 'init-kbd)
