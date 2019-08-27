@@ -29,14 +29,15 @@
   :commands selected-minor-mode
   :init
   (setq selected-org-mode-map (make-sparse-keymap))
-  (add-hook 'activate-mark-hook
-            '(lambda ()
-               ;; (define-key evil-normal-state-map (kbd "q") 'keyboard-quit)
-               (define-key evil-motion-state-map (kbd "SPC") 'hydra:selected/body)))
-  (add-hook 'deactivate-mark-hook
-            '(lambda ()
-               ;; (define-key evil-normal-state-map "q" 'keyboard-quit)
-               (define-key evil-motion-state-map (kbd "SPC") 'hydra:leader/body)))
+
+  (defun my/selected--on ()
+    ;; (define-key evil-normal-state-map "q" 'keyboard-quit)
+    (define-key evil-motion-state-map (kbd "SPC") 'hydra:selected/body))
+  (defun my/selected-off ()
+    ;; (define-key evil-normal-state-map "q" 'keyboard-quit)
+    (define-key evil-motion-state-map (kbd "SPC") 'hydra:leader/body))
+  (advice-add 'selected--on :after #'my/selected--on)
+  (advice-add 'selected-off :before #'my/selected-off)
   :bind (:map selected-keymap
          ("SPC" . hydra:selected/body)
          ("q" . (lambda () (interactive) (evil-normal-state) (keyboard-quit)))

@@ -45,6 +45,7 @@
 
 
 (use-package forge
+  :disabled
   :ensure t)
 
 

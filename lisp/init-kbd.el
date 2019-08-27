@@ -19,22 +19,13 @@
 ;; Mac OS X
 (when (eq system-type 'darwin)
   ;; (setq dired-use-ls-dired nil)
+  ;; (setq mac-allow-anti-aliasing t)
   (if (display-graphic-p)
       (setq mac-command-modifier 'meta
             mac-control-modifier 'control
             mac-option-modifier 'super
-            ns-function-modifier 'hyper)
-    (setq mac-command-modifier 'super
-          mac-control-modifier 'control
-          mac-option-modifier 'meta
-          ns-function-modifier 'hyper)))
+            mac-function-modifier 'hyper)))
 
-
-;; Terminal
-(unless (display-graphic-p)
-  (load-theme 'wombat t)
-  (blink-cursor-mode t)
-  (menu-bar-mode -1))
 
 ;; Terminal mouse scroll
 (unless (display-graphic-p)

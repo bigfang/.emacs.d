@@ -10,9 +10,16 @@
 (setq initial-scratch-message ";; (〜￣▽￣)〜〜(￣▽￣〜)\n\n")
 (setq visible-bell nil)
 
-(tool-bar-mode -1)
+
+(if (display-graphic-p)
+    (progn
+      (blink-cursor-mode -1))
+  (progn
+    (blink-cursor-mode t)
+    (menu-bar-mode -1)
+    (load-theme 'wombat t)))
 (scroll-bar-mode -1)
-(blink-cursor-mode -1)
+(tool-bar-mode -1)
 (global-hl-line-mode -1)
 (global-linum-mode -1)
 (mouse-avoidance-mode 'animate)
