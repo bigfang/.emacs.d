@@ -53,6 +53,7 @@ _n_ line-numbers-mode    %`display-line-numbers-mode
   ("w" ivy-imenu-anywhere "imenu-anywhere")
   ("r" ivy-resume "resume")
   ("h" counsel-command-history "history")
+  ("p" counsel-list-processes "processes")
 
   ("D" image-dired "image dired")
   ("q" nil :color blue))

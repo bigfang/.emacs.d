@@ -194,6 +194,13 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
   :hook (prog-mode))
 
 
+(use-package simple-httpd
+  :load-path "site-lisp/simple-httpd"
+  ;; :ensure t
+  :config
+  (setq httpd-port 7777))
+
+
 (use-package symbol-overlay
   :ensure t
   :commands symbol-overlay-mode

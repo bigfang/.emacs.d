@@ -55,6 +55,7 @@
 
 
 (use-package org-page
+  :after simple-httpd
   :ensure t
   :config
   (setq op/repository-directory "~/repo/op-blog"

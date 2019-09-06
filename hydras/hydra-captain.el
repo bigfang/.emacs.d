@@ -10,6 +10,7 @@
   ("x" (browse-url "https://xueqiu.com") "xueqiu")
   ("z" (browse-url "https://zhihu.com") "zhihu")
 
+  ("w" httpd-serve-directory "web server")
   ("j" browse-url "browser current")
   ("f" (lambda (file)
          (interactive "fFile: ")
