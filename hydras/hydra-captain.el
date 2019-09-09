@@ -1,16 +1,22 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
 
+(defun my/serve-and-open (dir)
+  (interactive "DServe directory: \n")
+  (httpd-serve-directory dir)
+  (browse-url (format "http://localhost:%s" httpd-port)))
+
+
 (defhydra hydra:browse (:color teal :hint nil :columns 6)
   "visit website"
   ("g" (browse-url "https://github.com") "GitHub")
   ("r" (browse-url "https://www.reddit.com") "Reddit")
   ("s" (browse-url "https://bbs.saraba1st.com/2b/forum-75-1.html") "Stage1st")
-  ("t" (browse-url "http://club.tgfcer.com/forum-25-1.html") "TGFC")
+  ("t" (browse-url "https://club.tgfcer.com/forum-25-1.html") "TGFC")
   ("x" (browse-url "https://xueqiu.com") "xueqiu")
   ("z" (browse-url "https://zhihu.com") "zhihu")
 
-  ("w" httpd-serve-directory "web server")
+  ("w" my/serve-and-open "web server")
   ("j" browse-url "browser current")
   ("f" (lambda (file)
          (interactive "fFile: ")
