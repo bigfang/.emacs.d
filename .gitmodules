@@ -1,0 +1,3 @@
+[submodule "simple-httpd"]
+	path = site-lisp/simple-httpd
+	url = git@github.com:bigfang/emacs-web-server.git
