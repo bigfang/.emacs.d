@@ -1,4 +1,4 @@
-;; -*- mode: Emacs-Lisp -*-
+;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
 
 ;; overwrite key-map M-o

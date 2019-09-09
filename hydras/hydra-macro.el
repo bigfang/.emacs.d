@@ -1,4 +1,4 @@
-;; -*- mode: Emacs-Lisp -*-
+;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
 
 (defhydra hydra:macro (:hint nil :color pink

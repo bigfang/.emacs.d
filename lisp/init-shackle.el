@@ -1,4 +1,4 @@
-;; -*- mode: Emacs-Lisp -*-
+;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
 
 ;; display-buffer

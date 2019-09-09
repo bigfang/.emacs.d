@@ -1,4 +1,4 @@
-;; -*- mode: Emacs-Lisp -*-
+;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
 
 (defhydra hydra:selected (:color teal :exit t :hint nil :columns 5)

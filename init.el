@@ -1,5 +1,5 @@
-;; -*- mode: Emacs-Lisp -*-
-;; Time-stamp: <2019-08-26 10:09:41>
+;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
+;; Time-stamp: <2019-09-09 12:01:31>
 
 
 
