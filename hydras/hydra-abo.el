@@ -17,6 +17,7 @@ _o_ outline-mode:        %`outline-minor-mode
 _v_ view-mode:           %`view-mode
 _m_ xterm-mouse-mode     %`xterm-mouse-mode
 _n_ line-numbers-mode    %`display-line-numbers-mode
+_F_ which-function-mode  %`which-function-mode
 "
   ("a" abbrev-mode)
   ("c" cua-mode)
@@ -27,6 +28,7 @@ _n_ line-numbers-mode    %`display-line-numbers-mode
   ("o" outline-minor-mode)
   ("v" view-mode)
   ("m" xterm-mouse-mode)
+  ("F" which-function-mode)
   ("n" display-line-numbers-mode)
   ("r" toggle-rot13-mode "rot13" :color blue)
   ("z" zone "zone" :color blue)
