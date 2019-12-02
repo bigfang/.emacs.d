@@ -101,7 +101,24 @@
                (message "paredit-mode enabled"))
       (progn (paredit-mode -1)
              (message "paredit-mode disabled"))))
+
+  (defun paredit/space-for-delimiter-p (endp delm)
+    (or (member 'font-lock-keyword-face (text-properties-at (1- (point))))
+        (not (derived-mode-p 'c++-mode
+                             'c-mode
+                             'csharp-mode
+                             'elixir-mode
+                             'erlang-mode
+                             'go-mode
+                             'java-mode
+                             'js-mode
+                             'lua-mode
+                             'python-mode
+                             'ruby-mode
+                             'rust-mode
+                             'typescript-mode))))
   :config
+  (add-to-list 'paredit-space-for-delimiter-predicates 'paredit/space-for-delimiter-p)
   (add-hook 'evil-insert-state-entry-hook 'enable-paredit-mode)
   (add-hook 'evil-insert-state-exit-hook 'disable-paredit-mode)
   (use-package hydra-paredit))
