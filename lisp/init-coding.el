@@ -57,9 +57,14 @@
 
   (defhydra hydra:python (:color teal :hint nil)
     "python"
-    ("z" pyvenv-workon "workon")
+    ("w" pyvenv-workon "workon")
+    ("z" poetry "poetry")
     ("r" run-python "IPython")
     ("q" nil :color blue)))
+
+(use-package poetry
+  :ensure t
+  :defer t)
 
 (use-package pyvenv
   :ensure t
@@ -127,6 +132,7 @@
 ;; typescript
 (use-package typescript-mode
   :ensure t
+  :mode "\\.tsx$"
   :defer t
   :config
   (setq typescript-indent-level 2))

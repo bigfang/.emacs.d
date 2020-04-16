@@ -72,7 +72,7 @@
          :show-meta t
          :show-comment t
          :uri-generator op/generate-uri
-         :uri-template "/blog/%y-%m-%d/%t"
+         :uri-template "/blog/%y-%m-%d/%f"
          :sort-by :date
          :category-index t)
         ("wiki"

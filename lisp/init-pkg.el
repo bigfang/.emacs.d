@@ -11,7 +11,7 @@
 (setq package-archives '(("gnu" . "https://elpa.emacs-china.org/gnu/")
                          ("melpa-stable" . "https://elpa.emacs-china.org/melpa-stable/")
                          ("melpa" . "https://elpa.emacs-china.org/melpa/")
-                         ("org" . "http://elpa.emacs-china.org/org/")))
+                         ("org" . "https://elpa.emacs-china.org/org/")))
 
 (package-initialize)
 
