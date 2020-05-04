@@ -151,6 +151,12 @@
   :bind ("M-o P" . prettier-js))
 
 
+;; racket
+(use-package racket-mode
+  :ensure t
+  :defer t)
+
+
 ;; rust
 (use-package rust-mode
   :ensure t
