@@ -113,6 +113,9 @@
 ;; javascript
 (use-package js
   :config
+  (setq js--prettify-symbols-alist
+        '((">=" . ?≥)
+          ("<=" . ?≤)))
   (setq js-indent-level 2))
 
 (use-package add-node-modules-path

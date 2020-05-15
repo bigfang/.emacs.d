@@ -6,7 +6,7 @@
      ^Buffer^    ^|      ^Server^      |         ^^Symbol^^           |      ^Doc^
 --^^-------------^+-------^^-----------+--^^^^------------------------+---^^-------------
   [_\\_] format   |  [_R_]   restart   |  [_d_] decl  [_t_] type def  |  [_o_] doc
-  [_m_] imenu    ^|  [_S_]   shutdown  |  [_._] def   [_s_] symbol    |  [_l_] sideline
+  [_l_] imenu    ^|  [_S_]   shutdown  |  [_._] def   [_s_] symbol    |  [_u_] sideline
   [_x_] execute  ^|  [_M-s_] session   |  [_'_] refs                ^^|  [_c_] flycheck
   [_r_] rename   ^|                  ^^|  [_i_] impl                ^^|
 "
@@ -17,12 +17,12 @@
   ("'" lsp-find-references)
   ("i" lsp-find-implementation)
   ("s" lsp-ui-peek-find-workspace-symbol)
-  ("l" lsp-ui-sideline-toggle-symbols-info)
+  ("u" lsp-ui-sideline-toggle-symbols-info)
   ("o" lsp-ui-doc-mode)
   ("c" lsp-ui-flycheck-list)
 
   ("\\" lsp-format-buffer)
-  ("m" lsp-ui-imenu)
+  ("l" lsp-ui-imenu)
   ("x" lsp-execute-code-action)
 
   ("M-s" lsp-describe-session)

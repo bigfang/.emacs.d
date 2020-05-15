@@ -78,9 +78,6 @@
      ;; for emacs-lisp-mode
      ((eq major-mode 'emacs-lisp-mode)
       (string-inflection-all-cycle))
-     ;; for python
-     ((eq major-mode 'python-mode)
-      (string-inflection-cycle))
      (t
       ;; default
       (string-inflection-all-cycle)))))

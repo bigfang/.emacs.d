@@ -72,6 +72,7 @@
         ivy-count-format "(%d/%d) "
         ivy-virtual-abbreviate 'abbreviate
         ivy-height 15)
+  (add-to-list 'ivy-more-chars-alist '(counsel-rg . 2))
   (setcdr (assq t ivy-format-functions-alist) #'ivy-format-function-arrow)
   (ivy-mode 1))
 
@@ -142,11 +143,6 @@
 
 
 ;; ===
-(use-package all-the-icons-ivy
-  :ensure t
-  :requires all-the-icons
-  :config (all-the-icons-ivy-setup))
-
 (use-package ivy-posframe
   :ensure t
   :requires posframe

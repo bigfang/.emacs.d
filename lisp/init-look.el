@@ -89,13 +89,29 @@
 
 ;; === packages ===
 (use-package all-the-icons
-  :if (display-graphic-p)
   :ensure t)
 
 (use-package all-the-icons-dired
   :ensure t
   :requires all-the-icons
   :hook (dired-mode . all-the-icons-dired-mode))
+
+(use-package all-the-icons-ibuffer
+  :ensure t
+  :requires all-the-icons
+  :init (all-the-icons-ibuffer-mode 1))
+
+(use-package all-the-icons-ivy
+  :ensure t
+  :requires all-the-icons
+  :after (ivy all-the-icons)
+  :config (all-the-icons-ivy-setup))
+
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :requires all-the-icons
+  :after (ivy-rich all-the-icons)
+  :init (all-the-icons-ivy-rich-mode 1))
 
 
 (use-package beacon

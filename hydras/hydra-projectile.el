@@ -16,7 +16,7 @@
     ^Navigation^          ^Search/Replace^          ^Buffers^                 ^Cache^
 --^^^^^^^^-----------------------------------------------------------------------------------------
   _d_: dired            _s_: ripgrep           _i_: Ibuffer             _c_: cache clear
-  _f_: file             _a_: ag                _b_: switch to buffer    _x_: remove known project
+  _f_: file             _g_: git-grep          _b_: switch to buffer    _x_: remove known project
   _F_: file dwim        _O_: multi-occur       _K_: Kill buffers        _X_: cleanup non-existing
   _e_: recent file      _r_: replace           ^^                       _z_: cache current
 
@@ -29,8 +29,8 @@
   ("e"   projectile-recentf)
   ("SPC" projectile-run-eshell)
 
-  ("a"   counsel-projectile-ag)
   ("s"   counsel-projectile-rg)
+  ("g"   counsel-projectile-git-grep)
   ("r"   projectile-replace)
   ("O"   projectile-multi-occur)
 

@@ -11,6 +11,7 @@ _a_ abbrev-mode:         %`abbrev-mode
 _c_ cua-mode:            %`cua-mode
 _d_ debug-on-error:      %`debug-on-error
 _f_ auto-fill-mode:      %`auto-fill-function
+_h_ highlight-indent     %`highlight-indent-guides-mode
 _t_ truncate-lines:      %`truncate-lines
 _w_ whitespace-mode:     %`whitespace-mode
 _o_ outline-mode:        %`outline-minor-mode
@@ -23,6 +24,7 @@ _F_ which-function-mode  %`which-function-mode
   ("c" cua-mode)
   ("d" toggle-debug-on-error)
   ("f" auto-fill-mode)
+  ("h" highlight-indent-guides-mode)
   ("t" toggle-truncate-lines)
   ("w" whitespace-mode)
   ("o" outline-minor-mode)

@@ -111,6 +111,7 @@
 
 (use-package evil-magit
   :ensure t
+  :after (evil magit)
   :config
   (evil-define-key 'normal magit-mode-map (kbd "SPC") 'hydra:leader/body))
 

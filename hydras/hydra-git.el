@@ -83,7 +83,8 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("d" smerge-kill-current)
 
   ("q" nil :color blue))
-(define-key smerge-mode-map (kbd "M-m") 'hydra:smerge/body)
+(with-eval-after-load 'smerge-mode
+  (define-key smerge-mode-map (kbd "M-m") 'hydra:smerge/body))
 
 
 (defhydra hydra:git (:color teal :hint nil :columns 4)

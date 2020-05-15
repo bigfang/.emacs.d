@@ -11,7 +11,7 @@
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-auto-guess-root t
-        lsp-prefer-flymake nil
+        lsp-diagnostic-package :auto
         lsp-enable-symbol-highlighting nil
         lsp-imenu-sort-methods '(position kind))
 
@@ -49,8 +49,6 @@
         lsp-ui-doc-include-signature t
         lsp-ui-doc-position 'at-point
         lsp-ui-doc-header nil
-
-        lsp-ui-flycheck-enable t
 
         lsp-ui-sideline-enable t
         lsp-ui-sideline-ignore-duplicate t))
