@@ -70,16 +70,19 @@
   :ensure t
   :defer t)
 
-(use-package lsp-python-ms
+(use-package lsp-pyls
   :disabled
+  :config
+  (setq lsp-pyls-plugins-pylint-enabled nil
+        lsp-pyls-configuration-sources ["flake8"]))
+
+(use-package lsp-pyright
   :ensure t
-  :hook
-  (python-mode . (lambda ()
-                   (require 'lsp-python-ms)
-                   (lsp-deferred)))
-  :init
-  (setq lsp-python-ms-dir
-        (expand-file-name "var/mspyls/" user-emacs-directory)))
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-pyright)
+                          (lsp-deferred)))
+  :config
+  (setq lsp-pyright-venv-path "~/.cache/virtualenvs"))
 
 
 ;; erlang

@@ -11,15 +11,10 @@
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-auto-guess-root t
-        lsp-diagnostic-package :auto
-        lsp-enable-symbol-highlighting nil
-        lsp-imenu-sort-methods '(position kind))
-
-  (use-package lsp-pyls
-    :config
-    (setq lsp-pyls-plugins-pylint-enabled nil
-          lsp-pyls-configuration-sources ["flake8"]))
-  )
+        lsp-eldoc-enable-hover nil
+        lsp-file-watch-threshold 2048
+        lsp-enable-symbol-highlighting t
+        lsp-imenu-sort-methods '(position kind)))
 
 
 (use-package lsp-ui
@@ -69,10 +64,10 @@
 ;; |------------+-----------------------------------------|
 
 
-(use-package company-lsp
-  :ensure t
-  :config
-  (add-to-list 'company-backends 'company-lsp))
+;; (use-package company-lsp
+;;   :ensure t
+;;   :config
+;;   (add-to-list 'company-backends 'company-lsp))
 
 
 (provide 'init-lsp)
