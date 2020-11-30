@@ -11,7 +11,9 @@
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-auto-guess-root t
+        lsp-keep-workspace-alive nil
         lsp-eldoc-enable-hover nil
+        lsp-signature-doc-lines 3
         lsp-file-watch-threshold 2048
         lsp-enable-symbol-highlighting t
         lsp-imenu-sort-methods '(position kind)))

@@ -70,6 +70,13 @@
     (diff-hl-margin-mode)))
 
 
+(use-package git-messenger
+  :ensure t
+  :custom
+  (git-messenger:show-detail t)
+  (git-messenger:use-magit-popup t))
+
+
 (use-package git-timemachine
   :ensure t
   :config

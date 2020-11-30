@@ -45,6 +45,7 @@
    "end of defun")
   ("\\" re-builder "re-builder")
 
+  ("a" hydra:adapter "adapter...")
   ("f" hydra:adjust/body "adjust...")
 
   ("c" calendar "calendar")
@@ -52,6 +53,7 @@
   ("s" eshell "eshell")
   ("e" eval-last-sexp "eval sexp")
   ("E" eval-buffer "eval buffer")
+  ("p" proced "proced")
   ("R" revert-buffer "revert buffer")
   ("v" ido-find-alternate-file "reload")
   ("x" smex "smex")

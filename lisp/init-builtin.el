@@ -49,6 +49,14 @@
   :config (savehist-mode t))
 
 
+(use-package saveplace
+  :config (save-place-mode))
+
+
+(use-package so-long
+  :config (global-so-long-mode))
+
+
 (use-package time-stamp
   :config
   (setq time-stamp-format "%04y-%02m-%02d %02H:%02M:%02S"))

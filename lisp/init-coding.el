@@ -57,8 +57,8 @@
 
   (defhydra hydra:python (:color teal :hint nil)
     "python"
+    ("a" poetry "poetry")
     ("w" pyvenv-workon "workon")
-    ("z" poetry "poetry")
     ("r" run-python "IPython")
     ("q" nil :color blue)))
 

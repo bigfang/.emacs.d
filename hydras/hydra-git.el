@@ -94,11 +94,15 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("r" magit-refresh-all "refresh all")
   ("f" magit-diff-buffer-file "file diff")
   ("v" magit-file-dispatch "magit file...")
+
   ("d" hydra:diff-hl/body "diff-hl...")
   ("g" hydra:git-gutter/body "git-gutter...")
-  ("m" hydra:smerge/body "smerge...")
+  ("M" hydra:smerge/body "smerge...")
+
   ("h" git-timemachine "timemachine")
+  ("m" git-messenger:popup-message "message")
   ("l" magit-todos-list "list todos")
+
   ("q" nil :color blue))
 
 

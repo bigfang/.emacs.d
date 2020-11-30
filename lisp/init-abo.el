@@ -109,6 +109,8 @@
   :bind (("M-g g" . avy-goto-char-2)
          ("M-g w" . avy-goto-word-or-subword-1)
          ("M-g l" . avy-goto-line))
+  :config
+  (setq avy-timeout-seconds 0.5)
   :init
   (defhydra hydra:avy (:color teal :hint nil)
     "
@@ -120,7 +122,7 @@
 "
     ("c" avy-goto-char)
     ("a" avy-goto-char-2)
-    ("o" avy-goto-char-2)
+    ("o" avy-goto-char-timer)
     ("t" avy-goto-char-timer)
     ("v" avy-goto-word-1)
     ("w" avy-goto-word-or-subword-1)
