@@ -92,7 +92,8 @@
   (evil-collection-init
    '(bookmark calendar ediff
      image image-dired image+
-     magit)))
+     magit magit-todos))
+  (evil-define-key 'normal magit-mode-map (kbd "SPC") 'hydra:leader/body))
 
 
 (use-package evil-goggles
@@ -107,13 +108,6 @@
   :ensure t
   :config
   (evil-lion-mode))
-
-
-(use-package evil-magit
-  :ensure t
-  :after (evil magit)
-  :config
-  (evil-define-key 'normal magit-mode-map (kbd "SPC") 'hydra:leader/body))
 
 
 (use-package evil-numbers
