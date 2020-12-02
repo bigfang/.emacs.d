@@ -16,12 +16,6 @@
   (setq-default deadgrep--search-type 'regexp))
 
 
-(use-package fzf
-  :ensure t
-  :defer t
-  :ensure-system-package fzf)
-
-
 (use-package google-this
   :ensure t
   :config

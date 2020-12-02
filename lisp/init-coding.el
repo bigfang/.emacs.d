@@ -71,12 +71,13 @@
   :defer t)
 
 (use-package lsp-pyls
-  :disabled
+  ;; :disabled
   :config
   (setq lsp-pyls-plugins-pylint-enabled nil
         lsp-pyls-configuration-sources ["flake8"]))
 
 (use-package lsp-pyright
+  :disabled
   :ensure t
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
