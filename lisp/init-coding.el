@@ -72,6 +72,7 @@
 
 (use-package lsp-pyls
   ;; :disabled
+  :defer t
   :config
   (setq lsp-pyls-plugins-pylint-enabled nil
         lsp-pyls-configuration-sources ["flake8"]))
@@ -79,6 +80,7 @@
 (use-package lsp-pyright
   :disabled
   :ensure t
+  :defer t
   :hook (python-mode . (lambda ()
                           (require 'lsp-pyright)
                           (lsp-deferred)))
@@ -94,6 +96,7 @@
 ;; elixir
 (use-package elixir-mode
   :ensure t
+  :defer t
   :interpreter "elixir"
   :config
   (add-hook 'elixir-format-hook
@@ -106,6 +109,8 @@
 
 (use-package alchemist
   :ensure t
+  :defer t
+  :hook (elixir-mode)
   :init
   (setq alchemist-key-command-prefix (kbd "M-g M-a"))
   :config
@@ -124,12 +129,14 @@
 
 (use-package add-node-modules-path
   :ensure t
+  :defer t
   :commands add-node-modules-path
   :hook
   (js-mode js2-mode vue-mode typescript-mode))
 
 (use-package js2-mode
   :ensure t
+  :defer t
   :mode "\\.js\\'"
   :interpreter "node"
   :config
@@ -139,6 +146,7 @@
 ;; typescript
 (use-package typescript-mode
   :ensure t
+  :defer t
   :mode "\\.tsx$"
   :defer t
   :config
@@ -147,6 +155,7 @@
 ;; prettier
 (use-package prettier-js
   :ensure t
+  :defer t
   ;; :config
   ;; (setq prettier-js-args
   ;;       '("--trailing-comma" "all"
@@ -173,6 +182,7 @@
 ;; haskell
 (use-package haskell-mode
   :ensure t
+  :defer t
   :hook ((haskell-mode . turn-on-haskell-doc-mode)
          (haskell-mode . turn-on-haskell-indent)
          (haskell-mode . interactive-haskell-mode)))
@@ -181,12 +191,14 @@
 
 ;; === web develop ===
 (use-package css-mode
+  :defer t
   :config
   (setq css-indent-offset 2))
 
 
 (use-package emmet-mode
   :ensure t
+  :defer t
   :hook (sgml-mode css-mode web-mode)
   :bind (:map emmet-mode-keymap
          ("C-j" . nil)
@@ -200,15 +212,11 @@
 
 (use-package web-mode
   :ensure t
+  :defer t
   :config
   (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2))
-
-
-(use-package vue-mode
-  :ensure t
-  :defer t)
 
 
 

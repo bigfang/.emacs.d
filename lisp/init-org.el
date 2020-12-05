@@ -57,6 +57,7 @@
 (use-package org-page
   :after simple-httpd
   :ensure t
+  :defer t
   :config
   (setq op/repository-directory "~/repo/op-blog"
         op/site-domain "http://bigfang.net"

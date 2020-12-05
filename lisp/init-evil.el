@@ -98,6 +98,7 @@
 
 (use-package evil-goggles
   :ensure t
+  :defer t
   :config
   (setq evil-goggles-duration 0.100)
   (evil-goggles-mode)
@@ -112,6 +113,7 @@
 
 (use-package evil-numbers
   :ensure t
+  :requires evil
   :config
   (define-key evil-normal-state-map (kbd "M-<down>") 'evil-numbers/dec-at-pt)
   (define-key evil-normal-state-map (kbd "M-<up>") 'evil-numbers/inc-at-pt))

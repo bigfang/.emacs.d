@@ -109,6 +109,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 (use-package paradox
   :ensure t
+  :defer t
   :after evil
   :config
   (paradox-enable)
@@ -191,6 +192,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 (use-package simple-httpd
   :load-path "site-lisp/simple-httpd"
   ;; :ensure t
+  :defer t
   :config
   (setq httpd-port 7777))
 
@@ -265,6 +267,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 (use-package rg
   :ensure t
+  :defer t
   :ensure-system-package (rg . ripgrep))
 
 

@@ -165,7 +165,8 @@
 
 
 (use-package counsel-tramp
-  :ensure t)
+  :ensure t
+  :defer t)
 
 
 (use-package counsel-projectile
@@ -175,6 +176,7 @@
 
 (use-package smex
   :ensure t
+  :defer t
   :bind ("M-X" . smex-major-mode-commands))
 
 
