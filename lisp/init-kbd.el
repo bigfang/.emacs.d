@@ -28,6 +28,9 @@
 
 
 ;; Terminal mouse scroll
+(global-set-key (kbd "<mouse-3>") '(lambda ()
+                                     (interactive)
+                                     (yank)))
 (unless (display-graphic-p)
   (define-key alt-o-map (kbd "x") 'xterm-mouse-mode)
   (global-set-key (kbd "<mouse-4>") '(lambda ()

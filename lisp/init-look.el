@@ -26,19 +26,19 @@
 
 
 ;; === theme ===
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-(add-to-list 'default-frame-alist '(ns-appearance . dark))
 (set-frame-parameter nil 'alpha 95)
+(set-face-attribute 'default nil :font "Monaco 14")
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
 ;; (set-cursor-color "#cd5c5c")
 ;; (set-face-attribute 'region nil :background "#4682b4" :foreground "black")
-(set-face-attribute 'default nil :font "Monaco 13")
 
 (setq custom-theme-directory "~/.emacs.d/themes")
-(use-package solarized-theme
-  :disabled
+(use-package leuven-theme
+  :if (display-graphic-p)
   :ensure t
   :config
-  (load-theme 'solarized-dark t))
+  (load-theme 'leuven t))
 
 (use-package doom-themes
   :if (display-graphic-p)
@@ -47,7 +47,7 @@
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
   :config
-  (load-theme 'doom-spacegrey t)
+  ;; (load-theme 'doom-spacegrey t)
   (doom-themes-visual-bell-config))
 
 

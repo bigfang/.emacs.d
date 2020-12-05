@@ -52,7 +52,9 @@
   :ensure t
   :hook (prog-mode . highlight-indent-guides-mode)
   :config
-  (setq highlight-indent-guides-method 'character)
+  (if (display-graphic-p)
+      (setq highlight-indent-guides-method 'bitmap)
+    (setq highlight-indent-guides-method 'character))
   (setq highlight-indent-guides-responsive 'top
         highlight-indent-guides-delay 0.2)
   (setq highlight-indent-guides-auto-enabled nil)
