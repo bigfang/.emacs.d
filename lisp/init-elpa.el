@@ -236,8 +236,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
       ("M-q" symbol-overlay-query-replace :color blue)
       ("r" symbol-overlay-rename  :color blue)
 
-      ("q" nil))
-  )
+      ("q" nil)))
 
 
 (use-package visual-regexp
