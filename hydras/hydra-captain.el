@@ -57,7 +57,7 @@
   ("R" revert-buffer "revert buffer")
   ("v" ido-find-alternate-file "reload")
   ("x" smex "smex")
-  ("z" fzf-directory "fzf-directory")
+  ("z" deadgrep "deadgrep")
 
   ("d" deft "deft")
   ("g" deadgrep "deadgrep")

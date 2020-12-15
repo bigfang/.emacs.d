@@ -7,16 +7,20 @@
          (js-mode . lsp-deferred)
          (js2-mode . lsp-deferred)
          (vue-mode . lsp-deferred)
-         (python-mode . lsp-deferred))
+         (python-mode . lsp-deferred)
+         (elixir-mode . lsp-deferred))
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-auto-guess-root t
         lsp-keep-workspace-alive nil
         lsp-eldoc-enable-hover nil
+        lsp-headerline-breadcrumb-enable nil
         lsp-signature-doc-lines 3
         lsp-file-watch-threshold 2048
         lsp-enable-symbol-highlighting t
-        lsp-imenu-sort-methods '(position kind)))
+        lsp-imenu-sort-methods '(position kind))
+  :init
+  (add-to-list 'exec-path "~/.elixir-ls"))
 
 
 (use-package lsp-ui
@@ -64,12 +68,6 @@
 ;; |------------+-----------------------------------------|
 ;; | python     | pip install python-language-server[all] |
 ;; |------------+-----------------------------------------|
-
-
-;; (use-package company-lsp
-;;   :ensure t
-;;   :config
-;;   (add-to-list 'company-backends 'company-lsp))
 
 
 (provide 'init-lsp)

@@ -34,6 +34,12 @@
   :config
   (exec-path-from-shell-initialize))
 
+;; disable signature check
+(use-package gnu-elpa-keyring-update
+  :disabled
+  :ensure t
+  :init
+  (setq package-check-signature nil))
 
 ;; ensure system package
 (use-package use-package-ensure-system-package
