@@ -96,6 +96,13 @@
   (evil-define-key 'normal magit-mode-map (kbd "SPC") 'hydra:leader/body))
 
 
+(use-package evil-exchange
+  :ensure t
+  :after evil
+  :config
+  (evil-exchange-install))
+
+
 (use-package evil-goggles
   :ensure t
   :defer t
