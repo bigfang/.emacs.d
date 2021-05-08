@@ -73,9 +73,18 @@
 (use-package lsp-pyls
   ;; :disabled
   :defer t
+  :hook (python-mode . lsp-deferred)
   :config
   (setq lsp-pyls-plugins-pylint-enabled nil
         lsp-pyls-configuration-sources ["flake8"]))
+
+(use-package lsp-python-ms
+  :disabled
+  :ensure t
+  :init (setq lsp-python-ms-auto-install-server t)
+  :hook (python-mode . (lambda ()
+                          (require 'lsp-python-ms)
+                          (lsp-deferred))))
 
 (use-package lsp-pyright
   :disabled
@@ -85,7 +94,7 @@
                           (require 'lsp-pyright)
                           (lsp-deferred)))
   :config
-  (setq lsp-pyright-venv-path "~/.cache/virtualenvs"))
+  (setq lsp-pyright-venv-path "~/.cache/pypoetry/virtualenvs"))
 
 
 ;; erlang

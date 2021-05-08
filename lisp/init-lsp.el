@@ -7,7 +7,7 @@
          (js-mode . lsp-deferred)
          (js2-mode . lsp-deferred)
          (vue-mode . lsp-deferred)
-         (python-mode . lsp-deferred)
+         ;; (python-mode . lsp-deferred)
          (elixir-mode . lsp-deferred))
   :commands (lsp lsp-deferred)
   :config
@@ -66,7 +66,7 @@
 ;; | ts/js      | npm i -D typescript-language-server     |
 ;; | vue        | npm i -D vue-language-server            |
 ;; |------------+-----------------------------------------|
-;; | python     | pip install python-language-server[all] |
+;; | python?    | pip install python-lsp-server           |
 ;; |------------+-----------------------------------------|
 
 
