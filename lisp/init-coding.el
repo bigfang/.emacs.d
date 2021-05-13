@@ -196,6 +196,13 @@
          (haskell-mode . turn-on-haskell-indent)
          (haskell-mode . interactive-haskell-mode)))
 
+;; go
+(use-package go-mode
+  :ensure t
+  :hook ((go-mode . lsp-deferred)
+         (go-mode . (lambda () (setq tab-width 4)))
+         (before-save . lsp-format-buffer)
+         (before-save . lsp-organize-imports)))
 
 
 ;; === web develop ===
