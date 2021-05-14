@@ -34,8 +34,8 @@
 
 (defhydra hydra:captain (:color teal :exit t :hint nil :idle .2 :columns 5)
   "⊞      --- Hydra Captain ---    "
-  ("RET" hydra:toggle/body "toggle modes...")
-  ("SPC" lsp-ui-imenu "lsp imenu")
+  ("RET" beacon-blink)
+  ("SPC" hydra:toggle/body "toggle modes...")
   ("TAB" beginning-of-defun "beginning of defun")
   ("DEL" (lambda (arg)
            (interactive "p")

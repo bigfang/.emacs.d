@@ -165,7 +165,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
   (setq pyim-page-tooltip 'popup))
 
 (use-package pyim-basedict
-  :ensure nil
+  :ensure t
   :after pyim
   :config (pyim-basedict-enable))
 

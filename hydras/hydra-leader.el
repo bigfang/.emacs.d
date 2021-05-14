@@ -52,7 +52,7 @@
   ("J" windmove-down :color red)
   ("K" windmove-up :color red)
   ("L" windmove-right :color red)
-  ("RET" other-frame)
+  ("RET" lsp-ui-imenu "lsp imenu")
 
   ;; window
   ("SPC" switch-window)
