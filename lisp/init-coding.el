@@ -128,6 +128,11 @@
   (evil-define-key 'normal alchemist-mode-map (kbd "gb") 'alchemist-goto-jump-back))
 
 
+;; prisma
+;; (use-package prisma-mode
+;;   :ensure t
+;;   :requires lsp-mode)
+
 ;; javascript
 (use-package js
   :config
@@ -157,7 +162,7 @@
   :ensure t
   :defer t
   :mode "\\.tsx$"
-  :defer t
+  :hook (typescript-mode . (lambda () (add-hook 'before-save-hook #'lsp-organize-imports t t)))
   :config
   (setq typescript-indent-level 2))
 
@@ -165,14 +170,14 @@
 (use-package prettier-js
   :ensure t
   :defer t
-  ;; :config
-  ;; (setq prettier-js-args
-  ;;       '("--trailing-comma" "all"
-  ;;         "--single-quote" "true"
-  ;;         "--no-semi"))
-  ;; :hook ((js2-mode . prettier-js-mode)
-  ;;        (typescript-mode . prettier-js-mode)
-  ;;        (web-mode . prettier-js-mode))
+  :config
+  (setq prettier-js-args
+        '("--trailing-comma" "es5"
+          ;; "--no-semi"
+          "--single-quote" "true"))
+  :hook ((js2-mode . prettier-js-mode)
+         (typescript-mode . prettier-js-mode)
+         (web-mode . prettier-js-mode))
   :bind ("M-o P" . prettier-js))
 
 
@@ -200,9 +205,9 @@
 (use-package go-mode
   :ensure t
   :hook ((go-mode . lsp-deferred)
-         (go-mode . (lambda () (setq tab-width 4)))
-         (before-save . lsp-format-buffer)
-         (before-save . lsp-organize-imports)))
+         (go-mode . (lambda () (add-hook 'before-save-hook #'lsp-format-buffer t t)))
+         (go-mode . (lambda () (add-hook 'before-save-hook #'lsp-organize-imports t t)))
+         (go-mode . (lambda () (setq tab-width 4)))))
 
 
 ;; === web develop ===
