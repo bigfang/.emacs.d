@@ -25,3 +25,5 @@ var/
 # flymake Flycheck
 *_flymake.*
 flycheck_*.el
+
+quelpa/

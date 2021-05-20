@@ -166,20 +166,6 @@
   :config
   (setq typescript-indent-level 2))
 
-;; prettier
-(use-package prettier-js
-  :ensure t
-  :defer t
-  :config
-  (setq prettier-js-args
-        '("--trailing-comma" "es5"
-          ;; "--no-semi"
-          "--single-quote" "true"))
-  :hook ((js2-mode . prettier-js-mode)
-         (typescript-mode . prettier-js-mode)
-         (web-mode . prettier-js-mode))
-  :bind ("M-o P" . prettier-js))
-
 
 ;; racket
 (use-package racket-mode

@@ -15,6 +15,7 @@
 
 (package-initialize)
 
+
 ;; Install use-package from melpa-stable
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
@@ -25,6 +26,17 @@
         use-package-enable-imenu-support t)
   (require 'use-package))
 (require 'bind-key)
+
+;; Install quelpa
+(setq quelpa-update-melpa-p nil)
+(unless (package-installed-p 'quelpa)
+  (with-temp-buffer
+    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+    (eval-buffer)
+    (quelpa-self-upgrade)))
+
+(use-package quelpa-use-package
+  :ensure t)
 
 
 ;; Mac OS exec-path
