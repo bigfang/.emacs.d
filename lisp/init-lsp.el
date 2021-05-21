@@ -3,12 +3,6 @@
 
 (use-package lsp-mode
   :ensure t
-  :hook ((typescript-mode . lsp-deferred)
-         (js-mode . lsp-deferred)
-         (js2-mode . lsp-deferred)
-         (vue-mode . lsp-deferred)
-         ;; (python-mode . lsp-deferred)
-         (elixir-mode . lsp-deferred))
   :commands (lsp lsp-deferred)
   :config
   (setq lsp-auto-guess-root t
@@ -66,7 +60,7 @@
 ;; | ts/js      | npm i -D typescript-language-server     |
 ;; | vue        | npm i -D vue-language-server            |
 ;; |------------+-----------------------------------------|
-;; | python?    | pip install python-lsp-server           |
+;; | python     | pip install 'python-lsp-server[all]'    |
 ;; |------------+-----------------------------------------|
 
 

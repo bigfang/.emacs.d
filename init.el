@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
-;; Time-stamp: <2019-09-09 12:01:31>
+;; Time-stamp: <2021-05-21 16:46:24>
 
 
 
@@ -44,6 +44,10 @@
 (use-package init-git)
 (use-package init-company)
 (use-package init-lsp)
+(use-package init-lang-javascript)
+(use-package init-lang-erlang)
+(use-package init-lang-python)
+(use-package init-lang)
 (use-package init-shackle)
 (use-package init-docker)
 (use-package init-elpa)
