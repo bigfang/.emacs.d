@@ -21,14 +21,6 @@
   (prisma-mode :fetcher github :repo "pimeys/emacs-prisma-mode"))
 
 
-(use-package simple-httpd
-  :load-path "site-lisp/simple-httpd"
-  ;; :ensure t
-  :defer t
-  :config
-  (setq httpd-port 7777))
-
-
 ;; === packages ===
 (use-package deadgrep
   :ensure t
@@ -211,6 +203,13 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 (use-package rainbow-mode
   :ensure t
   :hook (prog-mode))
+
+
+(use-package simple-httpd
+  :ensure t
+  :defer t
+  :config
+  (setq httpd-port 7777))
 
 
 (use-package symbol-overlay
