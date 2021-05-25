@@ -11,9 +11,7 @@
 (use-package apheleia
   :quelpa
   (apheleia :fetcher github :repo "raxod502/apheleia")
-  :bind ("M-o M-o" . apheleia-format-buffer)
-  :config
-  (apheleia-global-mode +1))
+  :bind ("M-o M-o" . apheleia-format-buffer))
 
 
 (use-package prisma-mode

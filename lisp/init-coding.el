@@ -26,7 +26,7 @@
   :ensure t
   :pin melpa
   :bind-keymap
-  ("M-o p" . projectile-command-map)
+  ("M-o P" . projectile-command-map)
   :config
   (setq projectile-completion-system 'ivy)
   (setq projectile-mode-line-function
@@ -51,6 +51,11 @@
   :defer t
   :config
   (setq css-indent-offset 2))
+
+
+(use-package graphql-mode
+  :ensure t
+  :defer t)
 
 
 (use-package emmet-mode

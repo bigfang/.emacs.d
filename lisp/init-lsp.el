@@ -58,7 +58,6 @@
 ;; | heml       | npm i -D vscode-html-languageserver-bin |
 ;; | css        | npm i -D vscode-css-languageserver-bin  |
 ;; | ts/js      | npm i -D typescript-language-server     |
-;; | vue        | npm i -D vue-language-server            |
 ;; |------------+-----------------------------------------|
 ;; | python     | pip install 'python-lsp-server[all]'    |
 ;; |------------+-----------------------------------------|

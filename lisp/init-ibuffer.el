@@ -34,7 +34,6 @@
                              (mode . js2-mode)))
            ("Web" (or (mode . html-mode)
                       (mode . web-mode)
-                      (mode . vue-mode)
                       (mode . scss-mode)
                       (mode . css-mode)))
            ("Org" (or (mode . json-mode)
