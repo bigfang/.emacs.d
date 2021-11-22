@@ -1,5 +1,7 @@
 # -*- mode: gitignore; -*-
 
+*
+nano-theme.el
 Amelie-theme.el
 afternoon-theme.el
 badger-theme.el

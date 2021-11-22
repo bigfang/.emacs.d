@@ -45,7 +45,7 @@
           "--single-quote" "true"
           "--bracket-spacing" "true"
           ;; "--no-semi"
-          "--arrowParens" "avoid"
+          "--arrow-parens" "avoid"
           "--trailing-comma" "es5"))
   :hook ((js-mode . prettier-js-mode)
          (js2-mode . prettier-js-mode)

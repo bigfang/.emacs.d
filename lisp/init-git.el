@@ -1,15 +1,12 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
-(use-package gitattributes-mode
-  :ensure t
-  :defer t)
+;; (use-package gitattributes-mode
+;;   :defer t)
 
-(use-package gitconfig-mode
-  :ensure t
-  :defer t)
+;; (use-package gitconfig-mode
+;;   :defer t)
 
 (use-package gitignore-mode
-  :ensure t
   :mode "/.dockerignore\\'")
 
 (use-package magit
@@ -86,10 +83,12 @@
 
 
 (use-package magit-todos
+  :disabled
   :ensure t
   :hook (magit-mode . magit-todos-mode)
   :config
   (setq magit-todos-ignored-keywords nil)
+  (setq magit-todos-exclude-globs '(".git/" "*.css.map"))
   (setq magit-todos-keywords-list
         '("TODO" "DOING" "DONE" "FIXME"
           "DONT" "FAIL" "MAYBE" "NOTE" "HACK"
