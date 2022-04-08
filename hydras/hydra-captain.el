@@ -32,7 +32,7 @@
   ("q" nil :color blue))
 
 
-(defhydra hydra:captain (:color teal :exit t :hint nil :idle .2 :columns 5)
+(defhydra hydra:captain (:color teal :exit t :hint nil :columns 5)
   "⊞      --- Hydra Captain ---    "
   ("RET" beacon-blink)
   ("SPC" hydra:toggle/body "toggle modes...")

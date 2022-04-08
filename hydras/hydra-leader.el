@@ -1,7 +1,7 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
 
-(defhydra hydra:leader (:color teal :exit t :hint nil :idle .2 :columns 5)
+(defhydra hydra:leader (:color teal :exit t :hint nil :columns 5)
   "      --- Hydra Leader ---    "
   ("<up>" previous-line :color red)
   ("<down>" next-line :color red)
