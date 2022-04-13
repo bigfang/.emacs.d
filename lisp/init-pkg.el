@@ -8,10 +8,10 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
-;; (setq package-archives '(("gnu" . "https://elpa.emacs-china.org/gnu/")
-;;                          ("melpa-stable" . "https://elpa.emacs-china.org/melpa-stable/")
-;;                          ("melpa" . "https://elpa.emacs-china.org/melpa/")
-;;                          ("org" . "https://elpa.emacs-china.org/org/")))
+(setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
+                         ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")
+                         ("melpa" . "http://elpa.emacs-china.org/melpa/")
+                         ("org" . "http://elpa.emacs-china.org/org/")))
 
 (package-initialize)
 
@@ -48,7 +48,7 @@
 
 ;; disable signature check
 (use-package gnu-elpa-keyring-update
-  :disabled
+  ;; :disabled
   :ensure t
   :init
   (setq package-check-signature nil))

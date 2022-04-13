@@ -47,17 +47,6 @@
 
 
 ;; === web develop ===
-(use-package css-mode
-  :defer t
-  :config
-  (setq css-indent-offset 2))
-
-
-(use-package graphql-mode
-  :ensure t
-  :defer t)
-
-
 (use-package emmet-mode
   :ensure t
   :defer t
@@ -79,52 +68,6 @@
   (setq web-mode-markup-indent-offset 2
         web-mode-css-indent-offset 2
         web-mode-code-indent-offset 2))
-
-
-
-;; === structured text ===
-(use-package csv-mode
-  :ensure t
-  :defer t
-  :config
-  (defhydra hydra:csv (:color teal :hint nil)
-    "csv"
-    ("o" csv-align-fields "align")
-    ("u" csv-unalign-fields "unalign")
-    ("q" nil :color blue)))
-
-(use-package json-mode
-  :ensure t
-  :defer t
-  :config
-  (setq json-reformat:indent-width 2)
-
-  (defhydra hydra:json (:color teal :hint nil :columns 2)
-    "json"
-    ("f" json-mode-beautify "reformat")
-    ("p" json-mode-show-path "show snatcher")
-    ("k" json-mode-kill-path "kill snatcher")
-    ("t" json-toggle-boolean "toggle boolean")
-    ("n" json-nullify-sexp "set null")
-    ("<up>" json-increment-number-at-point "increase number" :color pink)
-    ("<down>" json-decrement-number-at-point "decrease number" :color pink)
-    ("q" nil :color blue)))
-
-(use-package nginx-mode
-  :ensure t
-  :defer t)
-
-(use-package protobuf-mode
-  :ensure t
-  :defer t)
-
-(use-package toml-mode
-  :ensure t
-  :defer t)
-
-(use-package yaml-mode
-  :ensure t
-  :defer t)
 
 
 (provide 'init-coding)

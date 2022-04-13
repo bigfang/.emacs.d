@@ -54,4 +54,4 @@
   (setq lsp-pyright-venv-path "~/.cache/pypoetry/virtualenvs"))
 
 
-(provide 'init-lang-python)
+(provide 'init-python)

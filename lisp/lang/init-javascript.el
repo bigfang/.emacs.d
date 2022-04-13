@@ -11,6 +11,17 @@
   (setq js-indent-level 2))
 
 
+(use-package js2-mode
+  :ensure t
+  :defer t
+  :mode "\\.js\\'"
+  :interpreter "node"
+  :hook (lsp-deferred)
+  :config
+  (setq js2-basic-offset 2
+        js2-strict-missing-semi-warning nil))
+
+
 (use-package add-node-modules-path
   :ensure t
   :defer t
@@ -24,16 +35,6 @@
   :defer t
   :mode "\\.jsx\\'")
 
-
-(use-package js2-mode
-  :ensure t
-  :defer t
-  :mode "\\.js\\'"
-  :interpreter "node"
-  :hook (lsp-deferred)
-  :config
-  (setq js2-basic-offset 2
-        js2-strict-missing-semi-warning nil))
 
 ;; prettier
 (use-package prettier-js
@@ -54,6 +55,13 @@
   :bind ("M-o p" . prettier-js))
 
 
+;; apheleia
+(use-package apheleia
+  :quelpa
+  (apheleia :fetcher github :repo "raxod502/apheleia")
+  :bind ("M-o M-o" . apheleia-format-buffer))
+
+
 ;; typescript
 (use-package typescript-mode
   :ensure t
@@ -66,4 +74,4 @@
   (setq typescript-indent-level 2))
 
 
-(provide 'init-lang-javascript)
+(provide 'init-javascript)

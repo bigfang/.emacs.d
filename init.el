@@ -1,6 +1,5 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
-;; Time-stamp: <2021-05-21 16:46:24>
-
+;; Time-stamp: <2022-04-13 13:40:52>
 
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -22,35 +21,52 @@
 
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path (expand-file-name "lisp/lang" user-emacs-directory))
 (add-to-list 'load-path (expand-file-name "hydras" user-emacs-directory))
 
+(defvar deps-base '(init-look
+                    init-kbd
+                    init-builtin
+                    init-dired
+                    init-ibuffer
+                    init-org
+                    init-hooks))
+
+(defvar deps-main '(init-evil
+                    init-abo
+                    init-selected
+                    init-nav
+                    init-editing
+                    init-coding
+                    init-git
+                    init-company
+                    init-lsp
+                    init-docker
+                    init-shackle))
+
+(defvar deps-lang '(init-confs
+                    init-clojure
+                    init-css
+                    init-csv
+                    init-erlang
+                    init-go
+                    init-graphql
+                    init-haskell
+                    init-javascript
+                    init-json
+                    init-markdown
+                    init-prisma
+                    init-python
+                    init-racket
+                    init-rust))
+
+(defvar deps-elpa '(init-elpa))
 
 (require 'init-pkg)
-
-(use-package init-look)
-(use-package init-kbd)
-(use-package init-builtin)
-(use-package init-dired)
-(use-package init-ibuffer)
-(use-package init-org)
-(use-package init-hooks)
-
-(use-package init-evil)
-(use-package init-abo)
-(use-package init-selected)
-(use-package init-nav)
-(use-package init-editing)
-(use-package init-coding)
-(use-package init-git)
-(use-package init-company)
-(use-package init-lsp)
-(use-package init-lang-javascript)
-(use-package init-lang-erlang)
-(use-package init-lang-python)
-(use-package init-lang)
-(use-package init-shackle)
-(use-package init-docker)
-(use-package init-elpa)
+(mapc #'require deps-base)
+(mapc #'require deps-main)
+(mapc #'require deps-lang)
+(mapc #'require deps-elpa)
 
 
 ;; automatically garbage collect when switch away from emacs

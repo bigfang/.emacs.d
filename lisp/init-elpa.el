@@ -7,19 +7,6 @@
   :ensure t)
 
 
-;; === quelpa packages ===
-(use-package apheleia
-  :quelpa
-  (apheleia :fetcher github :repo "raxod502/apheleia")
-  :bind ("M-o M-o" . apheleia-format-buffer))
-
-
-(use-package prisma-mode
-  :defer t
-  :quelpa
-  (prisma-mode :fetcher github :repo "pimeys/emacs-prisma-mode"))
-
-
 ;; === packages ===
 (use-package deadgrep
   :ensure t
@@ -316,7 +303,7 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 
 
-;; === desabled ===
+;; === disabled ===
 (use-package fill-column-indicator
   :disabled
   :ensure t

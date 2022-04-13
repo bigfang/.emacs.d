@@ -39,4 +39,4 @@
 ;;   (evil-define-key 'normal alchemist-mode-map (kbd "gb") 'alchemist-goto-jump-back))
 
 
-(provide 'init-lang-erlang)
+(provide 'init-erlang)
