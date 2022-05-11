@@ -15,10 +15,6 @@
     ("q" nil :color blue)))
 
 
-(use-package poetry
-  :ensure t
-  :defer t)
-
 
 (use-package pyvenv
   :ensure t
