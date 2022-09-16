@@ -67,7 +67,6 @@
   :ensure t
   :config
   (setq minions-mode-line-lighter "⌘")
-  (add-to-list 'minions-direct 'projectile-mode)
   (minions-mode 1))
 
 

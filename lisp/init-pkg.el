@@ -8,10 +8,10 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
-(setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
-                         ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")
-                         ("melpa" . "http://elpa.emacs-china.org/melpa/")
-                         ("org" . "http://elpa.emacs-china.org/org/")))
+(setq package-archives '(("gnu" . "http://1.15.88.122/gnu/")
+                         ("melpa-stable" . "http://1.15.88.122/stable-melpa/")
+                         ("melpa" . "http://1.15.88.122/melpa/")
+                         ("org" . "http://1.15.88.122/org/")))
 
 (package-initialize)
 

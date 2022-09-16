@@ -291,10 +291,12 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
 
 ;; --- emoji ---
 (use-package emojify
+  :disabled
   :ensure t
   :hook (after-init . global-emojify-mode))
 
 (use-package company-emoji
+  :disabled
   :ensure t
   :requires company
   :after company-lsp              ; fix company-backends order
