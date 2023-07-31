@@ -62,7 +62,7 @@
   (setq time-stamp-format "%Y-%02m-%02d %02H:%02M:%02S"))
 
 
-(use-package tramp
+(use-package tramp-container
   :defer t
   :config
   (setq tramp-default-method "ssh"

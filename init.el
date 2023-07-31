@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
-;; Time-stamp: <2022-04-13 13:40:52>
+;; Time-stamp: <2023-07-31 09:04:45>
 
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -54,6 +54,7 @@
                     init-haskell
                     init-javascript
                     init-json
+                    init-kotlin
                     init-markdown
                     init-prisma
                     init-python
