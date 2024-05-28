@@ -13,6 +13,7 @@
   ("C-p" previous-line :color red)
   ("C-x C-c" save-buffers-kill-terminal :color blue)
   ("M-o c" save-buffers-kill-terminal :color blue)
+  ("x" counsel-M-x "M-x")
   (":" eval-expression "evil expression")
   ("!" shell-command "shell command")
 
