@@ -10,15 +10,8 @@
   (defhydra hydra:python (:color teal :hint nil)
     "python"
     ("a" poetry "poetry")
-    ("w" pyvenv-workon "workon")
     ("r" run-python "IPython")
     ("q" nil :color blue)))
-
-
-
-(use-package pyvenv
-  :ensure t
-  :defer t)
 
 
 (use-package lsp-pylsp
@@ -28,15 +21,6 @@
   :config
   (setq lsp-pylsp-plugins-pydocstyle-enabled nil
         lsp-pylsp-plugins-yapf-enabled t))
-
-
-(use-package lsp-python-ms
-  :disabled
-  :ensure t
-  :init (setq lsp-python-ms-auto-install-server t)
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-python-ms)
-                          (lsp-deferred))))
 
 
 (use-package lsp-pyright
