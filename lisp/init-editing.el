@@ -166,15 +166,18 @@
 (use-package undo-tree
   :ensure t
   :bind (:map evil-normal-state-map
+         ("U" . undo-tree-redo)
          ("u" . undo-tree-undo))
   :config
   (global-undo-tree-mode)
+  (bind-key* "C-\\" 'undo-tree-redo)
   ;; (bind-key* "C-?" 'uncomment-region)
   ;; (bind-key* "M-_" 'uncomment-region)
   ;; (bind-key* "s-z" 'comment-dwim)
   ;; (bind-key* "C-/" 'comment-dwim)
   ;; (bind-key* "C-_" 'comment-dwim)
   :init
+  (setq undo-tree-auto-save-history nil)
   (defhydra hydra:undo-tree (:hint nil)
     "
     [_p_]: undo  [_n_]: redo  [_s_]: save  [_l_]: load  "

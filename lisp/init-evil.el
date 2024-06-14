@@ -4,7 +4,7 @@
 (use-package evil
   :ensure t
   :pin melpa
-  :chords ("kj" . evil-normal-state)
+  ;; :chords ("kj" . evil-normal-state)
   :bind (:map evil-motion-state-map
          ("'" . evil-goto-mark)
          ("`" . evil-goto-mark-line)
@@ -76,7 +76,9 @@
 
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map
-    (read-kbd-macro evil-toggle-key) 'evil-emacs-state))
+              (read-kbd-macro evil-toggle-key) 'evil-emacs-state)
+
+  (key-chord-define evil-insert-state-map "jj" 'evil-normal-state))
 
 
 (use-package evil-terminal-cursor-changer

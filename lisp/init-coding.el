@@ -29,6 +29,8 @@
   ("M-o P" . projectile-command-map)
   :config
   (setq projectile-completion-system 'ivy)
+        ;; projectile-dynamic-mode-line nil)
+        ;; projectile-file-exists-remote-cache-expire nil)
   (setq projectile-mode-line-function
         '(lambda () (format " [%s]" (projectile-project-name))))
   (projectile-mode))

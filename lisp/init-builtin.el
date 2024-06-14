@@ -62,11 +62,11 @@
   (setq time-stamp-format "%Y-%02m-%02d %02H:%02M:%02S"))
 
 
-(use-package tramp-container
+(use-package tramp
   :defer t
   :config
-  (setq tramp-default-method "ssh"
-        tramp-default-user "root"
+  (setq tramp-default-method "sshx"
+        ;; tramp-default-user "root"
         ;; tramp-default-host "192\.168\.0\.1"
         password-cache-expiry nil))
 

@@ -43,6 +43,7 @@ _F_ which-function-mode  %`which-function-mode
   ("b" counsel-ibuffer "ibuffer")
   ("d" counsel-dired-jump "dired")
   ("f" counsel-find-file "find file")
+  ("t" counsel-tramp "tramp")
   ("e" counsel-recentf "recent file")
   ("m" counsel-mark-ring "mark ring")
 
