@@ -70,7 +70,7 @@
 
   ;; buffer
   ("w" save-buffer)
-  ("k" kill-this-buffer)
+  ("k" kill-current-buffer)
   ("TAB" projectile-previous-project-buffer)
   ("DEL" projectile-next-project-buffer)
   ("<" previous-buffer "prev buffer" :color red)

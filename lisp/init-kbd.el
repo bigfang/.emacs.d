@@ -27,6 +27,14 @@
             mac-function-modifier 'hyper)))
 
 
+(use-package kkp
+  :ensure t
+  :config
+  (setq kkp-super-modifier 'meta
+        kkp-alt-modifier 'super)
+  (global-kkp-mode +1))
+
+
 ;; Terminal mouse scroll
 (global-set-key (kbd "<mouse-3>") '(lambda ()
                                      (interactive)
