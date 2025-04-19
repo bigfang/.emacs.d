@@ -53,10 +53,6 @@
   :init
   (setq package-check-signature nil))
 
-;; ensure system package
-(use-package use-package-ensure-system-package
-  :ensure t)
-
 ;; key-chords
 (use-package use-package-chords
   :ensure t
