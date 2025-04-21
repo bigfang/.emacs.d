@@ -35,6 +35,8 @@
          ("C-r" . universal-argument)
          ("@" . nil)
          ("%" . evil-execute-macro)
+         ("ZZ" . my/save-and-close)
+         ("ZQ" . my/kill-without-save)
 
          :map evil-insert-state-map
          ("<escape>" . evil-normal-state)
@@ -51,6 +53,30 @@
         evil-want-C-u-scroll t
         evil-want-C-i-jump nil)
   :config
+  (defun other-file-buffers-p ()
+    (cl-some (lambda (buf)
+               (and (not (eq buf (current-buffer)))
+                    (buffer-file-name buf)))
+             (buffer-list)))
+  (defun my/save-and-close ()
+    (interactive)
+    (save-buffer)
+    (if (other-file-buffers-p)
+        (kill-buffer)
+      (progn
+        (kill-current-buffer)
+        (evil-quit))))
+  (defun my/kill-without-save ()
+    "Kill the current buffer - even if modified."
+    (interactive)
+    (if (other-file-buffers-p)
+        (progn
+          (set-buffer-modified-p nil)
+          (kill-current-buffer))
+      (progn
+        (kill-current-buffer)
+        (evil-quit))))
+
   (setq evil-operator-state-cursor '("goldenrod1" evil-half-cursor)
         evil-motion-state-cursor '("orchid" box)
         evil-replace-state-cursor '("MediumPurple1" hbar)
@@ -58,6 +84,8 @@
         evil-normal-state-cursor '("IndianRed" box)
         evil-visual-state-cursor '("LightGreen" box)
         evil-insert-state-cursor '("LightGoldenrod" bar))
+
+  (evil-ex-define-cmd "q" 'kill-current-buffer)
   (evil-mode 1)
   (with-current-buffer "*Messages*" (evil-emacs-state))
   (add-hook 'messages-buffer-mode-hook #'(lambda () (evil-emacs-state)))
