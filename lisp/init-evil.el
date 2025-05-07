@@ -97,7 +97,6 @@
   (evil-set-initial-state 'deadgrep-mode 'motion)
   (evil-set-initial-state 'deft-mode nil)
   (evil-set-initial-state 'helpful-mode 'motion)
-  (evil-set-initial-state 'paradox-menu-mode 'motion)
 
   (global-set-key (kbd "M-n") 'evil-scroll-line-down)
   (global-set-key (kbd "M-p") 'evil-scroll-line-up)

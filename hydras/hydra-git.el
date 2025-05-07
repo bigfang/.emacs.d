@@ -20,38 +20,38 @@
   ("L" (progn (goto-char (point-max))
               (diff-hl-previous-hunk)))
   ("m" diff-hl-mark-hunk)
-  ("s" git-gutter:stage-hunk "stage")
+  ("s" diff-hl-stage-current-hunk "stage")
   ("=" diff-hl-diff-goto-hunk :color blue)
   ("r" diff-hl-revert-hunk)
   ("q" nil :color blue))
 
 
-(defhydra hydra:git-gutter (:body-pre (git-gutter-mode 1)
-                            :post (git-gutter-mode -1)
-                            :color pink :hint nil)
-  "
-Git gutter:
-  ^^^ Move ^^^   |    hunk
------^^^^^^------|------^^------
-   ^ ^ _K_ ^ ^   |   _s_tage
-   _H_ ^+^ _L_   |   _r_evert
-   ^ ^ _J_ ^ ^   |   _=_ diff
-"
-  ("n" (lambda (arg) (interactive "p")
-         (git-gutter:next-hunk arg) (recenter)) "next hunk")
-  ("p" (lambda (arg) (interactive "p")
-         (git-gutter:previous-hunk arg) (recenter)) "prev hunk")
-  ("J" git-gutter:next-hunk)
-  ("K" git-gutter:previous-hunk)
-  ("H" (progn (goto-char (point-min))
-              (git-gutter:next-hunk 1)))
-  ("L" (progn (goto-char (point-max))
-              (git-gutter:previous-hunk 1)))
-  ("s" git-gutter:stage-hunk)
-  ("r" git-gutter:revert-hunk)
-  ("=" git-gutter:popup-hunk)
-  ("R" git-gutter:set-start-revision "Set Start Revision")
-  ("q" nil :color blue))
+;; (defhydra hydra:git-gutter (:body-pre (git-gutter-mode 1)
+;;                             :post (git-gutter-mode -1)
+;;                             :color pink :hint nil)
+;;   "
+;; Git gutter:
+;;   ^^^ Move ^^^   |    hunk
+;; -----^^^^^^------|------^^------
+;;    ^ ^ _K_ ^ ^   |   _s_tage
+;;    _H_ ^+^ _L_   |   _r_evert
+;;    ^ ^ _J_ ^ ^   |   _=_ diff
+;; "
+;;   ("n" (lambda (arg) (interactive "p")
+;;          (git-gutter:next-hunk arg) (recenter)) "next hunk")
+;;   ("p" (lambda (arg) (interactive "p")
+;;          (git-gutter:previous-hunk arg) (recenter)) "prev hunk")
+;;   ("J" git-gutter:next-hunk)
+;;   ("K" git-gutter:previous-hunk)
+;;   ("H" (progn (goto-char (point-min))
+;;               (git-gutter:next-hunk 1)))
+;;   ("L" (progn (goto-char (point-max))
+;;               (git-gutter:previous-hunk 1)))
+;;   ("s" git-gutter:stage-hunk)
+;;   ("r" git-gutter:revert-hunk)
+;;   ("=" git-gutter:popup-hunk)
+;;   ("R" git-gutter:set-start-revision "Set Start Revision")
+;;   ("q" nil :color blue))
 
 
 (defhydra hydra:smerge (:color pink :hint nil
@@ -96,7 +96,6 @@ _p_rev       _u_pper              _=_: upper/lower       _r_esolve
   ("v" magit-file-dispatch "magit file...")
 
   ("d" hydra:diff-hl/body "diff-hl...")
-  ("g" hydra:git-gutter/body "git-gutter...")
   ("M" hydra:smerge/body "smerge...")
 
   ("h" git-timemachine "timemachine")

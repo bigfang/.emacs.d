@@ -1,5 +1,11 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
 
+
+(use-package diff-mode
+  :config
+  (evil-define-key 'normal diff-mode-map (kbd "q") 'kill-buffer-and-window))
+
+
 ;; (use-package gitattributes-mode
 ;;   :defer t)
 
@@ -41,15 +47,11 @@
   (setq magit-completing-read-function 'ivy-completing-read))
 
 
-(use-package forge
-  :disabled
-  :ensure t)
-
-
 (use-package git-gutter
+  :disabled
   :ensure t
-  ;; :config
-  ;; (global-git-gutter-mode +1)
+  :config
+  (global-git-gutter-mode +1)
   :custom
   (git-gutter:disabled-modes '(asm-mode hexl-mode image-mode)))
 

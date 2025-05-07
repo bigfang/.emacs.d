@@ -64,16 +64,4 @@
   :ensure t)
 
 
-(use-package auto-package-update
-  :disabled
-  :ensure t
-  :config
-  (auto-package-update-at-time "12:10")
-  (setq auto-package-update-delete-old-versions t
-        auto-package-update-prompt-before-update t
-        auto-package-update-hide-results nil
-        auto-package-update-interval 2)
-  (auto-package-update-maybe))
-
-
 (provide 'init-pkg)
