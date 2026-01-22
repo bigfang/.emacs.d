@@ -8,10 +8,10 @@
                          ("melpa" . "https://melpa.org/packages/")))
 (add-to-list 'package-archives '("org" . "https://orgmode.org/elpa/") t)
 
-(setq package-archives '(("gnu" . "https://mirror.nju.edu.cn/elpa/gnu/")
-                         ("nogun" . "https://mirror.nju.edu.cn/elpa/nongnu/")
+(setq package-archives '(("gnu" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("nongun" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
                          ;; ("melpa-stable" . "")
-                         ("melpa" . "https://mirror.nju.edu.cn/elpa/melpa/")))
+                         ("melpa" . "https://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 (package-initialize)
 
