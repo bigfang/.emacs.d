@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
-;; Time-stamp: <2026-02-20 19:53:06>
+;; Time-stamp: <2026-02-20 22:10:45>
 
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -34,6 +34,7 @@
 
 (defvar deps-main '(init-evil
                     init-abo
+                    init-hydra
                     init-selected
                     init-nav
                     init-editing
