@@ -214,6 +214,15 @@ Get          _gj_ ^^ brightness      _gk_ ^^ saturation      _gl_ ^^ hue
       ("q" nil)))
 
 
+(use-package treesit-auto
+  :ensure t
+  :custom
+  (treesit-auto-install 'prompt)
+  :config
+  (treesit-auto-add-to-auto-mode-alist 'all)
+  (global-treesit-auto-mode))
+
+
 (use-package visual-regexp
   :ensure t
   :bind ("M-o q" . vr/query-replace)

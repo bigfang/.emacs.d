@@ -1,5 +1,5 @@
 ;; -*- mode: Emacs-Lisp; lexical-binding: t; -*-*-
-;; Time-stamp: <2023-07-31 09:04:45>
+;; Time-stamp: <2026-02-20 19:53:06>
 
 
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -44,8 +44,7 @@
                     init-docker
                     init-shackle))
 
-(defvar deps-lang '(init-confs
-                    init-clojure
+(defvar deps-lang '(init-clojure
                     init-css
                     init-csv
                     init-erlang
