@@ -57,8 +57,10 @@
 
 ;; apheleia
 (use-package apheleia
-  :quelpa
-  (apheleia :fetcher github :repo "raxod502/apheleia")
+  :ensure t
+  :defer t
+  ; :quelpa
+  ; (apheleia :fetcher github :repo "radian-software/apheleia")
   :bind ("M-o M-o" . apheleia-format-buffer))
 
 

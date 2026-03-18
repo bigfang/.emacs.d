@@ -28,12 +28,13 @@
 (require 'bind-key)
 
 ;; Install quelpa
-(setq quelpa-update-melpa-p nil)
-(unless (package-installed-p 'quelpa)
-  (with-temp-buffer
-    (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
-    (eval-buffer)
-    (quelpa-self-upgrade)))
+; (setq quelpa-update-melpa-p nil)
+; (unless (package-installed-p 'quelpa)
+;   (with-temp-buffer
+;     (url-insert-file-contents "https://raw.githubusercontent.com/quelpa/quelpa/master/quelpa.el")
+;     (eval-buffer)
+;     ; (quelpa-self-upgrade)
+;   ))
 
 (use-package quelpa-use-package
   :ensure t)

@@ -56,7 +56,6 @@
                     init-json
                     init-kotlin
                     init-markdown
-                    init-prisma
                     init-python
                     init-racket
                     init-rust))
